@@ -1,69 +1,135 @@
 <template>
-  <footer class="bg-gray-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- About Section -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4">About Puzzle Pages</h3>
-          <p class="text-gray-300">
+  <footer class="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand Section -->
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
+              <UIcon name="i-heroicons-puzzle-piece" class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl font-bold">Puzzle Pages</h3>
+          </div>
+          <p class="text-blue-100 leading-relaxed mb-6 max-w-md">
             Discover tiny libraries, find zines, solve riddles, and unlock the overall puzzle. 
-            A community-driven project connecting puzzle enthusiasts and library lovers.
+            A community-driven project connecting puzzle enthusiasts and library lovers worldwide.
           </p>
+          <div class="flex space-x-4">
+            <UButton
+              to="/library/new"
+              color="blue"
+              variant="solid"
+              icon="i-heroicons-plus"
+              size="sm"
+            >
+              Add Library
+            </UButton>
+            <UButton
+              to="/logbook/new"
+              color="white"
+              variant="outline"
+              icon="i-heroicons-pencil-square"
+              size="sm"
+            >
+              Share Discovery
+            </UButton>
+          </div>
         </div>
 
         <!-- Quick Links -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
+          <h4 class="text-lg font-semibold mb-4 text-blue-200">Explore</h4>
+          <ul class="space-y-3">
             <li>
-              <NuxtLink to="/" class="text-gray-300 hover:text-white transition-colors">
+              <NuxtLink 
+                to="/" 
+                class="text-blue-100 hover:text-white transition-colors flex items-center group"
+              >
+                <UIcon name="i-heroicons-home" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
                 Home
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/search" class="text-gray-300 hover:text-white transition-colors">
+              <NuxtLink 
+                to="/search" 
+                class="text-blue-100 hover:text-white transition-colors flex items-center group"
+              >
+                <UIcon name="i-heroicons-map" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
                 Search Libraries
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/logbook/new" class="text-gray-300 hover:text-white transition-colors">
-                Add Log Book Entry
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/library/new" class="text-gray-300 hover:text-white transition-colors">
-                Add New Library
+              <NuxtLink 
+                to="/logbook/new" 
+                class="text-blue-100 hover:text-white transition-colors flex items-center group"
+              >
+                <UIcon name="i-heroicons-pencil-square" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                Add Log Entry
               </NuxtLink>
             </li>
           </ul>
         </div>
 
-        <!-- Contact Info -->
+        <!-- Community Stats -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">Get Involved</h3>
-          <p class="text-gray-300 mb-2">
-            Help grow our community by adding new libraries and sharing your discoveries.
-          </p>
-          <UButton
-            to="/logbook/new"
-            color="white"
-            variant="outline"
-            size="sm"
-          >
-            Contribute Now
-          </UButton>
+          <h4 class="text-lg font-semibold mb-4 text-blue-200">Community</h4>
+          <div class="space-y-3">
+            <div class="flex items-center text-blue-100">
+              <div class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center mr-3">
+                <UIcon name="i-heroicons-building-library" class="w-4 h-4" />
+              </div>
+              <div>
+                <div class="font-semibold text-white">{{ stats.libraries }}</div>
+                <div class="text-xs">Libraries</div>
+              </div>
+            </div>
+            <div class="flex items-center text-blue-100">
+              <div class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center mr-3">
+                <UIcon name="i-heroicons-puzzle-piece" class="w-4 h-4" />
+              </div>
+              <div>
+                <div class="font-semibold text-white">{{ stats.riddles }}</div>
+                <div class="text-xs">Riddles Solved</div>
+              </div>
+            </div>
+            <div class="flex items-center text-blue-100">
+              <div class="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center mr-3">
+                <UIcon name="i-heroicons-users" class="w-4 h-4" />
+              </div>
+              <div>
+                <div class="font-semibold text-white">{{ stats.puzzlers }}</div>
+                <div class="text-xs">Active Puzzlers</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-        <p class="text-gray-400">
-          © {{ new Date().getFullYear() }} Puzzle Pages Project. Built with ❤️ for the community.
-        </p>
+      <div class="border-t border-blue-800/50 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-blue-200 text-sm">
+            © {{ new Date().getFullYear() }} Puzzle Pages Project. Built with 
+            <UIcon name="i-heroicons-heart" class="w-4 h-4 inline mx-1 text-red-400" /> 
+            for the community.
+          </p>
+          <div class="flex items-center mt-4 md:mt-0 text-blue-200 text-sm">
+            <span class="mr-2">Powered by</span>
+            <UIcon name="i-simple-icons-nuxtdotjs" class="w-4 h-4 mr-1" />
+            <span class="mr-3">Nuxt</span>
+            <UIcon name="i-simple-icons-tailwindcss" class="w-4 h-4 mr-1" />
+            <span>Tailwind</span>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-// Footer component
+// Mock stats data - in real implementation this would come from an API
+const stats = ref({
+  libraries: 42,
+  riddles: 127,
+  puzzlers: 234
+})
 </script>

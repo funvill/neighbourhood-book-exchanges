@@ -1,10 +1,19 @@
 <template>
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div v-if="library" class="space-y-8">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center space-x-2 text-sm text-gray-500">
+        <NuxtLink to="/" class="hover:text-blue-600">Home</NuxtLink>
+        <UIcon name="i-heroicons-chevron-right" class="w-4 h-4" />
+        <NuxtLink to="/search" class="hover:text-blue-600">Libraries</NuxtLink>
+        <UIcon name="i-heroicons-chevron-right" class="w-4 h-4" />
+        <span class="text-gray-900">{{ library.title }}</span>
+      </nav>
+
       <!-- Library Header -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
         <!-- Hero Image -->
-        <div class="aspect-video bg-gray-200">
+        <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 relative">
           <NuxtImg
             v-if="library.photo"
             :src="library.photo"
@@ -12,86 +21,215 @@
             class="w-full h-full object-cover"
           />
           <div v-else class="w-full h-full flex items-center justify-center">
-            <UIcon name="i-heroicons-photo" class="w-24 h-24 text-gray-400" />
+            <UIcon name="i-heroicons-building-library" class="w-32 h-32 text-gray-400" />
+          </div>
+          
+          <!-- Overlay with difficulty badge -->
+          <div class="absolute top-4 right-4">
+            <UBadge
+              :color="getDifficultyColor(library.difficulty)"
+              variant="solid"
+              size="lg"
+              class="capitalize shadow-lg"
+            >
+              {{ library.difficulty }} Level
+            </UBadge>
           </div>
         </div>
 
         <!-- Library Info -->
-        <div class="p-6">
-          <h1 class="text-3xl font-bold text-gray-900 mb-4">{{ library.title }}</h1>
-          
-          <!-- Location -->
-          <div class="flex items-center text-gray-600 mb-4">
-            <UIcon name="i-heroicons-map-pin" class="w-5 h-5 mr-2" />
-            <span>{{ formatLocation(library.location) }}</span>
-          </div>
+        <div class="p-8">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-6">
+              <div>
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ library.title }}</h1>
+                
+                <!-- Meta Information -->
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
+                  <div class="flex items-center">
+                    <UIcon name="i-heroicons-map-pin" class="w-4 h-4 mr-1 text-blue-500" />
+                    <span>{{ library.location?.address || formatLocation(library.location) }}</span>
+                  </div>
+                  <div class="flex items-center">
+                    <UIcon name="i-heroicons-puzzle-piece" class="w-4 h-4 mr-1 text-green-500" />
+                    <span>{{ library.riddles_count }} riddles</span>
+                  </div>
+                  <div class="flex items-center">
+                    <UIcon name="i-heroicons-calendar" class="w-4 h-4 mr-1 text-purple-500" />
+                    <span>Est. {{ new Date(library.established).getFullYear() }}</span>
+                  </div>
+                  <div v-if="library.recent_activity" class="flex items-center">
+                    <UIcon name="i-heroicons-clock" class="w-4 h-4 mr-1 text-orange-500" />
+                    <span>Last active {{ formatDate(library.recent_activity) }}</span>
+                  </div>
+                </div>
 
-          <!-- Description -->
-          <p class="text-gray-700 mb-6">{{ library.description }}</p>
+                <!-- Description -->
+                <p class="text-lg text-gray-700 leading-relaxed">{{ library.description }}</p>
+              </div>
 
-          <!-- Tags Cloud -->
-          <div v-if="library.tags && library.tags.length > 0" class="space-y-4">
-            <h3 class="text-lg font-semibold text-gray-900">Popular Topics</h3>
-            <div class="flex flex-wrap gap-2">
-              <UButton
-                v-for="tag in library.tags"
-                :key="tag"
-                :to="`/search?tag=${encodeURIComponent(tag)}`"
-                variant="soft"
-                size="sm"
-                :ui="{ rounded: 'rounded-full' }"
-              >
-                {{ tag }}
-              </UButton>
+              <!-- Content Body -->
+              <div class="prose max-w-none">
+                <ContentRenderer :value="library" class="library-content" />
+              </div>
+
+              <!-- Tags Cloud -->
+              <div v-if="library.tags && library.tags.length > 0" class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-900 flex items-center">
+                  <UIcon name="i-heroicons-tag" class="w-5 h-5 mr-2 text-blue-500" />
+                  Popular Topics
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <UButton
+                    v-for="tag in library.tags"
+                    :key="tag"
+                    :to="`/search?tag=${encodeURIComponent(tag)}`"
+                    variant="soft"
+                    size="sm"
+                    :ui="{ rounded: 'rounded-full' }"
+                    class="hover:scale-105 transition-transform"
+                  >
+                    {{ tag }}
+                  </UButton>
+                </div>
+                <p class="text-sm text-gray-500">
+                  Click on a tag to find other libraries with similar themes and puzzles.
+                </p>
+              </div>
             </div>
-            <p class="text-sm text-gray-500">
-              Click on a tag to find other libraries with similar content.
-            </p>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+              <!-- Quick Stats -->
+              <UCard>
+                <template #header>
+                  <h3 class="font-semibold text-gray-900">Quick Stats</h3>
+                </template>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Difficulty</span>
+                    <UBadge :color="getDifficultyColor(library.difficulty)" variant="soft" class="capitalize">
+                      {{ library.difficulty }}
+                    </UBadge>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Riddles</span>
+                    <span class="font-semibold">{{ library.riddles_count }}</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Established</span>
+                    <span class="font-semibold">{{ new Date(library.established).getFullYear() }}</span>
+                  </div>
+                </div>
+              </UCard>
+
+              <!-- Contact Info -->
+              <UCard v-if="library.contact">
+                <template #header>
+                  <h3 class="font-semibold text-gray-900">Contact</h3>
+                </template>
+                <div class="space-y-3 text-sm">
+                  <div v-if="library.contact.email" class="flex items-center">
+                    <UIcon name="i-heroicons-envelope" class="w-4 h-4 mr-2 text-blue-500" />
+                    <a :href="`mailto:${library.contact.email}`" class="text-blue-600 hover:underline">
+                      {{ library.contact.email }}
+                    </a>
+                  </div>
+                  <div v-if="library.contact.phone" class="flex items-center">
+                    <UIcon name="i-heroicons-phone" class="w-4 h-4 mr-2 text-green-500" />
+                    <a :href="`tel:${library.contact.phone}`" class="text-green-600 hover:underline">
+                      {{ library.contact.phone }}
+                    </a>
+                  </div>
+                  <div v-if="library.contact.coordinator" class="flex items-center">
+                    <UIcon name="i-heroicons-user" class="w-4 h-4 mr-2 text-purple-500" />
+                    <span>{{ library.contact.coordinator }}</span>
+                  </div>
+                  <div v-if="library.contact.hours" class="flex items-start">
+                    <UIcon name="i-heroicons-clock" class="w-4 h-4 mr-2 mt-0.5 text-orange-500" />
+                    <span>{{ library.contact.hours }}</span>
+                  </div>
+                </div>
+              </UCard>
+
+              <!-- Actions -->
+              <UCard>
+                <template #header>
+                  <h3 class="font-semibold text-gray-900">Get Involved</h3>
+                </template>
+                <div class="space-y-3">
+                  <UButton
+                    :to="`/logbook/new?library=${librarySlug}`"
+                    color="primary"
+                    size="lg"
+                    icon="i-heroicons-pencil-square"
+                    block
+                    class="shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    Add Log Entry
+                  </UButton>
+                  <UButton
+                    to="/search"
+                    variant="outline"
+                    size="lg"
+                    icon="i-heroicons-map"
+                    block
+                  >
+                    Find More Libraries
+                  </UButton>
+                </div>
+              </UCard>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Map Section -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="p-6">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4">Location</h2>
-          <div id="library-map" class="h-64 w-full rounded-lg"></div>
-        </div>
-      </div>
+      <UCard>
+        <template #header>
+          <h2 class="text-xl font-semibold text-gray-900 flex items-center">
+            <UIcon name="i-heroicons-map" class="w-5 h-5 mr-2 text-blue-500" />
+            Location
+          </h2>
+        </template>
+        <div id="library-map" class="h-80 w-full rounded-lg"></div>
+      </UCard>
 
-      <!-- Actions -->
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-xl font-semibold text-gray-900 mb-4">Get Involved</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <UButton
-            :to="`/logbook/new?library=${library.id}`"
-            color="primary"
-            size="lg"
-            icon="i-heroicons-pencil-square"
-            block
+      <!-- Recent Entries -->
+      <UCard>
+        <template #header>
+          <h2 class="text-xl font-semibold text-gray-900 flex items-center">
+            <UIcon name="i-heroicons-document-text" class="w-5 h-5 mr-2 text-green-500" />
+            Recent Log Entries
+          </h2>
+        </template>
+        <div v-if="logEntries && logEntries.length > 0" class="space-y-4">
+          <div 
+            v-for="entry in logEntries" 
+            :key="entry._path"
+            class="border-l-4 border-blue-200 pl-4 py-2"
           >
-            Add Log Book Entry
-          </UButton>
-          <UButton
-            to="/search"
-            variant="outline"
-            size="lg"
-            icon="i-heroicons-map"
-            block
-          >
-            Find More Libraries
-          </UButton>
+            <h4 class="font-semibold text-gray-900">{{ entry.title }}</h4>
+            <p class="text-sm text-gray-600 mb-2">
+              by {{ entry.author }} on {{ formatDate(entry.date) }}
+            </p>
+            <p class="text-gray-700 text-sm">{{ truncate(entry.description || '', 150) }}</p>
+          </div>
         </div>
-      </div>
-
-      <!-- Recent Entries (placeholder for future implementation) -->
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-xl font-semibold text-gray-900 mb-4">Recent Entries</h2>
-        <div class="text-center py-8 text-gray-500">
+        <div v-else class="text-center py-8 text-gray-500">
           <UIcon name="i-heroicons-document-text" class="w-12 h-12 mx-auto mb-2" />
           <p>No entries yet. Be the first to share your experience!</p>
+          <UButton
+            :to="`/logbook/new?library=${librarySlug}`"
+            color="primary"
+            size="sm"
+            class="mt-4"
+          >
+            Add First Entry
+          </UButton>
         </div>
-      </div>
+      </UCard>
     </div>
 
     <!-- Loading State -->
@@ -115,23 +253,25 @@
 import type { Map } from 'leaflet'
 
 const route = useRoute()
-const libraryId = route.params.id
+const librarySlug = route.params.id as string
 
-// Mock data - in real implementation this would come from an API
-const { data: library, pending } = await useLazyFetch(`/api/libraries/${libraryId}`, {
-  default: () => {
-    // Mock library data
-    if (libraryId === '1') {
-      return {
-        id: 1,
-        title: 'Downtown Central Library',
-        location: { lat: 49.2827, lng: -123.1207 },
-        photo: '/images/library1.jpg',
-        description: 'A cozy little library in the heart of downtown with mystery zines. This charming wooden box contains an ever-changing collection of puzzle books, mystery novels, and cryptic zines that challenge visitors to solve hidden riddles. Local puzzle enthusiasts have contributed handmade puzzles and brain teasers that make this location a favorite among the community.',
-        tags: ['Mystery', 'Community', 'Puzzles', 'Downtown', 'Cryptic']
-      }
-    }
+// Fetch library content
+const { data: library, pending } = await useLazyAsyncData(`library-${librarySlug}`, async () => {
+  try {
+    const content = await queryContent(`/content/${librarySlug}`).findOne()
+    return content
+  } catch {
     return null
+  }
+})
+
+// Fetch log entries for this library
+const { data: logEntries } = await useLazyAsyncData(`logbook-${librarySlug}`, async () => {
+  try {
+    const entries = await queryContent(`/content/${librarySlug}/logbook`).find()
+    return entries.slice(0, 5) // Show latest 5 entries
+  } catch {
+    return []
   }
 })
 
@@ -142,8 +282,33 @@ const formatLocation = (location: { lat: number; lng: number }) => {
   return `${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}`
 }
 
+const formatDate = (dateStr: string) => {
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  })
+}
+
+const truncate = (text: string, length: number) => {
+  return text.length > length ? text.substring(0, length) + '...' : text
+}
+
+const getDifficultyColor = (difficulty: string) => {
+  switch (difficulty) {
+    case 'beginner':
+      return 'green'
+    case 'intermediate':
+      return 'yellow'
+    case 'advanced':
+      return 'red'
+    default:
+      return 'gray'
+  }
+}
+
 const initializeLibraryMap = () => {
-  if (process.client && library.value) {
+  if (process.client && library.value?.location) {
     import('leaflet').then((L) => {
       // Initialize map
       map = L.map('library-map').setView([library.value.location.lat, library.value.location.lng], 15)
@@ -169,7 +334,7 @@ const initializeLibraryMap = () => {
 
 // Set page meta
 useHead({
-  title: computed(() => library.value ? `${library.value.title} - Puzzle Pages Project` : 'Library - Puzzle Pages Project'),
+  title: computed(() => library.value ? `${library.value.title} - Puzzle Pages` : 'Library - Puzzle Pages'),
   meta: computed(() => [
     {
       name: 'description',
@@ -180,7 +345,7 @@ useHead({
 
 // Lifecycle
 onMounted(() => {
-  if (library.value) {
+  if (library.value?.location) {
     nextTick(() => {
       initializeLibraryMap()
     })
@@ -196,7 +361,7 @@ onUnmounted(() => {
 
 // Watch for library data changes
 watch(library, (newLibrary) => {
-  if (newLibrary && !map) {
+  if (newLibrary?.location && !map) {
     nextTick(() => {
       initializeLibraryMap()
     })
@@ -206,4 +371,62 @@ watch(library, (newLibrary) => {
 
 <style>
 @import 'leaflet/dist/leaflet.css';
+
+.library-content :deep(h2) {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.library-content :deep(h3) {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.library-content :deep(h4) {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.library-content :deep(p) {
+  color: #374151;
+  margin-bottom: 1rem;
+  line-height: 1.625;
+}
+
+.library-content :deep(ul) {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
+.library-content :deep(ul li) {
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.library-content :deep(strong) {
+  font-weight: 600;
+  color: #111827;
+}
+
+.library-content :deep(em) {
+  font-style: italic;
+}
+
+.library-content :deep(blockquote) {
+  border-left: 4px solid #dbeafe;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #4b5563;
+  margin: 1rem 0;
+}
 </style>

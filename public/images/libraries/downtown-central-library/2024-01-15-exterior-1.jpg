@@ -1,0 +1,14 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f3f4f6"/>
+  <rect x="20" y="20" width="760" height="410" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="400" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#6b7280">No Image</text>
+  <text x="400" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9ca3af">Downtown Central Library - Exterior</text>
+  <text x="400" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9ca3af">2024-01-15</text>
+  <!-- Simple library icon -->
+  <rect x="350" y="280" width="100" height="80" fill="none" stroke="#9ca3af" stroke-width="2"/>
+  <rect x="365" y="295" width="15" height="50" fill="#9ca3af"/>
+  <rect x="385" y="295" width="15" height="50" fill="#9ca3af"/>
+  <rect x="405" y="295" width="15" height="50" fill="#9ca3af"/>
+  <rect x="425" y="295" width="15" height="50" fill="#9ca3af"/>
+  <polygon points="350,280 400,250 450,280" fill="none" stroke="#9ca3af" stroke-width="2"/>
+</svg>
