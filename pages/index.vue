@@ -8,7 +8,7 @@
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div class="text-center">
           <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-            <UIcon name="i-heroicons-sparkles" class="w-4 h-4 mr-2" />
+            <span class="material-symbols-outlined mr-2" style="font-size:20px;">auto_awesome</span>
             <span class="text-sm font-medium">Community Puzzle Adventure</span>
           </div>
           
@@ -23,65 +23,47 @@
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <UButton
-              to="/search"
-              color="white"
-              size="lg"
-              icon="i-heroicons-map"
-              class="shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
-            >
+            <a href="/search" class="md-button shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 flex items-center gap-1">
+              <span class="material-symbols-outlined" style="font-size:20px;">map</span>
               Explore Libraries
-            </UButton>
-            <UButton
-              to="/logbook/new"
-              variant="outline"
-              color="white"
-              size="lg"
-              icon="i-heroicons-pencil-square"
-              class="border-white/30 hover:bg-white/10 backdrop-blur-sm"
-            >
+            </a>
+            <a href="/logbook/new" class="md-button border border-white/30 hover:bg-white/10 backdrop-blur-sm flex items-center gap-1" style="background:transparent;color:white;">
+              <span class="material-symbols-outlined" style="font-size:20px;">edit</span>
               Share Your Discovery
-            </UButton>
+            </a>
           </div>
         </div>
-      </div>
-      
-      <!-- Wave Bottom -->
-      <div class="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-16 fill-white">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-        </svg>
       </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="text-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
             <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <UIcon name="i-heroicons-building-library" class="w-8 h-8 text-white" />
+              <span class="material-symbols-outlined text-white" style="font-size:32px;">local_library</span>
             </div>
             <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.libraries }}</div>
             <div class="text-gray-600 font-medium">Libraries</div>
           </div>
-          <div class="text-center">
+          <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
             <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <UIcon name="i-heroicons-puzzle-piece" class="w-8 h-8 text-white" />
+              <span class="material-symbols-outlined text-white" style="font-size:32px;">extension</span>
             </div>
             <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.riddles }}</div>
             <div class="text-gray-600 font-medium">Riddles Solved</div>
           </div>
-          <div class="text-center">
+          <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
             <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <UIcon name="i-heroicons-book-open" class="w-8 h-8 text-white" />
+              <span class="material-symbols-outlined text-white" style="font-size:32px;">menu_book</span>
             </div>
             <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.entries }}</div>
             <div class="text-gray-600 font-medium">Log Entries</div>
           </div>
-          <div class="text-center">
+          <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
             <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <UIcon name="i-heroicons-users" class="w-8 h-8 text-white" />
+              <span class="material-symbols-outlined text-white" style="font-size:32px;">groups</span>
             </div>
             <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.puzzlers }}</div>
             <div class="text-gray-600 font-medium">Active Puzzlers</div>
@@ -104,7 +86,7 @@
           <div class="text-center group">
             <div class="relative mb-6">
               <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-110">
-                <UIcon name="i-heroicons-map" class="w-10 h-10 text-white" />
+                <span class="material-symbols-outlined text-white" style="font-size:40px;">map</span>
               </div>
               <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">1</div>
             </div>
@@ -118,7 +100,7 @@
           <div class="text-center group">
             <div class="relative mb-6">
               <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-110">
-                <UIcon name="i-heroicons-puzzle-piece" class="w-10 h-10 text-white" />
+                <span class="material-symbols-outlined text-white" style="font-size:40px;">extension</span>
               </div>
               <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">2</div>
             </div>
@@ -132,7 +114,7 @@
           <div class="text-center group">
             <div class="relative mb-6">
               <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-110">
-                <UIcon name="i-heroicons-trophy" class="w-10 h-10 text-white" />
+                <span class="material-symbols-outlined text-white" style="font-size:40px;">emoji_events</span>
               </div>
               <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">3</div>
             </div>
@@ -142,6 +124,19 @@
               Collaborate with others to reach the ultimate solution.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="py-12 bg-white border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4 flex items-center">
+          <span class="material-symbols-outlined mr-2">map</span>
+          Library Map
+        </h2>
+        <div class="w-full h-96 rounded-xl overflow-hidden shadow md-elevated">
+          <div id="library-map" style="width: 100%; height: 100%;"></div>
         </div>
       </div>
     </section>
@@ -169,25 +164,14 @@
           Your next great discovery is just around the corner!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <UButton
-            to="/search"
-            color="white"
-            size="lg"
-            icon="i-heroicons-map"
-            class="shadow-xl hover:shadow-2xl transition-all"
-          >
+          <a href="/search" class="md-button shadow-xl hover:shadow-2xl transition-all flex items-center gap-1">
+            <span class="material-symbols-outlined" style="font-size:20px;">map</span>
             Start Exploring Now
-          </UButton>
-          <UButton
-            to="/library/new"
-            variant="outline"
-            color="white"
-            size="lg"
-            icon="i-heroicons-plus"
-            class="border-white/30 hover:bg-white/10"
-          >
+          </a>
+          <a href="/library/new" class="md-button border border-white/30 hover:bg-white/10 flex items-center gap-1" style="background:transparent;color:white;">
+            <span class="material-symbols-outlined" style="font-size:20px;">add</span>
             Add Your Library
-          </UButton>
+          </a>
         </div>
       </div>
     </section>
@@ -195,27 +179,57 @@
 </template>
 
 <script setup lang="ts">
-// Set page meta with enhanced SEO
-useHead({
-  title: 'Puzzle Pages - Community Library Adventure Platform',
-  meta: [
-    {
-      name: 'description',
-      content: 'Discover tiny libraries, solve puzzles, and unlock community mysteries. Join thousands of puzzle enthusiasts in an adventure spanning your entire community.'
-    },
-    {
-      property: 'og:title',
-      content: 'Puzzle Pages - Community Library Adventure Platform'
-    },
-    {
-      property: 'og:description',
-      content: 'Discover tiny libraries, solve puzzles, and unlock community mysteries. Join thousands of puzzle enthusiasts in an adventure spanning your entire community.'
-    },
-    {
-      property: 'og:type',
-      content: 'website'
-    }
-  ]
+import { onMounted, ref } from 'vue'
+
+// Library locations for the map (sync with featured libraries)
+const libraryLocations = [
+  {
+    name: 'Downtown Central Library',
+    lat: 49.2827,
+    lng: -123.1207,
+    address: '789 Main Street, Downtown'
+  },
+  {
+    name: 'Sunset Park Reading Nook',
+    lat: 49.2634,
+    lng: -123.1456,
+    address: 'Sunset Park, West Side'
+  },
+  {
+    name: 'University District Hub',
+    lat: 49.2606,
+    lng: -123.2460,
+    address: 'University Boulevard, Near Campus'
+  }
+]
+
+onMounted(() => {
+  // Load Leaflet CSS/JS from CDN if not already loaded
+  if (!window.L) {
+    const leafletCss = document.createElement('link')
+    leafletCss.rel = 'stylesheet'
+    leafletCss.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
+    document.head.appendChild(leafletCss)
+
+    const leafletScript = document.createElement('script')
+    leafletScript.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
+    leafletScript.onload = initMap
+    document.body.appendChild(leafletScript)
+  } else {
+    initMap()
+  }
+
+  function initMap() {
+    const map = window.L.map('library-map').setView([49.27, -123.13], 12)
+    window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map)
+    libraryLocations.forEach(lib => {
+      window.L.marker([lib.lat, lib.lng])
+        .addTo(map)
+        .bindPopup(`<b>${lib.name}</b><br>${lib.address}`)
+    })
+  }
 })
 
 // Enhanced stats data

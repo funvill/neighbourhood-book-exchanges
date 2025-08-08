@@ -7,7 +7,7 @@
           <NuxtLink to="/" class="text-decoration-none group">
             <div class="flex items-center space-x-3">
               <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <UIcon name="i-heroicons-puzzle-piece" class="w-6 h-6 text-white" />
+                <span class="material-symbols-outlined text-white" style="font-size:24px;">extension</span>
               </div>
               <div>
                 <h1 class="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
@@ -21,97 +21,57 @@
 
         <!-- Navigation Menu -->
         <nav class="hidden md:flex items-center space-x-1">
-          <UButton
-            to="/search"
-            variant="ghost"
-            icon="i-heroicons-map"
-            class="text-gray-600 hover:text-blue-600"
-          >
+          <a href="/search" class="md-button text-gray-600 hover:text-blue-600 flex items-center gap-1 bg-transparent shadow-none">
+            <span class="material-symbols-outlined" style="font-size:20px;">map</span>
             Explore
-          </UButton>
-          <UButton
-            to="/library/new"
-            variant="ghost"
-            icon="i-heroicons-building-library"
-            class="text-gray-600 hover:text-blue-600"
-          >
+          </a>
+          <a href="/library/new" class="md-button text-gray-600 hover:text-blue-600 flex items-center gap-1 bg-transparent shadow-none">
+            <span class="material-symbols-outlined" style="font-size:20px;">local_library</span>
             Add Library
-          </UButton>
+          </a>
         </nav>
 
         <!-- Search Bar -->
         <div class="flex-1 max-w-md mx-4">
-          <div class="relative">
-            <UInput
+          <form class="relative" @submit.prevent="performSearch">
+            <input
               v-model="searchQuery"
+              type="text"
               placeholder="Search libraries and puzzles..."
-              icon="i-heroicons-magnifying-glass"
-              class="w-full"
-              size="md"
-              :ui="{ 
-                rounded: 'rounded-full',
-                icon: { trailing: { pointer: '' } }
-              }"
+              class="w-full rounded-full border border-gray-200 py-2 pl-10 pr-10 focus:outline-none focus:border-blue-400 text-sm shadow-sm"
               @keyup.enter="performSearch"
-            >
-              <template #trailing>
-                <UButton
-                  v-if="searchQuery"
-                  @click="clearSearch"
-                  icon="i-heroicons-x-mark"
-                  variant="link"
-                  size="xs"
-                  class="text-gray-400 hover:text-gray-600"
-                />
-              </template>
-            </UInput>
-          </div>
+            />
+            <span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400" style="font-size:20px;">search</span>
+            <button v-if="searchQuery" type="button" @click="clearSearch" class="absolute right-2 top-2.5 text-gray-400 hover:text-gray-600">
+              <span class="material-symbols-outlined" style="font-size:20px;">close</span>
+            </button>
+          </form>
         </div>
 
         <!-- Action Buttons -->
         <div class="flex items-center space-x-2">
-          <UButton
-            to="/logbook/new"
-            color="primary"
-            variant="solid"
-            icon="i-heroicons-pencil-square"
-            size="md"
-            class="shadow-md hover:shadow-lg transition-shadow"
-          >
+          <a href="/logbook/new" class="md-button shadow-md hover:shadow-lg transition-shadow flex items-center gap-1">
+            <span class="material-symbols-outlined" style="font-size:20px;">edit</span>
             <span class="hidden sm:inline">Log Entry</span>
-          </UButton>
-          
+          </a>
           <!-- Mobile menu button -->
-          <UButton
-            variant="ghost"
-            icon="i-heroicons-bars-3"
-            class="md:hidden"
-            @click="toggleMobileMenu"
-          />
+          <button class="md-button md:hidden flex items-center justify-center bg-transparent shadow-none" @click="toggleMobileMenu" type="button">
+            <span class="material-symbols-outlined" style="font-size:24px;">menu</span>
+          </button>
         </div>
       </div>
 
       <!-- Mobile Navigation -->
       <div v-if="showMobileMenu" class="md:hidden py-4 border-t border-gray-200">
         <div class="flex flex-col space-y-2">
-          <UButton
-            to="/search"
-            variant="ghost"
-            icon="i-heroicons-map"
-            class="justify-start"
-            @click="closeMobileMenu"
-          >
+          <a href="/search" class="md-button justify-start flex items-center gap-1" @click="closeMobileMenu">
+            <span class="material-symbols-outlined" style="font-size:20px;">map</span>
             Explore Libraries
-          </UButton>
-          <UButton
-            to="/library/new"
-            variant="ghost"
-            icon="i-heroicons-building-library"
-            class="justify-start"
-            @click="closeMobileMenu"
-          >
+          </a>
+          <a href="/library/new" class="md-button justify-start flex items-center gap-1" @click="closeMobileMenu">
+            <span class="material-symbols-outlined" style="font-size:20px;">local_library</span>
             Add New Library
-          </UButton>
+          </a>
         </div>
       </div>
     </div>

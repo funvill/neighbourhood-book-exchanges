@@ -7,17 +7,13 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/image',
-    '@nuxt/ui'
+    '@nuxtjs/tailwindcss'
   ],
 
-  // UI and theming configuration
-  ui: {
-    global: true,
-    icons: ['heroicons', 'simple-icons']
-  },
-
   // Custom theme with Material Design principles
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/main.css', // Google Material Design theme
+  ],
 
   // App configuration
   app: {
@@ -32,13 +28,6 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
-    }
-  },
-
-  // Content configuration for our library content
-  content: {
-    highlight: {
-      theme: 'github-light'
     }
   }
 })

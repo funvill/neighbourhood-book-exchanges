@@ -102,25 +102,28 @@ const availableTags = [
 const allLibraries = ref([
   {
     id: 1,
+    slug: 'downtown-central-library',
     title: 'Downtown Central Library',
     location: { lat: 49.2827, lng: -123.1207 },
-    photo: '/images/library1.jpg',
+    photo: '/images/libraries/downtown-central-library/2024-01-15-exterior-1.jpg',
     description: 'A cozy little library in the heart of downtown with mystery zines.',
     tags: ['Mystery', 'Community']
   },
   {
     id: 2,
+    slug: 'sunset-park-reading-nook',
     title: 'Sunset Park Reading Nook',
     location: { lat: 49.2634, lng: -123.1456 },
-    photo: '/images/library2.jpg',
+    photo: '/images/libraries/sunset-park-reading-nook/2024-02-03-family-reading-1.jpg',
     description: 'Family-friendly library with children\'s puzzle books.',
     tags: ['Children', 'Adventure']
   },
   {
     id: 3,
+    slug: 'university-district-hub',
     title: 'University District Hub',
     location: { lat: 49.2606, lng: -123.2460 },
-    photo: '/images/library3.jpg',
+    photo: '/images/libraries/university-district-hub/2024-03-10-study-session-1.jpg',
     description: 'Academic-focused library with science and philosophy zines.',
     tags: ['Science', 'Philosophy']
   }
@@ -205,7 +208,7 @@ const updateMapMarkers = () => {
           <div class="p-2">
             <h4 class="font-semibold">${library.title}</h4>
             <p class="text-sm text-gray-600">${library.description}</p>
-            <a href="/library/${library.id}" class="text-blue-600 hover:underline">View Details</a>
+            <a href="/library/${library.slug}" class="text-blue-600 hover:underline">View Details</a>
           </div>
         `)
       markers.push(marker)

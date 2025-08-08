@@ -6,7 +6,7 @@
         <div class="md:col-span-2">
           <div class="flex items-center space-x-3 mb-4">
             <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
-              <UIcon name="i-heroicons-puzzle-piece" class="w-6 h-6 text-white" />
+              <span class="material-symbols-outlined text-white" style="font-size:24px;">extension</span>
             </div>
             <h3 class="text-xl font-bold">Puzzle Pages</h3>
           </div>
@@ -15,24 +15,14 @@
             A community-driven project connecting puzzle enthusiasts and library lovers worldwide.
           </p>
           <div class="flex space-x-4">
-            <UButton
-              to="/library/new"
-              color="blue"
-              variant="solid"
-              icon="i-heroicons-plus"
-              size="sm"
-            >
+            <a href="/library/new" class="md-button flex items-center gap-1" style="background: var(--md-primary); color: var(--md-on-primary);">
+              <span class="material-symbols-outlined" style="font-size:18px;">add</span>
               Add Library
-            </UButton>
-            <UButton
-              to="/logbook/new"
-              color="white"
-              variant="outline"
-              icon="i-heroicons-pencil-square"
-              size="sm"
-            >
+            </a>
+            <a href="/logbook/new" class="md-button flex items-center gap-1" style="background: var(--md-primary-container); color: var(--md-on-primary-container);">
+              <span class="material-symbols-outlined" style="font-size:18px;">edit</span>
               Share Discovery
-            </UButton>
+            </a>
           </div>
         </div>
 
@@ -45,7 +35,7 @@
                 to="/" 
                 class="text-blue-100 hover:text-white transition-colors flex items-center group"
               >
-                <UIcon name="i-heroicons-home" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                <span class="material-symbols-outlined mr-2 group-hover:translate-x-1 transition-transform" style="font-size:16px;">home</span>
                 Home
               </NuxtLink>
             </li>
@@ -54,7 +44,7 @@
                 to="/search" 
                 class="text-blue-100 hover:text-white transition-colors flex items-center group"
               >
-                <UIcon name="i-heroicons-map" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                <span class="material-symbols-outlined mr-2 group-hover:translate-x-1 transition-transform" style="font-size:16px;">map</span>
                 Search Libraries
               </NuxtLink>
             </li>
@@ -63,7 +53,7 @@
                 to="/logbook/new" 
                 class="text-blue-100 hover:text-white transition-colors flex items-center group"
               >
-                <UIcon name="i-heroicons-pencil-square" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                <span class="material-symbols-outlined mr-2 group-hover:translate-x-1 transition-transform" style="font-size:16px;">edit</span>
                 Add Log Entry
               </NuxtLink>
             </li>
@@ -76,7 +66,7 @@
           <div class="space-y-3">
             <div class="flex items-center text-blue-100">
               <div class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center mr-3">
-                <UIcon name="i-heroicons-building-library" class="w-4 h-4" />
+                <span class="material-symbols-outlined" style="font-size:18px;">local_library</span>
               </div>
               <div>
                 <div class="font-semibold text-white">{{ stats.libraries }}</div>
@@ -85,7 +75,7 @@
             </div>
             <div class="flex items-center text-blue-100">
               <div class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center mr-3">
-                <UIcon name="i-heroicons-puzzle-piece" class="w-4 h-4" />
+                <span class="material-symbols-outlined" style="font-size:18px;">extension</span>
               </div>
               <div>
                 <div class="font-semibold text-white">{{ stats.riddles }}</div>
@@ -94,7 +84,7 @@
             </div>
             <div class="flex items-center text-blue-100">
               <div class="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center mr-3">
-                <UIcon name="i-heroicons-users" class="w-4 h-4" />
+                <span class="material-symbols-outlined" style="font-size:18px;">groups</span>
               </div>
               <div>
                 <div class="font-semibold text-white">{{ stats.puzzlers }}</div>
@@ -109,14 +99,14 @@
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-blue-200 text-sm">
             © {{ new Date().getFullYear() }} Puzzle Pages Project. Built with 
-            <UIcon name="i-heroicons-heart" class="w-4 h-4 inline mx-1 text-red-400" /> 
+            <span class="material-symbols-outlined inline mx-1 text-red-400" style="font-size:16px;">favorite</span>
             for the community.
           </p>
           <div class="flex items-center mt-4 md:mt-0 text-blue-200 text-sm">
             <span class="mr-2">Powered by</span>
-            <UIcon name="i-simple-icons-nuxtdotjs" class="w-4 h-4 mr-1" />
+            <span class="material-symbols-outlined mr-1" style="font-size:16px;">rocket_launch</span>
             <span class="mr-3">Nuxt</span>
-            <UIcon name="i-simple-icons-tailwindcss" class="w-4 h-4 mr-1" />
+            <span class="material-symbols-outlined mr-1" style="font-size:16px;">waves</span>
             <span>Tailwind</span>
           </div>
         </div>

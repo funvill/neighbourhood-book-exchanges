@@ -5,33 +5,26 @@
       :key="library._path"
       class="group"
     >
-      <UCard class="h-full hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
+  <div class="md-card h-full hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 flex flex-col">
         <!-- Library Image -->
-        <template #header>
-          <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg overflow-hidden relative">
-            <NuxtImg
-              v-if="library.photo"
-              :src="library.photo"
-              :alt="library.title"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-            <div v-else class="w-full h-full flex items-center justify-center">
-              <UIcon name="i-heroicons-building-library" class="w-16 h-16 text-gray-400" />
-            </div>
-            
-            <!-- Difficulty Badge -->
-            <div class="absolute top-3 right-3">
-              <UBadge
-                :color="getDifficultyColor(library.difficulty)"
-                variant="solid"
-                class="capitalize shadow-md"
-              >
-                {{ library.difficulty }}
-              </UBadge>
-            </div>
+        <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg overflow-hidden relative">
+          <NuxtImg
+            v-if="library.photo"
+            :src="library.photo"
+            :alt="library.title"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+          <div v-else class="w-full h-full flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-gray-400">local_library</span>
           </div>
-        </template>
+          <!-- Difficulty Badge -->
+          <div class="absolute top-3 right-3">
+            <span :class="['inline-block px-3 py-1 rounded-full text-xs font-bold capitalize shadow-md', getDifficultyClass(library.difficulty)]">
+              {{ library.difficulty }}
+            </span>
+          </div>
+        </div>
 
         <!-- Library Details -->
         <div class="space-y-4">
@@ -47,86 +40,55 @@
 
           <!-- Location -->
           <div class="flex items-center text-sm text-gray-500">
-            <UIcon name="i-heroicons-map-pin" class="w-4 h-4 mr-2 text-blue-500" />
+            <span class="material-symbols-outlined text-blue-500 mr-2" style="font-size:18px;">location_on</span>
             <span>{{ library.location?.address || `${library.location?.lat?.toFixed(4)}, ${library.location?.lng?.toFixed(4)}` }}</span>
           </div>
 
           <!-- Stats -->
           <div class="flex items-center justify-between text-sm">
             <div class="flex items-center text-green-600">
-              <UIcon name="i-heroicons-puzzle-piece" class="w-4 h-4 mr-1" />
+              <span class="material-symbols-outlined mr-1" style="font-size:18px;">extension</span>
               <span>{{ library.riddles_count }} riddles</span>
             </div>
             <div class="flex items-center text-purple-600">
-              <UIcon name="i-heroicons-calendar" class="w-4 h-4 mr-1" />
+              <span class="material-symbols-outlined mr-1" style="font-size:18px;">calendar_month</span>
               <span>Est. {{ new Date(library.established).getFullYear() }}</span>
             </div>
           </div>
 
           <!-- Tags -->
-          <div v-if="library.tags && library.tags.length > 0" class="flex flex-wrap gap-1">
-            <UBadge
-              v-for="tag in library.tags.slice(0, 3)"
-              :key="tag"
-              variant="soft"
-              size="sm"
-              :ui="{ rounded: 'rounded-full' }"
-              class="capitalize"
-            >
+          <div v-if="library.tags && library.tags.length > 0" class="flex flex-wrap gap-1 mt-2">
+            <span v-for="tag in library.tags.slice(0, 3)" :key="tag" class="inline-block bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs capitalize">
               {{ tag }}
-            </UBadge>
-            <UBadge
-              v-if="library.tags.length > 3"
-              variant="soft"
-              size="sm"
-              color="gray"
-              :ui="{ rounded: 'rounded-full' }"
-            >
-              +{{ library.tags.length - 3 }}
-            </UBadge>
+            </span>
+            <span v-if="library.tags.length > 3" class="inline-block bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs">+{{ library.tags.length - 3 }}</span>
           </div>
         </div>
 
         <!-- Actions -->
-        <template #footer>
-          <div class="flex gap-2">
-            <UButton
-              :to="`/library/${getLibrarySlug(library._path)}`"
-              variant="outline"
-              size="sm"
-              icon="i-heroicons-eye"
-              class="flex-1"
-            >
-              Explore
-            </UButton>
-            
-            <UButton
-              :to="`/logbook/new?library=${getLibrarySlug(library._path)}`"
-              color="primary"
-              size="sm"
-              icon="i-heroicons-pencil-square"
-              class="flex-1"
-            >
-              Log Entry
-            </UButton>
-          </div>
-        </template>
-      </UCard>
+        <div class="flex gap-2 mt-6">
+          <a :href="`/library/${getLibrarySlug(library._path)}`" class="md-button flex-1 flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined" style="font-size:18px;">visibility</span>
+            Explore
+          </a>
+          <a :href="`/logbook/new?library=${getLibrarySlug(library._path)}`" class="md-button flex-1 flex items-center justify-center gap-1" style="background: var(--md-primary-container); color: var(--md-on-primary-container);">
+            <span class="material-symbols-outlined" style="font-size:18px;">edit</span>
+            Log Entry
+          </a>
+        </div>
+  </div>
     </div>
   </div>
   
   <!-- Fallback when no libraries are available -->
   <div v-else class="text-center py-12 text-gray-500">
-    <UIcon name="i-heroicons-building-library" class="w-16 h-16 mx-auto mb-4" />
+    <span class="material-symbols-outlined text-6xl mx-auto mb-4">local_library</span>
     <h3 class="text-lg font-semibold mb-2">No Featured Libraries Yet</h3>
     <p class="mb-4">Be the first to add a library to our community!</p>
-    <UButton
-      to="/library/new"
-      color="primary"
-      icon="i-heroicons-plus"
-    >
+    <a href="/library/new" class="md-button" style="background: var(--md-primary); color: var(--md-on-primary);">
+      <span class="material-symbols-outlined align-middle mr-1">add</span>
       Add First Library
-    </UButton>
+    </a>
   </div>
 </template>
 
@@ -180,16 +142,17 @@ const featuredLibraries = ref([
   }
 ])
 
-const getDifficultyColor = (difficulty: string) => {
+
+const getDifficultyClass = (difficulty: string) => {
   switch (difficulty) {
     case 'beginner':
-      return 'green'
+      return 'bg-green-100 text-green-700'
     case 'intermediate':
-      return 'yellow'
+      return 'bg-yellow-100 text-yellow-700'
     case 'advanced':
-      return 'red'
+      return 'bg-red-100 text-red-700'
     default:
-      return 'gray'
+      return 'bg-gray-200 text-gray-700'
   }
 }
 
