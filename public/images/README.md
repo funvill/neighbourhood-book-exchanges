@@ -1,6 +1,6 @@
 # Placeholder Image Files
 
-This directory contains placeholder images for the Puzzle Pages project.
+This directory contains placeholder images for the Neighbourhood book exchanges project.
 
 In a real implementation, these would be actual photos of the little libraries.
 

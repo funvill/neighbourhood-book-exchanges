@@ -4,15 +4,12 @@
       <!-- Library Image -->
       <a :href="getLibraryUrl()" class="block aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg overflow-hidden relative">
         <NuxtImg
-          v-if="library.photo"
-          :src="library.photo"
+          :src="getImageSrc()"
           :alt="library.title"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
+          @error="handleImageError"
         />
-        <div v-else class="w-full h-full flex items-center justify-center">
-          <span class="material-symbols-outlined text-6xl text-gray-400">local_library</span>
-        </div>
         
         <!-- Difficulty Badge (optional) -->
         <div v-if="showDifficultyBadge && library.difficulty" class="absolute top-3 right-3">
@@ -25,9 +22,11 @@
       <!-- Library Details -->
       <div class="flex-1 space-y-4">
         <div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-            {{ library.title }}
-          </h3>
+          <a :href="getLibraryUrl()" class="block">
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors hover:text-blue-600">
+              {{ library.title }}
+            </h3>
+          </a>
           
           <p class="text-gray-600 text-sm line-clamp-3 leading-relaxed">
             {{ library.description }}
@@ -134,6 +133,24 @@ const getLibrarySlug = (library: Library) => {
 
 const getLibraryUrl = () => {
   return `/library/${getLibrarySlug(props.library)}`
+}
+
+const getImageSrc = () => {
+  // If library has a photo, use it, otherwise use placeholder
+  if (props.library.photo && props.library.photo !== '/images/libraries/placeholder-library.jpg') {
+    return props.library.photo
+  }
+  return '/images/libraries/placeholder-library.jpg'
+}
+
+const handleImageError = (event: string | Event) => {
+  // If image fails to load, fallback to placeholder
+  if (typeof event !== 'string') {
+    const img = event.target as HTMLImageElement
+    if (img.src !== '/images/libraries/placeholder-library.jpg') {
+      img.src = '/images/libraries/placeholder-library.jpg'
+    }
+  }
 }
 </script>
 

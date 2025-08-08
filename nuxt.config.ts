@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   // App configuration
   app: {
     head: {
-      title: 'Puzzle Pages - Community Library Puzzles',
+      title: 'Neighbourhood book exchanges - Community Library Network',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

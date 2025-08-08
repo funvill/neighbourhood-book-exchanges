@@ -1,6 +1,6 @@
-# Puzzle Pages Components
+# Neighbourhood book exchanges Components
 
-This directory contains Vue components for the Puzzle Pages project.
+This directory contains Vue components for the Neighbourhood book exchanges project.
 
 ## Component Structure
 

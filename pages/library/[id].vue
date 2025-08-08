@@ -23,16 +23,6 @@
           <div v-else class="w-full h-full flex items-center justify-center">
             <span class="material-symbols-outlined text-gray-400" style="font-size:128px;">local_library</span>
           </div>
-          
-          <!-- Overlay with difficulty badge -->
-          <div class="absolute top-4 right-4">
-            <span
-              :class="getDifficultyColorClass(library.difficulty || 'beginner')"
-              class="px-3 py-1 rounded-full text-sm font-medium shadow-lg capitalize text-white"
-            >
-              {{ library.difficulty || 'beginner' }} Level
-            </span>
-          </div>
         </div>
 
         <!-- Library Info -->
@@ -45,9 +35,16 @@
                 
                 <!-- Meta Information -->
                 <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
-                  <div class="flex items-center">
+                  <div v-if="library.location?.lat && library.location?.lng" class="flex items-center">
                     <span class="material-symbols-outlined mr-1 text-blue-500" style="font-size:16px;">location_on</span>
-                    <span>{{ library.location?.address || 'Location not specified' }}</span>
+                    <a 
+                      :href="`https://www.google.com/maps?q=${library.location.lat},${library.location.lng}`"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-blue-600 hover:text-blue-800 hover:underline"
+                    >
+                      {{ library.location.lat.toFixed(4) }}, {{ library.location.lng.toFixed(4) }}
+                    </a>
                   </div>
                   <div class="flex items-center">
                     <span class="material-symbols-outlined mr-1 text-green-500" style="font-size:16px;">extension</span>
@@ -64,7 +61,10 @@
               </div>
 
               <!-- Content Body -->
-              <div v-if="library.description" class="prose max-w-none">
+              <div v-if="libraryContent" class="prose max-w-none">
+                <div v-html="formatMarkdownContent(libraryContent)" />
+              </div>
+              <div v-else-if="library.description" class="prose max-w-none">
                 <p class="text-gray-700 leading-relaxed">{{ library.description }}</p>
               </div>
             </div>
@@ -76,12 +76,6 @@
                 <h3 class="font-semibold text-gray-900 mb-4">Quick Stats</h3>
                 <div class="space-y-4">
                   <div class="flex justify-between items-center">
-                    <span class="text-gray-600">Difficulty</span>
-                    <span :class="getDifficultyColorClass(library.difficulty || 'beginner')" class="px-2 py-1 rounded text-xs font-medium text-white capitalize">
-                      {{ library.difficulty || 'beginner' }}
-                    </span>
-                  </div>
-                  <div class="flex justify-between items-center">
                     <span class="text-gray-600">Entries</span>
                     <span class="font-semibold">{{ library.entries_count || 0 }}</span>
                   </div>
@@ -92,13 +86,40 @@
                 </div>
               </div>
 
+              <!-- Tags -->
+              <div v-if="library.tags && library.tags.length > 0" class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                <h3 class="font-semibold text-gray-900 mb-4 flex items-center">
+                  <span class="material-symbols-outlined mr-2 text-purple-500" style="font-size:20px;">label</span>
+                  Tags
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <NuxtLink 
+                    v-for="tag in library.tags" 
+                    :key="tag"
+                    :to="`/search?tags=${encodeURIComponent(tag)}`"
+                    class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors cursor-pointer"
+                  >
+                    {{ tag }}
+                  </NuxtLink>
+                </div>
+              </div>
+
               <!-- Map -->
               <div v-if="library.location" class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                 <h3 class="font-semibold text-gray-900 mb-4 flex items-center">
                   <span class="material-symbols-outlined mr-2 text-blue-500" style="font-size:20px;">map</span>
                   Location
                 </h3>
-                <div id="library-map" class="h-80 w-full rounded-lg bg-gray-100" />
+                <div id="library-map" class="h-80 w-full rounded-lg bg-gray-100 mb-4" />
+                <a 
+                  :href="`https://www.google.com/maps?q=${library.location.lat},${library.location.lng}`"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  <span class="material-symbols-outlined" style="font-size:18px;">place</span>
+                  Open in Google Maps
+                </a>
               </div>
 
               <!-- Actions -->
@@ -144,27 +165,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick, watch, computed } from 'vue'
-
 // Define types
 interface LibraryLocation {
   lat: number
   lng: number
-  address: string
+  address?: string
 }
 
 interface Library {
+  id: number
+  slug: string
   title: string
   description: string
-  difficulty: string
-  entries_count: number
-  established: string
+  fullContent?: string // Add full content property
+  difficulty?: string
+  entries_count?: number
+  established?: string
   location: LibraryLocation
   photo: string
-}
-
-type LibraryMap = {
-  [key: string]: Library
+  tags?: string[]
+  _path?: string
 }
 
 const route = useRoute()
@@ -172,67 +192,33 @@ const librarySlug = route.params.id as string
 
 // Create reactive data
 const library = ref<Library | null>(null)
+const libraryContent = ref<any>(null)
 const pending = ref(true)
 const map = ref<any>(null)
 
-// Mock data for the three libraries we have
-const loadMockData = () => {
-  const mockLibraries: LibraryMap = {
-    'downtown-central-library': {
-      title: 'Downtown Central Library',
-      description: 'Located in the heart of downtown, this library serves as a hub for community enthusiasts and story sharers. Known for its diverse content and historical significance.',
-      difficulty: 'intermediate',
-      entries_count: 8,
-      established: '2023-01-15',
-      location: {
-        lat: 49.2827,
-        lng: -123.1207,
-        address: '789 Main Street, Downtown'
-      },
-      photo: '/images/libraries/downtown-central-library/2024-01-15-exterior-1.jpg'
-    },
-    'sunset-park-reading-nook': {
-      title: 'Sunset Park Reading Nook',
-      description: 'A cozy outdoor library nestled in Sunset Park, perfect for families and newcomers to the library community. Features beginner-friendly content and beautiful sunset views.',
-      difficulty: 'beginner',
-      entries_count: 5,
-      established: '2023-02-03',
-      location: {
-        lat: 49.2634,
-        lng: -123.1456,
-        address: 'Sunset Park, West Side'
-      },
-      photo: '/images/libraries/sunset-park-reading-nook/2024-02-03-family-reading-1.jpg'
-    },
-    'university-district-hub': {
-      title: 'University District Hub',
-      description: 'A student-favorite library located near the university campus. Known for its academic content and collaborative reading environment. Popular among study groups.',
-      difficulty: 'advanced',
-      entries_count: 12,
-      established: '2023-03-10',
-      location: {
-        lat: 49.2606,
-        lng: -123.2460,
-        address: 'University Boulevard, Near Campus'
-      },
-      photo: '/images/libraries/university-district-hub/2024-03-10-study-session-1.jpg'
+// Load library data from API
+const loadLibraryData = async () => {
+  try {
+    pending.value = true
+    // Fetch specific library data including full content
+    const libraryData = await $fetch(`/api/libraries/${librarySlug}`) as Library
+    
+    if (libraryData) {
+      library.value = libraryData
+      // The full content is now included in the API response
+      libraryContent.value = libraryData.fullContent
+    } else {
+      // Library not found
+      library.value = null
+      libraryContent.value = null
+      console.warn(`Library with slug "${librarySlug}" not found`)
     }
-  }
-  
-  library.value = mockLibraries[librarySlug] || null
-  pending.value = false
-}
-
-const getDifficultyColorClass = (difficulty: string): string => {
-  switch (difficulty) {
-    case 'beginner':
-      return 'bg-green-500'
-    case 'intermediate':
-      return 'bg-yellow-500'
-    case 'advanced':
-      return 'bg-red-500'
-    default:
-      return 'bg-gray-500'
+  } catch (error) {
+    console.error('Error loading library data:', error)
+    library.value = null
+    libraryContent.value = null
+  } finally {
+    pending.value = false
   }
 }
 
@@ -265,7 +251,7 @@ const initializeLibraryMap = async () => {
             <p class="text-sm text-gray-600">${library.value.description}</p>
           </div>
         `)
-        .openPopup()
+        // Remove .openPopup() to not show popup by default
         
       map.value = mapInstance
     } catch (error) {
@@ -276,7 +262,7 @@ const initializeLibraryMap = async () => {
 
 // Load data on mount
 onMounted(async () => {
-  await loadMockData()
+  await loadLibraryData()
   
   if (library.value?.location) {
     await nextTick()
@@ -302,7 +288,7 @@ watch(library, async (newLibrary) => {
 
 // Set page meta
 useHead({
-  title: computed(() => library.value ? `${library.value.title} - Puzzle Pages` : 'Library - Puzzle Pages'),
+  title: computed(() => library.value ? `${library.value.title} - Neighbourhood book exchanges` : 'Library - Neighbourhood book exchanges'),
   meta: [
     {
       name: 'description',
@@ -310,6 +296,22 @@ useHead({
     }
   ]
 })
+
+// Simple markdown to HTML converter for basic formatting
+function formatMarkdownContent(content: string): string {
+  return content
+    .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold mt-6 mb-4">$1</h3>')
+    .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-semibold mt-8 mb-6">$1</h2>')
+    .replace(/^# (.*$)/gm, '<h1 class="text-3xl font-bold mt-10 mb-8">$1</h1>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>')
+    .replace(/(^|[^"])(https?:\/\/[^\s<>"]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$2</a>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/^\* (.*)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/gs, '<ul class="list-disc pl-6 mb-4">$1</ul>')
+    .replace(/^(?!<[hul]|$)(.*$)/gm, '<p class="mb-4">$1</p>')
+    .replace(/\n\n/g, '\n')
+}
 </script>
 
 <style>

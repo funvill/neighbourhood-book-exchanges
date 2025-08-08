@@ -20,56 +20,46 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-// Mock featured libraries data for now
-const featuredLibraries = ref([
-  {
-    _path: '/content/downtown-central-library',
-    title: 'Downtown Central Library',
-    description: 'A cozy little library in the heart of downtown with mystery zines and community content. This historic location has been serving library enthusiasts for years.',
-    location: {
-      lat: 49.2827,
-      lng: -123.1207,
-      address: '789 Main Street, Downtown'
-    },
-    tags: ['Mystery', 'Community', 'Historic', 'Urban'],
-    photo: '/images/libraries/downtown-central-library/2024-01-15-exterior-1.jpg',
-    difficulty: 'intermediate',
-    entries_count: 8,
-    established: '2019-03-15'
-  },
-  {
-    _path: '/content/sunset-park-reading-nook',
-    title: 'Sunset Park Reading Nook',
-    description: 'Family-friendly library with children\'s books and adventure stories. Perfect for young readers and families exploring together.',
-    location: {
-      lat: 49.2634,
-      lng: -123.1456,
-      address: 'Sunset Park, West Side'
-    },
-    tags: ['Children', 'Adventure', 'Family', 'Nature'],
-    photo: '/images/libraries/sunset-park-reading-nook/2024-02-03-family-reading-1.jpg',
-    difficulty: 'beginner',
-    entries_count: 12,
-    established: '2020-07-20'
-  },
-  {
-    _path: '/content/university-district-hub',
-    title: 'University District Hub',
-    description: 'Academic-focused library with science and philosophy zines, perfect for students and deep thinkers. Features complex content and collaborative research materials.',
-    location: {
-      lat: 49.2606,
-      lng: -123.2460,
-      address: 'University Boulevard, Near Campus'
-    },
-    tags: ['Science', 'Philosophy', 'Academic', 'Collaborative', 'Advanced'],
-    photo: '/images/libraries/university-district-hub/2024-03-10-study-session-1.jpg',
-    difficulty: 'advanced',
-    entries_count: 15,
-    established: '2018-09-01'
+// Define library interface to match API response
+interface Library {
+  id: number
+  slug: string
+  title: string
+  description: string
+  difficulty?: string
+  tags?: string[]
+  photo: string
+  location: {
+    lat: number
+    lng: number
+    address?: string
   }
-])
+  established?: string
+  lastModified: string
+  _path: string
+}
+
+const featuredLibraries = ref<Library[]>([])
+
+// Fetch and sort libraries by most recent updates
+onMounted(async () => {
+  try {
+    const libraries = await $fetch('/api/libraries') as Library[]
+    
+    // Sort by lastModified date (most recent first) and take top 3
+    const sortedLibraries = libraries
+      .sort((a, b) => new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime())
+      .slice(0, 3)
+    
+    featuredLibraries.value = sortedLibraries
+  } catch (error) {
+    console.error('Error loading featured libraries:', error)
+    // Fallback to empty array which will show the "No Featured Libraries" message
+    featuredLibraries.value = []
+  }
+})
 </script>
 
 <style scoped>

@@ -23,11 +23,11 @@
 
 // Set page meta
 useHead({
-  title: 'Add New Library - Puzzle Pages Project',
+  title: 'Add New Library - Neighbourhood book exchanges',
   meta: [
     {
       name: 'description',
-      content: 'Add a new tiny library to the Puzzle Pages project and help grow our community network.'
+      content: 'Add a new tiny library to the Neighbourhood book exchanges and help grow our community network.'
     }
   ]
 })

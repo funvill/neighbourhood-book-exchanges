@@ -7,14 +7,14 @@
       </p>
     </div>
     
-    <SearchComponent />
+    <SearchComponent :initial-search-query="searchQuery" />
   </div>
 </template>
 
 <script setup lang="ts">
 // Set page meta
 useHead({
-  title: 'Search Libraries - Puzzle Pages Project',
+  title: 'Search Libraries - Neighbourhood book exchanges',
   meta: [
     {
       name: 'description',

@@ -8,7 +8,7 @@
             <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
               <span class="material-symbols-outlined text-white" style="font-size:24px;">extension</span>
             </div>
-            <h3 class="text-xl font-bold">Puzzle Pages</h3>
+            <h3 class="text-xl font-bold">Neighbourhood book exchanges</h3>
           </div>
           <p class="text-blue-100 leading-relaxed mb-6 max-w-md">
             Discover tiny libraries, find zines, solve riddles, and unlock the overall puzzle. 
@@ -98,7 +98,7 @@
       <div class="border-t border-blue-800/50 mt-12 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-blue-200 text-sm">
-            © {{ new Date().getFullYear() }} Puzzle Pages Project. Built with 
+            © {{ new Date().getFullYear() }} Neighbourhood book exchanges Project. Built with 
             <span class="material-symbols-outlined inline mx-1 text-red-400" style="font-size:16px;">favorite</span>
             for the community.
           </p>

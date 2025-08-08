@@ -4,7 +4,7 @@
     <header class="bg-purple-600 text-white px-6 py-4 flex items-center justify-between w-full shadow-lg sticky top-0 z-50 border-b-4 border-purple-800">
       <div class="flex items-center">
         <span class="material-symbols-outlined mr-2">menu_book</span>
-        <span class="font-bold text-lg">Puzzle Pages</span>
+        <span class="font-bold text-lg">Neighbourhood book exchanges</span>
       </div>
       <form class="flex items-center gap-2" @submit.prevent="handleSearch">
         <input
@@ -29,7 +29,7 @@
     <!-- Footer -->
     <footer class="bg-purple-100 text-purple-800 py-4 px-6 text-center border-t border-purple-200">
       <span class="material-symbols-outlined align-middle mr-1">local_library</span>
-      <span>&copy; 2025 Puzzle Pages Community</span>
+      <span>&copy; 2025 Neighbourhood book exchanges Community</span>
     </footer>
   </div>
 </template>

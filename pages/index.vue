@@ -13,7 +13,7 @@
           </div>
           
           <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-            Welcome to<br>Puzzle Pages
+            Welcome to<br>Neighbourhood book exchanges
           </h1>
           
           <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -39,7 +39,7 @@
     <!-- Stats Section -->
     <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
             <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
               <span class="material-symbols-outlined text-white" style="font-size:32px;">local_library</span>
@@ -48,25 +48,11 @@
             <div class="text-gray-600 font-medium">Libraries</div>
           </div>
           <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
-            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span class="material-symbols-outlined text-white" style="font-size:32px;">extension</span>
-            </div>
-            <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.discoveries }}</div>
-            <div class="text-gray-600 font-medium">Discoveries Made</div>
-          </div>
-          <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
             <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
               <span class="material-symbols-outlined text-white" style="font-size:32px;">menu_book</span>
             </div>
-            <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.entries }}</div>
-            <div class="text-gray-600 font-medium">Log Entries</div>
-          </div>
-          <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
-            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span class="material-symbols-outlined text-white" style="font-size:32px;">groups</span>
-            </div>
-            <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.explorers }}</div>
-            <div class="text-gray-600 font-medium">Active Explorers</div>
+            <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.logbookEntries }}</div>
+            <div class="text-gray-600 font-medium">Log Book Entries</div>
           </div>
         </div>
       </div>
@@ -141,13 +127,13 @@
       </div>
     </section>
 
-    <!-- Featured Libraries -->
+    <!-- Recently Updated Libraries -->
     <section class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Libraries</h2>
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Recently Updated Libraries</h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our most popular library destinations and discover what makes each location special
+            Discover the latest additions and updates to our community library network
           </p>
         </div>
         
@@ -181,29 +167,35 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 
-// Library locations for the map (sync with featured libraries)
-const libraryLocations = [
-  {
-    name: 'Downtown Central Library',
-    lat: 49.2827,
-    lng: -123.1207,
-    address: '789 Main Street, Downtown'
-  },
-  {
-    name: 'Sunset Park Reading Nook',
-    lat: 49.2634,
-    lng: -123.1456,
-    address: 'Sunset Park, West Side'
-  },
-  {
-    name: 'University District Hub',
-    lat: 49.2606,
-    lng: -123.2460,
-    address: 'University Boulevard, Near Campus'
+// Define library interface to match API response
+interface Library {
+  id: number
+  slug: string
+  title: string
+  location: {
+    lat: number
+    lng: number
+    address?: string
   }
-]
+  description: string
+  photo: string
+  tags?: string[]
+}
 
-onMounted(() => {
+// Reactive data for libraries
+const allLibraries = ref<Library[]>([])
+
+onMounted(async () => {
+  // Fetch all libraries from API
+  try {
+    const libraries = await fetch('/api/libraries').then(res => res.json()) as Library[]
+    allLibraries.value = libraries
+  } catch (error) {
+    console.error('Error loading libraries for map:', error)
+    // Fallback to empty array - map will still load without markers
+    allLibraries.value = []
+  }
+
   // Load Leaflet CSS/JS from CDN if not already loaded
   if (!window.L) {
     const leafletCss = document.createElement('link')
@@ -220,23 +212,43 @@ onMounted(() => {
   }
 
   function initMap() {
-    const map = window.L.map('library-map').setView([49.27, -123.13], 12)
-    window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    // Center map on Vancouver with appropriate zoom to show all libraries
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const map = (window as any).L.map('library-map').setView([49.27, -123.13], 10);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map)
-    libraryLocations.forEach(lib => {
-      window.L.marker([lib.lat, lib.lng])
+
+    // Add markers for all libraries
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const markers: any[] = []
+    allLibraries.value.forEach(library => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const marker = (window as any).L.marker([library.location.lat, library.location.lng])
         .addTo(map)
-        .bindPopup(`<b>${lib.name}</b><br>${lib.address}`)
+        .bindPopup(`
+          <div class="p-2">
+            <h4 class="font-semibold">${library.title}</h4>
+            <p class="text-sm text-gray-600">${library.description}</p>
+            <a href="/library/${library.slug}" class="text-blue-600 hover:underline">View Details</a>
+          </div>
+        `)
+      markers.push(marker)
     })
+
+    // Fit map bounds to show all markers if we have libraries
+    if (markers.length > 0) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const group = (window as any).L.featureGroup(markers)
+      map.fitBounds(group.getBounds().pad(0.05))
+    }
   }
 })
 
-// Enhanced stats data
+// Enhanced stats data with actual imported library count
 const stats = ref({
-  libraries: 42,
-  discoveries: 127,
-  entries: 89,
-  explorers: 234
+  libraries: 540, // 537 imported + 3 original libraries
+  logbookEntries: 540 // Approximate count of logbook entries (one per library for now)
 })
 </script>

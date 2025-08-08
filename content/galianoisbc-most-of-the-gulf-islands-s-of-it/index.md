@@ -1,0 +1,40 @@
+---
+title: Galiano.Is.BC & most of the Gulf Islands s. of it
+location:
+  lat: 48.9482074
+  lng: -123.4449135
+  address: '48.9482, -123.4449'
+tags:
+  - kml-import
+  - outside-vancouver
+  - pale-blue-marker
+  - active
+photo: /images/libraries/placeholder-library.jpg
+established: unknown
+original_style: icon-503-93D7E8-labelson
+original_coordinates: '-123.4449135,48.9482074,0'
+---
+9 book exchanges here on this island and other islands all the way s. to Victoria, BC.
+Some are free stores with other kinds of items besides book.
+To see those, in addition to the 8 on this map, click to see this other great map by another group:
+https://VictoriaPlaceMaking.ca/little-free-libraries/
+885 book sites on their map, as of 2025 2 27.
+—Added to map by K.D., 2025 1 28.
+
+This library was recently updated to demonstrate the featured libraries section!
+
+## Location Details
+
+This library is located at [48.9482074, -123.4449135](https://www.google.com/maps?q=48.9482074,-123.4449135).
+
+GPS Coordinates: 48.9482074, -123.4449135
+
+## Photos
+
+External photos available in original dataset.
+
+## Import Information
+
+This library was imported from the Vancouver Little Libraries KML dataset on 2024-08-08.
+
+Original data source: Neighbourhood book exchanges 2025.8.6.revision; Vancouver, BC, Canada

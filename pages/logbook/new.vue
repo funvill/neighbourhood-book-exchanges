@@ -305,12 +305,12 @@ const submitForm = async () => {
 
 // Set page meta
 useHead({
-  title: computed(() => isNewLibrary.value ? 'Add New Library - Puzzle Pages Project' : 'Add Log Book Entry - Puzzle Pages Project'),
+  title: computed(() => isNewLibrary.value ? 'Add New Library - Neighbourhood book exchanges' : 'Add Log Book Entry - Neighbourhood book exchanges'),
   meta: computed(() => [
     {
       name: 'description',
       content: isNewLibrary.value 
-        ? 'Add a new library to the Puzzle Pages project.' 
+        ? 'Add a new library to the Neighbourhood book exchanges.' 
         : 'Share your library visit and puzzle-solving experience.'
     }
   ])
