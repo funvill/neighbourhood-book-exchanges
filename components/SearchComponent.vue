@@ -48,7 +48,7 @@
       </h3>
       
       <!-- Library Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <LibraryCard
           v-for="library in paginatedResults"
           :key="library.id"
@@ -115,7 +115,7 @@ const allLibraries = ref([
     title: 'Sunset Park Reading Nook',
     location: { lat: 49.2634, lng: -123.1456 },
     photo: '/images/libraries/sunset-park-reading-nook/2024-02-03-family-reading-1.jpg',
-    description: 'Family-friendly library with children\'s puzzle books.',
+    description: 'Family-friendly library with children\'s books and adventure stories.',
     tags: ['Children', 'Adventure']
   },
   {

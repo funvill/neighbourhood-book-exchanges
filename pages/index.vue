@@ -9,7 +9,7 @@
         <div class="text-center">
           <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
             <span class="material-symbols-outlined mr-2" style="font-size:20px;">auto_awesome</span>
-            <span class="text-sm font-medium">Community Puzzle Adventure</span>
+            <span class="text-sm font-medium">Community Library Adventure</span>
           </div>
           
           <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
@@ -18,7 +18,7 @@
           
           <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
             Discover the magic of tiny libraries scattered throughout your community. 
-            Find hidden zines, solve mysterious riddles, and piece together the ultimate puzzle. 
+            Find hidden zines, solve mysterious challenges, and piece together stories from your neighborhood. 
             Each library holds secrets waiting to be unlocked by curious minds like yours.
           </p>
           
@@ -51,8 +51,8 @@
             <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
               <span class="material-symbols-outlined text-white" style="font-size:32px;">extension</span>
             </div>
-            <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.riddles }}</div>
-            <div class="text-gray-600 font-medium">Riddles Solved</div>
+            <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.discoveries }}</div>
+            <div class="text-gray-600 font-medium">Discoveries Made</div>
           </div>
           <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
             <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
@@ -65,8 +65,8 @@
             <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
               <span class="material-symbols-outlined text-white" style="font-size:32px;">groups</span>
             </div>
-            <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.puzzlers }}</div>
-            <div class="text-gray-600 font-medium">Active Puzzlers</div>
+            <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.explorers }}</div>
+            <div class="text-gray-600 font-medium">Active Explorers</div>
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Join thousands of puzzle enthusiasts in an adventure that spans across your entire community
+            Join thousands of library enthusiasts in an adventure that spans across your entire community
           </p>
         </div>
         
@@ -92,7 +92,7 @@
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Find Libraries</h3>
             <p class="text-gray-600 leading-relaxed">
-              Use our interactive map to locate tiny libraries in your area. Each one contains unique puzzles and zines 
+              Use our interactive map to locate tiny libraries in your area. Each one contains unique content and zines 
               waiting to be discovered.
             </p>
           </div>
@@ -104,10 +104,10 @@
               </div>
               <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">2</div>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Solve Riddles</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Explore Content</h3>
             <p class="text-gray-600 leading-relaxed">
-              Read the zines, solve the riddles within each library, and collect clues for the bigger puzzle. 
-              Every solution brings you closer to the mystery.
+              Read the zines, explore the content within each library, and collect insights for your journey. 
+              Every discovery brings you closer to understanding your community.
             </p>
           </div>
           
@@ -118,10 +118,10 @@
               </div>
               <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">3</div>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Complete the Puzzle</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Share Your Journey</h3>
             <p class="text-gray-600 leading-relaxed">
-              Combine clues from multiple libraries to solve the overarching puzzle and unlock the final mystery. 
-              Collaborate with others to reach the ultimate solution.
+              Combine insights from multiple libraries to create your own story and connect with community discoveries. 
+              Collaborate with others to build a rich tapestry of local knowledge.
             </p>
           </div>
         </div>
@@ -147,7 +147,7 @@
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Libraries</h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our most popular puzzle destinations and discover what makes each location special
+            Explore our most popular library destinations and discover what makes each location special
           </p>
         </div>
         
@@ -160,7 +160,7 @@
       <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold mb-6">Ready to Begin Your Adventure?</h2>
         <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-          Join our growing community of puzzle enthusiasts and help expand the network of mystery libraries. 
+          Join our growing community of library enthusiasts and help expand the network of community libraries. 
           Your next great discovery is just around the corner!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -235,8 +235,8 @@ onMounted(() => {
 // Enhanced stats data
 const stats = ref({
   libraries: 42,
-  riddles: 127,
+  discoveries: 127,
   entries: 89,
-  puzzlers: 234
+  explorers: 234
 })
 </script>

@@ -51,7 +51,7 @@
                   </div>
                   <div class="flex items-center">
                     <span class="material-symbols-outlined mr-1 text-green-500" style="font-size:16px;">extension</span>
-                    <span>{{ library.riddles_count || 0 }} riddles</span>
+                    <span>{{ library.entries_count || 0 }} entries</span>
                   </div>
                   <div class="flex items-center">
                     <span class="material-symbols-outlined mr-1 text-purple-500" style="font-size:16px;">calendar_month</span>
@@ -82,8 +82,8 @@
                     </span>
                   </div>
                   <div class="flex justify-between items-center">
-                    <span class="text-gray-600">Riddles</span>
-                    <span class="font-semibold">{{ library.riddles_count || 0 }}</span>
+                    <span class="text-gray-600">Entries</span>
+                    <span class="font-semibold">{{ library.entries_count || 0 }}</span>
                   </div>
                   <div class="flex justify-between items-center">
                     <span class="text-gray-600">Established</span>
@@ -157,7 +157,7 @@ interface Library {
   title: string
   description: string
   difficulty: string
-  riddles_count: number
+  entries_count: number
   established: string
   location: LibraryLocation
   photo: string
@@ -180,9 +180,9 @@ const loadMockData = () => {
   const mockLibraries: LibraryMap = {
     'downtown-central-library': {
       title: 'Downtown Central Library',
-      description: 'Located in the heart of downtown, this library serves as a hub for puzzle enthusiasts and mystery solvers. Known for its challenging riddles and historical significance.',
+      description: 'Located in the heart of downtown, this library serves as a hub for community enthusiasts and story sharers. Known for its diverse content and historical significance.',
       difficulty: 'intermediate',
-      riddles_count: 8,
+      entries_count: 8,
       established: '2023-01-15',
       location: {
         lat: 49.2827,
@@ -193,9 +193,9 @@ const loadMockData = () => {
     },
     'sunset-park-reading-nook': {
       title: 'Sunset Park Reading Nook',
-      description: 'A cozy outdoor library nestled in Sunset Park, perfect for families and newcomers to the puzzle community. Features beginner-friendly challenges and beautiful sunset views.',
+      description: 'A cozy outdoor library nestled in Sunset Park, perfect for families and newcomers to the library community. Features beginner-friendly content and beautiful sunset views.',
       difficulty: 'beginner',
-      riddles_count: 5,
+      entries_count: 5,
       established: '2023-02-03',
       location: {
         lat: 49.2634,
@@ -206,9 +206,9 @@ const loadMockData = () => {
     },
     'university-district-hub': {
       title: 'University District Hub',
-      description: 'A student-favorite library located near the university campus. Known for its academic puzzles and collaborative solving environment. Popular among study groups.',
+      description: 'A student-favorite library located near the university campus. Known for its academic content and collaborative reading environment. Popular among study groups.',
       difficulty: 'advanced',
-      riddles_count: 12,
+      entries_count: 12,
       established: '2023-03-10',
       location: {
         lat: 49.2606,

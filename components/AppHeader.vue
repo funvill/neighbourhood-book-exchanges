@@ -37,7 +37,7 @@
             <input
               v-model="searchQuery"
               type="text"
-              placeholder="Search libraries and puzzles..."
+              placeholder="Search libraries and content..."
               class="w-full rounded-full border border-gray-200 py-2 pl-10 pr-10 focus:outline-none focus:border-blue-400 text-sm shadow-sm"
               @keyup.enter="performSearch"
             />

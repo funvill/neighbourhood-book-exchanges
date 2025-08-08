@@ -3,7 +3,7 @@
     <div class="mb-8">
       <h1 class="text-3xl font-bold text-gray-900 mb-2">Search Libraries</h1>
       <p class="text-gray-600">
-        Find tiny libraries near you and discover the puzzles they contain.
+        Find tiny libraries near you and discover the content they contain.
       </p>
     </div>
     
@@ -18,7 +18,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Search and discover tiny libraries, their locations, and the puzzles they contain.'
+      content: 'Search and discover tiny libraries, their locations, and the content they contain.'
     }
   ]
 })
