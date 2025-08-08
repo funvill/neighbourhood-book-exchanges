@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div v-if="featuredLibraries && featuredLibraries.length > 0" class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div 
       v-for="library in featuredLibraries" 
       :key="library._path"
@@ -114,33 +114,71 @@
       </UCard>
     </div>
   </div>
+  
+  <!-- Fallback when no libraries are available -->
+  <div v-else class="text-center py-12 text-gray-500">
+    <UIcon name="i-heroicons-building-library" class="w-16 h-16 mx-auto mb-4" />
+    <h3 class="text-lg font-semibold mb-2">No Featured Libraries Yet</h3>
+    <p class="mb-4">Be the first to add a library to our community!</p>
+    <UButton
+      to="/library/new"
+      color="primary"
+      icon="i-heroicons-plus"
+    >
+      Add First Library
+    </UButton>
+  </div>
 </template>
 
 <script setup lang="ts">
-interface LibraryContent {
-  _path: string
-  title: string
-  description: string
-  location: {
-    lat: number
-    lng: number
-    address?: string
+// Mock featured libraries data for now
+const featuredLibraries = ref([
+  {
+    _path: '/content/downtown-central-library',
+    title: 'Downtown Central Library',
+    description: 'A cozy little library in the heart of downtown with mystery zines and community puzzles. This historic location has been serving puzzle enthusiasts for years.',
+    location: {
+      lat: 49.2827,
+      lng: -123.1207,
+      address: '789 Main Street, Downtown'
+    },
+    tags: ['Mystery', 'Community', 'Historic', 'Urban'],
+    photo: '/images/libraries/downtown-central-library/2024-01-15-exterior-1.jpg',
+    difficulty: 'intermediate',
+    riddles_count: 8,
+    established: '2019-03-15'
+  },
+  {
+    _path: '/content/sunset-park-reading-nook',
+    title: 'Sunset Park Reading Nook',
+    description: 'Family-friendly library with children\'s puzzle books and adventure-themed riddles. Perfect for young puzzle solvers and families exploring together.',
+    location: {
+      lat: 49.2634,
+      lng: -123.1456,
+      address: 'Sunset Park, West Side'
+    },
+    tags: ['Children', 'Adventure', 'Family', 'Nature'],
+    photo: '/images/libraries/sunset-park-reading-nook/2024-02-03-family-reading-1.jpg',
+    difficulty: 'beginner',
+    riddles_count: 12,
+    established: '2020-07-20'
+  },
+  {
+    _path: '/content/university-district-hub',
+    title: 'University District Hub',
+    description: 'Academic-focused library with science and philosophy zines, perfect for students and deep thinkers. Features complex logical puzzles and collaborative research challenges.',
+    location: {
+      lat: 49.2606,
+      lng: -123.2460,
+      address: 'University Boulevard, Near Campus'
+    },
+    tags: ['Science', 'Philosophy', 'Academic', 'Collaborative', 'Advanced'],
+    photo: '/images/libraries/university-district-hub/2024-03-10-study-session-1.jpg',
+    difficulty: 'advanced',
+    riddles_count: 15,
+    established: '2018-09-01'
   }
-  tags: string[]
-  photo?: string
-  difficulty: 'beginner' | 'intermediate' | 'advanced'
-  riddles_count: number
-  established: string
-}
-
-// Fetch featured libraries from content
-const { data: featuredLibraries } = await queryContent<LibraryContent>('/content')
-  .where({ _path: { $contains: '/content/' } })
-  .where({ _path: { $not: { $contains: '/logbook/' } } })
-  .where({ _path: { $not: { $contains: '/photos/' } } })
-  .sort({ established: -1 })
-  .limit(3)
-  .find()
+])
 
 const getDifficultyColor = (difficulty: string) => {
   switch (difficulty) {
