@@ -8,6 +8,7 @@ tags:
   - burnaby
   - active
   - books
+  - visited_funvill
 photo: logbook/20250809-190601.png
 library_id: '00362'
 ---

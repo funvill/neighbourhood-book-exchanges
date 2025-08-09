@@ -14,6 +14,7 @@ interface LibSummary {
   established?: string | number
   description: string
   _path: string
+  images?: string[]
 }
 
 function buildDescription(content: string): string {
@@ -46,11 +47,12 @@ function ensureCopiedPhoto(slug: string, rawPhoto?: string): string | undefined 
   }
 }
 
-function copyAllImages(slug: string) {
+function copyAllImages(slug: string): string[] {
   const libRoot = path.join(process.cwd(), 'content', 'libraries', slug)
-  if (!fs.existsSync(libRoot)) return
+  if (!fs.existsSync(libRoot)) return []
   const targetDir = path.join(process.cwd(), 'public', 'library-images', slug)
   const exts = new Set(['.png','.jpg','.jpeg','.webp','.gif','.avif'])
+  const collected: string[] = []
   const recurse = (dir: string) => {
     for (const entry of fs.readdirSync(dir)) {
       const full = path.join(dir, entry)
@@ -71,11 +73,14 @@ function copyAllImages(slug: string) {
             if (shouldCopy) {
               fs.copyFileSync(full, target)
             }
+            const publicPath = `/library-images/${slug}/${filename}`
+            if (!collected.includes(publicPath)) collected.push(publicPath)
         }
       }
     }
   }
   recurse(libRoot)
+  return collected
 }
 
 function loadLibraries(): LibSummary[] {
@@ -87,9 +92,24 @@ function loadLibraries(): LibSummary[] {
     try {
       const raw = fs.readFileSync(path.join(dir, slug, 'index.md'), 'utf8')
       const { data, content } = matter(raw)
-  const copied = ensureCopiedPhoto(slug, data.photo)
-  // Also copy any other images for potential future use
-  copyAllImages(slug)
+      const copied = ensureCopiedPhoto(slug, data.photo)
+      // Copy all images and build gallery list
+      const gallery = copyAllImages(slug) || []
+      // Ensure frontmatter image (copied or raw absolute) is first
+      const primary = copied || data.photo
+      let images: string[] = []
+      if (primary) {
+        // If relative, ensure we have its copied version path
+        if (primary.startsWith('/library-images/')) images.push(primary)
+        else if (!/^https?:\/\//i.test(primary) && !primary.startsWith('/')) {
+          const relName = path.basename(primary)
+          const match = gallery.find(g => g.endsWith('/' + relName))
+          if (match) images.push(match)
+        } else {
+          images.push(primary)
+        }
+      }
+      for (const img of gallery) if (!images.includes(img)) images.push(img)
       return {
         slug,
         title: data.title || slug,
@@ -98,7 +118,8 @@ function loadLibraries(): LibSummary[] {
         tags: data.tags || [],
         established: data.established,
         description: buildDescription(content),
-        _path: `/libraries/${slug}`
+        _path: `/libraries/${slug}`,
+        images
       }
     } catch { return null }
   }).filter(Boolean) as LibSummary[]

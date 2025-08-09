@@ -12,28 +12,28 @@
 
       <!-- Library Header -->
       <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-        <!-- Hero Image -->
-        <div class="aspect-video relative overflow-hidden border border-gray-200 rounded-none">
-          <!-- Blurred / darkened backdrop derived from image (decorative) -->
-          <template v-if="library.photo">
+        <!-- Hero Image / Carousel -->
+  <div class="aspect-video relative overflow-hidden border border-gray-200 rounded-none group select-none"
+       @mouseenter="isHovered = true" @mouseleave="isHovered = false"
+       @focusin="isFocused = true" @focusout="isFocused = false">
+          <template v-if="activeImage">
             <img
-              :src="library.photo"
+              :src="activeImage"
               alt=""
               aria-hidden="true"
-              class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 brightness-[0.45] contrast-110 select-none"
+              class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 brightness-[0.45] contrast-110"
               decoding="async"
               loading="lazy"
               draggable="false"
             />
             <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/25 to-black/40" />
           </template>
-          <!-- Foreground centered original image (no alteration) -->
           <div class="absolute inset-0 flex items-center justify-center p-2">
-            <template v-if="library.photo">
+            <template v-if="activeImage">
               <img
-                :src="library.photo"
+                :src="activeImage"
                 :alt="library.title"
-                class="relative z-10 max-w-full max-h-full w-auto h-auto object-contain drop-shadow-xl shadow-black/40 rounded-md bg-white/40 backdrop-blur-sm p-1"
+                class="relative z-10 max-w-full max-h-full w-auto h-auto object-contain drop-shadow-xl shadow-black/40 rounded-md bg-white/40 backdrop-blur-sm p-1 transition-opacity"
                 decoding="async"
                 loading="lazy"
                 draggable="false"
@@ -42,6 +42,32 @@
             <div v-else class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
               <span class="material-symbols-outlined text-gray-300" style="font-size:128px;">local_library</span>
             </div>
+          </div>
+          <div v-if="(library.images?.length || 0) > 1" class="absolute top-2 right-2 z-30 flex gap-2 !opacity-100">
+            <button
+              @click="prevImage"
+              class="bg-black/40 hover:bg-black/60 text-white rounded-full w-9 h-9 flex items-center justify-center backdrop-blur-sm"
+              aria-label="Previous image"
+            >
+              <span class="material-symbols-outlined" style="font-size:22px;">chevron_left</span>
+            </button>
+            <button
+              @click="nextImage"
+              class="bg-black/40 hover:bg-black/60 text-white rounded-full w-9 h-9 flex items-center justify-center backdrop-blur-sm"
+              aria-label="Next image"
+            >
+              <span class="material-symbols-outlined" style="font-size:22px;">chevron_right</span>
+            </button>
+          </div>
+          <div v-if="(library.images?.length || 0) > 1" class="absolute bottom-2 left-0 right-0 z-30 flex justify-center gap-1 px-4 !opacity-100">
+            <button
+              v-for="(img, idx) in library.images"
+              :key="img"
+              @click="goToImage(idx)"
+              :aria-label="`Go to image ${idx+1}`"
+              class="w-2.5 h-2.5 rounded-full transition"
+              :class="idx===currentImageIndex ? 'bg-white shadow ring-2 ring-white/60' : 'bg-white/40 hover:bg-white/70'"
+            />
           </div>
         </div>
 
@@ -202,8 +228,12 @@ interface Library {
   tags?: string[]
   entries_count?: number
   established?: string | number
+  images?: string[]
 }
 
+// vue import (Nuxt supplies types; suppress if tsconfig module settings differ)
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 // Nuxt auto-imports useRoute, useHead, queryContent, useAsyncData at runtime.
 // Provide minimal TS fallbacks (ignored if types present).
@@ -225,6 +255,19 @@ const { data: doc, pending } = useAsyncData<any>(`library:${librarySlug}`, async
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const qc: any = (typeof queryContent === 'function') ? queryContent : null
   let d = qc ? await qc(`/libraries/${librarySlug}`).findOne() : null
+  // If we have a content document, enrich it with gallery images from server cache (SSR serialization makes them available on client)
+  if (d) {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const g: any = globalThis as any
+      if (!d.images && g.__LIB_CACHE__) {
+        const cached = g.__LIB_CACHE__.find((c: any) => c.slug === librarySlug)
+        if (cached?.images?.length) {
+          d.images = cached.images
+        }
+      }
+    } catch { /* ignore enrichment errors */ }
+  }
   if (!d) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const g: any = globalThis as any
@@ -242,6 +285,7 @@ const { data: doc, pending } = useAsyncData<any>(`library:${librarySlug}`, async
           photo: cached.photo,
           tags: cached.tags,
           established: cached.established,
+          images: cached.images,
           body: { type: 'root', children: [{ type: 'element', tag: 'p', children: [{ type: 'text', value: cached.description }] }] }
         }
       }
@@ -311,22 +355,91 @@ const library = computed(() => {
   return `/library-images/${encodeURIComponent(librarySlug)}/${encodeURIComponent(filename)}`
   }
 
-  const l: Library = {
+  const primary = resolvePhoto(doc.value.photo)
+  const gallerySet = new Set<string>()
+  if (doc.value.images && Array.isArray(doc.value.images)) {
+    for (const p of doc.value.images) { const rp = resolvePhoto(p); if (rp) gallerySet.add(rp) }
+  }
+  // If no additional images came from the content document, try global cache (server side) for gallery images
+  if (gallerySet.size === 0) {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const g: any = (globalThis as any)
+      const cached = g.__LIB_CACHE__?.find((c: any) => c.slug === librarySlug)
+      if (cached && Array.isArray(cached.images)) {
+        for (const img of cached.images) {
+          if (img && typeof img === 'string') gallerySet.add(img)
+        }
+      }
+    } catch { /* ignore */ }
+  }
+  if (primary) gallerySet.delete(primary)
+  const gallery = [primary, ...Array.from(gallerySet)].filter(Boolean) as string[]
+  return {
     slug: librarySlug,
     title: doc.value.title || librarySlug,
     location: doc.value.location || { lat: 49.2827, lng: -123.1207 },
-    photo: resolvePhoto(doc.value.photo) || '/images/libraries/placeholder-library.jpg',
+    photo: primary || '/images/libraries/placeholder-library.jpg',
     description,
     tags: doc.value.tags || [],
     entries_count: 0,
     fullContent: doc.value.body,
-    established: doc.value.established
+    established: doc.value.established,
+    images: gallery
   }
-  return l
 })
 
 const libraryContent = computed(() => doc.value?.body || null)
 const map = ref<any>(null)
+
+// Carousel state
+const currentImageIndex = ref(0)
+const isHovered = ref(false)
+const isFocused = ref(false)
+const activeImage = computed(() => {
+  if (!library.value) return null
+  if (library.value.images && library.value.images.length)
+    return library.value.images[Math.min(currentImageIndex.value, library.value.images.length - 1)]
+  return library.value?.photo
+})
+const advance = () => {
+  if (!library.value?.images || library.value.images.length < 2) return
+  currentImageIndex.value = (currentImageIndex.value + 1) % library.value.images.length
+}
+const nextImage = advance
+const prevImage = () => {
+  if (!library.value?.images || library.value.images.length < 2) return
+  currentImageIndex.value = (currentImageIndex.value - 1 + library.value.images.length) % library.value.images.length
+}
+const goToImage = (idx: number) => {
+  if (!library.value?.images) return
+  if (idx >= 0 && idx < library.value.images.length) currentImageIndex.value = idx
+}
+
+// Autoplay (pause on hover or focus for accessibility)
+let autoplayTimer: any = null
+const AUTOPLAY_INTERVAL = 6000
+const clearAutoplay = () => { if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null } }
+const startAutoplay = () => {
+  clearAutoplay()
+  if (!library.value?.images || library.value.images.length < 2) return
+  autoplayTimer = setInterval(() => { if (!isHovered.value && !isFocused.value) advance() }, AUTOPLAY_INTERVAL)
+}
+watch(() => library.value?.images?.length, () => startAutoplay())
+onMounted(() => startAutoplay())
+onUnmounted(() => clearAutoplay())
+
+// Keyboard navigation
+let keyHandler: ((e: KeyboardEvent) => void) | null = null
+if (typeof window !== 'undefined') {
+  keyHandler = (e: KeyboardEvent) => {
+    if (!library.value?.images || library.value.images.length < 2) return
+    if (e.key === 'ArrowRight') { nextImage(); e.preventDefault() }
+    else if (e.key === 'ArrowLeft') { prevImage(); e.preventDefault() }
+  }
+  window.addEventListener('keydown', keyHandler)
+  onUnmounted(() => { if (keyHandler) window.removeEventListener('keydown', keyHandler) })
+}
 
 const initializeLibraryMap = async () => {
   if (typeof window !== 'undefined' && library.value?.location) {
@@ -338,7 +451,9 @@ const initializeLibraryMap = async () => {
       document.head.appendChild(link)
 
       // Dynamically import Leaflet
-      const L = await import('leaflet')
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore dynamic import for leaflet (bundled by Nuxt)
+  const L = await import('leaflet')
       
       // Initialize map
       const mapInstance = L.map('library-map').setView([library.value.location.lat, library.value.location.lng], 15)
@@ -383,7 +498,7 @@ onUnmounted(() => {
 })
 
 // Watch for library data changes
-watch(library, async (newLibrary) => {
+  watch(library, async (newLibrary: Library | null) => {
   if (newLibrary?.location && !map.value) {
     await nextTick()
     await initializeLibraryMap()
