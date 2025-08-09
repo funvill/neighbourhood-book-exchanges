@@ -1,6 +1,6 @@
 # Neighbourhood book exchanges
 
-A Little Library Zine
+Live preview: [libraries.abluestar.com](libraries.abluestar.com)
 
 [Project spec doc](https://docs.google.com/document/d/12LJpVHkkpRywIbbA4dffJ5qQawoV1HBOpGzlhY7aTvA/edit?tab=t.0)
 
@@ -37,6 +37,7 @@ npm run preview
 ### Notes
 
 - Convert all the images to png, and resize them
+  - Max image size is 600x600 pixels in any direction
 - This project is made to be built as a static webpage, then served by Cloudflare R2.
 
 ### Directory / Files

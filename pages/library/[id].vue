@@ -13,15 +13,35 @@
       <!-- Library Header -->
       <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
         <!-- Hero Image -->
-        <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 relative">
-          <NuxtImg
-            v-if="library.photo"
-            :src="library.photo"
-            :alt="library.title"
-            class="w-full h-full object-cover"
-          />
-          <div v-else class="w-full h-full flex items-center justify-center">
-            <span class="material-symbols-outlined text-gray-400" style="font-size:128px;">local_library</span>
+        <div class="aspect-video relative overflow-hidden border border-gray-200 rounded-none">
+          <!-- Blurred / darkened backdrop derived from image (decorative) -->
+          <template v-if="library.photo">
+            <img
+              :src="library.photo"
+              alt=""
+              aria-hidden="true"
+              class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 brightness-[0.45] contrast-110 select-none"
+              decoding="async"
+              loading="lazy"
+              draggable="false"
+            />
+            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/25 to-black/40" />
+          </template>
+          <!-- Foreground centered original image (no alteration) -->
+          <div class="absolute inset-0 flex items-center justify-center p-2">
+            <template v-if="library.photo">
+              <img
+                :src="library.photo"
+                :alt="library.title"
+                class="relative z-10 max-w-full max-h-full w-auto h-auto object-contain drop-shadow-xl shadow-black/40 rounded-md bg-white/40 backdrop-blur-sm p-1"
+                decoding="async"
+                loading="lazy"
+                draggable="false"
+              />
+            </template>
+            <div v-else class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+              <span class="material-symbols-outlined text-gray-300" style="font-size:128px;">local_library</span>
+            </div>
           </div>
         </div>
 
@@ -273,11 +293,29 @@ const library = computed(() => {
     } catch { /* ignore */ }
     return ''
   })()
+  // Resolve photo (supports relative paths like `logbook/xyz.png`)
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const contentImages: Record<string, string> = import.meta?.glob?.('~/content/libraries/**/*.{png,jpg,jpeg,webp,avif,gif}', { eager: true, as: 'url' }) || {}
+  const resolvePhoto = (raw?: string) => {
+    if (!raw) return '/images/libraries/placeholder-library.jpg'
+    if (raw.startsWith('/') || /^https?:\/\//i.test(raw)) return raw
+    const slugPathPrefix = `/libraries/${librarySlug}/`
+    const normalized = raw.replace(/^\.\//, '')
+    const entries = Object.entries(contentImages)
+    for (const [key, url] of entries) {
+      if (key.endsWith(`${slugPathPrefix}${normalized}`)) return url as string
+      if (key.includes(slugPathPrefix) && key.endsWith(`/${normalized.split('/').pop()}`)) return url as string
+    }
+  const filename = normalized.split('/').pop() || normalized
+  return `/library-images/${encodeURIComponent(librarySlug)}/${encodeURIComponent(filename)}`
+  }
+
   const l: Library = {
     slug: librarySlug,
     title: doc.value.title || librarySlug,
     location: doc.value.location || { lat: 49.2827, lng: -123.1207 },
-    photo: doc.value.photo || '/images/libraries/placeholder-library.jpg',
+    photo: resolvePhoto(doc.value.photo) || '/images/libraries/placeholder-library.jpg',
     description,
     tags: doc.value.tags || [],
     entries_count: 0,
