@@ -1,0 +1,5 @@
+# Placeholder for Library Image
+
+This is a text placeholder. In a real implementation, this would be replaced with an actual image file (placeholder-library.jpg) showing a generic little free library icon or photo.
+
+The image should be approximately 800x600 pixels and show a friendly, welcoming little free library structure.

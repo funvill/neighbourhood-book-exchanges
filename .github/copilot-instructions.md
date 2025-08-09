@@ -12,3 +12,7 @@
 
 - `.github/instructions/steven.instructions.md` - Steven's best pratices
 - `.github/instructions/typescript.instructions.md` - Contains best pratices for Typescript
+
+## Other 
+
+- When running commands use powershell and Windows

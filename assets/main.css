@@ -1,0 +1,131 @@
+/* Google Material Design Theme - Material 3 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
+:root {
+  /* Material 3 Color Palette */
+  --md-primary: #6750a4;
+  --md-on-primary: #fff;
+  --md-primary-container: #eaddff;
+  --md-on-primary-container: #21005d;
+  --md-secondary: #625b71;
+  --md-on-secondary: #fff;
+  --md-background: #f5f5f5;
+  --md-surface: #fff;
+  --md-error: #b3261e;
+  --md-on-error: #fff;
+  --md-outline: #79747e;
+  --md-shadow: rgba(0,0,0,0.14);
+  --md-radius: 12px;
+  --md-font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--md-font-family);
+  background: var(--md-background);
+  color: #1c1b1f;
+  margin: 0;
+  min-height: 100vh;
+}
+
+main, .md-surface {
+  background: var(--md-surface);
+  border-radius: var(--md-radius);
+  box-shadow: 0 2px 8px var(--md-shadow);
+  padding: 1.5rem;
+}
+
+a {
+  color: var(--md-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--md-primary-container);
+}
+
+button, .md-button {
+  font-family: var(--md-font-family);
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  border: none;
+  border-radius: var(--md-radius);
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 3px var(--md-shadow);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+button:hover, .md-button:hover {
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
+  box-shadow: 0 2px 8px var(--md-shadow);
+}
+
+input, textarea, select {
+  font-family: var(--md-font-family);
+  border: 1px solid var(--md-outline);
+  border-radius: var(--md-radius);
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: var(--md-surface);
+  color: #1c1b1f;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--md-primary);
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  font-size: 24px;
+  user-select: none;
+}
+
+/* Card style */
+.md-card {
+  background: var(--md-surface);
+  border-radius: var(--md-radius);
+  box-shadow: 0 2px 8px var(--md-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* App bar style */
+.md-appbar {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px var(--md-shadow);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Footer style */
+.md-footer {
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: var(--md-radius) var(--md-radius) 0 0;
+  margin-top: 2rem;
+}
+
+/* Utility classes */
+.md-elevated {
+  box-shadow: 0 4px 16px var(--md-shadow);
+}
+.md-rounded {
+  border-radius: var(--md-radius);
+}
+.md-text-center {
+  text-align: center;
+}
