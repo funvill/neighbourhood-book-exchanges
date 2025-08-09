@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00135'
 ---
 ‘Fable Swap’; 4 blocks n. of E. Hastings St.; Nanaimo—Renfrew St.; 3 shelves; with bench. Missing doors, so to keep books dry, please donate them, each in its own clear plastic bag.  
 —Added to map by K.D.,  2021 6 5.

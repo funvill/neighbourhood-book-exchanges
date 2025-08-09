@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00265'
 ---
 Its door is damaged.  Maybe donate each book in its own clear plastic bag.
 —Added to map by K.D., 2024 5 25.

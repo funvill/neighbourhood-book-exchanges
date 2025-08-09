@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00152'
 ---
 At s.e. entrance to Tea Swamp Park at 
 n.w. corner of 16th Ave. and Sophia St. 

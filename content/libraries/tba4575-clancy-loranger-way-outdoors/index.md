@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00508
 ---
 'Reuse and Recycling Drop-off Event' outdoors, next date to be announced.
 

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00179
 ---
 Adanac Exchange Free LIbrary. 
 Not 3200 address.

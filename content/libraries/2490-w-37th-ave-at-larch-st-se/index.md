@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00112'
 ---
 Medium large book cabinet.  
 Now with additional cabinet for food and hygiene.  No longer other items.

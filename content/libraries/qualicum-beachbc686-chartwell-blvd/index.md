@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00490
 ---
 Just s. of Is. Hwy.; n. of airport; Little Free Library #114263
 —Added to map by K.D., 2025 2 27.

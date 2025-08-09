@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00308
 ---
 Not confirmed.  On E. 48th Avenue, s. side, 
 near 6403 E. 48th Ave.

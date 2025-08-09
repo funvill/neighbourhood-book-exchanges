@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00254'
 ---
 A different box 2024 9.
 It looks exactly like the one at 2305 McLean. 

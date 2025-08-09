@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00338
 ---
 Marpole Little FIBRE Library.
 Inside Marpole Neighbourhood House for fibre arts materials and ?books.

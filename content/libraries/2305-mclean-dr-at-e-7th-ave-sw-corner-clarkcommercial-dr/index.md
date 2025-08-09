@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00097
 ---
 1 bl. e. of Clark Dr.
 London-phone-booth-inspired 

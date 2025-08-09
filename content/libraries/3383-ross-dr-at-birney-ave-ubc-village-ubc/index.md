@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00190
 ---
 'Oakwood Free Library' s.e. of 'Oakwood' building at that address.  
 On foot-path 10 metres s. of Ross Dr. side-walk.

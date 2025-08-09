@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00458
 ---
 Not confirmed. New Westminster, BC.
 Just up from E. Columbia; ‘Nootka Alley Library’; Twitter @NootkaStLibrary; 

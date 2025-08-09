@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00131'
 ---
 Norquay Seed Library (and books).
 2 shelves.  In front of 

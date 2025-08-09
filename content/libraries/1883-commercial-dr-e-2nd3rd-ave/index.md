@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00059
 ---
 A little 'free store' inside Spartacus Books (a store selling books).  The 'free store' part is a bookcase with a handful of free books, also shoes, etc.  Such small items only.
 For you to give and take, presumably.  

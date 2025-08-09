@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00428
 ---
 Was in The Nest on the main floor, University of British Columbia, Vancouver, B.C., Canada. Maybe find them at:
  http://UBCnoox. tumblr. com/ -- http://UBCnoox.tumblr.com/ .

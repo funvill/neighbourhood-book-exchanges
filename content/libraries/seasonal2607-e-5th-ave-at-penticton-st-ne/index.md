@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00501'
 ---
 Fall to spring: books.
 Spring to fall: seeds and plants.

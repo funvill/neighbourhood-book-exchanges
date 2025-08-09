@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00418
 ---
 A card-board box of books was here.  
 We'll see if it returns.

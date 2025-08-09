@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00493
 ---
 S.e. of Number 4 Rd. and Williams Rd.  
 Little Free Library #161082; John Edmondson.

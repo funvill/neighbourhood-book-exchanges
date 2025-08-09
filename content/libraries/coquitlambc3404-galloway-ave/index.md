@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00385
 ---
 Not confirmed.  Not on the official LFL map.
 Unknown location within park.

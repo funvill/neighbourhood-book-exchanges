@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00291
 ---
 Dr. A.R. Lord Elementary Book Exchange, 
 facing 3082 Turner St., w. of the corner of Lillooet and Turner Streets.

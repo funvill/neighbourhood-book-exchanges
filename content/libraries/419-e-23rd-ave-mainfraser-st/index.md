@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00237'
 ---
 Medium small box, 2 shelves.
 Same property as 423 E. 23rd.

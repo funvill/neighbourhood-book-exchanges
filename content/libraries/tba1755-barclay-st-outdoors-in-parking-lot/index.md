@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00505'
 ---
 Next date here to be announced.  
 These outdoor events move around the city.

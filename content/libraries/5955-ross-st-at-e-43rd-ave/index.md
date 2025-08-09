@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00299
 ---
 Between the building with a public washroom and the corner of Ross St. and E. 43rd Ave.  
 In the middle of the e. half of Memorial South Park.  ‘CloudScape Comics Free Library’.  

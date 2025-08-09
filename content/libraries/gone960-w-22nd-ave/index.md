@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00434'
 ---
 Maybe they meant the one at 980 on this block or the one at 960 one block south.
 Anyway, there is not one here as of 2024 9 10.

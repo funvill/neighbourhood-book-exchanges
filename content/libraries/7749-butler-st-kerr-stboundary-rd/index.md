@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00329
 ---
 Just n. of E. 62nd Ave.  Just w. of 
 Champlain Heights Community Centre.

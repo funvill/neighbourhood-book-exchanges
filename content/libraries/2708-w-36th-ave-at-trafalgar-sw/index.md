@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00126'
 ---
 John's Library, in memory of John, whose love of books lives on here.  Small box, 2 shelves.
 Little Free Library #188776.

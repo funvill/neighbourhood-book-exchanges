@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00293
 ---
 E. 14th—15th Ave. in very s.e. corner of Robson Park, in the park; n. of Kingsway.
 South of the building with that address; park address is instead 599 Kingsway.  

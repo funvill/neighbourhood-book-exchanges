@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00506'
 ---
 Next date to be announced.  
 Probably a Saturday, 10 am-1 pm, 

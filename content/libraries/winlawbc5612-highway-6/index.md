@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00517'
 ---
 Coonen and kids; Science, Spiritual, Health, Children's and Comedy books on the front porch. 
 LFL #84878.

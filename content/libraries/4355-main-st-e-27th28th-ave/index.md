@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00246'
 ---
 Cardboard box(es) of free books and other items on sidewalk in front of Still Fabulous Thrift Store. 
 Probably only when the store is open:

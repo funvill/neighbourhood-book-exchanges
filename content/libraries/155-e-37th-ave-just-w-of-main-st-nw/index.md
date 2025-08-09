@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00036'
 ---
 ‘The Little Free Library Off Main’.  With bench.  Medium-size.  3 narrow deep shelves; 
 On a w.-e. bike route.

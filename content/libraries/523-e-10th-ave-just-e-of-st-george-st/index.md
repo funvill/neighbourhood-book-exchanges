@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00280
 ---
 Lend and borrow, give and receive.
 On the 10th Avenue bike route.

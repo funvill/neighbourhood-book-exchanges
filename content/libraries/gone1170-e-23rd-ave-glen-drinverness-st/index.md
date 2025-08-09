@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00393
 ---
 Fraser—Knight St.
 —Added to map by K.D., 2025 6 12.  

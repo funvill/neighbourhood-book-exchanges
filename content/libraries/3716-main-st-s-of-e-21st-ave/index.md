@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00209
 ---
 Shelves for books, etc, possibly temporary.
  Community fridge. 

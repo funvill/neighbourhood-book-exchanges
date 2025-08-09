@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00307'
 ---
 2 blocks w. of Granville St.  
 Steward:  bdwatt@gmail.com

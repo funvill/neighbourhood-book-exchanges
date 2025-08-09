@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00372'
 ---
 Canada Way—Walker Ave.; Burris—Imperial St.
 'Buckingham Heights Little Free Library'.

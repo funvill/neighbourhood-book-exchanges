@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00229
 ---
 ‘Lieven's Free Library’.  N. of Brewers Park.
 Books might get wet through the front, so please donate each dry book in its own clear plastic bag. 

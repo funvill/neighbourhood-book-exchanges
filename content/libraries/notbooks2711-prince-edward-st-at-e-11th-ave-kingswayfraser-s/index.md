@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00467'
 ---
 NOT for books, as I first thought.  
 Probably meant instead for exchanging 

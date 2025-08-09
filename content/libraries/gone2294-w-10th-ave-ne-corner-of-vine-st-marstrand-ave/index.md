@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00404'
 ---
 Little Free Library #69912.  Feb 15, 2019.
 Notes added by K.D.: One block s. of 10th Ave.'  

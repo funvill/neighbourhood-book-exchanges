@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00272'
 ---
 Just e. of Main St.  Not at 4846 Sophia.  
 With bench. 

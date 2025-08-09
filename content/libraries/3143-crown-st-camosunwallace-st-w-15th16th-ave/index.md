@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00169
 ---
 Blanca—Dunbar St.  
 3141 and 3139 addresses on same property.

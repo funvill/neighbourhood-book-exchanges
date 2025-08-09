@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00129
 ---
 2 shelves.  2 blocks w. of Alma; Blanca--Alma.
 Not 3896 W. 11th Ave.

@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00363'
 ---
 Or maybe 4265 Rumble.  
 Probably not 4270 Rumble St.

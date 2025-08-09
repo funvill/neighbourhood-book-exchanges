@@ -13,6 +13,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00507'
 ---
 The next one here is to be announced.
 Check the list in the left column for other locations, which have green markers.  (I'm adding them.)

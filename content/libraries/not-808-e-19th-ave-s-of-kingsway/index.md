@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00464'
 ---
 Maybe never there, but a wrong address or mistaken information.
 At Reality Church.

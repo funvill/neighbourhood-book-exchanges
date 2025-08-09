@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00463'
 ---
 Probably a wrong address; s.w. corner.
 See 2 others just n., right across E. 16th Ave.

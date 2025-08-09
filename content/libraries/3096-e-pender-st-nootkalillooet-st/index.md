@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00165'
 ---
 Just s. of Hastings Community Centre in Hastings Community Park.  Renfrew—Freeway.
 —Added to map by K.D., 2021 9 21. Thanks, C.B.

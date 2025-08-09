@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00409
 ---
 Temporary free pile on lawn.  
 —Added to map by K.D., 2023 8 16.  

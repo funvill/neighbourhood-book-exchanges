@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00427'
 ---
 Reported by Craig B, April 2020.
 K.D.:  Confirmed that it was removed, 2021 6 30.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00069
 ---
 Ontario Place goes w. and e.
 Not Ontario Street, which goes n. and s.

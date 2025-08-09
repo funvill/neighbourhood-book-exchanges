@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00049
 ---
 Siri's Book Exchange - Community library dedicated to Siri Kidder Heiberg.
 Also known as 'Tribes of the Heart'.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00082
 ---
 Straddling the property line with 2091 E. 6th.
 —Added to map by K.D., 2020. 

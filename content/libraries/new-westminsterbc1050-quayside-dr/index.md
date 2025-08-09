@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00462'
 ---
 For children.
 South of the tracks from Columbia St.

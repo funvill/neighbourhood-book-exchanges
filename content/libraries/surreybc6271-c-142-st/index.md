@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00504'
 ---
 Not confirmed.  Not on official LFL map.
 Just s. of 62-B Ave.

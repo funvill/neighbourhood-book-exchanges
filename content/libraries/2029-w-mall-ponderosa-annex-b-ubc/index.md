@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00078
 ---
 Liz Hudson, UBC Press.  West central campus.
 Outside, in front of the building.

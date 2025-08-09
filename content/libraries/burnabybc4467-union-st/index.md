@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00365'
 ---
 N. Burnaby.  4 blocks s. of Hastings St.
 Just w. of Willingdon Ave.

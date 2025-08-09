@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00369
 ---
 —Added to map by K.D., 2022 8 19.  
 

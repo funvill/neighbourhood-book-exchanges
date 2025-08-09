@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00309
 ---
 Kids books.  Small, one shelf.
 —Added to map by K.D., 2025 1 8.  Thanks, A.Y.

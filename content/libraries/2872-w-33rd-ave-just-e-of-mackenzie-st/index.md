@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00143'
 ---
 MacKenzie—Macdonald St.; 'The Book Haus’.
 Small.  Little Free Library #134242.

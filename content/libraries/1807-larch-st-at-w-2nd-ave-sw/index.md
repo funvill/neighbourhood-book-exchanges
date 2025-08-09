@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00053'
 ---
 Looks like a miniature old-fashioned British telephone booth.  Small, 2 shelves.  2 benches.
 Little Free Library #194870.

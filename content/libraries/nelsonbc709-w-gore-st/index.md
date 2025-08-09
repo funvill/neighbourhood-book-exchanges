@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00456'
 ---
 Christine’s Little Free Library #137146.
 —Added to map by K.D., 2024 4 19. 

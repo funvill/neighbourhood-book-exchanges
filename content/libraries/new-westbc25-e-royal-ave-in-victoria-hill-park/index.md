@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00457'
 ---
 Not confirmed.  ‘Little Library on the Hill’ 
 in Victoria Hill neighbourhood,

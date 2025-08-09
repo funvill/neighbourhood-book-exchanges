@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00340'
 ---
 Notes by K.D.:  Not 883, as noted elsewhere.
 Quite big, 2 shelves.

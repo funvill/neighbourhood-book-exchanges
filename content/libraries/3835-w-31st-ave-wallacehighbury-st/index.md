@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00217'
 ---
 1 1/2 blocks w. of Dunbar St.  
 —Added to map by K.D., 2020.  

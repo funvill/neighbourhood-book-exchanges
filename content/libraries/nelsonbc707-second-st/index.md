@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00455'
 ---
 Jurgen Seyfried's, Little Free Library #139411.
 —Added to map by K.D., 2024 4 19. 

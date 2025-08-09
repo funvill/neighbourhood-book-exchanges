@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00408
 ---
 By RBC (bank).
 High-quality books were on the bus stop bench.

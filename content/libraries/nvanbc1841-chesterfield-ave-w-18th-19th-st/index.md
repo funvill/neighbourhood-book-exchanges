@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00469
 ---
 In lane, w. of house and garage.
 Little Free Library #175616.

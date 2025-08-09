@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00516'
 ---
 In a little triangle of land bounded by 2 streets and a sidewalk (the sidewalk looks like W. 22nd Ave. on the map, but it is not).  
 The Quesnel Dr. address is e. of the 

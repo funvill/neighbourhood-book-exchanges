@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00252'
 ---
 2 blocks w. of Main St.
 Medium big, 3 shelves.

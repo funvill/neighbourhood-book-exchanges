@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00482
 ---
 Somewhere on this road, but unknown where.. 'Beach connected.'  
 Or Crystal Water Beach Road.

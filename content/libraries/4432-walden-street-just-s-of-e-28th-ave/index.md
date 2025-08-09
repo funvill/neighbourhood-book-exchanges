@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00251'
 ---
 Little Free Library #5665.
  Collection circulates vigorously; multilingual and multimedia content welcome.  

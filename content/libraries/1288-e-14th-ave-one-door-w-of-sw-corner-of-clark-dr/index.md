@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00024'
 ---
 The address 1286 is on same property.
 'Kids Library'.  'Kids books' and adult's.  

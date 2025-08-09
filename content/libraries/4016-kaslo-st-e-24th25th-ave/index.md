@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00227'
 ---
 Slocan—Rupert St.;
 Renfrew Heights Little FIBRE Library; free books, tools, and materials related to all fibre arts.

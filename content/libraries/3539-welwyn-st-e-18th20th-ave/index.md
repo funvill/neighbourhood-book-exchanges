@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00201'
 ---
 Cedar Cottage Little FIBRE Library; free books and materials related to all fibre arts.
 The other 2 Little Fibre Libaries in Vancouver are 2821 E. Georgia St. and 4016 Kaslo St. 

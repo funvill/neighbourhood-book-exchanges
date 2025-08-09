@@ -11,6 +11,7 @@ tags:
   - yellow-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00513'
 ---
 Probably won't re-open unless more people volunteer to keep it tidy, because the public kept making a mess of it..   (If you want to volunteer, contact them or c/o KorkyDay@yahoo.com)
 Just w. of Cambie St.

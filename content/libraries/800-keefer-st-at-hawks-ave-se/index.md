@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00331'
 ---
 E. of 700-block Keefer.  Main St.—Clark Dr.  
 2 blocks s. of E. Hastings St.  

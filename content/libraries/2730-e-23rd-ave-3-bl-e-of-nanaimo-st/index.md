@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00130'
 ---
 Adult books only.  
 For kids books, go across the street to the s. side of the house at 3896 Slocan St.

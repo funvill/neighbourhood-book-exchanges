@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00417'
 ---
 Tell us if you see it returning after construction.
 Medium size.  2 shelves.

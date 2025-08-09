@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00368
 ---
 Not in Vancouver, but nearby in w. Burnaby.
 It is n.e. of Wayburne Dr. and Deer Lake Pkwy.

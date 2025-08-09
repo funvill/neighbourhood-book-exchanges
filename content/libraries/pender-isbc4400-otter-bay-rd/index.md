@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00478
 ---
 North island.
 Free books and other free items in their free store.

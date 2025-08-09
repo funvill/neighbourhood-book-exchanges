@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00025'
 ---
 2 blocks e. of Granville St.
 In the boulevard of Birch St. next to 2 chairs.

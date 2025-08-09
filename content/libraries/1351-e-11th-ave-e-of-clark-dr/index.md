@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00029
 ---
 Assumed address in Cedar Cottage Park (the part of the park which is e. of Clark Dr.).  
 The park's address is 2650 Clark Dr.

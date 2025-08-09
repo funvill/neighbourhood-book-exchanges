@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00070'
 ---
 2 close-together little libraries.
 Not 1951 E. 8th, as claimed in Google.

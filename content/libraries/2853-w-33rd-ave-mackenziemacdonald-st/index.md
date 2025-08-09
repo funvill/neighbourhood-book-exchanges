@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00141'
 ---
 Grace's Library.
  —Added to map by K.D., 2023 1 20.  

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00218
 ---
 English, Greek, and Chinese books as of date added..
 —Added to map by K.D., 2022 3 19.

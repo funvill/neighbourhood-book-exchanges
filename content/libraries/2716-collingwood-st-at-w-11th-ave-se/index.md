@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00127'
 ---
 2 shelves, chair, tree-house with benches.
 Dunbar—Macdonald; 1 block e. of Dunbar. 

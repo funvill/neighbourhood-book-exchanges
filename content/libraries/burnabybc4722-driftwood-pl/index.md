@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00366'
 ---
 Just e. of Wayburne Dr.
 Canada Way—Deer Lake Pkwy.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00026'
 ---
 One block w. of Knight St.
 Low to ground.

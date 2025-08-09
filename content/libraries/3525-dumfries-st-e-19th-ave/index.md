@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00199
 ---
 Knight—Dumfries streets.  'Mrs. Evans' Library'.
 2 big shelves.  By Tyee School.

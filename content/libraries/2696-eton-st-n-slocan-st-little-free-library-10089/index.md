@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00125'
 ---
 Built with a community grant from the Hastings Community Partners Group.
 Notes by K.D.:  2696 Eton St. (e. side of house); 

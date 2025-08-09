@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00466'
 ---
 A probably false rumour said that Golden Age Collectables store was giving away some free comic books 2025 May 3.  
 —Added to map by K.D., 2025 5 2.

@@ -11,6 +11,7 @@ tags:
   - star-shape
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00452'
 ---
 It might move back here.
 Now, however it has been moved a block n. to

@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00411'
 ---
 Was a free pile on the lawn.
 —Added to map by K.D., 2024 7 21.  

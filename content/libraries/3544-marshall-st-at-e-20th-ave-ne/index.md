@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00202'
 ---
 'In memory of Bob Mercer' (my friend).
 A big library with covered benches.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00347'
 ---
 ‘West 7th Cycle Path Little Free Library’ #131299
 	trishkolber@gmail.com ; not 929 W. 7th.

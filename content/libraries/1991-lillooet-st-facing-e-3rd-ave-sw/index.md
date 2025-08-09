@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00071'
 ---
 ‘3rd Avenue Children's Little Library’ #107401.
 Renfrew—Rupert St.

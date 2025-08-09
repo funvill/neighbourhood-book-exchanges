@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00084
 ---
 4 paces s. of the E. 5th Ave. sidewalk.  
 Under the trees.

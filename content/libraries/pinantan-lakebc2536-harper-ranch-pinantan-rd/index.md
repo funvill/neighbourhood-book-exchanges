@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00479
 ---
 By Pinantan Lake General Store, Pinantan Lake, BC.
 E. of city of Kamloops, BC.  2 shelves.

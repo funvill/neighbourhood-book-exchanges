@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00362'
 ---
 Re-opened; noted 2022 4 11.
 N. Burnaby;  'Hummingbird Little Library'. 

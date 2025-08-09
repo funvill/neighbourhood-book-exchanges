@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00115'
 ---
 E. Hastings—E. 1st Ave.
 Not 2575 or 2579 Napier.  2 shelves.

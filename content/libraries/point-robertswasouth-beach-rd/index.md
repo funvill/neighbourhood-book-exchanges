@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00484
 ---
 Somewhere on this road, but unknown where. 'Beach connected.'
 —Added to map by K.D., 2023 5 4.  

@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00442'
 ---
 —Added to map by K.D., 2020.  
 Book box removed 2020 or 2021.  Noted 2021.

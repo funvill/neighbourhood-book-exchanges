@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00206'
 ---
 2 blocks w. of Boundary Rd.
 2 blocks n. of E. 22nd Ave.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00094
 ---
 In open garage or car-port in lane behind 
 (north of) the house.

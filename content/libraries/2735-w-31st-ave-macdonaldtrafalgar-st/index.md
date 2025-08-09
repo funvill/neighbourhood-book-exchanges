@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00132'
 ---
 MacKenzie St.—W. Boulevard.
 Erected late 2020 or early 2021.

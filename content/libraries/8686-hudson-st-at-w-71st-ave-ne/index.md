@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00341'
 ---
 'chART Public Art Marpole'.
 Little Free Library #13509.  Designed by chART in collaboration with Marpole Place Neighbourhood House and Marpole Family Place.  July 22, 2018.

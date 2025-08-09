@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00223'
 ---
 3 blocks e. of Main St.     2 shelves.
 'Cempasuchil Seed and Book Library'.

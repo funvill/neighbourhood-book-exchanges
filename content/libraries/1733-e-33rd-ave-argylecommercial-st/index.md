@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00047'
 ---
 In front of Vancouver Cohousing, near suite #102 and/or the 1723 address.  Medium large box, with bench.
 Little Free LIbrary #152003.

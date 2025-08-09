@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00259
 ---
 Blanca—Alma St.  2 shelves.
 —Added to map by K.D., 2022 12 1. 

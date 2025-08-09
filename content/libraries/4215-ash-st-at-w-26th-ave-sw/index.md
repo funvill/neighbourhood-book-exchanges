@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00238
 ---
 Back after an absence.
 Heather—Cambie Streets.

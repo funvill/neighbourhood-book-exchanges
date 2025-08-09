@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00151'
 ---
 Dunbar—Macdonald St.; 2 shelves, small.  Bench.  Gaps around door.
 —Added to map by K.D., 2022 8 19.  

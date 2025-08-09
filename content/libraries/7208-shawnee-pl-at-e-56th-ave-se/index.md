@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00317'
 ---
 Elliott—Kerr St.; 3 blocks w. of Kerr St.
 Medium large, 2 shelves.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00253'
 ---
 'Welwyn Book Exchange'.
 Seems to be letting in rain at the n. end.

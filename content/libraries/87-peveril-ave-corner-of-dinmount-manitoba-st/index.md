@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00342'
 ---
 One bl. n.w. of Peveril and W. 28th Ave.
 ~1 block w. of Ontario St.; Cambie—Main St.

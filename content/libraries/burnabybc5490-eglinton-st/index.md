@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00370'
 ---
 South end of Gilpin Elementary School.
 From another map. Not confirmed.

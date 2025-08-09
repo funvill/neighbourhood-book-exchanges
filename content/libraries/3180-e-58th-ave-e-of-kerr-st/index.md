@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00172'
 ---
 The other marker on this map says 'Little free library'.  That marker says that this address is 3180 E. 58th Ave.  When you look at the library in person, you see only that it is near unit 56 of the housing co-op, which is the building with that other marker.
 The site is w. of a sign saying 3150 E. 58th Ave.

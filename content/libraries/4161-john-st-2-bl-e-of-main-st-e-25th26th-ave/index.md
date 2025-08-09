@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00236'
 ---
 Not 4147.
 —Added to map by K.D., 2025 1 27.  Thanks, A.Y.

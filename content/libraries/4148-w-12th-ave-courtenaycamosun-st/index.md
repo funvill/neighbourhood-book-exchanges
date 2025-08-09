@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00233'
 ---
 4 blocks w. of Alma St.  
 The book box smells new 2021.

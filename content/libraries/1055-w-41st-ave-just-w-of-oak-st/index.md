@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00006'
 ---
 Near n.w. corner.  Louis Brier Home & Hospital.
 Repaired as of 2021 7 20.

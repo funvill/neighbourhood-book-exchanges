@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00200'
 ---
 Now confirmed.  South of Kingsway. 
  No doors; 3 deep shelves; push books to the back so the rain misses them.  

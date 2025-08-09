@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00275'
 ---
 'Public book shelf'.
 At the lane, e. of Blenheim and 33rd.

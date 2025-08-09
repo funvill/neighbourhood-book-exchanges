@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00153'
 ---
 Especially for movie DVDs, etc.  'Blockbuster'.
 Also known as 'Free Blockbuster Vancouver'.

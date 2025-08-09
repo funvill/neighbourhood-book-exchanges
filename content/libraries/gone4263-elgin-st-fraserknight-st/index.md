@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00419
 ---
 See instead 4121 Elgin St., a bit north.
 Was between E. 26th and 27th Avenues.  Small.

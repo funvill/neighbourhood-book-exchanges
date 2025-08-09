@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00382
 ---
 Go n.e. on Bessborough Dr. to the last house on your left, which is 4871, and then go ~42 m farther into the woods on the path. Look to your left.
 That is the the western segment of Bessborough Dr., just n.e. of the corners of Eton St. and Brisbane Crescent.. 

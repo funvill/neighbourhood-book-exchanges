@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00239
 ---
 At lane s. of 26th; 2 bl. w. of Rupert St.; 
 around 7 bl. e. of Nanaimo St.

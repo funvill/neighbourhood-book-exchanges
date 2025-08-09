@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00396
 ---
 The books are gone, but there are a few other items left in a card-board box without a cover.
 —Added to map by K.D., 2023 8 9.  

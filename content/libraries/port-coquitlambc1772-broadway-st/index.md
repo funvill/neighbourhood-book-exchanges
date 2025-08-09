@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00485
 ---
 #111-1772 Broadway St. (or #110?)
 Mon-Fri, 8 am-3 pm.

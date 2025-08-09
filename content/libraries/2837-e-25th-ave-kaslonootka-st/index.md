@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00140'
 ---
 'Little Library' at Atlin St. (but no street sign there, as of 2022 5 16).  West of Renfrew Ravine (no car road through ravine).  
 2 blocks e. of Slocan St.  Not 2829 E. 25th.

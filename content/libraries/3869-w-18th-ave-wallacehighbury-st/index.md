@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00221'
 ---
 'Dunbar Fibre Library'. #littlefreefibrelibrary,  Follow for contents & social plans!  @kpwerker. 
 Free fibre, tools, and related books.  

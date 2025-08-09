@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00175'
 ---
 Reported by Craig B. May 2020.  
 Notes by K.D.:  at Balaclava St.; 

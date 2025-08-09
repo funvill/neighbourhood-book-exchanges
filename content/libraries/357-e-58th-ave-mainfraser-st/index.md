@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00205'
 ---
 1 block e. of Main St.
 Margaret Defrancisco's 

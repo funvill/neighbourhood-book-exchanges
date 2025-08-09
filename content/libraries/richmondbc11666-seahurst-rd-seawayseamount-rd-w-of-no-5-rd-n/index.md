@@ -12,6 +12,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00494
 ---
 Address might be 11611.  From another map.  Not confirmed.  If you know, please tell KorkyDay@yahoo.com .
 —Added to map by K.D., 2023 9 29.  

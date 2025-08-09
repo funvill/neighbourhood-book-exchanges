@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00348
 ---
 'Douglas Park Free Little Library'.
 1 1/2 blocks s.w. of Douglas Park.  2 shelves.

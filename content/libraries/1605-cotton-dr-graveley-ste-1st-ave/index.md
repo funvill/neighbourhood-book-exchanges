@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00039
 ---
 Temporary.  3 books in a cardboard box.  
 Nice hard-covers with maps.

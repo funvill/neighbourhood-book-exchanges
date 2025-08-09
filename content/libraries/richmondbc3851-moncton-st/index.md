@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00496
 ---
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts.
 Possibly by A Monkey Tree Emporium gift shop.

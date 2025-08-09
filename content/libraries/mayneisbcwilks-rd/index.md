@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00451'
 ---
 'Wilks Road Book Exchange'.
 Either this spelling of Wilks is wrong or Google is wrong, which says 'Wilkes'.

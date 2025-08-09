@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00354'
 ---
 Cameray Child and Family Services, just inside front entrance.
 jay.bexson@cameray.ca

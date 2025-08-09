@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00359
 ---
 Or is it next door w. at 104 N. Gilmore, as on the Google map?  3 blocks n. of Hastings St.
 Gilmore—Carlton Ave.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00110'
 ---
 Notes by K.D.:  Bottom doors don't close so well, so maybe put books there each in its own clear plastic bag.
 

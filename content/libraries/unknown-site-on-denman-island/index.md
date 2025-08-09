@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00514'
 ---
 Free Shack open 7 days per week.
 —Added to map by K.D., 2024 4 3.  

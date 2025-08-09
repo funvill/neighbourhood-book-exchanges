@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00433'
 ---
 This one might have been moved a bit west to n. of Chess St. and Malkin.
 I'll check.  Not found 2022 10 9.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00210'
 ---
 Formerly noted as 3737 W. 19th Ave., which is actually next door to the west.  
 Tiny box. Books get wet, so please donate each dry book in its own clear plastic bag. 

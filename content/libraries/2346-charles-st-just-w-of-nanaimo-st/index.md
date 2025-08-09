@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00107'
 ---
 Free book exchange. One door e. of free store.
 4 blocks n. of E. 1st Ave.

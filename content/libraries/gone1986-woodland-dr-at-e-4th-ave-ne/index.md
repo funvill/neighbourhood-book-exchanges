@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00400'
 ---
 Gone, so the closest full 'free store' is now probably the one at 2336 Charles St., just w. of Nanaimo St.
 Not 1987 Woodland.

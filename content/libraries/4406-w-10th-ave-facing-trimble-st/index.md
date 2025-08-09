@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00249
 ---
 On s.w. corner of 10th and Trimble.  
 By bench; Blanca—Alma.  

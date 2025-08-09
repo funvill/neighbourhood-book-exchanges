@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00274'
 ---
 'Book Exchange'.  Medium size.
 2 blocks n. of Kingsway.  Vanness—Euclid Ave.

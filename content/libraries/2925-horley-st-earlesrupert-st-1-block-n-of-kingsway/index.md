@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00146'
 ---
 Moss--Fairmont St.; Euclid Ave.—Kingsway.
 Looks like the yellow house that it is in front of.

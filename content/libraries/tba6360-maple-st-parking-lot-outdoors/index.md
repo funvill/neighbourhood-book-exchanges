@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00512'
 ---
 Probably a Saturday, 10 am-1 pm, Magee Secondary School parking lot, outside. Approximate location.  
 Near W. 48th Ave.

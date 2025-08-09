@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00043'
 ---
 Ladybug Community Little Library.
 In Ladybug Community Garden.

@@ -13,6 +13,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00328
 ---
 At the top of the stairs, to the w. of the stairs, climbing up from Great Northern Way.
 From the n., from Foley St., walk w. a few paces and then s. up the long staircase.  

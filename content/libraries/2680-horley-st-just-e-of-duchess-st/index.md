@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00124'
 ---
 3 blocks n. of Kingsway.  1 block w. of Earles St.
 Small.

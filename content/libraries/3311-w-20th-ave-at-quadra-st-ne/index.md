@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00185
 ---
 3 shelves.  Quadra—Blenheim;
  Dunbar—Macdonald St.

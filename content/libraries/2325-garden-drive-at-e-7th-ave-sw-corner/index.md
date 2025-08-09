@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00102'
 ---
 Reported by Craig B. May 2020.
 Later notes by K.D.:  window fixed.

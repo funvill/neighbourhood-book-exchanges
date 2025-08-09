@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00058
 ---
 Venables St.—E. 1st Ave.
 Same bldg: 1870, 1876.

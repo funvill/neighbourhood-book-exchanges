@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00063'
 ---
 Small book exchange just east of Victoria Drive.
 3 big shelves.

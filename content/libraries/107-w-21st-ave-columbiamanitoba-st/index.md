@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00007'
 ---
 Cambie—Main St.
 Curtained front; open back.  Books get wet, 

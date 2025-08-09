@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00352'
 ---
 Or 8816.
 —Added to map by K.D., 2022 12 5.

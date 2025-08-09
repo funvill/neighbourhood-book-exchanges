@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00068
 ---
 Straddling the property line of 1973 E. Broadway and 1985 E. Broadway.
 Close to the ground, with bench. 

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00021'
 ---
 Fraser—Knight St.  
 The address is not 1262, as reported elsewhere.

@@ -11,6 +11,7 @@ tags:
   - orange-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00108
 ---
 Confirmed and address corrected. 
 Indoors, so visit only when building open, 

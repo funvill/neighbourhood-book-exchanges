@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00163'
 ---
 3065 Alberta might be the same property.
 Books might get wet, so please donate each dry book in its own clear plastic bag.

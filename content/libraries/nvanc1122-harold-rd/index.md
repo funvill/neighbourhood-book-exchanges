@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00473'
 ---
 Fromme Rd.—Mt. Highway; n. of Lynn Valley Rd.
 —Added to map by K.D., 2022 11 24.  

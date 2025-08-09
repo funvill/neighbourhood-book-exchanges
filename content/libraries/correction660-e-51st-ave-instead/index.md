@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00388
 ---
 Look n.w. on this map, ~2 blocks, 
 for the red marker on E. 51st Ave., 

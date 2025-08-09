@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00073'
 ---
 Also called 'E. 18th Ave. / Ontario St.'
 Also called 'W. 18th Ave. / Ontario St.'

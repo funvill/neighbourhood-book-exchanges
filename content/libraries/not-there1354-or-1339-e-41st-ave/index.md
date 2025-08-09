@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00465'
 ---
 From another map, but we never saw one anywhere on those 2 blocks..
 Inverness--Culloden St.

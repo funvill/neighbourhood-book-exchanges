@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00339
 ---
 Granville—Oak St.  Big, with benches.
 Marpole Neighbourhood House.  

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00197
 ---
 2 blocks w. of Nanaimo St.
 2 blocks s.e. of John Hendry Park.

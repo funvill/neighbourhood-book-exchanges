@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00155'
 ---
 Little Free Library #88728:  
 'The John Liket Memorial Library'.

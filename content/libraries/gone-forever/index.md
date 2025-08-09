@@ -11,6 +11,7 @@ tags:
   - star-shape
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00390
 ---
 'Olympic Village Little Fibre Library'.
 Books, materials, tools.

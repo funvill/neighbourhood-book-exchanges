@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00046'
 ---
 Burrard—Pine St.;  Arbutus—Granville St.
 For books, puzzles, and seeds.

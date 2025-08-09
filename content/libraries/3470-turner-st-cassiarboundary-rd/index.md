@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00195
 ---
 2 blocks s. of E. Hastings St.
 'Turner Street Little Library and Seed Exchange'.

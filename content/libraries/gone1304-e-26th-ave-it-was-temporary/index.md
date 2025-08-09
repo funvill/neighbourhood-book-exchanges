@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00395
 ---
 —Added to map by K.D., 2022 9 6.  
 Noted gone 2022 9 18.

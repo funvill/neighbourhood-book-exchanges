@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00231'
 ---
 Blanca—Alma St.  By bus stop.
 Next door w. of 4103 W. 10th Ave.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00208
 ---
 Outside of Liberty Bakery in the street.
 At the w. end of the street seating which is blocking vehicle traffic on E. 21st Ave.

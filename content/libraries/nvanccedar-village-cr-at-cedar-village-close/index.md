@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00476'
 ---
 The Shire Little Free Library.
 —Added to map by K.D., 2022 11 24.  

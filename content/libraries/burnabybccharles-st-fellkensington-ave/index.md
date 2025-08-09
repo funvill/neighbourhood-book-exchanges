@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00380
 ---
 ~6200-block.  Around 7 blocks s. of Hastings St.
 From another map.  Not confirmed.

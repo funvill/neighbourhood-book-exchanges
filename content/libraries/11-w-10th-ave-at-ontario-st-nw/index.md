@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00009
 ---
 By '10th Avenue Church' and a bench.
 'The Tiny Library' — yes, ‘tiny’ compared to 

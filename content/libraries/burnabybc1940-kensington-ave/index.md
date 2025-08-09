@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00353'
 ---
 Butcher Gardens Little Library.  Not confirmed.
 Buchanan St.—Parkcrest Dr.

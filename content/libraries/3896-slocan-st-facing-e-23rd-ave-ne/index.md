@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00222'
 ---
 3 blocks e. of Nanaimo St.; s.e. corner of property.
 Kids books only.  For adult books, go across the street to 2730 E. 23rd Ave.

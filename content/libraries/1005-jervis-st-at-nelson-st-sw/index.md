@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00001'
 ---
 Look very hard, as it is hard to see!
 The most humorous one in town!

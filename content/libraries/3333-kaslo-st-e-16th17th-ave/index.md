@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00188
 ---
 4 blocks e. of Nanaimo St.; 
 one block w. of Renfrew St.

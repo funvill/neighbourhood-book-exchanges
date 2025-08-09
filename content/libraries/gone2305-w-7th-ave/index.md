@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00405'
 ---
 No free books inside, but see the boxes outside the building with the red and dark blue markers on this map.
 At Kitsilano Neighbourhood House.

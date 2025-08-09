@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00499
 ---
 Recycle Depot. Free books at Book Exchange. Donate books when the staff are there. 
 Monday–Thursday : 10 am–5 pm., 

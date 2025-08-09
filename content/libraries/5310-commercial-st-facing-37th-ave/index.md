@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00285
 ---
 Reported by Craig B., April 2020.
 Later notes by K.D.:  Several shelves, 2 benches.  

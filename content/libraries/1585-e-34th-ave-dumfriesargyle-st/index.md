@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00038
 ---
 1 1/2 blocks e. of Knight St.
 2 shelves at the top of a hill.

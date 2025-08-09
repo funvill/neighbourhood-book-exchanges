@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00398
 ---
 Nothing visible when I last checked.
 On some maps, but very out-dated, I think.

@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00459
 ---
 Not confirmed. New Westminster, BC.
 In the front garden; kids’ books only; JenArbo@gmail.com ; Little Free Library #54802.

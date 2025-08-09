@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00260'
 ---
 Main—Fraser St.; 3 blocks e. of Main St.
 Small, 1 shelf.

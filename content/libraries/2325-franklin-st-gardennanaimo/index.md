@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00101'
 ---
 ‘Vine Arts Festival Zine Library’; and other literature; 6 doors, triangular shelves.  VineArtsFestival. com 
 In s.e. Pandora Park; 

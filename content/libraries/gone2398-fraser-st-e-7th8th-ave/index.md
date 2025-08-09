@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00407'
 ---
 In Sahalli Park.  Closest house is 2420 Fraser St., 
 a little s. of the park.

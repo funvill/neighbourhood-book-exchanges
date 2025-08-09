@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00167'
 ---
 Eri's Community Closet (free store) — books, clothes, household items, toys, etc.  2 stands.
 Window missing on left door.  It might help to keep them dry by wrapping each book donation in its own clear plastic bag.

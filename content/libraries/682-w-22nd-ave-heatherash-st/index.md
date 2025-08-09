@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00313'
 ---
 Books might get wet, so please donate dry books each in their own clear plastic bags.  
 —Added to map by K.D., 2020.  

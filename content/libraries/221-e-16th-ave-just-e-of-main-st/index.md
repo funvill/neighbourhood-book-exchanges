@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00088
 ---
 Free books on table outside under an awning.  
 Books especially about motorcycles.  

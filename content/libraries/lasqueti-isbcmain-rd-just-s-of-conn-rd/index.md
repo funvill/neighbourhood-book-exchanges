@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00446'
 ---
 Lasqueti Island Free Store & Recycling Depot.
 The Free Store: books, clothing, household objects.

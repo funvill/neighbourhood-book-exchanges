@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00358
 ---
 One block n. of Burnaby General Hospital..
 —Added to map by K.D., 2022 3 1; unconfirmed. Thanks, L.F.V.  

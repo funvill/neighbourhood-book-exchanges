@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00486
 ---
 Little Free Library #48688 moraninthemoon@gmail.com
 —Added to map by K.D., 2025 2 27.

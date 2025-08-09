@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00243'
 ---
 Little Free Library #48354.
 Revised by K.D. 2022 1 15.

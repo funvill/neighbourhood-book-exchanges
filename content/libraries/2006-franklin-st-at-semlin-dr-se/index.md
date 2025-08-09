@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00076'
 ---
 'Hastings-Sunrise Little Library'. 
 One block n. of E. Hastings St.

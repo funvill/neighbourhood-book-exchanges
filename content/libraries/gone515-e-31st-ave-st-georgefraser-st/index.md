@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00424'
 ---
 Maybe it will 'pop-up' again.
 Corrected address: not 531 E. 31st.

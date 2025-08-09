@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00241'
 ---
 N. of SkyTrain (Expo Line).   
 ‘Saint Group of Companies’.

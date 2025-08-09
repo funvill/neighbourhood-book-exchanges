@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00303'
 ---
 Not 6141 Yew.
 Box replaced with a waterproof one. 

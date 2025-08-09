@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00016'
 ---
 5 blocks e. of Fraser St.; Fraser—Knight St.;
 ~3 small shelves.  

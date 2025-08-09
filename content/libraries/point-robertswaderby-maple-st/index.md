@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00483
 ---
 'Maple Beach Park at Derby & Maple' St.
 Name of park not confirmed: might be 

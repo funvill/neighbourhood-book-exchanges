@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00093
 ---
 One shelf.  Macdonald—Arbutus.
 Not 2263 W. 14th.

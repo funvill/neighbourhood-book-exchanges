@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00383
 ---
 Little Free Library #76322; mmcgregor@srd.ca
 —Added to map by K.D., 2025 2 27.

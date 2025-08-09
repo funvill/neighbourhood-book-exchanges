@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00042'
 ---
 East of Cotton Dr., in boulevard.
 —Added to map by K.D., 2021 5 2.

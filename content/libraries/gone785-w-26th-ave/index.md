@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00430'
 ---
 Willow—Heather St.; Oak—Cambie St.
 —Added to map by K.D., 2021 8 6.

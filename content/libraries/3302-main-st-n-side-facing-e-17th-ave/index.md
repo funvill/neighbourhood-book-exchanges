@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00183
 ---
 By sidewalk for outdoor seating for 
 Nikkyu Japanese Restaurant.

@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00444'
 ---
 Free store somewhere near here, but not confirmed lately.
 —Added to map by K.D., 2023 3 3.  

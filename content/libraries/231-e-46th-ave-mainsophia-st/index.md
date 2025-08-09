@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00099
 ---
 Main—Fraser.  A bit of free food as of 2022 2 23.
 —Added to map by K.D., 2021 8 31.  

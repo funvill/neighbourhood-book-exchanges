@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00005'
 ---
 ‘Amicae Co-op Little Library’. 
 Little Free Library #129811.

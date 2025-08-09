@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00077'
 ---
 This sidewalk free-box sometimes has free books, records, magazines, etc.  In front of Audiopile record store, under the awning.  
 The box might not be out on the sidewalk if the store is closed.  The store is open 11 am-7 pm daily.  The store is 2 doors s. of Canterbury Tales Bookstore.  

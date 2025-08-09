@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00123'
 ---
 Not 2620 Victoria, as reported elsewhere.
 —Added to map by K.D., 2020.

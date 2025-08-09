@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00302'
 ---
 Gone? or moved? or just closed temporarily during building reconstruction??
 Second floor, n.w. corner.

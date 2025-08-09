@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00379
 ---
 North segment of Neptune Crescent (not confirmed); e. of Gagliardi Way; 
 n. of Lougheed Hwy.; 

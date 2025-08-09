@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00230'
 ---
 2 shelves.
 Not 55 address.  Across the st. from a little film library at 30 E. 23rd Ave.

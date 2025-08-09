@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00314'
 ---
 Elliott—Kerr St.  
 This book box has front and back doors!

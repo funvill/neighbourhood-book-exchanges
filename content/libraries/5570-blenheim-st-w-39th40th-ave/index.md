@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00292
 ---
 Reported by Craig B. May 2020.
 Later notes by K.D.:  Near the property line with 5590 Blenheim. Dunbar—MacKenzie St.

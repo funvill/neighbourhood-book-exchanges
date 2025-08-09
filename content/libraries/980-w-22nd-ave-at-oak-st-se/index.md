@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00350'
 ---
 On a tree, facing the sidewalk and the house.
 Not 960 W. 22nd.

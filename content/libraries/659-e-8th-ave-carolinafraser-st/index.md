@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00310'
 ---
 Now confirmed; w. of Sahalli Park.  Not 7th Ave.
 'Little Free Library at the Ridgemont' (apartment building).  mr_jason@hotmail.com

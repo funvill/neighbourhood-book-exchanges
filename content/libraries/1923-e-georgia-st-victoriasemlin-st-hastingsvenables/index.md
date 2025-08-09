@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00064'
 ---
 Overlapping a bit onto the lot of 1915 E. Georgia.
 3 big shelves.

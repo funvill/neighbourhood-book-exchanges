@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00461'
 ---
 Not confirmed. New Westminster, BC.
 By bus stop; steward: Allison Taylor McBryde; Little Free Library #7950.  One shelf.

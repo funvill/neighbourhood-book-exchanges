@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00118
 ---
 The one pictured here was in bad condition, so it was removed and then repaired and enlarged or replaced.  It is now back in use.  It is big.
 Nanaimo—Renfrew St.

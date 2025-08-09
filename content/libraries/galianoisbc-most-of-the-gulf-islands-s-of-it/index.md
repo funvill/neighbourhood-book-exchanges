@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00389
 ---
 9 book exchanges here on this island and other islands all the way s. to Victoria, BC.
 Some are free stores with other kinds of items besides book.

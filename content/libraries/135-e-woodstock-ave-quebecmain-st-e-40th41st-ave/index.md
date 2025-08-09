@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00028
 ---
 Linda’s Library, Little Free LIbrary #172352.
 —Added to map by K.D., 2023 9 15. 

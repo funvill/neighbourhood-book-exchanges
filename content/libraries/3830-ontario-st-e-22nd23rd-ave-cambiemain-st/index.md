@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00216'
 ---
 —Added to map by K.D., 2022 10 1. Thanks, K.G.
 

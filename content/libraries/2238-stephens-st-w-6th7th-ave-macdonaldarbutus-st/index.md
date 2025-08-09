@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00092
 ---
 Not a book exchange, but an old small fridge being given away.  It might work as a fridge, but if not, it would make an excellent little library on another site.  There is another similar fridge at 1695 Cedar Cres. at Pine.
 —Added to map by K.D., 2024 9 10. 

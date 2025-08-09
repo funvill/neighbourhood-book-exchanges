@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00423'
 ---
 Dunbar—MacKenzie.  Big; artistic design; with bench. Shelves on front and back.
 —Added to map by K.D., 2021 7 15.  

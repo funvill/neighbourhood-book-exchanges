@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00276'
 ---
 Main—Fraser St.  
 Outside Le Marché St. George.

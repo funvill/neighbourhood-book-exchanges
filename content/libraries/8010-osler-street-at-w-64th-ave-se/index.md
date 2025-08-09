@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00333'
 ---
 Granville—Oak St.  Marpole Baptist Church.
 —Added to map by K.D., 2021 3 1.

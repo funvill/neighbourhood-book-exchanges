@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00017'
 ---
 Big box, 2 shelves.  
 No books inside when I first found it.

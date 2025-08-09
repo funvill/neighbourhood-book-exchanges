@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00245'
 ---
 1 block e. of Dunbar St.  Small box, 2 shelves.
 —Added to map by K.D., 2024 8 29.

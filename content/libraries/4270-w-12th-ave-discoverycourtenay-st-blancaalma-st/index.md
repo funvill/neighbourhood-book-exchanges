@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00240'
 ---
 Confirmed.  Small, 2 shelves.
 The notice in the little library's window is too sun-faded to read.  I left a note 2025 8 6 asking what it says, including my e-address: KorkyDay@yahoo.com

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00081
 ---
 'Cross Buck Park Library', w. of the house at this address.
 2 small silver-painted wooden boxes, 

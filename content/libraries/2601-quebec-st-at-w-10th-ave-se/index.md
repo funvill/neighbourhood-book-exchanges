@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00119
 ---
 'The Federal Store Little Tiny Library'.
 Closer to W. 10th Ave.

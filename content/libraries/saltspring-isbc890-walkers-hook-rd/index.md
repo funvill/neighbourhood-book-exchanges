@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00500'
 ---
 Little Free Library #129154, Mona Donovan.
 Many more in and around BC's capital city and nearby, mapped by a crew there, not the Vancouver mapping crew: 

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00079
 ---
 The box in this photo from long ago has been replaced.  Not at 6th and Trafalgar.
 —Noted by K.D., 2025 1 8.  Thanks, A.Y.

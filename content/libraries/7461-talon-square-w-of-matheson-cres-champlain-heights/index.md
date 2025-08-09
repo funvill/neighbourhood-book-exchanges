@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00323'
 ---
 Turn w. from Matheson Cres.; 
 Arbor--Rumble Ave.

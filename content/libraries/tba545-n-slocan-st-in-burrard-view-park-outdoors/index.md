@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00510'
 ---
 One-day event to be announced, maybe not until 2025 summer.
 Saturday, 11 am - 2 pm.

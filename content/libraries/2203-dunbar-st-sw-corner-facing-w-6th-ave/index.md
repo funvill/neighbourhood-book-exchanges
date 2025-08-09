@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00087
 ---
 Sixth Avenue Branch.  1 bl. e. of Alma St.; s.e. corner of the lane.  Next door to 3622 W. 6th Ave.
 —Additional notes by K.D.

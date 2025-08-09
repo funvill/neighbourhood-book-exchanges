@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00357'
 ---
 By Garden Square Housing Co-op:
 5116 Smith Ave.  Unconfirmed.

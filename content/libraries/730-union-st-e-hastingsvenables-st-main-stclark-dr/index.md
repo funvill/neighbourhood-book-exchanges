@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00320'
 ---
 A free store.  Big, open tables of free items: books, clothes, household items, stationery, toys, etc.  
 In front of co-op housing.  

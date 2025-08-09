@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00117'
 ---
 'Wall Street Little Free Library'.
 At N. Penticton St.; a bit w.of the s.w. corner.

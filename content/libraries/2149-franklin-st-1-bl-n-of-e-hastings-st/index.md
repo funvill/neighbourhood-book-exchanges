@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00085
 ---
 A small 'Giving Box' for books and maybe other small items.  On the front lawn.
 Woodland—Templeton; Victoria—Nanaimo.

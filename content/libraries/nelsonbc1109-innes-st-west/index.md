@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00454'
 ---
 'Little Free Library- West Innes'.
 Easy off-street parking.

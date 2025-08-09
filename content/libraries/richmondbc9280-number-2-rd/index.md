@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00498
 ---
 Not in Vancouver, BC, but it might be hard to find any other way, as it is not on the LFL map.
 Francis—Williams roads.

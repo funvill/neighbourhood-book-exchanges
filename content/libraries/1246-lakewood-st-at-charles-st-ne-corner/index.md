@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00020'
 ---
 A friendly neighbourhood book exchange in this traffic-calmed green space.  Big, 3 shelves.  
 No textbooks.

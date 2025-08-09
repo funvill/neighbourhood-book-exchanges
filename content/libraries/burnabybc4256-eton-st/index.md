@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00361'
 ---
 N. Burnaby.  7 blocks n. of Hastings St.
 6 blocks e. of Boundary Rd.

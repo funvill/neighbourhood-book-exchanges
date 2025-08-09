@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00316'
 ---
 3 blocks s. of E. Hastings St.  Books might get wet inside, so please wrap each dry book you donate in its own clear plastic bag.
 Flatland Community; exchange all kinds of items.  A little free store.

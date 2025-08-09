@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00487
 ---
 At Beach Rd., n.w. 'Rotary Little Free Library', LFL #86064
 —Added to map by K.D., 2025 2 27.

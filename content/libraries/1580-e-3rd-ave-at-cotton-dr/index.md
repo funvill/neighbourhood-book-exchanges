@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00037'
 ---
 East Van Palomita Gallery:
 A cute art gallery that also offers some fibre arts supplies and ?books. https://www.instagram.com/palomita.gallery/

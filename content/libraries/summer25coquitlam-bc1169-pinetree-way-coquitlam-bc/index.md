@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00503'
 ---
 2025 date to be announced.  Probably annual.
 The last one was 2024 Aug. 15, Thur. 1-3 pm.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00031'
 ---
 2 blocks n. of 1st Ave.
 Salsbury & Grant Neighbourhood Book Exchange.

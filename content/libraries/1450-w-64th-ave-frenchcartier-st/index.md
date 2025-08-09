@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00032'
 ---
 In front of historic house museum, which might be closed, but the book box is always open.
 Granville—Oak St.

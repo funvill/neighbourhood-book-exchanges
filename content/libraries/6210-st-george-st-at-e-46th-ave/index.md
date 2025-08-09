@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00306'
 ---
 1 block w. of Fraser St. 
 —Added to map by K.D., 2025 4 16.  Thanks, D.L. 

@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00301'
 ---
 It has been returned!
 This address is that of the closest building, which is just west of this 'Tiny Library'.  

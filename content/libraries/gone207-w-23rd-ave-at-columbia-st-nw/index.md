@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00402'
 ---
 Moved from here to 180 W. 22nd.  With bench.  
 On 2020 Dec. 1, holiday lights on the book box!

@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00471'
 ---
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts.
 —Added to map by K.D., 2022 3 19.

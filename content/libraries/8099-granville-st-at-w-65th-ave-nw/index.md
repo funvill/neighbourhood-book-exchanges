@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00335'
 ---
 In front of Sushi Bar Shu business.
 By 'chART Public Art Marpole'.  

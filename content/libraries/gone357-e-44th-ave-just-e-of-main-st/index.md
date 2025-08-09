@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00416'
 ---
 Will it return?  Construction site.
 Sophia—Pr. Edward St.  No door on top shelf. Books might get wet on that shelf, so please donate each dry book there in its own clear plastic bag.

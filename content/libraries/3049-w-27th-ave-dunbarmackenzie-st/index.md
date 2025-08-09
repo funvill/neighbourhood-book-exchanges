@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00160'
 ---
 Balaclava—Carnarvon St.
 2 shelves, medium-small.

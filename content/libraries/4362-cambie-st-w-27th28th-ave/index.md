@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00247'
 ---
 Unlabeled box.  2 shelves.  Small books only.
 —Added to map by K.D., 2024 6 29.  Thanks, FC.

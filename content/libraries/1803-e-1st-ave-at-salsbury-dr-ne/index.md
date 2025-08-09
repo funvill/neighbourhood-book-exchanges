@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00052'
 ---
 Commercial—Victoria Dr.
 Facing Salsbury Dr.  By Grandview Church.

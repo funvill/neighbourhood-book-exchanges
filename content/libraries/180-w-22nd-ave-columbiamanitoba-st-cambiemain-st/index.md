@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00051'
 ---
 Reported moved from 207 W. 23rd Ave. to here.
 —Added to map by K.D., 2022 10 1. 

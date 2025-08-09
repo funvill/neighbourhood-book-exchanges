@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00414'
 ---
 Temporary free piles on tables.
 —Added to map by K.D., 2022 10 9.  

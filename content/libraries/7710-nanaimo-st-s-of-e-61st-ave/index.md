@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00327'
 ---
 S.w. corner of Bobolink Park;
 Just w. of South Vancouver Family Place.  

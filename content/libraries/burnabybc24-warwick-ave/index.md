@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00355'
 ---
 Free books and food. North Burnaby.
 Almost 2 long blocks n. of Hastings St.

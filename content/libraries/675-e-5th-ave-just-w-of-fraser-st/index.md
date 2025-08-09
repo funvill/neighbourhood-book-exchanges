@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00312'
 ---
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts.
 S.W. corner of Northern Way Housing Co-op.

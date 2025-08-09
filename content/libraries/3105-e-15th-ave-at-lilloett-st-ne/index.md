@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00166'
 ---
 Lillooet—Windemere; Renfrew—Rupert St.
 Large box.  'No pamphlets or religious material.'

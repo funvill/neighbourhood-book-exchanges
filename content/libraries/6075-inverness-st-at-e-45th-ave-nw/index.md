@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00300'
 ---
 Sherbrooke--Culloden St.; Fraser—Knight St.
 'Pilgrim Library' at Pilgrim Church.

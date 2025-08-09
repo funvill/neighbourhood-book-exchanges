@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00397
 ---
 Alibrary is gone.  Let's hope it returns!  
 Or another one.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00136'
 ---
 Just e. of Macdonald St.  2 shelves.
 —Added to map by K.D., 2022 3 12. Thanks, K.G.

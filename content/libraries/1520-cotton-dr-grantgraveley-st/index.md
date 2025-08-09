@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00035'
 ---
 Seems new.  Beautiful wood work.
 —Added to map by K.D., 2021 4 16.

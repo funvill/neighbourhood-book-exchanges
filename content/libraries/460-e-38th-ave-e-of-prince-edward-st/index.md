@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00263'
 ---
 Between Prince Edward St. and 
 Mountain View Cemetery.  Main—Fraser St.

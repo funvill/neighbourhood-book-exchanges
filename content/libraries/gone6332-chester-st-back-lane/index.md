@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00429
 ---
 Long gone or wrong address.
 —Added to map as 'gone' by K.D., 2025 1 8 (so you don't waste your time looking for it unless you find it somewhere else or they put it back).  

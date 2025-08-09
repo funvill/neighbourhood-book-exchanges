@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00048
 ---
 Reported by Craig B., May 2020.
 Later notes by K.D.:  The closest house, e. of the book exchange, is 1740 E. 14th.

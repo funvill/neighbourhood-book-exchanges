@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00225'
 ---
 In Guelph Park.  Small, one shelf.
 Also known as 2390 Brunswick St.  

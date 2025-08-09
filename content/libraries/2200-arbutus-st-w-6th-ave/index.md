@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00086
 ---
 On s.e. corner, outside the eatery, in the boulevard.  5 benches.
 New, waterproof structure (noticed 2022 1) replacing the one pictured above.

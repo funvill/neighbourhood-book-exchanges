@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00271'
 ---
 E. 31st—32nd Ave.; s. of Kingsway.
 Knight St.—Victoria Dr.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00311'
 ---
 Picnic tables. Next to free food pantry. 
  Main—Fraser St.  

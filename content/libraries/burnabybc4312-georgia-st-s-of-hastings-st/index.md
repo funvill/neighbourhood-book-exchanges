@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00364'
 ---
 This book exchange is just 6 blocks over the civic border into Burnaby, BC, not in Vancouver, BC.
 ‘Villa Villekulla’; Little Free LIbrary #120976.

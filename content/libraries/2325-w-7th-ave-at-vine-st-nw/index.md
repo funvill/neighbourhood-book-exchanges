@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00103'
 ---
 Macdonald—Arbutus Streets. Just w. of Vine St.
 Kids books (and maybe a few adult books allowed until the next-door neighbourhood house re-opens with their free bookcase). 

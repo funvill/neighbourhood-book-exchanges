@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00460'
 ---
 Free little library.  Not confirmed.
 —Added to map by K.D., 2025 7 23.

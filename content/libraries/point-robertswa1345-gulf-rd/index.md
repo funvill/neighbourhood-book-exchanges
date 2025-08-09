@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00481
 ---
 1345 Gulf Rd., Salt Water Cafe Little Free Library, Charter #96123.
 —Added to map by K.D., 2023 5 4.  

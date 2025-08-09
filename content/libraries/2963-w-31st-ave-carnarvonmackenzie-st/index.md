@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00149
 ---
 'Four Seguin's Free Library'.
 Dunbar—MacKenzie St.

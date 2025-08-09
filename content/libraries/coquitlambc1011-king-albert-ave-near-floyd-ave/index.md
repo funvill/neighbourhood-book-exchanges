@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00384
 ---
 Blue Mountain Little Free Library.
  'Between 2 benches near the playground.'

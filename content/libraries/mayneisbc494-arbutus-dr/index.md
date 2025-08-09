@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00448
 ---
 'Arbutus Books'.
 Just n.e. of 514 Arbutus Dr.

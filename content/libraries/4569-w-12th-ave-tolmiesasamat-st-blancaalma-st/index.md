@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00261'
 ---
 Address and details confirmed. 
 Little Free Library #91312.  Small, 1 1/2 shelves.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00121'
 ---
 2642 is close, too.  Little Free Library #67275.
 —Added to map by K.D., 2022 12 1. 

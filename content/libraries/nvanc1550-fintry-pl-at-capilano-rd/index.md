@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00474'
 ---
 —Added to map by K.D., 2022 11 24.  
 Many little libraries are on the North Shore (North Vancouver and West Vancouver, BC),

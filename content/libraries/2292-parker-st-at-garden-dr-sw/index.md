@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00095
 ---
 One block w. of Nanaimo St. 
 No textbooks, magazines, or non-books.   

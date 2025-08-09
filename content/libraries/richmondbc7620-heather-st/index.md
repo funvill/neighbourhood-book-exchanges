@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00497
 ---
 Not confirmed.  Not sure where it is in this park.
 Granville Ave.—Blundell Rd.; 

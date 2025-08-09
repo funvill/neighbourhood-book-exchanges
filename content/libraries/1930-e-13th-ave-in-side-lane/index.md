@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00065'
 ---
 East of Boat Day Care in the lane which runs north-south; on the w. edge of the property.
 —Added to map by K.D., 2000.

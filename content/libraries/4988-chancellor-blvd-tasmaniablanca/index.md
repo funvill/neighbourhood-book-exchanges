@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00278
 ---
 4 shelves, by 2 benches.
 —Added to map by K.D., 2021 10 27.  

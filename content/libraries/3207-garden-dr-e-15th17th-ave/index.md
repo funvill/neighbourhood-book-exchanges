@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00176'
 ---
 ‘The Garden House Library’.
 Between John Hendry Park and Nanaimo St.

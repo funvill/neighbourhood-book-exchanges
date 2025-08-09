@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00279
 ---
 Emily Carr The cutest little fibre library cart.
 www.ecuad.ca

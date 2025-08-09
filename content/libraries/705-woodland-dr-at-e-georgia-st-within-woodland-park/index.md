@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00315'
 ---
 A big book exchange with 5 doors, plus open shelves.  In the e. central part of the park, 
 s. of the care-taker's house.

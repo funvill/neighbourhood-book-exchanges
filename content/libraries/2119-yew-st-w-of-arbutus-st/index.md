@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00083
 ---
 W. 5th—6th Ave.  
 Not 2143 Yew, as on another map.

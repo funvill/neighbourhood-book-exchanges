@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00283
 ---
 One block s. of E. Hastings St.; 
 3 blocks w. of Boundary Rd.  Pender—Turner 

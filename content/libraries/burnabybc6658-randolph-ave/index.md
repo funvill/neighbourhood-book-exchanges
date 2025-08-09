@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00373'
 ---
 Just n.w. of Imperial Ave. and Gilley St.
 Randolph Book Exchange.

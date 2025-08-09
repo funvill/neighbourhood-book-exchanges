@@ -10,6 +10,7 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00449
 ---
 'Felix Jack Books'.
 Just w. of the building with that address.

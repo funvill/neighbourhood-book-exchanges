@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00296
 ---
 5874 is on the same lot.  Not 5873.
 Big, with 2 shelves.

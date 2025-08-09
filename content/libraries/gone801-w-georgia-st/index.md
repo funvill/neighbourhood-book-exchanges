@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00431'
 ---
 Little Free Library #71869, Pacific Centre.  
 But according to the photos, it was one block s.e.

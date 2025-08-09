@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00157'
 ---
 The address is not 3036, as noted elsewhere.
 —Added to map by K.D., 2021 6 16.

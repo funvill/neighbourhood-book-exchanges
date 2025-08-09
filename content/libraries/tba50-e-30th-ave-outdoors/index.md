@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00509
 ---
 'Free Swap' run by the city government.
 Next date to be announced.

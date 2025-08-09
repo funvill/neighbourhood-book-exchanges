@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00061'
 ---
 At the w. end of the ramp to the dock which is a block n.w. of the Vancouver Maritime Museum. 
  'W.B. and M.H. Chung Little Library'.

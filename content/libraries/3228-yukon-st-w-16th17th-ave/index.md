@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00178
 ---
 East of Cambie St.
 3224 Yukon might be on the same property, but it's closer to 3228. 

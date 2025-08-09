@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00244'
 ---
 4 blocks e. of Blanca St.
 No textbooks, big dictionaries, encyclopedia, or magazines. Take 1 or 2 at a time.

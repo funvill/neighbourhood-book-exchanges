@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00015'
 ---
 2 blocks w. of Burrard St.
 4 blocks s. of W. Georgia St.

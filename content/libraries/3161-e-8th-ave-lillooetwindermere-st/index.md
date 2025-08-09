@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00170'
 ---
 2 bl. e. of Renfrew St.; no windows.
 The address is not 3155.  I found no address 3165.  Seemingly wrongly noted elsewhere as 3165/3155.

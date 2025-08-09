@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00332'
 ---
 Kinross Library at Kinross Creek Housing Co-op.
  Turn e. from Champlain Cres.

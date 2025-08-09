@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00319
 ---
 2 shelves.
 —Added to map by K.D., 2024 3 30.

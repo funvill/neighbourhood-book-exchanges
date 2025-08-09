@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00255'
 ---
 Confirmed.  One block e. of Fraser St.
 Children's Book Nook and 'Imagination Station': Children's Art Supply Exchange.  Bench.

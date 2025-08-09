@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00142'
 ---
 '38th Ave Book Exchange'.  
 Medium size, 2 shelves.

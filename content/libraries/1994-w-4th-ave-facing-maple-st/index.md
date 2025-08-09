@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00072'
 ---
 Arbutus—Burrard St.  
 By street plaza seating.  2 shelves. 

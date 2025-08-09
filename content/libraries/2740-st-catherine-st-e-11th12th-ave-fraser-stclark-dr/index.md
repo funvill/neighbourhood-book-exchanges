@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00133'
 ---
 ‘Lizzie’s Little Library’; big; 3 shelves.
 —Added to map by K.D., 2024 5 10.

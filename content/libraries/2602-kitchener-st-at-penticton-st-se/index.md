@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00120'
 ---
 Nanaimo—Renfrew streets;
 'East Van Book Exchange'.

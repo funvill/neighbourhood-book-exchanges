@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00074'
 ---
 Big box, 1 shelf.  Ground decorations.
 —Added to map by K.D., 2024 8 30. 

@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00305'
 ---
 This seems to be a permanent small free box on the ground.  
 Wooden, but without roof, so please donate books only with each book in its own clear plastic bag.

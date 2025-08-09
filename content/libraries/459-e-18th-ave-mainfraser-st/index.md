@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00262'
 ---
 Between Prince Edward and St. George Streets.   Books might get wet, so please wrap each dry book you donate in its own clear plastic bag.  
 2 book boxes.  Not 457 or 475.

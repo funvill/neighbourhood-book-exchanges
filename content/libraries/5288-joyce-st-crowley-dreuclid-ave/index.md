@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00284
 ---
 At Collingwood Neighbourhood House.
 Just s. of Joyce SkyTrain Station.

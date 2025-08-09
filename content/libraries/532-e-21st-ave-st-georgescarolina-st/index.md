@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00286
 ---
 Main—Fraser St.  Small, with bench.
 —Added to map by K.D., 2021 7 17.  

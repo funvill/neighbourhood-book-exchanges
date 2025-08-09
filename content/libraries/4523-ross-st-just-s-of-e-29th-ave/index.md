@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00258
 ---
 'Ross Street Library'.  Elgin—Inverness St.
 Fraser—Knight St.

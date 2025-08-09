@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00304'
 ---
 Elm—Balsam St.; Macdonald—W. Blvd.
 —Added to map by K.D., 2021 9 25.  Thanks, K.G.  

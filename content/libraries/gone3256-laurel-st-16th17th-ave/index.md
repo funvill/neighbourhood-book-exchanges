@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00413'
 ---
 It was temporary.  3258 Laurel is on same lot.
 Just e. of Oak St.

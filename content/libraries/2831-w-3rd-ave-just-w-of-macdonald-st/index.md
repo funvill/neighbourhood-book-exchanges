@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00139
 ---
 Little Pink Book Exchange.
 With chair.  In honour of Leah and Carl Lehan who loved both books and Kitsilano.  

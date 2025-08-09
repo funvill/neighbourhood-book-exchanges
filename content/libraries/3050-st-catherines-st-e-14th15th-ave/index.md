@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00162'
 ---
 Near 3020 St. Catherines St.
  2 bl. e. of Fraser St.

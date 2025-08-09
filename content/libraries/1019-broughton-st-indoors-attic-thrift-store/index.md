@@ -8,6 +8,7 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00002'
 ---
 M-F 10 am-3 pm (as of 2022 10 29); 
 closed on statutory holidays.

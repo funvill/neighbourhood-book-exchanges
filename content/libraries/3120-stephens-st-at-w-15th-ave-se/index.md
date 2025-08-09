@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00168
 ---
 Macdonald—Arbutus St.  
 Small box on a former utility pole.  One chair.

@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00480
 ---
 ‘Little Plant & Seed Library’.
 Officially registered as Little Free Library #139377, though it is not for books.

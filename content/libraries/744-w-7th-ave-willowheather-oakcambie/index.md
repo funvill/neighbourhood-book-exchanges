@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00322'
 ---
 ‘Fairview Fairy & Gnome Kids Library’.
 Little Free Library #145591.

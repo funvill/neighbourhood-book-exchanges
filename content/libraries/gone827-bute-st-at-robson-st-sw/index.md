@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00432'
 ---
 The area has a lot of road wrork where the box was.  Maybe it will be put back later.  
 

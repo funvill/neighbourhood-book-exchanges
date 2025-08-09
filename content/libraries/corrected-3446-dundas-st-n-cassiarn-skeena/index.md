@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00386
 ---
 Freeway—Boundary Rd., 
 4 blocks n. of E. Hastings St.

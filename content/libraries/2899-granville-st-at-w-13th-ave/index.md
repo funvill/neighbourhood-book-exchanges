@@ -11,6 +11,7 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00145'
 ---
 NEW LOCATION, POSSIBLY TEMPORARY because of construction:
 2899 Granville St. at W. 13th Ave.

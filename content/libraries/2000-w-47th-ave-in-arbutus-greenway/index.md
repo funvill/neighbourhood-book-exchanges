@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00075'
 ---
 Between W. Boulevard and E. Boulevard at ~2000-block W. 47th Ave., on the e. edge of the
  'Arbutus Greenway', where the trains went.

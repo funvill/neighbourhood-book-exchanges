@@ -11,6 +11,7 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00105'
 ---
 Big boxes of toys added 2024 12 24.
 Free store.  One door w. of free book exchange.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00054'
 ---
 Small box.
 —Added to map by K.D., 2023 7 26.  

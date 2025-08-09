@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00326'
 ---
 Oak—Cambie Streets.  3 shelves.  
 Not 711 or 717. 

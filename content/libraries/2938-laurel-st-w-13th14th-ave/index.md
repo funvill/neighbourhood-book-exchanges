@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00147'
 ---
 1 block e. of Oak St.  Small with 2 shelves.  
 St. Mary Magdalene Anglican Church.

@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00453'
 ---
 On Broadway they had a free box.  
 Their new store at 3328 Fraser St. had no free box when last checked. 

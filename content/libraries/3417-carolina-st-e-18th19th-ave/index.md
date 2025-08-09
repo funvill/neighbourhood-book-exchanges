@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00193
 ---
 One block w. of Fraser St.
 The address does not appear to be 3423 or 3427, which were reported for this book exchange elsewhere.  

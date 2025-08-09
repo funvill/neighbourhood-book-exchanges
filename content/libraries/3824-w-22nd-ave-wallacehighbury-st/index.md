@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00215'
 ---
 'Good Mornin Book Exchange'.
 Small, 2 shelves.

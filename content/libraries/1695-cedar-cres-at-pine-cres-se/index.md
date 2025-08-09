@@ -11,6 +11,7 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00045'
 ---
 Not a book exchange, but an old small fridge being given away. It might work as a fridge, but if not, it would make an excellent little library on another site. 
 Just e. of Granville St., just s. of W. 16th Ave.

@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00412'
 ---
 Was a temporary box of free items.
 —Added to map by K.D., 2024 5 10.

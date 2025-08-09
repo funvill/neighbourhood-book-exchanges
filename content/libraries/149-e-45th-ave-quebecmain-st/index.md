@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00033'
 ---
 Cambie—Main St.  
 I added some washed cloth masks.

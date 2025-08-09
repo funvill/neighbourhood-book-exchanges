@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00174'
 ---
 Medium size.  2 shelves.
 —Added to map by K.D., 2025 1 8.  Thanks, A.Y.

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00012'
 ---
 Denman—Burrard St.;  W. Hastings—Pacific St.
 On foot-path just w. of this address.  Enter that path 3 m w. of picket gate on Pendrell St.  

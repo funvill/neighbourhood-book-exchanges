@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00235'
 ---
 E. 26th—27th Ave.; in the s.-central part of the park between the playground and the garden.
 Picnic table.  'Kingcrest Book Exchange'.

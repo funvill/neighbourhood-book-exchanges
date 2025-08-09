@@ -11,6 +11,7 @@ tags:
   - yellow-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00491
 ---
 Free bags gone.  Building demolished.  
 Will give-aways continue after construction?

@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00226'
 ---
 Facing W. 20th.  Virginia's Little in memory of Grandmother Virginia. 
  Small, 1 shelf.  Little Free Library #191575.

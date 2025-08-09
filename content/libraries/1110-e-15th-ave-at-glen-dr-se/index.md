@@ -11,6 +11,7 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00011'
 ---
 Reported by Craig B., May 2020.
 Notes by K.D.:  Fraser—Knight St.; on property line with 1126.

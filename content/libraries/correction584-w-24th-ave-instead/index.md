@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00387
 ---
 Look 3 blocks east.
 —K.D., 2021 4~.

@@ -11,6 +11,7 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
+library_id: '00437'
 ---
 It is gone, I'm sad to say.  They were the largest known book exchange in Vancouver.
  https://www. facebook. com/ SecondAvenueFreeLibrary (delete spaces)
