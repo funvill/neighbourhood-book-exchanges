@@ -1,0 +1,7 @@
+{
+    "name": "neighbourhood-book-exchanges",
+    "compatibility_date": "2025-08-09",
+    "assets": {
+      "directory": "./.output/public"
+    }
+  }

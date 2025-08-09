@@ -10,7 +10,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "start": "nuxt preview",
-    "test": "echo 'No tests specified yet' && exit 0"
+    "test": "echo 'No tests specified yet' && exit 0",
+    "deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "@nuxt/content": "^2.13.2",
