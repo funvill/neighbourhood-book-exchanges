@@ -21,22 +21,19 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function queryContent(path?: string): any
 
 // Define library interface to match API response
 interface Library {
-  id: number
   slug: string
   title: string
   description: string
   tags?: string[]
   photo: string
-  location: {
-    lat: number
-    lng: number
-    address?: string
-  }
-  lastModified: string
+  location: { lat: number; lng: number; address?: string }
   _path: string
+  updated?: string
 }
 
 const featuredLibraries = ref<Library[]>([])
@@ -44,17 +41,23 @@ const featuredLibraries = ref<Library[]>([])
 // Fetch and sort libraries by most recent updates
 onMounted(async () => {
   try {
-    const libraries = await $fetch('/api/libraries') as Library[]
-    
-    // Sort by lastModified date (most recent first) and take top 3
-    const sortedLibraries = libraries
-      .sort((a, b) => new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime())
-      .slice(0, 3)
-    
-    featuredLibraries.value = sortedLibraries
-  } catch (error) {
-    console.error('Error loading featured libraries:', error)
-    // Fallback to empty array which will show the "No Featured Libraries" message
+  const docs = await queryContent('/libraries').where({ _extension: 'md' }).find()
+    const mapped: Library[] = docs.map((d: any) => ({
+      slug: d._path.replace(/^\/libraries\//, ''),
+      title: d.title || d._path,
+      description: (d.body?.children?.find((c: any) => c.tag === 'p')?.children || []).map((c: any) => c.value || '').join(' ').substring(0,160) + '…',
+      tags: d.tags || [],
+      photo: d.photo || '/images/libraries/placeholder-library.jpg',
+      location: d.location || { lat: 49.2827, lng: -123.1207 },
+      _path: d._path,
+      updated: d.updated
+    }))
+    // Sort by updated (fallback to title)
+    featuredLibraries.value = mapped
+      .sort((a, b) => new Date(b.updated || 0).getTime() - new Date(a.updated || 0).getTime())
+      .slice(0,3)
+  } catch (e) {
+    console.error('Error loading featured libraries:', e)
     featuredLibraries.value = []
   }
 })

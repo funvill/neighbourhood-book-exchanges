@@ -3,14 +3,14 @@
     <div class="md-card h-full hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 flex flex-col">
       <!-- Library Image -->
       <a :href="getLibraryUrl()" class="block aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg overflow-hidden relative">
-        <NuxtImg
+        <!-- Use regular img for all images in static build -->
+        <img
           :src="getImageSrc()"
           :alt="library.title"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
           @error="handleImageError"
         />
-        
       </a>
 
       <!-- Library Details -->
@@ -114,6 +114,23 @@ const getImageSrc = () => {
     return props.library.photo
   }
   return '/images/libraries/placeholder-library.jpg'
+}
+
+const isPlaceholderImage = () => {
+  const photo = props.library.photo
+  if (!photo) return true
+  if (photo === '/images/libraries/placeholder-library.jpg') return true
+  // Also check if it ends with the placeholder filename (in case of absolute URLs)
+  if (photo.endsWith('placeholder-library.jpg')) return true
+  // Debug logging for the first few images
+  if (Math.random() < 0.05) { // Log ~5% of images
+    console.log('LibraryCard photo check:', { 
+      photo, 
+      isPlaceholder: photo === '/images/libraries/placeholder-library.jpg' || photo.endsWith('placeholder-library.jpg'),
+      libraryTitle: props.library.title 
+    })
+  }
+  return false
 }
 
 const handleImageError = (event: string | Event) => {

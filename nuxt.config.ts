@@ -1,11 +1,36 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import fs from 'node:fs'
+import path from 'node:path'
+
+// Collect library slugs at build time so their pages & API endpoints are prerendered for static hosting
+const librariesDir = path.resolve('content', 'libraries')
+let librarySlugs: string[] = []
+try {
+  librarySlugs = fs.readdirSync(librariesDir)
+    .filter(name => {
+      try {
+        return fs.statSync(path.join(librariesDir, name)).isDirectory() && fs.existsSync(path.join(librariesDir, name, 'index.md'))
+      } catch { return false }
+    })
+} catch {
+  // directory might not exist yet during certain build phases; ignore
+  librarySlugs = []
+}
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  // Removed debug:true to avoid duplicate console.time label warnings in Node output
 
   nitro: {
-    prerender: {      
-    },
+    prerender: {
+      routes: [
+        // Dynamic library detail pages
+        ...librarySlugs.map(slug => `/library/${slug}`)
+      ],
+      // Continue generating even if some routes fail
+      failOnError: true
+    }
   },
 
   modules: [
@@ -14,6 +39,20 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/tailwindcss'
   ],
+
+  // Image optimization configuration
+  image: {
+    // The quality should be a number between 0 and 100
+    quality: 80,
+    // Image formats
+    format: ['webp', 'jpg'],
+    // Reduce image processing for development and static builds
+    provider: 'ipx',
+    ipx: {
+      // Reduce concurrent processing to avoid repeated requests
+      maxAge: 60 * 60 * 24 * 7, // 7 days cache
+    }
+  },
 
   // Custom theme with Material Design principles
   css: [
