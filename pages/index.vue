@@ -13,7 +13,7 @@
           </div>
           
           <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-            Welcome to<br>Neighbourhood book exchanges
+            Welcome to<br>Neighbourhood Little Libraries
           </h1>
           
           <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -27,7 +27,7 @@
               <span class="material-symbols-outlined" style="font-size:20px;">map</span>
               Explore Libraries
             </a>
-            <a href="/logbook/new" class="md-button border border-white/30 hover:bg-white/10 backdrop-blur-sm flex items-center gap-1" style="background:transparent;color:white;">
+            <a href="#todo?/logbook/new" class="md-button border border-white/30 hover:bg-white/10 backdrop-blur-sm flex items-center gap-1" style="background:transparent;color:white;">
               <span class="material-symbols-outlined" style="font-size:20px;">edit</span>
               Share Your Discovery
             </a>
@@ -154,9 +154,9 @@
             <span class="material-symbols-outlined" style="font-size:20px;">map</span>
             Start Exploring Now
           </a>
-          <a href="/library/new" class="md-button border border-white/30 hover:bg-white/10 flex items-center gap-1" style="background:transparent;color:white;">
-            <span class="material-symbols-outlined" style="font-size:20px;">add</span>
-            Add Your Library
+          <a href="/library/log" class="md-button border border-white/30 hover:bg-white/10 flex items-center gap-1" style="background:transparent;color:white;">
+            <span class="material-symbols-outlined" style="font-size:20px;">edit_note</span>
+            Add Logbook Entry
           </a>
         </div>
       </div>

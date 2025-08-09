@@ -11,8 +11,6 @@
           @error="handleImageError"
         />
         
-        <!-- Difficulty Badge (optional) -->
-        <!-- Removed difficulty badge as difficulty field is no longer used -->
       </a>
 
       <!-- Library Details -->

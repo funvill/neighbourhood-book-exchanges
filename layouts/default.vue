@@ -2,9 +2,9 @@
   <div class="min-h-screen flex flex-col bg-gray-50">
     <!-- App Bar -->
     <header class="bg-purple-600 text-white px-6 py-4 flex items-center justify-between w-full shadow-lg sticky top-0 z-50 border-b-4 border-purple-800">
-      <div class="flex items-center">
-        <span class="material-symbols-outlined mr-2">menu_book</span>
-        <span class="font-bold text-lg">Neighbourhood book exchanges</span>
+      <div class="flex items-center">        
+        <NuxtLink to="/"><img src="/logo.svg" alt="Neighbourhood book exchanges logo" class="h-12 w-12 mr-2"></NuxtLink>
+        <span class="font-bold text-4xl">Neighbourhood Little Libraries</span>        
       </div>
       <form class="flex items-center gap-2" @submit.prevent="handleSearch">
         <input

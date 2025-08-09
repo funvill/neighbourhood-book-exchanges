@@ -247,7 +247,7 @@ async function importKML() {
     const placemarks = parseKML(kmlContent);
     console.log(`Found ${placemarks.length} placemarks`);
     
-    const contentDir = path.join(__dirname, '..', 'content');
+    const contentDir = path.join(__dirname, '..', 'content', 'libraries');
     let imported = 0;
     const stats = {
       active: 0,

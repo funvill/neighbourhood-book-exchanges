@@ -37,6 +37,7 @@ npm run preview
 ### Notes
 
 - Convert all the images to png, and resize them
+- This project is made to be built as a static webpage, then served by Cloudflare R2.
 
 ### Directory / Files
 
@@ -44,8 +45,8 @@ npm run preview
 content/
 └── your-library-name/
     ├── index.md
-    └── logbook/
-    |   ├── (logbook entries will go here YYY-MMM-DD-HHMMSS.md)
+    ├── logbook/
+    │   ├── (logbook entries will go here YYY-MMM-DD-HHMMSS.md)
     ├── photos/
         └── (photos from logbook entries will go here YYY-MMM-DD-HHMMSS.png)
 ```

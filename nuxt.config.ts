@@ -4,9 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   nitro: {
-    prerender: {
-      routes: ["/library/1005-jervis-st-at-nelson-st-sw", "library/1023-pacific-st-thurlowburrard-st"],
-      ignore: ["/dynamic"],
+    prerender: {      
     },
   },
 

@@ -125,7 +125,7 @@
               <!-- Actions -->
               <div class="space-y-3">
                 <NuxtLink
-                  :to="`/logbook/new?library=${librarySlug}`"
+                  :to="`#todo?/logbook/new?library=${librarySlug}`"
                   class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
                 >
                   <span class="material-symbols-outlined" style="font-size:18px;">edit</span>
@@ -178,9 +178,6 @@ interface Library {
   title: string
   description: string
   fullContent?: string // Add full content property
-  difficulty?: string
-  entries_count?: number
-  established?: string
   location: LibraryLocation
   photo: string
   tags?: string[]

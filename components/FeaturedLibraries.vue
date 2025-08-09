@@ -11,10 +11,10 @@
   <div v-else class="text-center py-12 text-gray-500">
     <span class="material-symbols-outlined text-6xl mx-auto mb-4">local_library</span>
     <h3 class="text-lg font-semibold mb-2">No Featured Libraries Yet</h3>
-    <p class="mb-4">Be the first to add a library to our community!</p>
-    <a href="/library/new" class="md-button" style="background: var(--md-primary); color: var(--md-on-primary);">
-      <span class="material-symbols-outlined align-middle mr-1">add</span>
-      Add First Library
+    <p class="mb-4">Be the first to explore our community libraries!</p>
+    <a href="/search" class="md-button" style="background: var(--md-primary); color: var(--md-on-primary);">
+      <span class="material-symbols-outlined align-middle mr-1">map</span>
+      Explore Libraries
     </a>
   </div>
 </template>
@@ -28,7 +28,6 @@ interface Library {
   slug: string
   title: string
   description: string
-  difficulty?: string
   tags?: string[]
   photo: string
   location: {
@@ -36,7 +35,6 @@ interface Library {
     lng: number
     address?: string
   }
-  established?: string
   lastModified: string
   _path: string
 }

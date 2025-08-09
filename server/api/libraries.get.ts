@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 
 export default defineEventHandler(async (_event) => {
   try {
-    const contentDir = path.join(process.cwd(), 'content')
+    const contentDir = path.join(process.cwd(), 'content', 'libraries')
     const directories = fs.readdirSync(contentDir, { withFileTypes: true })
       .filter(dirent => dirent.isDirectory())
       .map(dirent => dirent.name)

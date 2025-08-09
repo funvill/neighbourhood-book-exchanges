@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
       })
     }
 
-    const contentDir = path.join(process.cwd(), 'content')
+    const contentDir = path.join(process.cwd(), 'content', 'libraries')
     const indexPath = path.join(contentDir, slug, 'index.md')
     
     if (!fs.existsSync(indexPath)) {
