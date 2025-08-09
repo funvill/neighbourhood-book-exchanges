@@ -13,7 +13,7 @@
           </div>
           
           <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-            Welcome to<br>Neighbourhood book exchanges
+            Welcome to<br>Neighbourhood Little Libraries
           </h1>
           
           <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -27,7 +27,7 @@
               <span class="material-symbols-outlined" style="font-size:20px;">map</span>
               Explore Libraries
             </a>
-            <a href="/logbook/new" class="md-button border border-white/30 hover:bg-white/10 backdrop-blur-sm flex items-center gap-1" style="background:transparent;color:white;">
+            <a href="#todo?/logbook/new" class="md-button border border-white/30 hover:bg-white/10 backdrop-blur-sm flex items-center gap-1" style="background:transparent;color:white;">
               <span class="material-symbols-outlined" style="font-size:20px;">edit</span>
               Share Your Discovery
             </a>
@@ -154,9 +154,9 @@
             <span class="material-symbols-outlined" style="font-size:20px;">map</span>
             Start Exploring Now
           </a>
-          <a href="/library/new" class="md-button border border-white/30 hover:bg-white/10 flex items-center gap-1" style="background:transparent;color:white;">
-            <span class="material-symbols-outlined" style="font-size:20px;">add</span>
-            Add Your Library
+          <a href="/library/log" class="md-button border border-white/30 hover:bg-white/10 flex items-center gap-1" style="background:transparent;color:white;">
+            <span class="material-symbols-outlined" style="font-size:20px;">edit_note</span>
+            Add Logbook Entry
           </a>
         </div>
       </div>
@@ -165,7 +165,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch, nextTick } from 'vue'
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function useLibraries(): { data: { value: any[] | null }; pending: any }
 
 // Define library interface to match API response
 interface Library {
@@ -182,73 +184,82 @@ interface Library {
   tags?: string[]
 }
 
-// Reactive data for libraries
+// Data
+const { data: libSummaries, pending: libsPending } = useLibraries()
 const allLibraries = ref<Library[]>([])
+// Stats must be declared before the watcher that references it (immediate watcher runs synchronously)
+const stats = ref({
+  libraries: 0,
+  logbookEntries: 0
+})
 
-onMounted(async () => {
-  // Fetch all libraries from API
-  try {
-    const libraries = await fetch('/api/libraries').then(res => res.json()) as Library[]
-    allLibraries.value = libraries
-  } catch (error) {
-    console.error('Error loading libraries for map:', error)
-    // Fallback to empty array - map will still load without markers
-    allLibraries.value = []
-  }
+watch(() => libSummaries.value, async (vals: any[] | null) => {
+  if (!vals || !Array.isArray(vals)) return
+  allLibraries.value = vals.map((v: any, idx: number) => ({
+    id: idx + 1,
+    slug: v.slug,
+    title: v.title,
+    location: v.location || { lat: 49.2827, lng: -123.1207 },
+    description: v.description,
+    photo: v.photo,
+    tags: v.tags
+  }))
+  // Update stats when data arrives
+  stats.value.libraries = allLibraries.value.length
+  stats.value.logbookEntries = allLibraries.value.length
+  await nextTick()
+  ensureMap()
+}, { immediate: true })
 
-  // Load Leaflet CSS/JS from CDN if not already loaded
-  if (!window.L) {
+function ensureMap() {
+  if (typeof window === 'undefined') return
+  if (!document.getElementById('library-map')) return
+  if (!(window as any).L) {
+    // Load assets then init
     const leafletCss = document.createElement('link')
     leafletCss.rel = 'stylesheet'
     leafletCss.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
     document.head.appendChild(leafletCss)
-
     const leafletScript = document.createElement('script')
     leafletScript.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
-    leafletScript.onload = initMap
+    leafletScript.onload = () => initMap()
     document.body.appendChild(leafletScript)
   } else {
     initMap()
   }
+}
 
-  function initMap() {
-    // Center map on Vancouver with appropriate zoom to show all libraries
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const map = (window as any).L.map('library-map').setView([49.27, -123.13], 10);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map)
-
-    // Add markers for all libraries
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const markers: any[] = []
-    allLibraries.value.forEach(library => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const marker = (window as any).L.marker([library.location.lat, library.location.lng])
-        .addTo(map)
-        .bindPopup(`
-          <div class="p-2">
-            <h4 class="font-semibold">${library.title}</h4>
-            <p class="text-sm text-gray-600">${library.description}</p>
-            <a href="/library/${library.slug}" class="text-blue-600 hover:underline">View Details</a>
-          </div>
-        `)
-      markers.push(marker)
-    })
-
-    // Fit map bounds to show all markers if we have libraries
-    if (markers.length > 0) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const group = (window as any).L.featureGroup(markers)
-      map.fitBounds(group.getBounds().pad(0.05))
-    }
+function initMap() {
+  if (!(window as any).L) return
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const L = (window as any).L
+  const mapEl = document.getElementById('library-map')
+  if (!mapEl) return
+  if ((mapEl as any)._initialized) return
+  const map = L.map('library-map').setView([49.27, -123.13], 10)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map)
+  const markers: any[] = []
+  allLibraries.value.forEach(library => {
+    const marker = L.marker([library.location.lat, library.location.lng])
+      .addTo(map)
+      .bindPopup(`
+        <div class="p-2">
+          <h4 class="font-semibold">${library.title}</h4>
+          <p class="text-sm text-gray-600">${library.description}</p>
+          <a href="/library/${library.slug}" class="text-blue-600 hover:underline">View Details</a>
+        </div>
+      `)
+    markers.push(marker)
+  })
+  if (markers.length > 0) {
+    const group = L.featureGroup(markers)
+    map.fitBounds(group.getBounds().pad(0.05))
   }
-})
+  ;(mapEl as any)._initialized = true
+}
 
-// Enhanced stats data with actual imported library count
-const stats = ref({
-  libraries: 540, // 537 imported + 3 original libraries
-  logbookEntries: 540 // Approximate count of logbook entries (one per library for now)
-})
+// Enhanced stats data with actual imported library count (already declared above)
+
+// Populate stats from content (approximate; logbook counting could be added later)
+onMounted(() => ensureMap())
 </script>

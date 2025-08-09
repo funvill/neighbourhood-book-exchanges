@@ -61,8 +61,8 @@
               </div>
 
               <!-- Content Body -->
-              <div v-if="libraryContent" class="prose max-w-none">
-                <div v-html="formatMarkdownContent(libraryContent)" />
+              <div v-if="doc" class="prose max-w-none">
+                <ContentRenderer :value="doc" />
               </div>
               <div v-else-if="library.description" class="prose max-w-none">
                 <p class="text-gray-700 leading-relaxed">{{ library.description }}</p>
@@ -125,7 +125,7 @@
               <!-- Actions -->
               <div class="space-y-3">
                 <NuxtLink
-                  :to="`/logbook/new?library=${librarySlug}`"
+                  :to="`#todo?/logbook/new?library=${librarySlug}`"
                   class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
                 >
                   <span class="material-symbols-outlined" style="font-size:18px;">edit</span>
@@ -173,54 +173,122 @@ interface LibraryLocation {
 }
 
 interface Library {
-  id: number
   slug: string
   title: string
   description: string
-  fullContent?: string // Add full content property
-  difficulty?: string
-  entries_count?: number
-  established?: string
+  fullContent?: any
   location: LibraryLocation
   photo: string
   tags?: string[]
-  _path?: string
+  entries_count?: number
+  established?: string | number
 }
+
+import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
+// Nuxt auto-imports useRoute, useHead, queryContent, useAsyncData at runtime.
+// Provide minimal TS fallbacks (ignored if types present).
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function queryContent(path?: string): any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function useAsyncData<T>(key: string, handler: () => Promise<T>): { data: { value: T | null }; pending: any }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function useHead(input: any): void
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function useRoute(): any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function $fetch<T=any>(url: string): Promise<T>
 
 const route = useRoute()
 const librarySlug = route.params.id as string
 
-// Create reactive data
-const library = ref<Library | null>(null)
-const libraryContent = ref<any>(null)
-const pending = ref(true)
-const map = ref<any>(null)
-
-// Load library data from API
-const loadLibraryData = async () => {
-  try {
-    pending.value = true
-    // Fetch specific library data including full content
-    const libraryData = await $fetch(`/api/libraries/${librarySlug}`) as Library
-    
-    if (libraryData) {
-      library.value = libraryData
-      // The full content is now included in the API response
-      libraryContent.value = libraryData.fullContent
-    } else {
-      // Library not found
-      library.value = null
-      libraryContent.value = null
-      console.warn(`Library with slug "${librarySlug}" not found`)
+const { data: doc, pending } = useAsyncData<any>(`library:${librarySlug}`, async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const qc: any = (typeof queryContent === 'function') ? queryContent : null
+  let d = qc ? await qc(`/libraries/${librarySlug}`).findOne() : null
+  if (!d) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const g: any = globalThis as any
+    if (g.__LIB_CACHE__) {
+      const cached = g.__LIB_CACHE__.find((c: any) => c.slug === librarySlug)
+      if (cached) {
+        if (!g.__LIBRARY_DETAIL_CACHE_LOGGED__) {
+          console.log('[library page] Using global cache for detail page (one-time notice).')
+          g.__LIBRARY_DETAIL_CACHE_LOGGED__ = true
+        }
+        d = {
+          _path: cached._path,
+          title: cached.title,
+          location: cached.location,
+          photo: cached.photo,
+          tags: cached.tags,
+          established: cached.established,
+          body: { type: 'root', children: [{ type: 'element', tag: 'p', children: [{ type: 'text', value: cached.description }] }] }
+        }
+      }
     }
-  } catch (error) {
-    console.error('Error loading library data:', error)
-    library.value = null
-    libraryContent.value = null
-  } finally {
-    pending.value = false
   }
-}
+  if (!d) {
+    // Final API fallback
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const g: any = globalThis as any
+    if (!g.__LIBRARY_DETAIL_API_FALLBACK_LOGGED__) {
+      console.log('[library page] Falling back to /api/libraries/:slug (one-time notice).')
+      g.__LIBRARY_DETAIL_API_FALLBACK_LOGGED__ = true
+    }
+    try {
+      const api = await $fetch(`/api/libraries/${librarySlug}`)
+      if (api && api.body) {
+        d = {
+          _path: `/libraries/${librarySlug}`,
+          title: api.title || librarySlug,
+          location: api.location,
+          photo: api.photo,
+          tags: api.tags,
+          established: api.established,
+          body: { type: 'root', children: api.body.split(/\n\n+/).map((p: string) => ({ type: 'element', tag: 'p', children: [{ type: 'text', value: p }] })) }
+        }
+      }
+    } catch (e) {
+      console.error('[library page] API fallback failed', e)
+    }
+  }
+  if (!d) console.warn('[library page] No content found after fallbacks for', librarySlug)
+  return d
+})
+
+const library = computed(() => {
+  if (!doc.value) return null
+  const body = doc.value.body
+  const description = (() => {
+    try {
+      const stack: any[] = body?.children ? [...body.children] : []
+      while (stack.length) {
+        const n = stack.shift()
+        if (n.type === 'element' && n.tag === 'p') {
+          const t = (n.children || []).map((c: any) => c.value || '').join(' ').trim()
+          if (t) return t.substring(0, 200) + (t.length > 200 ? '…' : '')
+        }
+        if (n.children) stack.push(...n.children)
+      }
+    } catch { /* ignore */ }
+    return ''
+  })()
+  const l: Library = {
+    slug: librarySlug,
+    title: doc.value.title || librarySlug,
+    location: doc.value.location || { lat: 49.2827, lng: -123.1207 },
+    photo: doc.value.photo || '/images/libraries/placeholder-library.jpg',
+    description,
+    tags: doc.value.tags || [],
+    entries_count: 0,
+    fullContent: doc.value.body,
+    established: doc.value.established
+  }
+  return l
+})
+
+const libraryContent = computed(() => doc.value?.body || null)
+const map = ref<any>(null)
 
 const initializeLibraryMap = async () => {
   if (typeof window !== 'undefined' && library.value?.location) {
@@ -262,8 +330,6 @@ const initializeLibraryMap = async () => {
 
 // Load data on mount
 onMounted(async () => {
-  await loadLibraryData()
-  
   if (library.value?.location) {
     await nextTick()
     await initializeLibraryMap()
@@ -297,21 +363,7 @@ useHead({
   ]
 })
 
-// Simple markdown to HTML converter for basic formatting
-function formatMarkdownContent(content: string): string {
-  return content
-    .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold mt-6 mb-4">$1</h3>')
-    .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-semibold mt-8 mb-6">$1</h2>')
-    .replace(/^# (.*$)/gm, '<h1 class="text-3xl font-bold mt-10 mb-8">$1</h1>')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>')
-    .replace(/(^|[^"])(https?:\/\/[^\s<>"]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$2</a>')
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/^\* (.*)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>)/gs, '<ul class="list-disc pl-6 mb-4">$1</ul>')
-    .replace(/^(?!<[hul]|$)(.*$)/gm, '<p class="mb-4">$1</p>')
-    .replace(/\n\n/g, '\n')
-}
+// formatMarkdownContent no longer needed; ContentRenderer handles rendering
 </script>
 
 <style>

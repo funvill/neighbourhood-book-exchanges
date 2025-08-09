@@ -15,11 +15,11 @@
             A community-driven project connecting puzzle enthusiasts and library lovers worldwide.
           </p>
           <div class="flex space-x-4">
-            <a href="/library/new" class="md-button flex items-center gap-1" style="background: var(--md-primary); color: var(--md-on-primary);">
+            <a href="#todo" class="md-button flex items-center gap-1" style="background: var(--md-primary); color: var(--md-on-primary);">
               <span class="material-symbols-outlined" style="font-size:18px;">add</span>
               Add Library
             </a>
-            <a href="/logbook/new" class="md-button flex items-center gap-1" style="background: var(--md-primary-container); color: var(--md-on-primary-container);">
+            <a href="#todo" class="md-button flex items-center gap-1" style="background: var(--md-primary-container); color: var(--md-on-primary-container);">
               <span class="material-symbols-outlined" style="font-size:18px;">edit</span>
               Share Discovery
             </a>
@@ -50,7 +50,7 @@
             </li>
             <li>
               <NuxtLink 
-                to="/logbook/new" 
+                to="#todo?/logbook/new" 
                 class="text-blue-100 hover:text-white transition-colors flex items-center group"
               >
                 <span class="material-symbols-outlined mr-2 group-hover:translate-x-1 transition-transform" style="font-size:16px;">edit</span>

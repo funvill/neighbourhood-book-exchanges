@@ -6,12 +6,10 @@
         <div class="flex-shrink-0">
           <NuxtLink to="/" class="text-decoration-none group">
             <div class="flex items-center space-x-3">
-              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span class="material-symbols-outlined text-white" style="font-size:24px;">extension</span>
-              </div>
+              <NuxtImg src="/logo.svg" alt="Neighbourhood book exchanges logo" class="w-10 h-10 object-contain" />
               <div>
                 <h1 class="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                  Neighbourhood book exchanges
+                  Neighbourhood Little Libraries
                 </h1>
                 <p class="text-xs text-gray-500 mt-0.5">Community Library Adventures</p>
               </div>
@@ -25,9 +23,9 @@
             <span class="material-symbols-outlined" style="font-size:20px;">map</span>
             Explore
           </a>
-          <a href="/library/new" class="md-button text-gray-600 hover:text-blue-600 flex items-center gap-1 bg-transparent shadow-none">
-            <span class="material-symbols-outlined" style="font-size:20px;">local_library</span>
-            Add Library
+          <a href="/library/log" class="md-button text-gray-600 hover:text-blue-600 flex items-center gap-1 bg-transparent shadow-none">
+            <span class="material-symbols-outlined" style="font-size:20px;">edit_note</span>
+            Add Logbook Entry
           </a>
         </nav>
 
@@ -50,7 +48,7 @@
 
         <!-- Action Buttons -->
         <div class="flex items-center space-x-2">
-          <a href="/logbook/new" class="md-button shadow-md hover:shadow-lg transition-shadow flex items-center gap-1">
+          <a href="#todo?/logbook/new" class="md-button shadow-md hover:shadow-lg transition-shadow flex items-center gap-1">
             <span class="material-symbols-outlined" style="font-size:20px;">edit</span>
             <span class="hidden sm:inline">Log Entry</span>
           </a>
@@ -68,9 +66,9 @@
             <span class="material-symbols-outlined" style="font-size:20px;">map</span>
             Explore Libraries
           </a>
-          <a href="/library/new" class="md-button justify-start flex items-center gap-1" @click="closeMobileMenu">
-            <span class="material-symbols-outlined" style="font-size:20px;">local_library</span>
-            Add New Library
+          <a href="/library/log" class="md-button justify-start flex items-center gap-1" @click="closeMobileMenu">
+            <span class="material-symbols-outlined" style="font-size:20px;">edit_note</span>
+            Add Logbook Entry
           </a>
         </div>
       </div>

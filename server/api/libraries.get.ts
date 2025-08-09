@@ -1,54 +1,31 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import matter from 'gray-matter'
 
-export default defineEventHandler(async (_event) => {
-  try {
-    const contentDir = path.join(process.cwd(), 'content')
-    const directories = fs.readdirSync(contentDir, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name)
-
-    const libraries = []
-
-    for (const dir of directories) {
-      const indexPath = path.join(contentDir, dir, 'index.md')
-      if (fs.existsSync(indexPath)) {
-        try {
-          const fileContent = fs.readFileSync(indexPath, 'utf-8')
-          const { data, content } = matter(fileContent)
-          const stats = fs.statSync(indexPath)
-          
-          // Count logbook entries dynamically
-          const logbookDir = path.join(contentDir, dir, 'logbook')
-          let logbookCount = 0
-          if (fs.existsSync(logbookDir)) {
-            const logbookFiles = fs.readdirSync(logbookDir).filter(file => file.endsWith('.md'))
-            logbookCount = logbookFiles.length
-          }
-          
-          libraries.push({
-            id: libraries.length + 1,
-            slug: dir,
-            title: data.title || 'Untitled Library',
-            location: data.location || { lat: 49.2827, lng: -123.1207, address: 'Unknown' },
-            photo: data.photo || '/images/libraries/placeholder-library.jpg',
-            description: content.split('\n').slice(0, 3).join(' ').substring(0, 200) + '...',
-            tags: data.tags || [],
-            established: data.established || 'unknown',
-            entries_count: logbookCount, // Use dynamic count instead of frontmatter
-            _path: `/${dir}`,
-            lastModified: stats.mtime.toISOString()
-          })
-        } catch (error) {
-          console.warn(`Error processing ${dir}:`, error)
-        }
+export default defineEventHandler(() => {
+  const contentDir = path.join(process.cwd(), 'content', 'libraries')
+  if (!fs.existsSync(contentDir)) return []
+  const directories = fs.readdirSync(contentDir, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name)
+  return directories.map((dir, idx) => {
+    const indexPath = path.join(contentDir, dir, 'index.md')
+    if (!fs.existsSync(indexPath)) return null
+    try {
+      const raw = fs.readFileSync(indexPath, 'utf8')
+      const { data, content } = matter(raw)
+      const first = content.split('\n').filter(l => l.trim() && !l.startsWith('#'))[0] || ''
+      return {
+        id: idx + 1,
+        slug: dir,
+        title: data.title || dir,
+        location: data.location,
+        photo: data.photo || '/images/libraries/placeholder-library.jpg',
+        tags: data.tags || [],
+        description: first.length > 200 ? first.slice(0,200) + '…' : first,
+        established: data.established,
+        _path: `/libraries/${dir}`
       }
-    }
-
-    return libraries
-  } catch (error) {
-    console.error('Error fetching libraries:', error)
-    return []
-  }
+    } catch { return null }
+  }).filter(Boolean)
 })

@@ -84,7 +84,7 @@
 
     <!-- No Results -->
     <div v-else-if="hasSearched" class="text-center py-12">
-      <UIcon name="i-heroicons-map" class="w-16 h-16 text-gray-400 mx-auto mb-4" />
+  <span class="material-symbols-outlined text-gray-400 mx-auto mb-4 block" style="font-size:64px;">map</span>
       <h3 class="text-xl font-semibold text-gray-900 mb-2">No libraries found</h3>
       <p class="text-gray-600 mb-4">Try adjusting your search criteria or browse all libraries.</p>
       <button 
@@ -98,21 +98,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function queryContent(path?: string): any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function useLibraries(): { data: any; pending: any }
 
 // Define library interface
 interface Library {
-  id: number
   slug: string
   title: string
-  location: {
-    lat: number
-    lng: number
-    address?: string
-  }
+  location: { lat: number; lng: number; address?: string }
   description: string
   photo?: string
   tags?: string[]
+  id?: number
 }
 
 // Props
@@ -140,7 +140,26 @@ const markers: any[] = []
 const allLibraries = ref<Library[]>([])
 const searchResults = ref<Library[]>([])
 
-// Load library data
+const { data: libSummaries } = useLibraries()
+
+// Initialize data from summaries if available
+watch(libSummaries, (vals: any[]) => {
+  if (vals && vals.length) {
+    allLibraries.value = vals.map((v: any, idx: number) => ({
+      id: idx + 1,
+      slug: v.slug,
+      title: v.title,
+      location: v.location || { lat: 49.2827, lng: -123.1207 },
+      description: v.description,
+      photo: v.photo,
+      tags: v.tags || []
+    }))
+    searchResults.value = [...allLibraries.value]
+    nextTick(() => initializeMap())
+  }
+}, { immediate: true })
+
+// Load library data (fallback direct content query)
 onMounted(async () => {
   // Initialize search query from prop (URL parameter is passed from parent)
   if (props.initialSearchQuery) {
@@ -148,58 +167,27 @@ onMounted(async () => {
   }
 
   try {
-    // Fetch from our custom API using fetch instead of $fetch for client-side
-    const response = await fetch('/api/libraries')
-    const libraries = await response.json() as Library[]
-    if (libraries && Array.isArray(libraries)) {
-      allLibraries.value = libraries
-      searchResults.value = [...libraries]
-      
-      // If we have initial search query, perform initial search
-      if (searchQuery.value) {
-        hasSearched.value = true
-        performSearch()
-      }
-      
-      // Initialize map after data is loaded, regardless of search state
-      nextTick(() => {
-        initializeMap()
-      })
+    if (allLibraries.value.length === 0) {
+      const docs = await queryContent('/libraries').where({ _extension: 'md' }).find()
+      const mapped: Library[] = docs.map((d: any, idx: number) => ({
+        id: idx + 1,
+        slug: d._path.replace(/^\/libraries\//, ''),
+        title: d.title || d._path,
+        location: d.location || { lat: 49.2827, lng: -123.1207 },
+        photo: d.photo || '/images/libraries/placeholder-library.jpg',
+        description: (d.body?.children?.find((c: any) => c.tag === 'p')?.children || []).map((c: any) => c.value || '').join(' ').substring(0,200) + '…',
+        tags: d.tags || []
+      }))
+      allLibraries.value = mapped
+      searchResults.value = [...mapped]
     }
-  } catch (error) {
-    console.warn('Could not fetch libraries from API, using fallback data', error)
-    console.warn('Could not fetch libraries from API, using fallback data')
-    // Fallback to original mock data if API fails
-    allLibraries.value = [
-      {
-        id: 1,
-        slug: 'downtown-central-library',
-        title: 'Downtown Central Library',
-        location: { lat: 49.2827, lng: -123.1207 },
-        photo: '/images/libraries/downtown-central-library/2024-01-15-exterior-1.jpg',
-        description: 'A cozy little library in the heart of downtown with mystery zines.',
-        tags: ['Mystery', 'Community']
-      },
-      {
-        id: 2,
-        slug: 'sunset-park-reading-nook',
-        title: 'Sunset Park Reading Nook',
-        location: { lat: 49.2634, lng: -123.1456 },
-        photo: '/images/libraries/sunset-park-reading-nook/2024-02-03-family-reading-1.jpg',
-        description: 'Family-friendly library with children\'s books and adventure stories.',
-        tags: ['Children', 'Adventure']
-      },
-      {
-        id: 3,
-        slug: 'university-district-hub',
-        title: 'University District Hub',
-        location: { lat: 49.2606, lng: -123.2460 },
-        photo: '/images/libraries/university-district-hub/2024-03-10-study-session-1.jpg',
-        description: 'Academic-focused library with science and philosophy zines.',
-        tags: ['Science', 'Philosophy']
-      }
-    ]
-    searchResults.value = [...allLibraries.value]
+    if (searchQuery.value) {
+      hasSearched.value = true
+      performSearch()
+    }
+    nextTick(() => initializeMap())
+  } catch (e) {
+    console.error('Failed to load libraries from content', e)
   }
   
   // Initialize map after data is loaded
@@ -289,6 +277,14 @@ const initializeMap = () => {
   if (typeof window !== 'undefined') {
     // Dynamically import Leaflet to avoid SSR issues
     import('leaflet').then((L) => {
+      // Fix Leaflet icon paths
+      delete L.Icon.Default.prototype._getIconUrl
+      L.Icon.Default.mergeOptions({
+        iconRetinaUrl: '/images/marker-icon-2x.png',
+        iconUrl: '/images/marker-icon.png',
+        shadowUrl: '/images/marker-shadow.png'
+      })
+
       // Initialize map
       map = L.map('map').setView([49.2827, -123.1207], 11)
       

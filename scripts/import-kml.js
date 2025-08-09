@@ -144,13 +144,9 @@ location:
 tags:
 ${tags.map(tag => `  - "${tag}"`).join('\n')}
 photo: "/images/libraries/placeholder-library.jpg"
-established: "unknown"
-difficulty: "beginner"
 entries_count: 1
 import_source: "vancouver-little-libraries-kml"
 import_date: "2024-08-08"
-original_style: "${library.styleUrl}"
-original_coordinates: "${library.originalCoordinates}"
 ---
 
 # ${library.title}
@@ -202,14 +198,8 @@ function createLogbookEntry(library) {
 
   return `---
 date: 2024-08-08
-author: "System Import"
-library: ${library.slug}
 import: true
 source: "Neighbourhood book exchanges 2025.8.6"
-difficulty: unknown
-solved: false
-time_spent: "N/A"
-collaboration: false
 tags:
   - import
   - kml-data
@@ -257,7 +247,7 @@ async function importKML() {
     const placemarks = parseKML(kmlContent);
     console.log(`Found ${placemarks.length} placemarks`);
     
-    const contentDir = path.join(__dirname, '..', 'content');
+    const contentDir = path.join(__dirname, '..', 'content', 'libraries');
     let imported = 0;
     const stats = {
       active: 0,
