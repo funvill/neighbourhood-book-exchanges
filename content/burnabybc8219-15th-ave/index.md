@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.9239277,49.227491,0'
 ---
 Little Free Library #30788.  
 Shelley Stevenson  shelley.s@shaw.ca

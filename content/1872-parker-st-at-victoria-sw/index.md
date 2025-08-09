@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0660341,49.2756522,0'
 ---
 Venables St.—E. 1st Ave.
 Same bldg: 1870, 1876.

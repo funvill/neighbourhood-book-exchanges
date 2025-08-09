@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1261358,49.2507352,0'
 ---
 'Douglas Park Free Little Library'.
 1 1/2 blocks s.w. of Douglas Park.  2 shelves.

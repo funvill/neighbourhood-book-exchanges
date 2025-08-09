@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-EE9C96-labelson
-original_coordinates: '-123.1618666,49.2383291,0'
 ---
 Medium large book cabinet.  
 Now with additional cabinet for food and hygiene.  No longer other items.

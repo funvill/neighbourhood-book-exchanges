@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1503304,49.2678772,0'
 ---
 Arbutus—Burrard St.  
 By street plaza seating.  2 shelves. 

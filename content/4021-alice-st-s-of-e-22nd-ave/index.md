@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0658965,49.2492766,0'
 ---
 ‘Lieven's Free Library’.  N. of Brewers Park.
 Books might get wet through the front, so please donate each dry book in its own clear plastic bag. 

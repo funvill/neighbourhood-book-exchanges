@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0447336,49.2183041,0'
 ---
 Elliott—Kerr St.; 3 blocks w. of Kerr St.
 Medium large, 2 shelves.

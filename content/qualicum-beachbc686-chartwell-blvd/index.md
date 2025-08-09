@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-124.3934696,49.3470816,0'
 ---
 Just s. of Is. Hwy.; n. of airport; Little Free Library #114263
 —Added to map by K.D., 2025 2 27.

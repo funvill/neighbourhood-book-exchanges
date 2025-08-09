@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-FF8277-labelson
-original_coordinates: '-123.1389997,49.2599052,0'
 ---
 NEW LOCATION, POSSIBLY TEMPORARY because of construction:
 2899 Granville St. at W. 13th Ave.

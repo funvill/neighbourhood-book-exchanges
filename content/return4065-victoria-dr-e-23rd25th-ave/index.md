@@ -11,9 +11,6 @@ tags:
   - yellow-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-F4EB37-labelson
-original_coordinates: '-123.0652319,49.2488371,0'
 ---
 Free bags gone.  Building demolished.  
 Will give-aways continue after construction?

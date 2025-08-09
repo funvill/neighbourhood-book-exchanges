@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-EE9C96-labelson
-original_coordinates: '-123.1342185,49.2070262,0'
 ---
 'chART Public Art Marpole'.
 Little Free Library #13509.  Designed by chART in collaboration with Marpole Place Neighbourhood House and Marpole Family Place.  July 22, 2018.

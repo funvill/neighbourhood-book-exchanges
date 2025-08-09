@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.8566489,49.2593014,0'
 ---
 Please tell me if you know more precisely where  this book exchange is on the trail: 
 KorkyDay @ yahoo. com

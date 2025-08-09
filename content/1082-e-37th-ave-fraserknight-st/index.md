@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0830023,49.2363956,0'
 ---
 Elgin—Ross St.
 Erin Creak's.  Little Free Library #118506.

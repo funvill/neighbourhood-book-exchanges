@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0624757,49.2522421,0'
 ---
 'In memory of Bob Mercer' (my friend).
 A big library with covered benches.

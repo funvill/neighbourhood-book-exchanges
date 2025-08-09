@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0871539,49.2791769,0'
 ---
 E. of 700-block Keefer.  Main St.—Clark Dr.  
 2 blocks s. of E. Hastings St.  

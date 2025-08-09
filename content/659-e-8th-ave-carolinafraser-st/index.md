@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-EE9C96-labelson
-original_coordinates: '-123.0898638,49.2635132,0'
 ---
 Now confirmed; w. of Sahalli Park.  Not 7th Ave.
 'Little Free Library at the Ridgemont' (apartment building).  mr_jason@hotmail.com

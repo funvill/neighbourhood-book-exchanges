@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0656939,49.2605793,0'
 ---
 Not 2620 Victoria, as reported elsewhere.
 —Added to map by K.D., 2020.

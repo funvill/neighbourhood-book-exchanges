@@ -179,16 +179,6 @@ const libraryOptions = ref([
 
 const surveyQuestions = ref([
   {
-    id: 'difficulty',
-    title: 'How would you rate the puzzle difficulty?',
-    options: [
-      { value: 'easy', label: 'Easy', popular: false },
-      { value: 'medium', label: 'Medium', popular: true },
-      { value: 'hard', label: 'Hard', popular: false },
-      { value: 'expert', label: 'Expert', popular: false }
-    ]
-  },
-  {
     id: 'type',
     title: 'What type of puzzles did you find?',
     options: [

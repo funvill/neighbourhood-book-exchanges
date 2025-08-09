@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1318965,49.2849729,0'
 ---
 Look very hard, as it is hard to see!
 The most humorous one in town!

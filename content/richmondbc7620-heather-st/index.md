@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.1215347,49.1576446,0'
 ---
 Not confirmed.  Not sure where it is in this park.
 Granville Ave.—Blundell Rd.; 

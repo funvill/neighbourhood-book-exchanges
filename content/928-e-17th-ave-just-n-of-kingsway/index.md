@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0848256,49.2553922,0'
 ---
 Small book exchange, tall with one shelf.
 Between St. Catherines and Windsor Streets. Fraser—Knight.  'Book Exchange'.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0503662,49.2209775,0'
 ---
 Elliott—Kerr St.  
 This book box has front and back doors!

@@ -13,9 +13,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.0407276,49.2799301,0'
 ---
 The next one here is to be announced.
 Check the list in the left column for other locations, which have green markers.  (I'm adding them.)

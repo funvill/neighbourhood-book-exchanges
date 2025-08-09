@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-123.0976063,49.2575464,0'
 ---
 2 blocks s. of Kingsway.  Main—Fraser St.
 Called 'Prince Edward Renters Collective (PERC) 

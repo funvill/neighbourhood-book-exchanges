@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0890921,49.2577432,0'
 ---
 Was a temporary box of free items.
 —Added to map by K.D., 2024 5 10.

@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-120.0303455,50.7310884,0'
 ---
 By Pinantan Lake General Store, Pinantan Lake, BC.
 E. of city of Kamloops, BC.  2 shelves.

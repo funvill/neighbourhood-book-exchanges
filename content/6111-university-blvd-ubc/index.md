@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-EE9C96-labelson
-original_coordinates: '-123.2479719,49.2661619,0'
 ---
 It has been returned!
 This address is that of the closest building, which is just west of this 'Tiny Library'.  

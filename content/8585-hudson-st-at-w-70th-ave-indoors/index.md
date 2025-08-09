@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-F4B400-labelson
-original_coordinates: '-123.1348394,49.2088868,0'
 ---
 Marpole Little FIBRE Library.
 Inside Marpole Neighbourhood House for fibre arts materials and ?books.

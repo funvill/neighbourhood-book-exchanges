@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.178757,49.2468501,0'
 ---
 Medium size, 2 shelves.
 —Added to map by K.D., 2025 6 24.

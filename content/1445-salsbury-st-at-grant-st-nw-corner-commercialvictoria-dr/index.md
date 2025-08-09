@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0678338,49.2713258,0'
 ---
 2 blocks n. of 1st Ave.
 Salsbury & Grant Neighbourhood Book Exchange.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0261643,49.2519851,0'
 ---
 2 blocks w. of Boundary Rd.
 2 blocks n. of E. 22nd Ave.

@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-FF8277-labelson
-original_coordinates: '-123.0905791,49.2662622,0'
 ---
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts.
 S.W. corner of Northern Way Housing Co-op.

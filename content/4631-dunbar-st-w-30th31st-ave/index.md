@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1853987,49.2448921,0'
 ---
 Its door is damaged.  Maybe donate each book in its own clear plastic bag.
 —Added to map by K.D., 2024 5 25.

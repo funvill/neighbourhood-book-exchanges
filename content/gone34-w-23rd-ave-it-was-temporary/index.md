@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1058004,49.2498716,0'
 ---
 Temporary free piles on tables.
 —Added to map by K.D., 2022 10 9.  

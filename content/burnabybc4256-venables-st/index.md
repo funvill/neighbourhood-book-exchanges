@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.0094786,49.2764425,0'
 ---
 Re-opened; noted 2022 4 11.
 N. Burnaby;  'Hummingbird Little Library'. 

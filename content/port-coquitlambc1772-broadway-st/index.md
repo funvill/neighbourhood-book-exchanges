@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.7607707,49.248403,0'
 ---
 #111-1772 Broadway St. (or #110?)
 Mon-Fri, 8 am-3 pm.

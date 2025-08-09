@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-123.1007972,49.2517569,0'
 ---
 Shelves for books, etc, possibly temporary.
  Community fridge. 

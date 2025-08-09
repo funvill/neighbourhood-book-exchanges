@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1039851,49.2499902,0'
 ---
 2 shelves.
 Not 55 address.  Across the st. from a little film library at 30 E. 23rd Ave.

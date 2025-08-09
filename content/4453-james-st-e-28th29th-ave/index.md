@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1040105,49.2452395,0'
 ---
 2 blocks w. of Main St.
 Medium big, 3 shelves.

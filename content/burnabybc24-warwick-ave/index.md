@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.9779795,49.2836956,0'
 ---
 Free books and food. North Burnaby.
 Almost 2 long blocks n. of Hastings St.

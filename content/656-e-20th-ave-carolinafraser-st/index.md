@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0909632,49.2527518,0'
 ---
 Kids books.  Small, one shelf.
 —Added to map by K.D., 2025 1 8.  Thanks, A.Y.

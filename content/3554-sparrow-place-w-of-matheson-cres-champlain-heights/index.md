@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0264913,49.2131052,0'
 ---
 Rumble Ave.—Champlain Cres.
 Matheson Heights Housing Co-op.  

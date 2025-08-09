@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0693819,49.2671211,0'
 ---
 Nothing visible when I last checked.
 On some maps, but very out-dated, I think.

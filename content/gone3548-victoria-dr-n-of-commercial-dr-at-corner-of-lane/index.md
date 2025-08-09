@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0660035,49.2535993,0'
 ---
 Was a box of free books on the ground.
 1/2 bl. s. of E. 19th Ave.

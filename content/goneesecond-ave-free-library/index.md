@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0531192,49.2684136,0'
 ---
 It is gone, I'm sad to say.  They were the largest known book exchange in Vancouver.
  https://www. facebook. com/ SecondAvenueFreeLibrary (delete spaces)

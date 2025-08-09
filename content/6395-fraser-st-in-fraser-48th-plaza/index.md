@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0913171,49.2265067,0'
 ---
 Not confirmed.  On E. 48th Avenue, s. side, 
 near 6403 E. 48th Ave.

@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.3094902,48.8339934,0'
 ---
 'East of the Sun, West of the Moon, Little Free Library'.
 Mayne Island is s.w. of Vancouver in the Gulf Islands.

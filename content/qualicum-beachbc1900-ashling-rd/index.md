@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-124.5725503,49.3176312,0'
 ---
 Little Free Library #48688 moraninthemoon@gmail.com
 —Added to map by K.D., 2025 2 27.

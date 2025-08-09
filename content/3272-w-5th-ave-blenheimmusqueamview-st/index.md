@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1770141,49.2675765,0'
 ---
 Dunbar—Macdonald St.
 Musqueamview is the new name for Trutch St.

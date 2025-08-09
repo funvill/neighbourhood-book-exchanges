@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0959353,49.2641937,0'
 ---
 An art exchange curated by Cheryl Cheeks.
 Read more about the exchange:

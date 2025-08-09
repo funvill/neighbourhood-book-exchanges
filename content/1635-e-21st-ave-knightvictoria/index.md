@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.071184,49.251679,0'
 ---
 ‘Book Depot’; also toys.
 Maybe second biggest in Vancouver.

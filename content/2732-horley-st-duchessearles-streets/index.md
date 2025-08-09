@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0489458,49.2405175,0'
 ---
 Norquay Seed Library (and books).
 2 shelves.  In front of 

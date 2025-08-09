@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.042103,49.3264835,0'
 ---
 The Shire Little Free Library.
 —Added to map by K.D., 2022 11 24.  

@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.1048682,49.2431252,0'
 ---
 'Free Swap' run by the city government.
 Next date to be announced.

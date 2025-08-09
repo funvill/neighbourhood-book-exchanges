@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1076876,49.2465981,0'
 ---
 One bl. n.w. of Peveril and W. 28th Ave.
 ~1 block w. of Ontario St.; Cambie—Main St.

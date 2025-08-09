@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1780414,49.2424283,0'
 ---
 'Public book shelf'.
 At the lane, e. of Blenheim and 33rd.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0779227,49.2577493,0'
 ---
 The address 1286 is on same property.
 'Kids Library'.  'Kids books' and adult's.  

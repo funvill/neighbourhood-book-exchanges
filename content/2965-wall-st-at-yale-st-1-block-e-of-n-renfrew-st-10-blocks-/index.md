@@ -13,9 +13,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0433408,49.2907861,0'
 ---
 North of the western edge of Hastings Park 
 (the PNE).

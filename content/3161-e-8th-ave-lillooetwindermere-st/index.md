@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0375266,49.2630038,0'
 ---
 2 bl. e. of Renfrew St.; no windows.
 The address is not 3155.  I found no address 3165.  Seemingly wrongly noted elsewhere as 3165/3155.

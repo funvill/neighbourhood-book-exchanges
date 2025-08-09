@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1311331,49.2625895,0'
 ---
 Temporary free pile on lawn.  
 —Added to map by K.D., 2023 8 16.  

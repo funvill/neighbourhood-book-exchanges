@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0562601,49.2821349,0'
 ---
 Notes by K.D.:  Bottom doors don't close so well, so maybe put books there each in its own clear plastic bag.
 

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1504949,49.2617132,0'
 ---
 Arbutus—Burrard St.  3 shelves.
 —Added to map by K.D., 2023 3 24.  

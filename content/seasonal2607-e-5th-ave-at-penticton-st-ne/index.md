@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.0519508,49.2658002,0'
 ---
 Fall to spring: books.
 Spring to fall: seeds and plants.

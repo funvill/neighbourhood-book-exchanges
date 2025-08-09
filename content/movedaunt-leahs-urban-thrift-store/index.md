@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1013628,49.2630361,0'
 ---
 On Broadway they had a free box.  
 Their new store at 3328 Fraser St. had no free box when last checked. 

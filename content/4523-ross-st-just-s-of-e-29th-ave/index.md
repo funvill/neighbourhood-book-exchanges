@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0815194,49.2441845,0'
 ---
 'Ross Street Library'.  Elgin—Inverness St.
 Fraser—Knight St.

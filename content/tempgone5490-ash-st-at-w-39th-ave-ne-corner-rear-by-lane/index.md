@@ -11,9 +11,6 @@ tags:
   - yellow-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-F4EB37-labelson
-original_coordinates: '-123.11722,49.2355073,0'
 ---
 Probably won't re-open unless more people volunteer to keep it tidy, because the public kept making a mess of it..   (If you want to volunteer, contact them or c/o KorkyDay@yahoo.com)
 Just w. of Cambie St.

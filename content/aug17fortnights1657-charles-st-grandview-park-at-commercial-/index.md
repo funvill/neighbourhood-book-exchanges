@@ -13,9 +13,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.070059,49.2734966,0'
 ---
 Is this event still going??
 'The Vancouver Free Market'.

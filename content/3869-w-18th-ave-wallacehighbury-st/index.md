@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-FF8277-labelson
-original_coordinates: '-123.1899098,49.2566266,0'
 ---
 'Dunbar Fibre Library'. #littlefreefibrelibrary,  Follow for contents & social plans!  @kpwerker. 
 Free fibre, tools, and related books.  

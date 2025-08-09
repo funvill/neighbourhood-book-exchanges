@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1891608,49.2443847,0'
 ---
 1 1/2 blocks w. of Dunbar St.  
 —Added to map by K.D., 2020.  

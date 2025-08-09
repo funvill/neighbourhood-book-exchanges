@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1644767,49.2675045,0'
 ---
 The box in this photo from long ago has been replaced.  Not at 6th and Trafalgar.
 —Noted by K.D., 2025 1 8.  Thanks, A.Y.

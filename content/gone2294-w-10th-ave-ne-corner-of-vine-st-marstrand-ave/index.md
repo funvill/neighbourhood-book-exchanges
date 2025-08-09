@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1575784,49.2625266,0'
 ---
 Little Free Library #69912.  Feb 15, 2019.
 Notes added by K.D.: One block s. of 10th Ave.'  

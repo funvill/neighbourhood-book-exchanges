@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.8994525,49.2266363,0'
 ---
 Not confirmed. New Westminster, BC.
 In the front garden; kids’ books only; JenArbo@gmail.com ; Little Free Library #54802.

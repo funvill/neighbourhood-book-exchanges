@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.8289485,49.1167615,0'
 ---
 Not confirmed.  Not on official LFL map.
 Just s. of 62-B Ave.

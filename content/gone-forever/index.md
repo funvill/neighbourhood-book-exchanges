@@ -11,9 +11,6 @@ tags:
   - star-shape
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-C6A4CF-labelson
-original_coordinates: '-123.1035307,49.2712131,0'
 ---
 'Olympic Village Little Fibre Library'.
 Books, materials, tools.

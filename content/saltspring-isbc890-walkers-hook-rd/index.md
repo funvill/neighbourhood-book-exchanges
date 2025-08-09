@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.5231117,48.9096597,0'
 ---
 Little Free Library #129154, Mona Donovan.
 Many more in and around BC's capital city and nearby, mapped by a crew there, not the Vancouver mapping crew: 

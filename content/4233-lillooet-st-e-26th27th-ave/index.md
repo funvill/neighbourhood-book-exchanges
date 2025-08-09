@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0392375,49.246715,0'
 ---
 At lane s. of 26th; 2 bl. w. of Rupert St.; 
 around 7 bl. e. of Nanaimo St.

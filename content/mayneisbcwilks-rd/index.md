@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.2649895,48.8543798,0'
 ---
 'Wilks Road Book Exchange'.
 Either this spelling of Wilks is wrong or Google is wrong, which says 'Wilkes'.

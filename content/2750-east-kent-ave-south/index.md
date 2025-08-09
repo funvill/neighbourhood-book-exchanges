@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0504469,49.2059178,0'
 ---
 Little Free Library #146779.
 Between the tennis courts on the w. and the utility yard on the e.  The address is the official address of Riverfront Park.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1984986,49.2617497,0'
 ---
 4 blocks w. of Alma St.  
 The book box smells new 2021.

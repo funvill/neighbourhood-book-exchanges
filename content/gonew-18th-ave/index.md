@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1904697,49.2566166,0'
 ---
 —Added to map by K.D., 2020.  
 Book box removed 2020 or 2021.  Noted 2021.

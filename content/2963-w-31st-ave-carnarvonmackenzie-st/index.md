@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1718365,49.2443217,0'
 ---
 'Four Seguin's Free Library'.
 Dunbar—MacKenzie St.

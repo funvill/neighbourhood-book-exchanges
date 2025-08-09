@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.1636003,49.1361299,0'
 ---
 ‘Lassam Road Little Free Children's Library’ Williams Rd.—Steveston Hwy.;
  Railway Ave.—No. 2 Rd.; 

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0643775,49.2624309,0'
 ---
 Straddling the property line of 1973 E. Broadway and 1985 E. Broadway.
 Close to the ground, with bench. 

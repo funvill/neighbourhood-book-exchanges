@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0574311,49.2677809,0'
 ---
 The address is not 2323, as noted elsewhere.
 —Added to map by K.D., 2021 6 16.

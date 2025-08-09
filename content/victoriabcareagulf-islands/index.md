@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.2736547,48.4976836,0'
 ---
 885 more book exchanges are on another map, in and around Victoria and the Gulf Islands!
 That other map is provided by another crew there, not by us, the Vancouver mapping crew.  

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0471207,49.2547765,0'
 ---
 4 blocks e. of Nanaimo St.; 
 one block w. of Renfrew St.

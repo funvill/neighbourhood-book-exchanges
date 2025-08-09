@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1678816,49.2533183,0'
 ---
 Was a temporary free box.  It recurs occasionally with various free things, but not usually books.
 At the e. side of the property at the back lane on Macdonald St.

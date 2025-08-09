@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.0716751,49.2703237,0'
 ---
 Temporary.  3 books in a cardboard box.  
 Nice hard-covers with maps.

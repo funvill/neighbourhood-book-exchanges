@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-F4B400-labelson
-original_coordinates: '-123.1573455,49.2331299,0'
 ---
 Seniors Centre hours (as of 2022 10 29).
 M/F 9 am-6 pm; Sa 9 am-4 pm.

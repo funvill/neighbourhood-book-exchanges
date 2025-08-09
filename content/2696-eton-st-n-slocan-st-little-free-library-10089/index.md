@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0494392,49.2875079,0'
 ---
 Built with a community grant from the Hastings Community Partners Group.
 Notes by K.D.:  2696 Eton St. (e. side of house); 

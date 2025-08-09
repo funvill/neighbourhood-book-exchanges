@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-117.3028544,49.4831113,0'
 ---
 Christine’s Little Free Library #137146.
 —Added to map by K.D., 2024 4 19. 

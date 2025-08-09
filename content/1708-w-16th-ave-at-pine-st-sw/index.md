@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1442169,49.2570248,0'
 ---
 Burrard—Pine St.;  Arbutus—Granville St.
 For books, puzzles, and seeds.

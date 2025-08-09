@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1793801,49.2650443,0'
 ---
 Dunbar—Macdonald St.  Low to ground.
 —Added to map by K.D., 2023 3 21. 

@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0887367,49.2270762,0'
 ---
 Long gone or wrong address.
 —Added to map as 'gone' by K.D., 2025 1 8 (so you don't waste your time looking for it unless you find it somewhere else or they put it back).  

@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-FF8277-labelson
-original_coordinates: '-123.1038899,49.245976,0'
 ---
 Facing James St.; not at 4407 or 4411 James St.
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts.

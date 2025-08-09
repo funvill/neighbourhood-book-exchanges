@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-123.0573692,49.2728891,0'
 ---
 Big boxes of toys added 2024 12 24.
 Free store.  One door w. of free book exchange.

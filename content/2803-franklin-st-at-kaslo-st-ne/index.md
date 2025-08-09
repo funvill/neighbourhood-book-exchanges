@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0465719,49.2824743,0'
 ---
 One bl. w. of Renfrew St. and Hastings Park.
 By Kaslo St. sidewalk, w. of the Franklin St. house, just s. of the lane going w.-e.

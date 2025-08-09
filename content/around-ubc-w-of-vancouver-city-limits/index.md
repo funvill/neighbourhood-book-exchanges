@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.2548794,49.2660999,0'
 ---
 Boxes of free books are in various buildings sporadically around the University of British Columbia.  Try going to the department that interests you.
 Official U.B.C. address: 

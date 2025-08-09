@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.8984661,49.2143832,0'
 ---
 Not confirmed.  ‘Little Library on the Hill’ 
 in Victoria Hill neighbourhood,

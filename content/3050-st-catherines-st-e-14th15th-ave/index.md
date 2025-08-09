@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0852527,49.2574167,0'
 ---
 Near 3020 St. Catherines St.
  2 bl. e. of Fraser St.

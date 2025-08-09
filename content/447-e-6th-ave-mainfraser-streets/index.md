@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0940926,49.2653472,0'
 ---
 A different box 2024 9.
 It looks exactly like the one at 2305 McLean. 

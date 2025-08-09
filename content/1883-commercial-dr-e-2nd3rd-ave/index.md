@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-123.0698513,49.2679383,0'
 ---
 A little 'free store' inside Spartacus Books (a store selling books).  The 'free store' part is a bookcase with a handful of free books, also shoes, etc.  Such small items only.
 For you to give and take, presumably.  

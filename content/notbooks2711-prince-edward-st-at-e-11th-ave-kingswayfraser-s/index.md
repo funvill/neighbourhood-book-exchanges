@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0962202,49.2607125,0'
 ---
 NOT for books, as I first thought.  
 Probably meant instead for exchanging 

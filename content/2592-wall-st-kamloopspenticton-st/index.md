@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0523347,49.2914685,0'
 ---
 'Wall Street Little Free Library'.
 At N. Penticton St.; a bit w.of the s.w. corner.

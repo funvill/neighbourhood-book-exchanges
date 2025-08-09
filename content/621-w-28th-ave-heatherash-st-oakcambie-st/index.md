@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-EE9C96-labelson
-original_coordinates: '-123.1190733,49.2462365,0'
 ---
 This seems to be a permanent small free box on the ground.  
 Wooden, but without roof, so please donate books only with each book in its own clear plastic bag.

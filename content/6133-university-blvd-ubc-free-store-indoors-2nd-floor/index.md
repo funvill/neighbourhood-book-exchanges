@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-F4B400-labelson
-original_coordinates: '-123.2503802,49.2667136,0'
 ---
 Gone? or moved? or just closed temporarily during building reconstruction??
 Second floor, n.w. corner.

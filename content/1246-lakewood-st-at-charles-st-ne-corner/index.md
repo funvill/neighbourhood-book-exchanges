@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0617854,49.2730199,0'
 ---
 A friendly neighbourhood book exchange in this traffic-calmed green space.  Big, 3 shelves.  
 No textbooks.

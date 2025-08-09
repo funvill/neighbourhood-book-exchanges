@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1783015,49.2614714,0'
 ---
 Open front.  Books might get damp, so please wrap each dry book you donate in its own clear plastic bag.
 —Added to map by K.D., 2020.

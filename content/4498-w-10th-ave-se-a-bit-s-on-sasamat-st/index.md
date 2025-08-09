@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.2090802,49.2636005,0'
 ---
 By road plaza with tables and chairs.
 —Added to map by K.D., 2022 12 8.  

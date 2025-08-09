@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0975032,49.229205,0'
 ---
 'Kids Library'.  Small; 1 shelf.  
 Little Free LIbrary #202024.

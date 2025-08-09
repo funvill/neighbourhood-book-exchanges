@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.0498082,49.2904499,0'
 ---
 One-day event to be announced, maybe not until 2025 summer.
 Saturday, 11 am - 2 pm.

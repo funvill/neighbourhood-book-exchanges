@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1670751,49.2574834,0'
 ---
 Just e. of Macdonald St.  2 shelves.
 —Added to map by K.D., 2022 3 12. Thanks, K.G.

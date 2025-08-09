@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.1663502,49.265989,0'
 ---
 Not a book exchange, but an old small fridge being given away.  It might work as a fridge, but if not, it would make an excellent little library on another site.  There is another similar fridge at 1695 Cedar Cres. at Pine.
 —Added to map by K.D., 2024 9 10. 

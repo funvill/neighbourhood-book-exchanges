@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1245719,49.2503783,0'
 ---
 Tell us if you see it returning after construction.
 Medium size.  2 shelves.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1242557,49.2588609,0'
 ---
 1 block e. of Oak St.  Small with 2 shelves.  
 St. Mary Magdalene Anglican Church.

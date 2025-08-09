@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1041191,49.2536585,0'
 ---
 Big box, 1 shelf.  Ground decorations.
 —Added to map by K.D., 2024 8 30. 

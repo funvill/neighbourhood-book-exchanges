@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0677766,49.2555991,0'
 ---
 Outside the Trout Lake Housing Co-op.
  Caretakers are Catriona Strang and 

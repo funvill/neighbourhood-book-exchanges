@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1215865,49.2561925,0'
 ---
 Oak—Cambie Streets.  3 shelves.  
 Not 711 or 717. 

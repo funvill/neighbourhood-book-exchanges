@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-124.3463761,49.4976209,0'
 ---
 Lasqueti Island Free Store & Recycling Depot.
 The Free Store: books, clothing, household objects.

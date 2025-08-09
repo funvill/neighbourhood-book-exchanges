@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0652857,49.2659979,0'
 ---
 Small book exchange just east of Victoria Drive.
 3 big shelves.

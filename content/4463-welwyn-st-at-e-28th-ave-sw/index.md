@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0700975,49.2450147,0'
 ---
 'Welwyn Book Exchange'.
 Seems to be letting in rain at the n. end.

@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.1115758,49.1390478,0'
 ---
 S.e. of Number 4 Rd. and Williams Rd.  
 Little Free Library #161082; John Edmondson.

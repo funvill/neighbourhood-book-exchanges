@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1241708,49.2760332,0'
 ---
 Was a temporary pile in the open air, s.e. corner of  Emery Barnes Park.
 —Added to map by K.D., 2023 9 8.  

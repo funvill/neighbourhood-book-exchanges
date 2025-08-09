@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-124.5749193,49.3691882,0'
 ---
 South-east corner??  
 Send changes to korkyday@yahoo.com .

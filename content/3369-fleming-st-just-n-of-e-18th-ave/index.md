@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0710969,49.2547626,0'
 ---
 Dumphries—Commercial Dr.; a.k.a. 3365.
 The condo complex is 3365-3387 Fleming St.

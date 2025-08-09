@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0788284,49.2327417,0'
 ---
 From another map, but we never saw one anywhere on those 2 blocks..
 Inverness--Culloden St.

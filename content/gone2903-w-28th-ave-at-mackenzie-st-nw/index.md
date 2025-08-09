@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1703645,49.2471123,0'
 ---
 Was a free pile on the lawn.
 —Added to map by K.D., 2024 7 21.  

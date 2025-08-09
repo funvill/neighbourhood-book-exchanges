@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-124.6762514,49.5346791,0'
 ---
 Free store somewhere near here, but not confirmed lately.
 —Added to map by K.D., 2023 3 3.  

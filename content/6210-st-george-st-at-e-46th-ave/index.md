@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0938983,49.2280965,0'
 ---
 1 block w. of Fraser St. 
 —Added to map by K.D., 2025 4 16.  Thanks, D.L. 

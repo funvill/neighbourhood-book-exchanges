@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0984137,49.2395551,0'
 ---
 ‘Little Plant & Seed Library’.
 Officially registered as Little Free Library #139377, though it is not for books.

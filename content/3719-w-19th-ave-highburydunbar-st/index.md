@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1870006,49.2556345,0'
 ---
 Formerly noted as 3737 W. 19th Ave., which is actually next door to the west.  
 Tiny box. Books get wet, so please donate each dry book in its own clear plastic bag. 

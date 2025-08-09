@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.4449135,48.9482074,0'
 ---
 9 book exchanges here on this island and other islands all the way s. to Victoria, BC.
 Some are free stores with other kinds of items besides book.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0335857,49.214948,0'
 ---
 Just n. of E. 62nd Ave.  Just w. of 
 Champlain Heights Community Centre.

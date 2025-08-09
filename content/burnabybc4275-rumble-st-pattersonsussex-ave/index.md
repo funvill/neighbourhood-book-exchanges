@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.0093598,49.2150334,0'
 ---
 Or maybe 4265 Rumble.  
 Probably not 4270 Rumble St.

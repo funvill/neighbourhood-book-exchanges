@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1467375,49.2572944,0'
 ---
 Canadian Memorial United Church.  
 Between Arbutus and Granville Streets.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0288643,49.2127672,0'
 ---
 Kinross Library at Kinross Creek Housing Co-op.
  Turn e. from Champlain Cres.

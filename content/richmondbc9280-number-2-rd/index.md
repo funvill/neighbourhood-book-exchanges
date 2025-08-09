@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.1588179,49.1455776,0'
 ---
 Not in Vancouver, BC, but it might be hard to find any other way, as it is not on the LFL map.
 Francis—Williams roads.

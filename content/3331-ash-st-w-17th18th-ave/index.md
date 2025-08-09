@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1182559,49.2555505,0'
 ---
 Oak—Cambie St.; 2 blocks w. of Cambie St.
 '18th Avenue Little Free Library'.

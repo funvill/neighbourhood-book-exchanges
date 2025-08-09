@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.9972586,49.2500334,0'
 ---
 Cristina McAllister, Little Free Library #189054.
 —Added to map by K.D., 2025 7 23.

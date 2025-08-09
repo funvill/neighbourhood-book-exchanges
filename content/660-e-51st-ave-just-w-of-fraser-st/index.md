@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0917765,49.223496,0'
 ---
 Picnic tables. Next to free food pantry. 
  Main—Fraser St.  

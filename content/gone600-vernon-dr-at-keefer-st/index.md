@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0791149,49.2791134,0'
 ---
 Reported by Craig B, April 2020.
 K.D.:  Confirmed that it was removed, 2021 6 30.

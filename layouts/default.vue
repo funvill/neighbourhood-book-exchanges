@@ -29,7 +29,7 @@
     <!-- Footer -->
     <footer class="bg-purple-100 text-purple-800 py-4 px-6 text-center border-t border-purple-200">
       <span class="material-symbols-outlined align-middle mr-1">local_library</span>
-      <span>&copy; 2025 Neighbourhood book exchanges Community</span>
+      <span>Made with ❤️ by <a href='https://blog.abluestar.com'>@funvill</a></span>
     </footer>
   </div>
 </template>

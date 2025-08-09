@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.069986,49.2401955,0'
 ---
 In front of Vancouver Cohousing, near suite #102 and/or the 1723 address.  Medium large box, with bench.
 Little Free LIbrary #152003.

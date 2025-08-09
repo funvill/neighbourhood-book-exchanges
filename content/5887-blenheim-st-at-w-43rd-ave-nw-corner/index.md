@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1789071,49.2329056,0'
 ---
 Dunbar—Macdonald St.  
 Collingwood—Balaclava St.

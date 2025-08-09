@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1526301,49.2573731,0'
 ---
 'Cross Buck Park Library', w. of the house at this address.
 2 small silver-painted wooden boxes, 

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.072884,49.2395619,0'
 ---
 1 1/2 blocks e. of Knight St.
 2 shelves at the top of a hill.

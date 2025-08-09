@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0815194,49.2455084,0'
 ---
 5 blocks e. of Fraser St.; Fraser—Knight St.;
 ~3 small shelves.  

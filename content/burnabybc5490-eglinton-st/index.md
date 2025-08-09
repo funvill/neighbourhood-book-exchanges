@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.9835517,49.2425945,0'
 ---
 South end of Gilpin Elementary School.
 From another map. Not confirmed.

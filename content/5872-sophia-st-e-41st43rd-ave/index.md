@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.098583,49.2314727,0'
 ---
 5874 is on the same lot.  Not 5873.
 Big, with 2 shelves.

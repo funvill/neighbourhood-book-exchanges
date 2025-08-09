@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.2056493,49.2584323,0'
 ---
 Looked temporary.
 —Added to map by K.D., 2024 8 10.  

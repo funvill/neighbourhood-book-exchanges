@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1493305,49.2193664,0'
 ---
 Cypress—Angus St.; just e. of E. Boulevard.
  Small, with benches. It might be moved to different spots near the store. 

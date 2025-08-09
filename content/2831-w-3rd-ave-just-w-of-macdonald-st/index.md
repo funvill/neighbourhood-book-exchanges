@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1690718,49.269356,0'
 ---
 Little Pink Book Exchange.
 With chair.  In honour of Leah and Carl Lehan who loved both books and Kitsilano.  

@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.0448835,49.2267234,0'
 ---
 Next event here to be announced.
 Saturday, 10 am-1 pm, 6260 Killarney Street, Killarney Community Centre, outside.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0531212,49.2749071,0'
 ---
 E. Hastings—E. 1st Ave.
 Not 2575 or 2579 Napier.  2 shelves.

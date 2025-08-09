@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1579094,49.2347577,0'
 ---
 Maybe the one in the Yaletown Scotiabank is still there.
 They are indoors in the banks, so go when it is open: 

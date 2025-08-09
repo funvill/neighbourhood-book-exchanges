@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0819057,49.2486039,0'
 ---
 Reported by Craig B., May 2020.
 Later notes by K.D.: Fraser—Knight St.

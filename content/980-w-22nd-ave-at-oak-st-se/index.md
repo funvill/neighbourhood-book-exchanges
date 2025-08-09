@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1270113,49.2516667,0'
 ---
 On a tree, facing the sidewalk and the house.
 Not 960 W. 22nd.

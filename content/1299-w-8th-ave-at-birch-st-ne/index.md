@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1336168,49.2644945,0'
 ---
 2 blocks e. of Granville St.
 In the boulevard of Birch St. next to 2 chairs.

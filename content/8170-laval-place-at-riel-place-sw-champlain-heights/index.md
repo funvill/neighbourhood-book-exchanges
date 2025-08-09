@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0282143,49.2117611,0'
 ---
 Turn e. from Champlain Cres.
 Maquinna Dr.—Matheson Cres.

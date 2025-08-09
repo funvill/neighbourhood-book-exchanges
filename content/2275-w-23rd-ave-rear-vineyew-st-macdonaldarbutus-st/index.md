@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1574553,49.2521879,0'
 ---
 In open garage or car-port in lane behind 
 (north of) the house.

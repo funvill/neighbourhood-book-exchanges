@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.0092555,49.2872997,0'
 ---
 N. Burnaby.  7 blocks n. of Hastings St.
 6 blocks e. of Boundary Rd.

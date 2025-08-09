@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.1619745,49.2627745,0'
 ---
 Next date to be announced.  
 Probably a Saturday, 10 am-1 pm, 

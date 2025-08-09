@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1075201,49.2594799,0'
 ---
 Cambie—Main Streets.
 —Added to map by K.D., 2020.

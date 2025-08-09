@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.1476059,49.1912051,0'
 ---
 'Burkeville Book Locker'.  On eastern Sea Island.
 Little Free Library #171018.

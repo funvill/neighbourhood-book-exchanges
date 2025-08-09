@@ -11,12 +11,8 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-F4B400-labelson
-original_coordinates: '-123.0924226,49.2675886,0'
 ---
-Emily Carr Library: probably indoors, with the hours of the building.
-The cutest little fibre library cart.
+Emily Carr The cutest little fibre library cart.
 www.ecuad.ca
 —Added to map by K.D., 2024 11 29.
 

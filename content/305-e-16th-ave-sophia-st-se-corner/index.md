@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0982835,49.2566423,0'
 ---
 During construction it was moved 1/2 block s. from 320 E. 15th Ave. at Sophia, s.e.  The construction is over, and it is not moved back, so I guess it won't be moved back.
 Now on n.e. corner of 16th & Sophia St. by a Korean church.

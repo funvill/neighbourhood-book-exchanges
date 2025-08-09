@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1211873,49.2650009,0'
 ---
 ‘Fairview Fairy & Gnome Kids Library’.
 Little Free Library #145591.

@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1513024,49.2661971,0'
 ---
 Arbutus—Maple Streets.  
 Attached to the outside w. wall of 

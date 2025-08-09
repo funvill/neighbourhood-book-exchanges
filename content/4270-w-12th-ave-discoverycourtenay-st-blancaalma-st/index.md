@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.2022334,49.2618134,0'
 ---
 Confirmed.  Small, 2 shelves.
 The notice in the little library's window is too sun-faded to read.  I left a note 2025 8 6 asking what it says, including my e-address: KorkyDay@yahoo.com

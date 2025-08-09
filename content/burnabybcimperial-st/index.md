@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.9966765,49.2218859,0'
 ---
 ?4730 or 4734 or 4750 Imperial St.
 Waverley—Jubilee Ave.; 

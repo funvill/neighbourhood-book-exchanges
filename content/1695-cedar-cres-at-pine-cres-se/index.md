@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.1434046,49.2561468,0'
 ---
 Not a book exchange, but an old small fridge being given away. It might work as a fridge, but if not, it would make an excellent little library on another site. 
 Just e. of Granville St., just s. of W. 16th Ave.

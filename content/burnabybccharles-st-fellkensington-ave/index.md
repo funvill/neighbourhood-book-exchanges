@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.973488,49.2726156,0'
 ---
 ~6200-block.  Around 7 blocks s. of Hastings St.
 From another map.  Not confirmed.

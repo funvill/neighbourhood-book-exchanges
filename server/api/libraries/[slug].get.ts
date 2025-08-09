@@ -44,7 +44,6 @@ export default defineEventHandler(async (event) => {
       description: content.split('\n').slice(0, 3).join(' ').substring(0, 200) + '...',
       fullContent: content, // Include the full markdown content
       tags: data.tags || [],
-      established: data.established || 'unknown',
       entries_count: logbookCount, // Use dynamic count instead of frontmatter
       _path: `/${slug}`,
       lastModified: stats.mtime.toISOString(),

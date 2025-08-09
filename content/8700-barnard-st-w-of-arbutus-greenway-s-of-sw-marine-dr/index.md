@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1450869,49.2066564,0'
 ---
 From Granville St. and W. 70th Ave., go w. about 2 blocks to S.W. Marine Dr. and Barnard, then south to 8700.  
 From W. 75th Ave., go n. on Barnard to 8700. 

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0592937,49.2141515,0'
 ---
 S.w. corner of Bobolink Park;
 Just w. of South Vancouver Family Place.  

@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1870135,49.2341867,0'
 ---
 Not there anymore.  If you know a new location for it, tell me KorkyDay@yahoo.com .
 ‘The Lighthouse Neighbourhood Gift Box and Little Free Library’.  

@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-124.4474269,49.3461859,0'
 ---
 At Beach Rd., n.w. 'Rotary Little Free Library', LFL #86064
 —Added to map by K.D., 2025 2 27.

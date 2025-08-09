@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0685256,49.2366489,0'
 ---
 Reported by Craig B., April 2020.
 Later notes by K.D.:  Several shelves, 2 benches.  

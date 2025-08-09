@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0906518,49.2671381,0'
 ---
 ~2 bl. n. of E. 5th; w. of Fraser St.
 	Great Northern Way, a.k.a. Central Valley Greenway. The box says CDM (sponsored by the Centre for Digital Media). Just s.w. of Kafka’s 

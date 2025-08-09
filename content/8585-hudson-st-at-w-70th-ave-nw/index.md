@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-EE9C96-labelson
-original_coordinates: '-123.1344875,49.2086403,0'
 ---
 Granville—Oak St.  Big, with benches.
 Marpole Neighbourhood House.  

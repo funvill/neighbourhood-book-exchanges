@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.867147,49.2530069,0'
 ---
 Blue Mountain Little Free Library.
  'Between 2 benches near the playground.'

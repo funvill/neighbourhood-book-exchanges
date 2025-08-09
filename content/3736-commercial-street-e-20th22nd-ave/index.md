@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.067932,49.2511947,0'
 ---
 2 bl. w. of Victoria Drive.  
 On Commercial STREET, which is the 

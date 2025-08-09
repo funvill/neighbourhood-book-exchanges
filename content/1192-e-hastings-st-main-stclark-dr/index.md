@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0791956,49.2808933,0'
 ---
 Big box, 2 shelves.  
 No books inside when I first found it.

@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-125.1161257,49.8584117,0'
 ---
 Or 8816.
 —Added to map by K.D., 2022 12 5.

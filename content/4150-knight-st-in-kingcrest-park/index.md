@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0746511,49.2471197,0'
 ---
 E. 26th—27th Ave.; in the s.-central part of the park between the playground and the garden.
 Picnic table.  'Kingcrest Book Exchange'.

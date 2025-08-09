@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0302753,49.2667355,0'
 ---
 'Cassiar Little Free Library':  see in Facebook and Instagram.  This book box is 'under construction', but it's operating already.  (It might be finished by the time you read this.)
 Before the window is installed, please donate dry books each in its own clear plastic bag.

@@ -35,7 +35,6 @@ export default defineEventHandler(async (_event) => {
             photo: data.photo || '/images/libraries/placeholder-library.jpg',
             description: content.split('\n').slice(0, 3).join(' ').substring(0, 200) + '...',
             tags: data.tags || [],
-            established: data.established || 'unknown',
             entries_count: logbookCount, // Use dynamic count instead of frontmatter
             _path: `/${dir}`,
             lastModified: stats.mtime.toISOString()

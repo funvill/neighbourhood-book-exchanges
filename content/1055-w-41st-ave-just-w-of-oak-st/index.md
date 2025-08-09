@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1294639,49.2341604,0'
 ---
 Near n.w. corner.  Louis Brier Home & Hospital.
 Repaired as of 2021 7 20.

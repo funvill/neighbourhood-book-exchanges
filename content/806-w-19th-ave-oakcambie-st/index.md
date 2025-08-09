@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1222434,49.254013,0'
 ---
 East side of the house, facing Willow St.
 —Added to map by K.D., 2020.  

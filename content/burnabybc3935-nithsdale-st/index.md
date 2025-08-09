@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.0170288,49.2518087,0'
 ---
 One block n. of Burnaby General Hospital..
 —Added to map by K.D., 2022 3 1; unconfirmed. Thanks, L.F.V.  

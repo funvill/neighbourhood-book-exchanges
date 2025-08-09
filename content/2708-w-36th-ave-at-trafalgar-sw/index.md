@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1658181,49.239359,0'
 ---
 John's Library, in memory of John, whose love of books lives on here.  Small box, 2 shelves.
 Little Free Library #188776.

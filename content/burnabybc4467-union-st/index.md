@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.004121,49.2774556,0'
 ---
 N. Burnaby.  4 blocks s. of Hastings St.
 Just w. of Willingdon Ave.

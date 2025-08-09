@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0583725,49.2558183,0'
 ---
 ‘The Garden House Library’.
 Between John Hendry Park and Nanaimo St.

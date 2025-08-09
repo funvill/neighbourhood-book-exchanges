@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0987858,49.2176309,0'
 ---
 1 block e. of Main St.
 Margaret Defrancisco's 

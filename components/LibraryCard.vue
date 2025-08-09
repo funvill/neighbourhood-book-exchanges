@@ -12,11 +12,7 @@
         />
         
         <!-- Difficulty Badge (optional) -->
-        <div v-if="showDifficultyBadge && library.difficulty" class="absolute top-3 right-3">
-          <span :class="['inline-block px-3 py-1 rounded-full text-xs font-bold capitalize shadow-md', getDifficultyClass(library.difficulty)]">
-            {{ library.difficulty }}
-          </span>
-        </div>
+        <!-- Removed difficulty badge as difficulty field is no longer used -->
       </a>
 
       <!-- Library Details -->
@@ -44,10 +40,6 @@
           <div class="flex items-center text-green-600">
             <span class="material-symbols-outlined mr-1" style="font-size:18px;">extension</span>
             <span>{{ library.entries_count || 0 }} entries</span>
-          </div>
-          <div v-if="library.established" class="flex items-center text-purple-600">
-            <span class="material-symbols-outlined mr-1" style="font-size:18px;">calendar_month</span>
-            <span>Est. {{ new Date(library.established).getFullYear() }}</span>
           </div>
         </div>
 
@@ -85,20 +77,16 @@ interface Library {
   photo?: string
   description: string
   tags?: string[]
-  difficulty?: string
   entries_count?: number
-  established?: string
 }
 
 interface Props {
   library: Library
-  showDifficultyBadge?: boolean
   showStats?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  showDifficultyBadge: false,
-  showStats: false
+  showStats: false,
 })
 
 const formatLocation = (location: { lat: number; lng: number; address?: string }) => {
@@ -106,19 +94,6 @@ const formatLocation = (location: { lat: number; lng: number; address?: string }
     return location.address
   }
   return `${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}`
-}
-
-const getDifficultyClass = (difficulty: string) => {
-  switch (difficulty) {
-    case 'beginner':
-      return 'bg-green-100 text-green-700'
-    case 'intermediate':
-      return 'bg-yellow-100 text-yellow-700'
-    case 'advanced':
-      return 'bg-red-100 text-red-700'
-    default:
-      return 'bg-gray-200 text-gray-700'
-  }
 }
 
 const getLibrarySlug = (library: Library) => {

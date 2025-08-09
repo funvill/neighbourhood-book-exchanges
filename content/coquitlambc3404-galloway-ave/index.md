@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.7537843,49.2944222,0'
 ---
 Not confirmed.  Not on the official LFL map.
 Unknown location within park.

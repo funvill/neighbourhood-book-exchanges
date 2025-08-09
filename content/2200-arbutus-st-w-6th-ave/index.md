@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1527861,49.2662836,0'
 ---
 On s.e. corner, outside the eatery, in the boulevard.  5 benches.
 New, waterproof structure (noticed 2022 1) replacing the one pictured above.

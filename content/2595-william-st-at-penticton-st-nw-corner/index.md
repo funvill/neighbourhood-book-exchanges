@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-EE9C96-labelson
-original_coordinates: '-123.0521263,49.2742348,0'
 ---
 The one pictured here was in bad condition, so it was removed and then repaired and enlarged or replaced.  It is now back in use.  It is big.
 Nanaimo—Renfrew St.

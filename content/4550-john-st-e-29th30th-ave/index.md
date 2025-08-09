@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0973629,49.2438067,0'
 ---
 Main—Fraser St.; 3 blocks e. of Main St.
 Small, 1 shelf.

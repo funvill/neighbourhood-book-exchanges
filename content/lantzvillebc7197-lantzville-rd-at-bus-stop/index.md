@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-124.0752456,49.2506246,0'
 ---
 Address to be confirmed.
 Free book shelves in the bus shelter.  

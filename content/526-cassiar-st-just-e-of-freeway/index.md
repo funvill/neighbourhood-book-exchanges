@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0307695,49.2798715,0'
 ---
 One block s. of E. Hastings St.; 
 3 blocks w. of Boundary Rd.  Pender—Turner 

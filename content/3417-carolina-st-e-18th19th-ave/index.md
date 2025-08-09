@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0919958,49.2543701,0'
 ---
 One block w. of Fraser St.
 The address does not appear to be 3423 or 3427, which were reported for this book exchange elsewhere.  

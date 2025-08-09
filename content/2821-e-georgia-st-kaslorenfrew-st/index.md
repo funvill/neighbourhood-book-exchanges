@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-FF8277-labelson
-original_coordinates: '-123.0460512,49.2783323,0'
 ---
 Hasting Sunrise Little FIBRE Library; free books, tools, and materials related to all fibre arts.
 The other 2 Little Fibre Libaries in Vancouver are 3539 Welwyn St. and 4016 Kaslo St.

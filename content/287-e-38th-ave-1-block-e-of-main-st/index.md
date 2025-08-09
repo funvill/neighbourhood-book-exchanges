@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0997086,49.2363789,0'
 ---
 '38th Ave Book Exchange'.  
 Medium size, 2 shelves.

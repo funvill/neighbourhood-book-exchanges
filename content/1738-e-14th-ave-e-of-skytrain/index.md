@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0689587,49.2576856,0'
 ---
 Reported by Craig B., May 2020.
 Later notes by K.D.:  The closest house, e. of the book exchange, is 1740 E. 14th.

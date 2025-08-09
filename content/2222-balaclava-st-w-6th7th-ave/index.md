@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1738245,49.266284,0'
 ---
 Hooray!  New replacement box: 2024 Feb.
 Alma—Macdonald St.

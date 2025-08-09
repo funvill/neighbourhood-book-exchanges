@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0931403,49.2519045,0'
 ---
 Main—Fraser St.  Small, with bench.
 —Added to map by K.D., 2021 7 17.  

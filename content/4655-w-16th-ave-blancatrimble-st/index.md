@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.2142291,49.2585513,0'
 ---
 —Added to map by K.D., 2023 1 18.  
 

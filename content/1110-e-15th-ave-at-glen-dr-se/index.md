@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0812651,49.2567634,0'
 ---
 Reported by Craig B., May 2020.
 Notes by K.D.:  Fraser—Knight St.; on property line with 1126.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1256702,49.2650932,0'
 ---
 ‘West 7th Cycle Path Little Free Library’ #131299
 	trishkolber@gmail.com ; not 929 W. 7th.

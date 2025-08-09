@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1907637,49.2622474,0'
 ---
 2 shelves.  2 blocks w. of Alma; Blanca--Alma.
 Not 3896 W. 11th Ave.

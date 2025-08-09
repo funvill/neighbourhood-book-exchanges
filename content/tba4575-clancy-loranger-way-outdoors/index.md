@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.1074196,49.2433893,0'
 ---
 'Reuse and Recycling Drop-off Event' outdoors, next date to be announced.
 

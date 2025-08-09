@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.038908,49.2564449,0'
 ---
 Lillooet—Windemere; Renfrew—Rupert St.
 Large box.  'No pamphlets or religious material.'

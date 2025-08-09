@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0743839,49.253444,0'
 ---
 Knight—Dumfries streets.  'Mrs. Evans' Library'.
 2 big shelves.  By Tyee School.

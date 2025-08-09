@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.8934076,49.2349847,0'
 ---
 Not confirmed. New Westminster, BC.
 Just up from E. Columbia; ‘Nootka Alley Library’; Twitter @NootkaStLibrary; 

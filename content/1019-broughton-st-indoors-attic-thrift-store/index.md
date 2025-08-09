@@ -8,9 +8,6 @@ tags:
   - kml-import
   - imported
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-F4B400-labelson
-original_coordinates: '-123.1337282,49.2856395,0'
 ---
 M-F 10 am-3 pm (as of 2022 10 29); 
 closed on statutory holidays.

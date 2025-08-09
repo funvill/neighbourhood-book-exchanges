@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0815877,49.241809,0'
 ---
 Fraser—Knight St.  Medium size; 2 shelves.
 —Added to map by K.D., 2025 1 8.  Thanks, A.Y.

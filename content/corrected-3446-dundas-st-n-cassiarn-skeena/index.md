@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0297139,49.2846984,0'
 ---
 Freeway—Boundary Rd., 
 4 blocks n. of E. Hastings St.

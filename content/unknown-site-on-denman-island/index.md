@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-124.7755791,49.5279997,0'
 ---
 Free Shack open 7 days per week.
 —Added to map by K.D., 2024 4 3.  

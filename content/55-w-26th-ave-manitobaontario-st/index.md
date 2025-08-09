@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1063416,49.2478591,0'
 ---
 Cambie—Main St.  
 3 shelves.  Bottom shelf could be damp, so each book there should be in a clear plastic bag.

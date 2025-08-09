@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.067675,49.2747821,0'
 ---
 2 bl. s. of Venables St.  Not 1700 Napier St.
 'Salsbury Garden Book House.'  Named after “Salsbury Garden”, which was, until 2006, a tiny much-loved semi-public space on this corner.

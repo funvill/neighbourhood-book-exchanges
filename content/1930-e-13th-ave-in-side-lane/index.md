@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0652441,49.2584331,0'
 ---
 East of Boat Day Care in the lane which runs north-south; on the w. edge of the property.
 —Added to map by K.D., 2000.

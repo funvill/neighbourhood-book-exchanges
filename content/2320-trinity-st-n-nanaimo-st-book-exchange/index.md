@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0566972,49.2888988,0'
 ---
 Notes by K.D.:  2320 Trinity St., e. edge of that property, which is N. Nanaimo St.;
 w. side of the 400-block of N. Nanaimo St., 

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1092433,49.2509733,0'
 ---
 Reported moved from 207 W. 23rd Ave. to here.
 —Added to map by K.D., 2022 10 1. 

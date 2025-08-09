@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0757441,49.2641167,0'
 ---
 1 bl. e. of Clark Dr.
 London-phone-booth-inspired 

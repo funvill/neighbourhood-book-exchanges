@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1043666,49.2498469,0'
 ---
 Especially for movie DVDs, etc.  'Blockbuster'.
 Also known as 'Free Blockbuster Vancouver'.

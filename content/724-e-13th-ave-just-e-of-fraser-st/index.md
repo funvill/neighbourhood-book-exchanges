@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-FF8277-labelson
-original_coordinates: '-123.0885271,49.2584509,0'
 ---
 From E. 13th Ave., walk s. on the narrow foot-path between 726 E. 13th Ave. and the house to the w., which is on the corner of Fraser (~2900 Fraser St.).
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts.

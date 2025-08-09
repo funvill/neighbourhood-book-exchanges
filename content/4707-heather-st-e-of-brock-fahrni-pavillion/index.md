@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1222286,49.2430926,0'
 ---
 W. 31st—32nd Ave.
 On unnamed road between Willow and Heather Streets. The official address of that pavillion is 4650 Oak St., but it is not close to Oak St. 

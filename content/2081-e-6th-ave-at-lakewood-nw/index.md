@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0622795,49.2650712,0'
 ---
 Straddling the property line with 2091 E. 6th.
 —Added to map by K.D., 2020. 

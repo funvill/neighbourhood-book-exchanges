@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0767048,49.2446452,0'
 ---
 'Little Free Library'.  Not 1300.
 —Added to map by K.D., 2021 5 26.

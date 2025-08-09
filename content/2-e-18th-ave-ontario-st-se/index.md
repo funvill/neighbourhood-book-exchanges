@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1049262,49.2545955,0'
 ---
 Also called 'E. 18th Ave. / Ontario St.'
 Also called 'W. 18th Ave. / Ontario St.'

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0580255,49.2518126,0'
 ---
 2 blocks w. of Nanaimo St.
 2 blocks s.e. of John Hendry Park.

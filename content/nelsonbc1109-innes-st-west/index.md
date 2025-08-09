@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-117.304702,49.481806,0'
 ---
 'Little Free Library- West Innes'.
 Easy off-street parking.

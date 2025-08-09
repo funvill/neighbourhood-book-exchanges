@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.2061423,49.2636215,0'
 ---
 On s.w. corner of 10th and Trimble.  
 By bench; Blanca—Alma.  

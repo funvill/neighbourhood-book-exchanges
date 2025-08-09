@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0284508,49.2849821,0'
 ---
 Dundas—Oxford.  4 blocks n. of E. Hastings St.
 On the same lot is 37 N. Skeena St.

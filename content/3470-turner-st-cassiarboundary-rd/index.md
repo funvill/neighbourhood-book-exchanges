@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0293671,49.2789975,0'
 ---
 2 blocks s. of E. Hastings St.
 'Turner Street Little Library and Seed Exchange'.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1330065,49.2774773,0'
 ---
 n.w. end of Burrard Bridge .
 Little Free Library #12930.

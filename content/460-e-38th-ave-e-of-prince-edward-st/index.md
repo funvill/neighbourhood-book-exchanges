@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0951515,49.2361089,0'
 ---
 Between Prince Edward St. and 
 Mountain View Cemetery.  Main—Fraser St.

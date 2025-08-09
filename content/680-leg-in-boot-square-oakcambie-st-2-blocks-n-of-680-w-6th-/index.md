@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1195565,49.2674586,0'
 ---
 'Creek Book Exchange' in front of 
 'Convivial Cafe and Bakery'.  Might be taken indoors when the store is closed (?).. 

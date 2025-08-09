@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1291974,49.2578939,0'
 ---
 1 long block w. of Oak St.
 —Later notes by K.D., 2020~.

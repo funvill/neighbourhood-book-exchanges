@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.181386,49.2529286,0'
 ---
 Small book exchange.  Looks new.
  —Added to map by K.D., 2021 5 15.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.073048,49.2781943,0'
 ---
 A big book exchange with 5 doors, plus open shelves.  In the e. central part of the park, 
 s. of the care-taker's house.

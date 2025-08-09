@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1177424,49.2499674,0'
 ---
 Almost whole block to be demolished.  
 The address is NOT any of these:  853 W. 24th, 854 W. 24th, 584 W. 23rd.

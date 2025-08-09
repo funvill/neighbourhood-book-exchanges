@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0571117,49.2728877,0'
 ---
 Free book exchange. One door e. of free store.
 4 blocks n. of E. 1st Ave.

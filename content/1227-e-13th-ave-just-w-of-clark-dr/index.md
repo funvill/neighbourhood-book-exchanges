@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0791825,49.2589206,0'
 ---
 If books might get wet, please donate each dry book in its own clear plastic bag. 
 —Added to map by K.D., 2022 3 2. Thanks, L.F.V.  

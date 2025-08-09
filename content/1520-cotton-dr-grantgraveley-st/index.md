@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0714387,49.27105,0'
 ---
 Seems new.  Beautiful wood work.
 —Added to map by K.D., 2021 4 16.

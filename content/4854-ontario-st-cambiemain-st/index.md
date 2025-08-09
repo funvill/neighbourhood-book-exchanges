@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1052137,49.2413249,0'
 ---
 E. 32nd—33rd Ave.
 The Not-So-Little Free Library, #130554.

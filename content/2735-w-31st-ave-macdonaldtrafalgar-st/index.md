@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1664622,49.2442862,0'
 ---
 MacKenzie St.—W. Boulevard.
 Erected late 2020 or early 2021.

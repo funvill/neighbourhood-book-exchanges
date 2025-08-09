@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1892241,49.2573498,0'
 ---
 English, Greek, and Chinese books as of date added..
 —Added to map by K.D., 2022 3 19.

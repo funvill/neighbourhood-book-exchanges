@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.140569,49.2123526,0'
 ---
 In front of Sushi Bar Shu business.
 By 'chART Public Art Marpole'.  

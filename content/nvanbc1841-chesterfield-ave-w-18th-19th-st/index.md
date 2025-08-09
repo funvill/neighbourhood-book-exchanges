@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.0760745,49.3258332,0'
 ---
 In lane, w. of house and garage.
 Little Free Library #175616.

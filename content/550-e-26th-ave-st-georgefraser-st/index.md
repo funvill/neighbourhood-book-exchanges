@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0929821,49.2475645,0'
 ---
 Little Free Library #1337.  Probably the first registered with Little Free Libraries and still open in Vancouver, BC.  The sad news is that the steward, Cheryl Shizgal, died 2024 12 24: obituary in Vancouver Sun, 2025 1 25, p. C-17.
 —Original notes added to by K.D.

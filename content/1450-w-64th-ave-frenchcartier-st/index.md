@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.138452,49.2130286,0'
 ---
 In front of historic house museum, which might be closed, but the book box is always open.
 Granville—Oak St.

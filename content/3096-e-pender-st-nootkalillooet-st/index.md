@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0393358,49.2803876,0'
 ---
 Just s. of Hastings Community Centre in Hastings Community Park.  Renfrew—Freeway.
 —Added to map by K.D., 2021 9 21. Thanks, C.B.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.2041335,49.2600572,0'
 ---
 4 blocks e. of Blanca St.
 No textbooks, big dictionaries, encyclopedia, or magazines. Take 1 or 2 at a time.

@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0831244,49.2734063,0'
 ---
 This one might have been moved a bit west to n. of Chess St. and Malkin.
 I'll check.  Not found 2022 10 9.

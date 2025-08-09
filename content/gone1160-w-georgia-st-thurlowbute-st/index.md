@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1245899,49.2865392,0'
 ---
 Coastal Church.  I think that it is Christian Science.
 Another map said that a free book box is here, 

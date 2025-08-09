@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.047205,48.9777223,0'
 ---
 Somewhere on this road, but unknown where.. 'Beach connected.'  
 Or Crystal Water Beach Road.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1151765,49.2464159,0'
 ---
 Unlabeled box.  2 shelves.  Small books only.
 —Added to map by K.D., 2024 6 29.  Thanks, FC.

@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0844131,49.2499567,0'
 ---
 —Added to map by K.D., 2020.  
 Noted gone 2021 8 20.

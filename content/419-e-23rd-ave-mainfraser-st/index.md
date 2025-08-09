@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0959282,49.2502642,0'
 ---
 Medium small box, 2 shelves.
 Same property as 423 E. 23rd.

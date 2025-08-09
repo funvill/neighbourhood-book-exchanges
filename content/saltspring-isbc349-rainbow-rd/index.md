@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-123.5179226,48.8520587,0'
 ---
 Recycle Depot. Free books at Book Exchange. Donate books when the staff are there. 
 Monday–Thursday : 10 am–5 pm., 

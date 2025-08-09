@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1150493,49.2370874,0'
 ---
 Temporary pile of books, toys, and clothes. 
 Just e. of Cambie St.

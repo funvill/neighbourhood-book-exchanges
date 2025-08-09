@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0438741,49.2411574,0'
 ---
 'Book Exchange'.  Medium size.
 2 blocks n. of Kingsway.  Vanness—Euclid Ave.

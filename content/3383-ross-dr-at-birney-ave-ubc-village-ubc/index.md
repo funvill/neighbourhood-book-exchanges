@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.2381365,49.2515418,0'
 ---
 'Oakwood Free Library' s.e. of 'Oakwood' building at that address.  
 On foot-path 10 metres s. of Ross Dr. side-walk.

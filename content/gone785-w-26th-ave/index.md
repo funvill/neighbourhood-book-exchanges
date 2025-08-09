@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1220288,49.2481449,0'
 ---
 Willow—Heather St.; Oak—Cambie St.
 —Added to map by K.D., 2021 8 6.

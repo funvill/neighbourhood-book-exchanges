@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0786736,49.2535991,0'
 ---
 Fraser St.—Knight Rd.  
 'Little Blue House Free Library'.

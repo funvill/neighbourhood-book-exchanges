@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1029097,49.2336856,0'
 ---
 Linda’s Library, Little Free LIbrary #172352.
 —Added to map by K.D., 2023 9 15. 

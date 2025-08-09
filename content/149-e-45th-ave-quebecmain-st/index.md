@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1026522,49.2294671,0'
 ---
 Cambie—Main St.  
 I added some washed cloth masks.

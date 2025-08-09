@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1623012,49.2699096,0'
 ---
 Looks like a miniature old-fashioned British telephone booth.  Small, 2 shelves.  2 benches.
 Little Free Library #194870.

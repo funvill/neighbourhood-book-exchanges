@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.0196218,49.2379755,0'
 ---
 By Garden Square Housing Co-op:
 5116 Smith Ave.  Unconfirmed.

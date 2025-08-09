@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0571503,49.2821177,0'
 ---
 ‘Vine Arts Festival Zine Library’; and other literature; 6 doors, triangular shelves.  VineArtsFestival. com 
 In s.e. Pandora Park; 

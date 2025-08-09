@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1663475,49.2585638,0'
 ---
 Macdonald—Arbutus St.  
 Small box on a former utility pole.  One chair.

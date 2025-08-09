@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.0218307,49.2839102,0'
 ---
 This book exchange is just over the civic border in Burnaby, BC, not in Vancouver, BC.  3 bl. n. of Hastings St.; Boundary Rd.—Esmond Ave. 
 On a humorous note, Google Maps wrongly says in the note below that this site is in Vancouver.  The truth, instead, is that it is in Burnaby, BC.

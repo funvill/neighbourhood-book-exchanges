@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-93D7E8-labelson
-original_coordinates: '-123.0551229,49.3429154,0'
 ---
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts.
 Other Little FIBRE Libaries are in Vancouver, including:  3539 Welwyn St., 2821 E. Georgia St., and 4016 Kaslo St. 

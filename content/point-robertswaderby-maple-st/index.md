@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.0407557,48.9992301,0'
 ---
 'Maple Beach Park at Derby & Maple' St.
 Name of park not confirmed: might be 

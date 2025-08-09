@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1134534,49.2842886,0'
 ---
 The Little Free Library steward for this one was the Downtown Vancouver Business Improvement Association (D.V.B.I.A.), which had ~11 book exchanges in the downtown area.  
 The boxes were all removed, probably by 2020.

@@ -11,9 +11,6 @@ tags:
   - orange-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-F8971B-labelson
-original_coordinates: '-123.2505196,49.2607623,0'
 ---
 Confirmed and address corrected. 
 Indoors, so visit only when building open, 

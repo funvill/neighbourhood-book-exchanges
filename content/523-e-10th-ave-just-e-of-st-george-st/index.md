@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0923921,49.2616399,0'
 ---
 Lend and borrow, give and receive.
 On the 10th Avenue bike route.

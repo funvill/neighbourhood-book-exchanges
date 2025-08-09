@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.032883,49.2369256,0'
 ---
 At Collingwood Neighbourhood House.
 Just s. of Joyce SkyTrain Station.

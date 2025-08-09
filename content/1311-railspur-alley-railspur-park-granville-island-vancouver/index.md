@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1331663,49.269941,0'
 ---
 Little Free Library #8963.  In the middle of Railspur Park on Granville Island.  Its post is a little wobbly, so be gentle!  
 Notes by K.D.:  The location is correct on this map, with a guessed address.  It was on other maps as a block w. of where it actually is.  

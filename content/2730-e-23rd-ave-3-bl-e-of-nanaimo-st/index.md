@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0485441,49.2496451,0'
 ---
 Adult books only.  
 For kids books, go across the street to the s. side of the house at 3896 Slocan St.

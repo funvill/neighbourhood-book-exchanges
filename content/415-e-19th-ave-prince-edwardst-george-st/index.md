@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.095829,49.2538897,0'
 ---
 Main—Fraser St.
 —Added to map by K.D., 2021 4 22.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1006325,49.2285106,0'
 ---
 Main—Fraser.  A bit of free food as of 2022 2 23.
 —Added to map by K.D., 2021 8 31.  

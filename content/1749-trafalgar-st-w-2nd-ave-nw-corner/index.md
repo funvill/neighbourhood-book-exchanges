@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1645578,49.2701496,0'
 ---
 Siri's Book Exchange - Community library dedicated to Siri Kidder Heiberg.
 Also known as 'Tribes of the Heart'.

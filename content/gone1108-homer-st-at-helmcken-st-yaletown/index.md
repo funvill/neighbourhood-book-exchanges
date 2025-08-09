@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1216803,49.2761569,0'
 ---
 Was inside the Scotiabank.
 N. of Davie St.; e. of Granville.

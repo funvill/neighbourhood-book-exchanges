@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0998627,49.2492698,0'
 ---
 Main—Fraser St.
 2 shelves, medium size.  

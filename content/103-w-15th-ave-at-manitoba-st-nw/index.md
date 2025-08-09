@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1071866,49.2576957,0'
 ---
 Cambie—Main St.
 Also known as 3091 Manitoba St.; not 100 W. 15th.

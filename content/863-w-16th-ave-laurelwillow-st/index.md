@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1235054,49.2571569,0'
 ---
 Notes by K.D.:  Not 883, as noted elsewhere.
 Quite big, 2 shelves.

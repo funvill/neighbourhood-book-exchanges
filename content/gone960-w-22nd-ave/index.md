@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1264147,49.2515478,0'
 ---
 Maybe they meant the one at 980 on this block or the one at 960 one block south.
 Anyway, there is not one here as of 2024 9 10.

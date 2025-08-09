@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-123.1576351,49.2659044,0'
 ---
 'Community Pantry': 2 separate outdoor structures ~5 m apart.  Outside of the Vine St. entrance to Kitsilano Neighbourhood House.  
 By benches.

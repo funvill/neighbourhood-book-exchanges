@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0971227,49.2455748,0'
 ---
 3 blocks e. of Main St.     2 shelves.
 'Cempasuchil Seed and Book Library'.

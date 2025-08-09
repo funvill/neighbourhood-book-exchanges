@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.2112733,49.2621148,0'
 ---
 Address and details confirmed. 
 Little Free Library #91312.  Small, 1 1/2 shelves.

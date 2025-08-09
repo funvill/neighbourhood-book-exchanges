@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-123.1149455,49.2682152,0'
 ---
 Also known as 498 W. 1st Ave. at Spyglass Pl.
 Under the s. end of the Cambie St. Bridge.

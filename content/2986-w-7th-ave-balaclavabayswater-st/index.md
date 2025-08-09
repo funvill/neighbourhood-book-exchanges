@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1719243,49.2658121,0'
 ---
 Dunbar—Macdonald St.; 2 shelves, small.  Bench.  Gaps around door.
 —Added to map by K.D., 2022 8 19.  

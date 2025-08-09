@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0654507,49.279744,0'
 ---
 2 blocks s. of E. Hastings St.  Small; log to sit on.
 Also known as 522 Victoria Dr.

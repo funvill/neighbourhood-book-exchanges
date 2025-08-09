@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1552899,49.2667903,0'
 ---
 W. 5th—6th Ave.  
 Not 2143 Yew, as on another map.

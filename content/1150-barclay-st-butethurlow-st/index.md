@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1284445,49.2840272,0'
 ---
 2 blocks w. of Burrard St.
 4 blocks s. of W. Georgia St.

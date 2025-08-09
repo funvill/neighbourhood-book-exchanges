@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-122.7926707,49.281617,0'
 ---
 2025 date to be announced.  Probably annual.
 The last one was 2024 Aug. 15, Thur. 1-3 pm.

@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1681965,49.2644,0'
 ---
 By RBC (bank).
 High-quality books were on the bus stop bench.

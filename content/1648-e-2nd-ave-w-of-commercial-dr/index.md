@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0707664,49.2686841,0'
 ---
 East of Cotton Dr., in boulevard.
 —Added to map by K.D., 2021 5 2.

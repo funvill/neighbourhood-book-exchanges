@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1051892,49.2621494,0'
 ---
 By '10th Avenue Church' and a bench.
 'The Tiny Library' — yes, ‘tiny’ compared to 

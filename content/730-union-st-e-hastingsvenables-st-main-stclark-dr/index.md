@@ -11,9 +11,6 @@ tags:
   - dark-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-4186F0-labelson
-original_coordinates: '-123.0891013,49.2774115,0'
 ---
 A free store.  Big, open tables of free items: books, clothes, household items, stationery, toys, etc.  
 In front of co-op housing.  

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0615538,49.2838461,0'
 ---
 ‘Warren’s Little Library’ with Watson's Fairy Village (decorated garden); under a yellow cedar; by the residents of Lakewood Townhouses. 
 Also known as 2100 Triumph St.

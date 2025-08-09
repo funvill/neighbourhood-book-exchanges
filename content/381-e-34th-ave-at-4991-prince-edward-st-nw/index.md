@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0971878,49.2396725,0'
 ---
 s. edge of 4991 Prince Edward St. (the actual address); facing 381~ E. 34th Ave.; 
 2 bl. e. of Main St.

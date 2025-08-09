@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0641581,49.2420896,0'
 ---
 E. 31st—32nd Ave.
 —Added to map by K.D., 2020. 

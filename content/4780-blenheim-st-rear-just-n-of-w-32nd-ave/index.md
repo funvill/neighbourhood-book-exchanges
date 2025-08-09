@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1779815,49.2434864,0'
 ---
 In the n.-s. back lane between W. 31st and 32nd Avenues, just e. of Blenheim St.  
 Behind the house which faces Blenheim and which has this address. 

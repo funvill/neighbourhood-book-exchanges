@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1201779,49.2585428,0'
 ---
 Little Free Library #88728:  
 'The John Liket Memorial Library'.

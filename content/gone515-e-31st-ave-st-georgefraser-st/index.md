@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.0937761,49.2427336,0'
 ---
 Maybe it will 'pop-up' again.
 Corrected address: not 531 E. 31st.

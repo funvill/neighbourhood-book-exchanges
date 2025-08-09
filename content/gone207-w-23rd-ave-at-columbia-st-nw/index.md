@@ -11,9 +11,6 @@ tags:
   - violet-marker
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-C6A4CF-labelson
-original_coordinates: '-123.1101837,49.2500863,0'
 ---
 Moved from here to 180 W. 22nd.  With bench.  
 On 2020 Dec. 1, holiday lights on the book box!

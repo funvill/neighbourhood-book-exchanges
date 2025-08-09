@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.9974374,49.2476966,0'
 ---
 Just e. of Wayburne Dr.
 Canada Way—Deer Lake Pkwy.

@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-125.1854052,49.9178105,0'
 ---
 Little Free Library #76322; mmcgregor@srd.ca
 —Added to map by K.D., 2025 2 27.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1014943,49.2518136,0'
 ---
 Outside of Liberty Bakery in the street.
 At the w. end of the street seating which is blocking vehicle traffic on E. 21st Ave.

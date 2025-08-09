@@ -11,9 +11,6 @@ tags:
   - green-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-62AF44-labelson
-original_coordinates: '-123.1359288,49.2894388,0'
 ---
 Next date here to be announced.  
 These outdoor events move around the city.

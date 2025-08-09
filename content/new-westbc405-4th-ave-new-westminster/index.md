@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.9146756,49.2114579,0'
 ---
 Free little library.  Not confirmed.
 —Added to map by K.D., 2025 7 23.

@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-122.9971228,49.2419017,0'
 ---
 Not in Vancouver, but nearby in w. Burnaby.
 It is n.e. of Wayburne Dr. and Deer Lake Pkwy.

@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-123.0073594,49.2343907,0'
 ---
 Not confirmed.
 —Added to map by K.D., 2021 11 9.  

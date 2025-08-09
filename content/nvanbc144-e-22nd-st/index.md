@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-93D7E8-labelson
-original_coordinates: '-123.0700894,49.3294973,0'
 ---
 Silver Harbour Seniors' Activity Centre.
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts.

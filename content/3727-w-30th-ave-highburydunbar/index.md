@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1870821,49.2452821,0'
 ---
 Small box.
 —Added to map by K.D., 2022 2 25.  

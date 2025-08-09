@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1112322,49.2579451,0'
 ---
 3065 Alberta might be the same property.
 Books might get wet, so please donate each dry book in its own clear plastic bag.

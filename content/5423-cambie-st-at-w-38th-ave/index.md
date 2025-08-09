@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1163883,49.2362018,0'
 ---
 'Cambie Commons'.
 Seeds and seedlings also welcome.

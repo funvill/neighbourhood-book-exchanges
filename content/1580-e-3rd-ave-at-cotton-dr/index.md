@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-FF8277-labelson
-original_coordinates: '-123.0716325,49.2677486,0'
 ---
 East Van Palomita Gallery:
 A cute art gallery that also offers some fibre arts supplies and ?books. https://www.instagram.com/palomita.gallery/

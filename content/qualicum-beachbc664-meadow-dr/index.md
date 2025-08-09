@@ -10,9 +10,6 @@ tags:
   - pale-blue-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-93D7E8-labelson
-original_coordinates: '-124.3806036,49.3471863,0'
 ---
 Just n. of Lundine Lane and n. of Is. Hwy.; Yambury—Johnstone (n.-s. streets); n.e. of airport; Little Free Library #2044
 —Added to map by K.D., 2025 2 27.

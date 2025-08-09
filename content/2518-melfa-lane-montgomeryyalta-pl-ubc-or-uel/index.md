@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.2375719,49.2648177,0'
 ---
 Medium-small box.  Little Free Library #67298.
 Montgomery—Yalta Pl. (which go n.s.~); Tennis Cresc.—Acadia Rd. (which go w.e.~); just s. of University Blvd.; ~3 blocks e. of Wesbrook Mall.

@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.0879985,49.2448218,0'
 ---
 Confirmed.  One block e. of Fraser St.
 Children's Book Nook and 'Imagination Station': Children's Art Supply Exchange.  Bench.

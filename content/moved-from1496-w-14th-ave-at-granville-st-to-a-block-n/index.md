@@ -11,9 +11,6 @@ tags:
   - star-shape
   - inactive
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-F4EB37-labelson
-original_coordinates: '-123.1380829,49.2589202,0'
 ---
 It might move back here.
 Now, however it has been moved a block n. to

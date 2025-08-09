@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.070897,49.2419573,0'
 ---
 E. 31st—32nd Ave.; s. of Kingsway.
 Knight St.—Victoria Dr.

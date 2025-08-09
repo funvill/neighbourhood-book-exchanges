@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1857656,49.2520227,0'
 ---
 This book box faces W. 23rd Ave.  It is on the same property as 3891 Dunbar St. on that corner.
 —Added to map by K.D., 2020? and 2021 7 1.

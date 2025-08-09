@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1077487,49.2519936,0'
 ---
 Cambie—Main St.
 Curtained front; open back.  Books get wet, 

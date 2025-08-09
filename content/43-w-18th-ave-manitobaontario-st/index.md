@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1060329,49.2547774,0'
 ---
 3 little shelves.
 —Added to map by K.D., 2022 4 22. 

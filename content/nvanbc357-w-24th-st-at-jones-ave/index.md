@@ -11,9 +11,6 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-960-93D7E8-labelson
-original_coordinates: '-123.0811539,49.331197,0'
 ---
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts. 
 https://baaadannas.com/little-fibre-library-resource-page/

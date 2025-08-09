@@ -11,9 +11,6 @@ tags:
   - red-marker
   - active
 photo: /images/libraries/placeholder-library.jpg
-established: unknown
-original_style: icon-503-FF8277-labelson
-original_coordinates: '-123.1298196,49.2466477,0'
 ---
 Just w. of Oak St. and W. 28th Ave.
 —Added to map by K.D., 2020. 
