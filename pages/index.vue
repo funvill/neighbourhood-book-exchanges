@@ -127,19 +127,7 @@
       </div>
     </section>
 
-    <!-- Recently Updated Libraries -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">Recently Updated Libraries</h2>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover the latest additions and updates to our community library network
-          </p>
-        </div>
-        
-        <FeaturedLibraries />
-      </div>
-    </section>
+  <!-- Recently Updated Libraries section removed -->
 
     <!-- Call to Action -->
     <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">

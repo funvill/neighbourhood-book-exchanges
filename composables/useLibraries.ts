@@ -45,14 +45,51 @@ export function buildDescription(body?: any): string {
   return ''
 }
 
+// Client-side image map for all images stored within content/libraries/**
+// This lets us turn relative frontmatter values like "logbook/20250809-190601.png"
+// into fully-qualified asset URLs that Vite/Nuxt can serve.
+// Note: When running in a pure server context (e.g., Nitro node env) this block
+// will be tree-shaken / ignored because import.meta.glob is a build-time feature.
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore - Vite injects the typing
+const __LIB_CONTENT_IMAGES__: Record<string, string> = import.meta?.glob?.(
+  '~/content/libraries/**/*.{png,jpg,jpeg,webp,avif,gif}',
+  { eager: true, as: 'url' }
+// Fallback empty object if glob unsupported
+) || {}
+
+function resolvePhoto(slug: string, raw?: string): string {
+  if (!raw) return '/images/libraries/placeholder-library.jpg'
+  // Already absolute or remote
+  if (raw.startsWith('/') || /^https?:\/\//i.test(raw)) return raw
+  // Attempt to find matching image inside the content tree
+  const normalized = raw.replace(/^\.\//, '')
+  // Candidate endings we will search for
+  const candidates = [
+    `/libraries/${slug}/${normalized}`,
+    // Sometimes the slug may already appear in the raw path (defensive)
+    normalized
+  ]
+  const entries = Object.entries(__LIB_CONTENT_IMAGES__)
+  for (const [key, url] of entries) {
+    if (candidates.some(c => key.endsWith(c))) return url as string
+    // Also allow endsWith just the filename if unique within slug folder
+    if (key.includes(`/libraries/${slug}/`) && key.endsWith(`/${normalized.split('/').pop()}`)) return url as string
+  }
+  // Fallback: assume server plugin copied the file to /public/library-images/<slug>/
+  const filename = normalized.split('/').pop() || normalized
+  return `/library-images/${encodeURIComponent(slug)}/${encodeURIComponent(filename)}`
+}
+
 export function mapContentDocToSummary(doc: any): LibrarySummary {
   const fm: LibraryFrontmatter = doc || {}
   const slug = doc._path.replace(/^\/libraries\//, '').replace(/\/$/, '')
+  const rawPhoto = fm.photo || '/images/libraries/placeholder-library.jpg'
   return {
     slug,
     title: fm.title || slug,
     location: fm.location,
-    photo: fm.photo || '/images/libraries/placeholder-library.jpg',
+    photo: resolvePhoto(slug, rawPhoto),
     tags: fm.tags || [],
     description: buildDescription(doc.body),
     established: fm.established,

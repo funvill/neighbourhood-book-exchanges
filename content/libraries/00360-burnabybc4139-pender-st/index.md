@@ -1,0 +1,23 @@
+---
+title: Pender’s Book Nook
+location:
+  lat: 49.2802366
+  lng: -123.0127471
+  address: '4139 Pender St, Burnaby, BC, Canada'
+tags:
+  - burnaby
+  - active
+  - books
+  - visited_funvill
+photo: logbook/PXL_20250809_021423095.MP.png
+library_id: '00360'
+---
+
+A little worn out and needed some repair. 2 shelfs, books
+
+Pender’s Book Nook. Little Free Library #169027.
+
+## History
+
+- **2024-Aug-08** - visited by [@funvill](https://blog.abluestar.com)
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

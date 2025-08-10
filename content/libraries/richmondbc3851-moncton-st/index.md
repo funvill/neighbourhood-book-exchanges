@@ -11,23 +11,11 @@ tags:
   - star-shape
   - active
 photo: /images/libraries/placeholder-library.jpg
+library_id: 00496
 ---
 A Little Fibre Library exchanging free books, tools, and materials related to all fibre arts.
 Possibly by A Monkey Tree Emporium gift shop.
 —Added to map by K.D., 2022 3 19.
 
-## Location Details
-
-This library is located at [49.1252702, -123.1823704](https://www.google.com/maps?q=49.1252702,-123.1823704).
-
-GPS Coordinates: 49.1252702, -123.1823704
-
-## Photos
-
-External photos available in original dataset.
-
-## Import Information
-
-This library was imported from the Vancouver Little Libraries KML dataset on 2024-08-08.
-
-Original data source: Neighbourhood book exchanges 2025.8.6.revision; Vancouver, BC, Canada
+## History
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
