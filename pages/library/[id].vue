@@ -230,15 +230,17 @@ declare function $fetch<T = any>(url: string): Promise<T>
 const route = useRoute()
 const routeParam = route.params.id as string
 
+// Import URL utilities
+import { parseLibraryUrl, isLegacyUrlFormat } from '~/utils/libraryUrl'
+
 // Parse URL parameter to handle both new ID-slug format and legacy slug-only format
-const { parseLibraryUrl, isLegacyUrlFormat, extractSlug } = await import('~/utils/libraryUrl')
 const urlParts = parseLibraryUrl(routeParam)
 
 // Determine the actual slug to use for content lookup
-const librarySlug = urlParts?.slug || extractSlug(routeParam)
+const librarySlug = urlParts?.slug || routeParam
 const libraryId = urlParts?.library_id
 
-// If this is a legacy URL (slug-only), we need to redirect to canonical form
+// Check if this is a legacy URL (slug-only without numeric prefix)
 const shouldRedirect = isLegacyUrlFormat(routeParam)
 
 const { data: doc, pending } = useAsyncData<any>(`library:${librarySlug}`, async () => {
@@ -524,8 +526,8 @@ useHead({
       property: 'og:url',
       content: computed(() => {
         if (library.value?.library_id) {
-          const { libraryUrl } = require('~/utils/libraryUrl')
-          return `https://neighbourhood-book-exchanges.com${libraryUrl(library.value)}`
+          // Import synchronously in computed
+          return `https://neighbourhood-book-exchanges.com/library/${library.value.slug}`
         }
         return `https://neighbourhood-book-exchanges.com/library/${librarySlug}`
       })
@@ -536,8 +538,7 @@ useHead({
       rel: 'canonical',
       href: computed(() => {
         if (library.value?.library_id) {
-          const { libraryUrl } = require('~/utils/libraryUrl')
-          return `https://neighbourhood-book-exchanges.com${libraryUrl(library.value)}`
+          return `https://neighbourhood-book-exchanges.com/library/${library.value.slug}`
         }
         return `https://neighbourhood-book-exchanges.com/library/${librarySlug}`
       })

@@ -99,6 +99,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
+import { libraryUrl } from '~/utils/libraryUrl'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare function queryContent(path?: string): any
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -310,10 +311,9 @@ const updateMapMarkers = () => {
   import('leaflet').then((L) => {
     searchResults.value.forEach(library => {
       // Generate proper library URL
-      let libraryUrl = `/library/${library.slug}`
+      let libUrl = `/library/${library.slug}`
       if (library.library_id) {
-        const { libraryUrl: generateLibraryUrl } = require('~/utils/libraryUrl')
-        libraryUrl = generateLibraryUrl({ library_id: library.library_id, slug: library.slug })
+        libUrl = libraryUrl({ library_id: library.library_id, slug: library.slug })
       }
       
       const marker = L.marker([library.location.lat, library.location.lng])
@@ -322,7 +322,7 @@ const updateMapMarkers = () => {
           <div class="p-2">
             <h4 class="font-semibold">${library.title}</h4>
             <p class="text-sm text-gray-600">${library.description}</p>
-            <a href="${libraryUrl}" class="text-blue-600 hover:underline">View Details</a>
+            <a href="${libUrl}" class="text-blue-600 hover:underline">View Details</a>
           </div>
         `)
       markers.push(marker)

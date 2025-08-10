@@ -127,6 +127,7 @@
 
 <script setup lang="ts">
 import { ref, reactive, computed, onMounted, onUnmounted, defineComponent, h } from 'vue'
+import { libraryUrl as generateLibraryUrl } from '~/utils/libraryUrl'
 // Fallback declaration for queryContent to satisfy type checking in this isolated file.
 // nuxt/content injects this at runtime; refine with proper types if desired.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -254,7 +255,6 @@ const libraryTitleMissing = ref(false)
 // Computed library URL using new format if library_id is available
 const libraryUrl = computed(() => {
   if (libraryId.value && librarySlug.value) {
-    const { libraryUrl: generateLibraryUrl } = require('~/utils/libraryUrl')
     return generateLibraryUrl({ library_id: libraryId.value, slug: librarySlug.value })
   }
   return `/library/${librarySlug.value}`

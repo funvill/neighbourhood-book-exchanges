@@ -28,7 +28,12 @@ describe('libraryUrl utilities', () => {
     })
 
     describe('libraryUrl', () => {
-        it('generates URL with library_id field', () => {
+        it('generates URL with library_id field for existing format', () => {
+            const library = { library_id: 73, slug: '00073-example-library' }
+            expect(libraryUrl(library)).toBe('/library/00073-example-library')
+        })
+
+        it('generates URL with library_id field for new slug', () => {
             const library = { library_id: 73, slug: 'example-library' }
             expect(libraryUrl(library)).toBe('/library/00073-example-library')
         })
@@ -59,7 +64,15 @@ describe('libraryUrl utilities', () => {
             const result = parseLibraryUrl('00073-example-library')
             expect(result).toEqual({
                 library_id: '00073',
-                slug: 'example-library'
+                slug: '00073-example-library'
+            })
+        })
+
+        it('parses existing directory format', () => {
+            const result = parseLibraryUrl('00001-1005-jervis-st-at-nelson-st-sw')
+            expect(result).toEqual({
+                library_id: '00001',
+                slug: '00001-1005-jervis-st-at-nelson-st-sw'
             })
         })
 
@@ -67,7 +80,7 @@ describe('libraryUrl utilities', () => {
             const result = parseLibraryUrl('00073')
             expect(result).toEqual({
                 library_id: '00073',
-                slug: undefined
+                slug: '00073'
             })
         })
 
@@ -87,11 +100,11 @@ describe('libraryUrl utilities', () => {
         it('handles numeric IDs with varying lengths', () => {
             expect(parseLibraryUrl('12345-slug')).toEqual({
                 library_id: '12345',
-                slug: 'slug'
+                slug: '12345-slug'
             })
             expect(parseLibraryUrl('123456789-slug')).toEqual({
                 library_id: '123456789',
-                slug: 'slug'
+                slug: '123456789-slug'
             })
         })
     })
@@ -125,7 +138,7 @@ describe('libraryUrl utilities', () => {
 
     describe('extractSlug', () => {
         it('extracts slug from new format', () => {
-            expect(extractSlug('00073-example-library')).toBe('example-library')
+            expect(extractSlug('00073-example-library')).toBe('00073-example-library')
         })
 
         it('returns full param for legacy format', () => {

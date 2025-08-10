@@ -29,6 +29,13 @@ export function libraryUrl(library: LibraryInfo): string {
     if (!id) {
         throw new Error('Library must have library_id or id field')
     }
+    
+    // If the slug already includes the ID (current format), use it as-is
+    if (library.slug.startsWith(padLibraryId(id) + '-')) {
+        return `/library/${library.slug}`
+    }
+    
+    // Otherwise, construct the ID-slug format
     const paddedId = padLibraryId(id)
     return `/library/${paddedId}-${library.slug}`
 }
@@ -41,11 +48,21 @@ export function parseLibraryUrl(param: string): LibraryUrlParts | null {
     if (!param) return null
     
     // Try new format first: {library_id}-{slug}
-    const idSlugMatch = param.match(/^(\d{5,})(?:-(.+))?$/)
+    // But recognize that current directory structure already has this format
+    const idSlugMatch = param.match(/^(\d{5,})-(.+)$/)
     if (idSlugMatch) {
         return {
             library_id: idSlugMatch[1],
-            slug: idSlugMatch[2]
+            slug: param // Use full param as slug for content lookup
+        }
+    }
+    
+    // Also handle ID-only format
+    const idOnlyMatch = param.match(/^(\d{5,})$/)
+    if (idOnlyMatch) {
+        return {
+            library_id: idOnlyMatch[1],
+            slug: param
         }
     }
     
@@ -71,7 +88,7 @@ export function isNewUrlFormat(param: string): boolean {
  * Check if a URL parameter is in the legacy slug-only format
  */
 export function isLegacyUrlFormat(param: string): boolean {
-    return !!/^[^-\d]/.test(param) || (!/^\d/.test(param) && !param.includes('-'))
+    return !!/^[^-\d]/.test(param) && !/^\d/.test(param)
 }
 
 /**

@@ -62,6 +62,8 @@
 </template>
 
 <script setup lang="ts">
+import { libraryUrl } from '~/utils/libraryUrl'
+
 interface Library {
   id?: number
   library_id?: string | number
@@ -111,7 +113,6 @@ const getLibraryUrl = () => {
   
   // If we have a library_id, use the new canonical format
   if (libraryId) {
-    const { libraryUrl } = require('~/utils/libraryUrl')
     return libraryUrl({ library_id: libraryId, slug })
   }
   
