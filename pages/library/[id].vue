@@ -152,7 +152,7 @@
               -->
               <!-- Actions -->
               <div class="space-y-3">
-                <NuxtLink :to="`#todo?/logbook/new?library=${librarySlug}`"
+                <NuxtLink :to="`/logbook/new?library=${librarySlug}`"
                   class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
                   <span class="material-symbols-outlined" style="font-size:18px;">edit</span>
                   Add Log Entry
