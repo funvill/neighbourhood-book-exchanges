@@ -228,7 +228,18 @@ declare function useRoute(): any
 declare function $fetch<T = any>(url: string): Promise<T>
 
 const route = useRoute()
-const librarySlug = route.params.id as string
+const routeParam = route.params.id as string
+
+// Parse URL parameter to handle both new ID-slug format and legacy slug-only format
+const { parseLibraryUrl, isLegacyUrlFormat, extractSlug } = await import('~/utils/libraryUrl')
+const urlParts = parseLibraryUrl(routeParam)
+
+// Determine the actual slug to use for content lookup
+const librarySlug = urlParts?.slug || extractSlug(routeParam)
+const libraryId = urlParts?.library_id
+
+// If this is a legacy URL (slug-only), we need to redirect to canonical form
+const shouldRedirect = isLegacyUrlFormat(routeParam)
 
 const { data: doc, pending } = useAsyncData<any>(`library:${librarySlug}`, async () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -364,9 +375,26 @@ const library = computed(() => {
     entries_count: 0,
     fullContent: doc.value.body,
     established: doc.value.established,
-    images: gallery
+    images: gallery,
+    library_id: doc.value.library_id
   }
 })
+
+// Handle redirect for legacy URLs
+watch([library, doc], async ([newLibrary, newDoc]) => {
+  if (newLibrary && newDoc && shouldRedirect) {
+    const docLibraryId = newDoc.library_id
+    if (docLibraryId) {
+      const { libraryUrl } = await import('~/utils/libraryUrl')
+      const canonicalUrl = libraryUrl({ 
+        library_id: docLibraryId, 
+        slug: librarySlug 
+      })
+      // Use navigateTo for client-side redirect with 301 status
+      await navigateTo(canonicalUrl, { redirectCode: 301 })
+    }
+  }
+}, { immediate: true })
 
 const libraryContent = computed(() => doc.value?.body || null)
 const map = ref<any>(null)
@@ -491,6 +519,28 @@ useHead({
     {
       name: 'description',
       content: computed(() => library.value ? library.value.description : 'Library details page')
+    },
+    {
+      property: 'og:url',
+      content: computed(() => {
+        if (library.value?.library_id) {
+          const { libraryUrl } = require('~/utils/libraryUrl')
+          return `https://neighbourhood-book-exchanges.com${libraryUrl(library.value)}`
+        }
+        return `https://neighbourhood-book-exchanges.com/library/${librarySlug}`
+      })
+    }
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: computed(() => {
+        if (library.value?.library_id) {
+          const { libraryUrl } = require('~/utils/libraryUrl')
+          return `https://neighbourhood-book-exchanges.com${libraryUrl(library.value)}`
+        }
+        return `https://neighbourhood-book-exchanges.com/library/${librarySlug}`
+      })
     }
   ]
 })

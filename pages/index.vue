@@ -228,13 +228,20 @@ function initMap() {
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map)
   const markers: any[] = []
   allLibraries.value.forEach(library => {
+    // Generate proper library URL
+    let libraryUrl = `/library/${library.slug}`
+    if (library.library_id) {
+      const { libraryUrl: generateLibraryUrl } = require('~/utils/libraryUrl')
+      libraryUrl = generateLibraryUrl({ library_id: library.library_id, slug: library.slug })
+    }
+    
     const marker = L.marker([library.location.lat, library.location.lng])
       .addTo(map)
       .bindPopup(`
         <div class="p-2">
           <h4 class="font-semibold">${library.title}</h4>
           <p class="text-sm text-gray-600">${library.description}</p>
-          <a href="/library/${library.slug}" class="text-blue-600 hover:underline">View Details</a>
+          <a href="${libraryUrl}" class="text-blue-600 hover:underline">View Details</a>
         </div>
       `)
     markers.push(marker)

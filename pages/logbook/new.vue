@@ -12,7 +12,7 @@
         <div class="flex-1 min-w-0">
           <p class="text-sm text-gray-600 mb-1">Adding an entry for</p>
           <p class="text-lg font-semibold text-gray-900 truncate">
-            <NuxtLink :to="`/library/${librarySlug}`" class="text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded">
+            <NuxtLink :to="libraryUrl" class="text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded">
               <span v-if="libraryTitle">{{ libraryTitle }}</span>
               <span v-else>{{ librarySlug }}</span>
             </NuxtLink>
@@ -247,8 +247,18 @@ const spaceTypeOptions = ['Public','Private']
 const route = useRoute()
 const librarySlug = computed(() => (route?.query?.library || '').toString().trim())
 const libraryTitle = ref('')
+const libraryId = ref('')
 const libraryTitleFetched = ref(false)
 const libraryTitleMissing = ref(false)
+
+// Computed library URL using new format if library_id is available
+const libraryUrl = computed(() => {
+  if (libraryId.value && librarySlug.value) {
+    const { libraryUrl: generateLibraryUrl } = require('~/utils/libraryUrl')
+    return generateLibraryUrl({ library_id: libraryId.value, slug: librarySlug.value })
+  }
+  return `/library/${librarySlug.value}`
+})
 
 // Dirty state detection
 const isDirty = computed(() => {
@@ -309,8 +319,12 @@ onMounted(async () => {
     if (librarySlug.value) {
       try {
         const lib = await queryContent(`/libraries/${librarySlug.value}`).findOne()
-        if (lib && lib.title) libraryTitle.value = lib.title
-        else libraryTitleMissing.value = true
+        if (lib && lib.title) {
+          libraryTitle.value = lib.title
+          libraryId.value = lib.library_id || ''
+        } else {
+          libraryTitleMissing.value = true
+        }
       } catch { libraryTitleMissing.value = true }
       finally { libraryTitleFetched.value = true }
     } else {

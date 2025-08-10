@@ -64,6 +64,7 @@
 <script setup lang="ts">
 interface Library {
   id?: number
+  library_id?: string | number
   slug?: string
   _path?: string
   title: string
@@ -105,7 +106,17 @@ const getLibrarySlug = (library: Library) => {
 }
 
 const getLibraryUrl = () => {
-  return `/library/${getLibrarySlug(props.library)}`
+  const slug = getLibrarySlug(props.library)
+  const libraryId = props.library.library_id ?? props.library.id
+  
+  // If we have a library_id, use the new canonical format
+  if (libraryId) {
+    const { libraryUrl } = require('~/utils/libraryUrl')
+    return libraryUrl({ library_id: libraryId, slug })
+  }
+  
+  // Fallback to legacy format
+  return `/library/${slug}`
 }
 
 const getImageSrc = () => {
