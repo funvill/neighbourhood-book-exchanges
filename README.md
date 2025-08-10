@@ -39,6 +39,13 @@ npm run preview
 - Convert all the images to png, and resize them
   - Max image size is 600x600 pixels in any direction
 - This project is made to be built as a static webpage, then served by Cloudflare R2.
+- Add a `## History` section to each little libary. the history section is formated like this `- **2024-Aug-08** - @funvill visited and took photo. Status: Active`
+- `photo: logbook/20250809-190601.png` to reference a logbook entry
+
+### Tags
+
+- visited_funvill - This tiny libary has been visited by [@funvill](https://blog.abluestar.com)
+
 
 ### Directory / Files
 
@@ -72,6 +79,7 @@ photo: /images/libraries/placeholder-library.jpg
 This is the example description. this is markdown and can contain links [48.8520587, -123.5179226](https://www.google.com/maps?q=48.8520587,-123.5179226) and other formating options.
 ---
 ```
+
 
 #### logbook/YYY-MMM-DD-HHMMSS.md
 
