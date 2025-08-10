@@ -24,4 +24,4 @@ https://www.facebook.com/100057000522780/posts/724463509463660/?sfnsn=mo&mibexti
 —Added to map by K.D., 2023 8 11.  
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

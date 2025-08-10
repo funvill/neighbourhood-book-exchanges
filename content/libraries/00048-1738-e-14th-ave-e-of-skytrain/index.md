@@ -20,4 +20,4 @@ Not 1746 or 1748.  
 Across the street, to the n.e., is 1747 E 14th Ave.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

@@ -18,5 +18,5 @@ Wooden box, single shelf, needs maintence
 ## History
 
 - **2024-Aug-08** - @funvill visited and took photo. Status: Active. Wooden box, single shelf, needs maintence
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
 - **2021-Jun-17** - Added to map by K.D., 2021 6 17.  Thanks, K.G.

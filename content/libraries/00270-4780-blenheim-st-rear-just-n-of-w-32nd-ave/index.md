@@ -20,4 +20,4 @@ The books might get wet on the open top shelf, so for that shelf please donate e
 Address corrected 2021 7 1.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

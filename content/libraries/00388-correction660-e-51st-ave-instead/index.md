@@ -19,4 +19,4 @@ not at this violet marker on E. 52nd Ave.
 —Notes by K.D.:  2021 6 25.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

@@ -26,4 +26,4 @@ Missing door, so books might get wet, so please donate each book in its own clea
 — Revised by K.D. 2024 9 20+.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

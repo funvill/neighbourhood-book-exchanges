@@ -18,4 +18,4 @@ Between St. Catherines and Windsor Streets. Fraser—Knight.  'Book Exchange'.
 —Revised by K.D., 2022 10 9.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

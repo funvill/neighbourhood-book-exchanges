@@ -19,4 +19,4 @@ Facing W. 2nd Ave.  With beautiful bench.
 (On another map the address is inaccurately given as 2698-2600 W. 2nd Ave.)
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

@@ -31,4 +31,4 @@ If coming instead from the south (E. 54th Ave.), go n. 1/2 block n. of 54th on t
 That lane is not a through street on this block for cars, just for pedestrians and cyclists.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

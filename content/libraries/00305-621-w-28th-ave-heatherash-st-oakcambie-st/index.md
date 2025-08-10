@@ -17,4 +17,4 @@ Not 721 W. 28th.
 Empty as of 2023 8 8, but later it might have more books, etc.  
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

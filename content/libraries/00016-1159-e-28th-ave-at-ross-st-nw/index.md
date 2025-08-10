@@ -19,4 +19,4 @@ V5V 2P5.  (Not 1153 E. 28th.)
 —Added to map by K.D., 2021 5 29.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

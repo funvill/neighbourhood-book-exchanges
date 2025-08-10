@@ -18,4 +18,4 @@ The box might not be out on the sidewalk if the store is closed.  The store is 
 —Added to map by K.D., 2020 12—2021 5 1.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

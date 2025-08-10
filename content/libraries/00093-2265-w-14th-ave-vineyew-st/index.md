@@ -18,4 +18,4 @@ Not 2263 W. 14th.
 —Original notes added to by K.D., 2022 1 26-.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

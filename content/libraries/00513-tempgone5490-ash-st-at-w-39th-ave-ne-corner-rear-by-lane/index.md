@@ -21,4 +21,4 @@ Books, clothes, house-wares, toys, etc.
 Closed 2024 4 and as of 2025 6 4~.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

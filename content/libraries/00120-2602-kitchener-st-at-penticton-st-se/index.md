@@ -21,4 +21,4 @@ To the w., across the street, is 1439 Penticton.
 —Added to map by K.D., 2020.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

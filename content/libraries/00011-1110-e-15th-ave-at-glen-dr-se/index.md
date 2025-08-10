@@ -17,4 +17,4 @@ Reported by Craig B., May 2020.
 Notes by K.D.:  Fraser—Knight St.; on property line with 1126.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

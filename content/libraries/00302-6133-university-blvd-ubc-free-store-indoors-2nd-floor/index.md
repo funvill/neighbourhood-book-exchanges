@@ -24,4 +24,4 @@ Re-closing noted 2024 11 29.  Permanent?
 They don't answer FB messages.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

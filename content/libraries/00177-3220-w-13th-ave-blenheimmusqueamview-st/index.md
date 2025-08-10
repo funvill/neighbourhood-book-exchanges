@@ -19,4 +19,4 @@ Address corrected 2020 12. 
 (I could not find the address 3228 W. 13th Ave.)
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

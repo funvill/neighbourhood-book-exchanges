@@ -21,4 +21,4 @@ It might seem that the marker shows that the offerings are ON the bridge, but, n
 Thanks, A.Y. and the Georgia Straight.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

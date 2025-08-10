@@ -22,4 +22,4 @@ https://VictoriaPlaceMaking.ca/little-free-libraries/
 This library was recently updated to demonstrate the featured libraries section!
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

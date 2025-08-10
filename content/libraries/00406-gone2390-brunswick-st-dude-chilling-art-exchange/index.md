@@ -21,4 +21,4 @@ K.D. adds: Closed for a few years as of 2020.
 It was somewhere in Guelph Park, a.k.a. Dude Chilling Park, 2390 Brunswick St.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

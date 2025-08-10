@@ -26,4 +26,4 @@ CDs and other media were also welcome.  Medium size.  Since those photos were
 —Original notes added to by K.D., 2020~+.  Noted gone 2023 7 29. Thanks, M.S.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

@@ -18,4 +18,4 @@ Not a book exchange, but an old small fridge being given away.  It might work a
 —
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

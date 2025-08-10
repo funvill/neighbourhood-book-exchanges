@@ -20,4 +20,4 @@ Jamie Girouard, probable steward.
 Noted gone by K.D., 2025 3 1.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

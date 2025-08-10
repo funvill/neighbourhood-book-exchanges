@@ -17,4 +17,4 @@ A probably false rumour said that Golden Age Collectables store was giving away 
 —Added to map by K.D., 2025 5 2.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

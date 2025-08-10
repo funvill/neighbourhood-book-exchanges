@@ -20,4 +20,4 @@ Now, however it has been moved a block n. to
 Address previously revised from 3002 Granville to 1496 W. 14th by K.D., 2024 11 29.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

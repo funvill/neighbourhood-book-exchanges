@@ -17,4 +17,4 @@ Was a temporary pile in the open air, s.e. corner of  Emery Barnes Park.
 —Added to map by K.D., 2023 9 8.  
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

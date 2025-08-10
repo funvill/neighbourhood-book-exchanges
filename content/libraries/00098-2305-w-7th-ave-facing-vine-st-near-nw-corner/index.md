@@ -22,4 +22,4 @@ There in the south box are sometimes books and other items, too, like a free sto
 Updated by K.D., 2025 3 12.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

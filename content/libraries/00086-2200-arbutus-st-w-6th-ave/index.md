@@ -18,4 +18,4 @@ New, waterproof structure (noticed 2022 1) replacing the one pictured above.
  —Original notes added to by K.D., ~2020+.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

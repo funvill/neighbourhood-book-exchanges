@@ -19,4 +19,4 @@ Donate good quality items.
 —Added to map by K.D., 2022 3 18.  
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

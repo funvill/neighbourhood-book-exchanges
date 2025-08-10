@@ -23,4 +23,4 @@ Clarified 2023 9 30. 
 Address confirmed 2023 11 16.  Thanks, M.S.  
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

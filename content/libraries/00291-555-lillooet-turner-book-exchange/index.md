@@ -19,4 +19,4 @@ Toys, also.  Books might get wet, so please donate each dry book in its own cle
 —Original notes added to by K.D.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

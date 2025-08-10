@@ -19,4 +19,4 @@ Board books, picture books, easy readers, chapter books and middle grade fiction
 —Added to map by K.D., 2023 1 20.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

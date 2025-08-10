@@ -17,4 +17,4 @@ East of Boat Day Care in the lane which runs north-south; on the w. edge of the 
 —Added to map by K.D., 2000.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

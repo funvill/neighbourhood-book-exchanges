@@ -20,4 +20,4 @@ Small box for small and medium-size books only.
 —Added to map by K.D., 2022 2 1. Thanks, K.G.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

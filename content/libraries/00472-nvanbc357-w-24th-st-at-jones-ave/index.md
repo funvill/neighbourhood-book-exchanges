@@ -25,4 +25,4 @@ An easier link might be here by now:
 https://www.facebook.com/groups/northshorelittlelibraries
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

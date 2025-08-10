@@ -18,4 +18,4 @@ For kids books, go across the street to the s. side of the house at 3896 Slocan 
 —Added to map by K.D., 2021 6 19. Thanks, K.G.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

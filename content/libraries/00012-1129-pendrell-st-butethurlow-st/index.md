@@ -20,4 +20,4 @@ Mole Hill neighbourhood.  A big box.
 —This is the first book exchange added to this map by K.D., 2020 10~.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

@@ -17,4 +17,4 @@ Main—Fraser.  A bit of free food as of 2022 2 23.
 —Added to map by K.D., 2021 8 31.  
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

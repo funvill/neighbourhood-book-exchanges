@@ -18,4 +18,4 @@ Not 55 address.  Across the st. from a little film library at 30 E. 23rd Ave.
 —Added to map by K.D., 2023 4 15. 
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

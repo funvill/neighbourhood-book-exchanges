@@ -19,4 +19,4 @@ On a w.-e. bike route.
 —Erected 2021 8 19 and added to this map by K.D. the same day.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

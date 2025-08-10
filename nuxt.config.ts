@@ -40,6 +40,13 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
+  // Exclude logbook entry markdown files from @nuxt/content indexing/search
+  content: {
+    // User requested pattern; matches top-level /logbook folders under content root.
+    // If nested library paths need exclusion, consider changing to '**/logbook/*.md'
+    ignores: ['/logbook/*.md']
+  },
+
   // Image optimization configuration
   image: {
     // The quality should be a number between 0 and 100

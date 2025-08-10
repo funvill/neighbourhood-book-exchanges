@@ -17,4 +17,4 @@ Its door is damaged.  Maybe donate each book in its own clear plastic bag.
 —Added to map by K.D., 2024 5 25.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

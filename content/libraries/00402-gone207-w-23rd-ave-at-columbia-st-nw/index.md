@@ -19,4 +19,4 @@ On 2020 Dec. 1, holiday lights on the book box!
 Confirmed moved 2023 8 8.  Thanks, K.B.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

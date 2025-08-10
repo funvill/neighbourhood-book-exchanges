@@ -12,7 +12,7 @@
  * 3. Append a new '## History' section with a standard initial entry:
  *
  *    ## History\n
- *    - **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision\n
+ *    - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision\n
  * Notes:
  * - Only processes markdown files that have frontmatter and keeps frontmatter untouched.
  * - Uses a very lightweight parser (line-based) to strip sections until the next heading of same or higher level (## ...).
@@ -36,7 +36,7 @@ const REMOVE_HEADINGS = new Set([
 
 const HISTORY_SECTION = [
   '## History',
-  '- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision',
+  '- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision',
   ''
 ].join('\n')
 

@@ -18,4 +18,4 @@ Kids books only.  For adult books, go across the street to 2730 E. 23rd Ave.
 —Added to map by K.D., 2021 6 19. Thanks, K.G.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

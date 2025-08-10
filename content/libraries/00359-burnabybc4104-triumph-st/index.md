@@ -24,5 +24,5 @@ Books might get wet, so please donate each dry book in its own clear plastic bag
 ## History
 
 - **2024-Aug-08** - visited by [@funvill](https://blog.abluestar.com)
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
 - **2024-Aug-08** - Added to map by K.D., 2022 3 2; unconfirmed. Thanks, L.F.V.  

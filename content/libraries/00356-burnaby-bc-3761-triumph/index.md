@@ -18,5 +18,5 @@ Wooden box, needs maintence, 5 shelfs, books.
 ## History
 
 - **2024-Aug-08** - visited by [@funvill](https://blog.abluestar.com)
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
 - **2020-jan-01** - Original notes added to by K.D., 2020~ and later.

@@ -17,4 +17,4 @@ library_id: '00442'
 Book box removed 2020 or 2021.  Noted 2021.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

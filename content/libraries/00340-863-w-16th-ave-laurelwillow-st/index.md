@@ -17,4 +17,4 @@ Notes by K.D.:  Not 883, as noted elsewhere.
 Quite big, 2 shelves.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

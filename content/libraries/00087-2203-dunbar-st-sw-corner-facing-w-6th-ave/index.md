@@ -17,4 +17,4 @@ Sixth Avenue Branch.  1 bl. e. of Alma St.; s.e. corner of the lane.  Next doo
 —Additional notes by K.D.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

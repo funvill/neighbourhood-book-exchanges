@@ -18,4 +18,4 @@ The books are gone, but there are a few other items left in a card-board box wit
 Books noted gone 2023 9 29.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

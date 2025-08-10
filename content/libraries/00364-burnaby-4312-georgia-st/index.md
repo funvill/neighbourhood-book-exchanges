@@ -20,4 +20,4 @@ The other is a steal box (book share) with 5 shelvs
 ## History
 
 - **2024-Aug-08** - visited by [@funvill](https://blog.abluestar.com)
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

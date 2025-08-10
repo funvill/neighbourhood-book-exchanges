@@ -18,4 +18,4 @@ Later notes by K.D.:  Near the property line with 5590 Blenheim. Dunbar—MacKe
 'Book exchange'.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

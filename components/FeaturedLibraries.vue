@@ -41,18 +41,20 @@ const featuredLibraries = ref<Library[]>([])
 // Fetch and sort libraries by most recent updates
 onMounted(async () => {
   try {
-  const docs = await queryContent('/libraries').where({ _extension: 'md' }).find()
-    const mapped: Library[] = docs.map((d: any) => ({
-      slug: d._path.replace(/^\/libraries\//, ''),
-      title: d.title || d._path,
-      description: (d.body?.children?.find((c: any) => c.tag === 'p')?.children || []).map((c: any) => c.value || '').join(' ').substring(0,160) + '…',
-      tags: d.tags || [],
-      photo: d.photo || '/images/libraries/placeholder-library.jpg',
-      location: d.location || { lat: 49.2827, lng: -123.1207 },
-      _path: d._path,
-      updated: d.updated
-    }))
-    // Sort by updated (fallback to title)
+    const docs = await queryContent('/libraries').where({ _extension: 'md' }).find()
+    const mapped: Library[] = docs.map((d: any) => {
+      const updated = d.updated || d._file?.mtime || d._source?.mtime
+      return {
+        slug: d._path.replace(/^\/libraries\//, ''),
+        title: d.title || d._path,
+        description: (d.body?.children?.find((c: any) => c.tag === 'p')?.children || []).map((c: any) => c.value || '').join(' ').substring(0,160) + '…',
+        tags: d.tags || [],
+        photo: d.photo || '/images/libraries/placeholder-library.jpg',
+        location: d.location || { lat: 49.2827, lng: -123.1207 },
+        _path: d._path,
+        updated
+      }
+    })
     featuredLibraries.value = mapped
       .sort((a, b) => new Date(b.updated || 0).getTime() - new Date(a.updated || 0).getTime())
       .slice(0,3)

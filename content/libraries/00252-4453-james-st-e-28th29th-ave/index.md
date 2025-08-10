@@ -17,4 +17,4 @@ library_id: '00252'
 Medium big, 3 shelves.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

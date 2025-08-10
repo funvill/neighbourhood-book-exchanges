@@ -18,4 +18,4 @@ Dunbar—Macdonald; 1 block e. of Dunbar. 
 —Added to map by K.D., 2022 3 28. 
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

@@ -19,4 +19,4 @@ The address is NOT any of these:  853 W. 24th, 854 W. 24th, 584 W. 23rd.
 (Noted gone 2023 7 13.)  Thanks, F.C.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

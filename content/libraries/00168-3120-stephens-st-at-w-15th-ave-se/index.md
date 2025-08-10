@@ -18,4 +18,4 @@ Small box on a former utility pole.  One chair.
 —Added to map by K.D., 2021 9 21. Thanks, C.B.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

@@ -20,4 +20,4 @@ Address not 2300, as noted elsewhere.
 Steward:  gary.bosomworth@gmail.com
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

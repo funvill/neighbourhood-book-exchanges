@@ -18,4 +18,4 @@ Window missing on left door.  It might help to keep them dry by wrapping each 
  — Revised by K.D., 2020?
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

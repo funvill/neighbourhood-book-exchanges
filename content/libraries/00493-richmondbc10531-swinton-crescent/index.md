@@ -17,4 +17,4 @@ Little Free Library #161082; John Edmondson.
 —Added to map by K.D., 2023 8 7.  
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

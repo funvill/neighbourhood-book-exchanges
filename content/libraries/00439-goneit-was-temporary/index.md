@@ -18,4 +18,4 @@ Seems permanently gone, but keep an eye on the spot.  2615 Columbia St.; the si
 Noted gone 2023 7 26 and earlier.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

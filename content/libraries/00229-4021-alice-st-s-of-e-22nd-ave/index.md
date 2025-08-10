@@ -18,4 +18,4 @@ Books might get wet through the front, so please donate each dry book in its own
 —Added to map by K.D., 2022 3 3.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

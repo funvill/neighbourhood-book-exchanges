@@ -19,4 +19,4 @@ Sophia—Pr. Edward St.  No door on top shelf. Books might get wet on that shel
 Noted gone 2025 1 9.  Thanks, A.Y.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

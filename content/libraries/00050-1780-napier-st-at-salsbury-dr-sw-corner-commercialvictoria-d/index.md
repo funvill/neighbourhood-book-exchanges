@@ -23,4 +23,4 @@ The crow is “Crovid”, our neighbourhood mascot.
 — Added to map ?2018 11, then K.D. revised it, lastly 2025 7 22. Thanks, P.S.!
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

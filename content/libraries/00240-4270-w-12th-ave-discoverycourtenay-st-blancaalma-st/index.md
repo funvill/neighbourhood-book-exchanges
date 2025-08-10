@@ -20,4 +20,4 @@ The notice in the little library's window is too sun-faded to read.  I left a n
 Thanks, E.B.S.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

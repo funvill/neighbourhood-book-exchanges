@@ -20,4 +20,4 @@ s.w. corner of Slocan, just n. of 225 N. Slocan St. (where another map ?wrongly 
 With chalk-board and bulletin board.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

@@ -17,4 +17,4 @@ Medium small, 3 shelves.
 Noted returned 2025 6 11.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

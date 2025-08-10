@@ -18,4 +18,4 @@ Reported moved from 207 W. 23rd Ave. to here.
  Thanks, K.G.  and K.B.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

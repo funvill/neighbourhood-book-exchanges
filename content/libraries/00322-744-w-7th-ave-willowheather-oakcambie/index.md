@@ -19,4 +19,4 @@ In an alcove, next to beautiful, huge display of miniatures: the Fairview Slopes
 —Added to map by K.D., 2022 6 17. 
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

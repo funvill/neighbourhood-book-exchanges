@@ -19,4 +19,4 @@ library_id: '00347'
 Map position corrected: it is on the s. side of W. 7th Ave.; 2022 6 17.
 
 ## History
-- **2024-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
