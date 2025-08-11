@@ -1,10 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import fs from 'node:fs'
 import path from 'node:path'
+import matter from 'gray-matter'
 
 // Collect library slugs at build time so their pages & API endpoints are prerendered for static hosting
 const librariesDir = path.resolve('content', 'libraries')
 let librarySlugs: string[] = []
+let libraryManifest: any = { libraries: [] }
+
 try {
   librarySlugs = fs.readdirSync(librariesDir)
     .filter(name => {
@@ -12,6 +15,38 @@ try {
         return fs.statSync(path.join(librariesDir, name)).isDirectory() && fs.existsSync(path.join(librariesDir, name, 'index.md'))
       } catch { return false }
     })
+
+  // Build library manifest for route generation by reading actual frontmatter
+  try {
+    const libraries: any[] = []
+    for (const folder of librarySlugs) {
+      try {
+        const indexPath = path.join(librariesDir, folder, 'index.md')
+        const content = fs.readFileSync(indexPath, 'utf8')
+        const frontmatter = matter(content)
+        const libraryId = frontmatter.data.library_id
+        if (libraryId) {
+          const title: string = frontmatter.data.title || folder
+          const titleSlug = title.toLowerCase()
+            .normalize('NFKD')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '')
+            .replace(/-{2,}/g, '-') || folder
+          libraries.push({
+            library_id: String(libraryId),
+            slug: titleSlug,
+            title,
+            folder
+          })
+        }
+      } catch {
+        // Skip if can't read frontmatter
+      }
+    }
+    libraryManifest.libraries = libraries
+  } catch {
+    // If frontmatter reading fails, fall back to legacy slug-only routes
+  }
 } catch {
   // directory might not exist yet during certain build phases; ignore
   librarySlugs = []
@@ -25,12 +60,12 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        // Dynamic library detail pages
-        ...librarySlugs.map(slug => `/library/${slug}`)
+        // Canonical /library/{id}/{slug} routes (legacy single-param prerender removed 2025-08-10 after 301 cutover)
+        ...libraryManifest.libraries.map((l: any) => `/library/${String(l.library_id).padStart(5,'0')}/${l.slug}`)
       ],
       // Continue generating even if some routes fail
-      failOnError: true
-    }
+      failOnError: false
+  }
   },
 
   modules: [

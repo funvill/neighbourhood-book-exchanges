@@ -99,6 +99,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
+import { libraryUrl } from '~/utils/libraryUrl'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare function queryContent(path?: string): any
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -113,6 +114,7 @@ interface Library {
   photo?: string
   tags?: string[]
   id?: number
+  library_id?: string | number
 }
 
 // Props
@@ -123,6 +125,11 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   initialSearchQuery: ''
 })
+// Macro shims if missing
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+declare function defineProps<T>(): T
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+declare function withDefaults<T, U>(props: T, defaults: U): T & U
 
 // Reactive data
 const searchQuery = ref(props.initialSearchQuery || '')
@@ -152,7 +159,8 @@ watch(libSummaries, (vals: any[]) => {
       location: v.location || { lat: 49.2827, lng: -123.1207 },
       description: v.description,
       photo: v.photo,
-      tags: v.tags || []
+      tags: v.tags || [],
+      library_id: v.library_id
     }))
     searchResults.value = [...allLibraries.value]
     nextTick(() => initializeMap())
@@ -176,7 +184,8 @@ onMounted(async () => {
         location: d.location || { lat: 49.2827, lng: -123.1207 },
         photo: d.photo || '/images/libraries/placeholder-library.jpg',
         description: (d.body?.children?.find((c: any) => c.tag === 'p')?.children || []).map((c: any) => c.value || '').join(' ').substring(0,200) + '…',
-        tags: d.tags || []
+        tags: d.tags || [],
+        library_id: d.library_id
       }))
       allLibraries.value = mapped
       searchResults.value = [...mapped]
@@ -272,31 +281,35 @@ const resetSearch = () => {
   updateMapMarkers()
 }
 
+let mapStarted = false
+let inlineIcon: any = null
 const initializeMap = () => {
-  // Initialize map on client side
-  if (typeof window !== 'undefined') {
-    // Dynamically import Leaflet to avoid SSR issues
-    import('leaflet').then((L) => {
-      // Fix Leaflet icon paths
-      delete L.Icon.Default.prototype._getIconUrl
-      L.Icon.Default.mergeOptions({
-        iconRetinaUrl: '/images/marker-icon-2x.png',
-        iconUrl: '/images/marker-icon.png',
-        shadowUrl: '/images/marker-shadow.png'
-      })
-
-      // Initialize map
-      map = L.map('map').setView([49.2827, -123.1207], 11)
-      
-      // Add tile layer
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(map)
-
-      // Add initial markers
-      updateMapMarkers()
+  if (mapStarted) return
+  if (typeof window === 'undefined') return
+  const el = document.getElementById('map')
+  if (!el) return
+  mapStarted = true
+  import('leaflet').then((L) => {
+    const svgMarker = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='41' viewBox='0 0 25 41'%3E%3Cpath fill='%233b82f6' stroke='white' stroke-width='2' d='M12.5 0c-7 0-12.5 5.6-12.5 12.5 0 9.4 12.5 28.5 12.5 28.5S25 21.9 25 12.5C25 5.6 19.4 0 12.5 0z'/%3E%3Ccircle cx='12.5' cy='12.5' r='5' fill='white'/%3E%3C/svg%3E"
+    const transparentPng = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/P1iJ6QAAAABJRU5ErkJggg=='
+    inlineIcon = L.icon({
+      iconUrl: svgMarker,
+      iconRetinaUrl: svgMarker,
+      shadowUrl: transparentPng,
+      iconSize: [25,41],
+      iconAnchor: [12,41],
+      popupAnchor: [1,-34],
+      shadowSize: [1,1]
     })
-  }
+    map = L.map('map').setView([49.2827, -123.1207], 11)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map)
+    updateMapMarkers()
+  }).catch(err => {
+    console.error('[SearchComponent] Failed to init map', err)
+    mapStarted = false
+  })
 }
 
 const updateMapMarkers = () => {
@@ -306,27 +319,34 @@ const updateMapMarkers = () => {
   markers.forEach(marker => map?.removeLayer(marker))
   markers.length = 0
 
-  // Add new markers
-  import('leaflet').then((L) => {
-    searchResults.value.forEach(library => {
-      const marker = L.marker([library.location.lat, library.location.lng])
-        .addTo(map!)
-        .bindPopup(`
-          <div class="p-2">
-            <h4 class="font-semibold">${library.title}</h4>
-            <p class="text-sm text-gray-600">${library.description}</p>
-            <a href="/library/${library.slug}" class="text-blue-600 hover:underline">View Details</a>
-          </div>
-        `)
-      markers.push(marker)
-    })
-
-    // Fit bounds if there are markers
-    if (markers.length > 0) {
-      const group = L.featureGroup(markers)
-      map?.fitBounds(group.getBounds().pad(0.1))
-    }
+  // Use existing Leaflet instance if already loaded
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const L: any = (window as any).L
+  if (!L) return
+  if (!inlineIcon && L.icon) {
+    const svgMarker = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='41' viewBox='0 0 25 41'%3E%3Cpath fill='%233b82f6' stroke='white' stroke-width='2' d='M12.5 0c-7 0-12.5 5.6-12.5 12.5 0 9.4 12.5 28.5 12.5 28.5S25 21.9 25 12.5C25 5.6 19.4 0 12.5 0z'/%3E%3Ccircle cx='12.5' cy='12.5' r='5' fill='white'/%3E%3C/svg%3E"
+    const transparentPng = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/P1iJ6QAAAABJRU5ErkJggg=='
+    inlineIcon = L.icon({ iconUrl: svgMarker, iconRetinaUrl: svgMarker, shadowUrl: transparentPng, iconSize: [25,41], iconAnchor: [12,41], popupAnchor: [1,-34], shadowSize: [1,1] })
+  }
+  searchResults.value.forEach((library: Library) => {
+    const libUrl = library.library_id
+      ? libraryUrl({ library_id: library.library_id, slug: library.slug })
+      : `/library/${library.slug}`
+  const marker = L.marker([library.location.lat, library.location.lng], inlineIcon ? { icon: inlineIcon } : undefined)
+      .addTo(map!)
+      .bindPopup(`
+        <div class="p-2">
+          <h4 class="font-semibold">${library.title}</h4>
+          <p class="text-sm text-gray-600">${library.description}</p>
+          <a href="${libUrl}" class="text-blue-600 hover:underline">View Details</a>
+        </div>
+      `)
+    markers.push(marker)
   })
+  if (markers.length > 0) {
+    const group = L.featureGroup(markers)
+    map?.fitBounds(group.getBounds().pad(0.1))
+  }
 }
 
 onUnmounted(() => {

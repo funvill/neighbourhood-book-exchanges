@@ -62,8 +62,16 @@
 </template>
 
 <script setup lang="ts">
+import { libraryUrl } from '~/utils/libraryUrl'
+// Nuxt macros shim (if type inference missing in isolated file analysis)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+declare function defineProps<T>(): T
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+declare function withDefaults<T, U>(props: T, defaults: U): T & U
+
 interface Library {
   id?: number
+  library_id?: string | number
   slug?: string
   _path?: string
   title: string
@@ -105,7 +113,10 @@ const getLibrarySlug = (library: Library) => {
 }
 
 const getLibraryUrl = () => {
-  return `/library/${getLibrarySlug(props.library)}`
+  const slug = getLibrarySlug(props.library)
+  const libraryId = props.library.library_id ?? props.library.id
+  if (libraryId) return libraryUrl({ library_id: libraryId, slug })
+  return `/library/${slug}` // legacy fallback (should phase out)
 }
 
 const getImageSrc = () => {

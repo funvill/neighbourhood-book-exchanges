@@ -11,7 +11,6 @@ interface LibSummary {
   location?: any
   photo: string
   tags: string[]
-  established?: string | number
   description: string
   _path: string
   images?: string[]
@@ -116,7 +115,6 @@ function loadLibraries(): LibSummary[] {
         location: data.location,
         photo: copied || data.photo || '/images/libraries/placeholder-library.jpg',
         tags: data.tags || [],
-        established: data.established,
         description: buildDescription(content),
         _path: `/libraries/${slug}`,
         images

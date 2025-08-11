@@ -154,6 +154,9 @@
 
 <script setup lang="ts">
 import { onMounted, ref, watch, nextTick } from 'vue'
+// Use relative import to satisfy TS resolution in build tooling
+// @ts-ignore path alias provided by Nuxt
+import { libraryUrl } from '~/utils/libraryUrl'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare function useLibraries(): { data: { value: any[] | null }; pending: any }
 
@@ -170,6 +173,7 @@ interface Library {
   description: string
   photo: string
   tags?: string[]
+  library_id?: string | number
 }
 
 // Data
@@ -190,61 +194,96 @@ watch(() => libSummaries.value, async (vals: any[] | null) => {
     location: v.location || { lat: 49.2827, lng: -123.1207 },
     description: v.description,
     photo: v.photo,
-    tags: v.tags
+    tags: v.tags,
+    library_id: v.library_id
   }))
-  // Update stats when data arrives
   stats.value.libraries = allLibraries.value.length
   stats.value.logbookEntries = allLibraries.value.length
   await nextTick()
-  ensureMap()
+  // Ensure map exists then (re)draw markers
+  ensureMap(() => refreshMarkers())
 }, { immediate: true })
 
-function ensureMap() {
+// Map + markers (reusable so markers appear even if data loads after map init)
+let mapInstance: any = null
+let inlineIcon: any = null
+const currentMarkers: any[] = []
+
+function ensureMap(after?: () => void) {
   if (typeof window === 'undefined') return
-  if (!document.getElementById('library-map')) return
+  const mapEl = document.getElementById('library-map')
+  if (!mapEl) return
+  const proceed = () => {
+    initMapBase()
+    if (after) after()
+  }
   if (!(window as any).L) {
-    // Load assets then init
-    const leafletCss = document.createElement('link')
-    leafletCss.rel = 'stylesheet'
-    leafletCss.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
-    document.head.appendChild(leafletCss)
-    const leafletScript = document.createElement('script')
-    leafletScript.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
-    leafletScript.onload = () => initMap()
-    document.body.appendChild(leafletScript)
+    // Inject CSS once
+    if (!document.querySelector('link[data-leaflet]')) {
+      const leafletCss = document.createElement('link')
+      leafletCss.rel = 'stylesheet'
+      leafletCss.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
+      leafletCss.setAttribute('data-leaflet','true')
+      document.head.appendChild(leafletCss)
+    }
+    // Load script
+    if (!document.querySelector('script[data-leaflet]')) {
+      const leafletScript = document.createElement('script')
+      leafletScript.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
+      leafletScript.setAttribute('data-leaflet','true')
+      leafletScript.onload = () => proceed()
+      document.body.appendChild(leafletScript)
+    } else {
+      // Script tag present but maybe still loading; attach onload or attempt proceed later
+      const existing = document.querySelector('script[data-leaflet]') as HTMLScriptElement
+      if (existing && existing.dataset.loaded === 'true') proceed()
+      else existing.addEventListener('load', () => proceed(), { once: true })
+    }
   } else {
-    initMap()
+    proceed()
   }
 }
 
-function initMap() {
-  if (!(window as any).L) return
+function initMapBase() {
+  if (mapInstance || !(window as any).L) return
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const L = (window as any).L
-  const mapEl = document.getElementById('library-map')
-  if (!mapEl) return
-  if ((mapEl as any)._initialized) return
-  const map = L.map('library-map').setView([49.27, -123.13], 10)
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map)
-  const markers: any[] = []
-  allLibraries.value.forEach(library => {
-    const marker = L.marker([library.location.lat, library.location.lng])
-      .addTo(map)
+  mapInstance = L.map('library-map').setView([49.27, -123.13], 10)
+  const svgMarker = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='41' viewBox='0 0 25 41'%3E%3Cpath fill='%233b82f6' stroke='white' stroke-width='2' d='M12.5 0c-7 0-12.5 5.6-12.5 12.5 0 9.4 12.5 28.5 12.5 28.5S25 21.9 25 12.5C25 5.6 19.4 0 12.5 0z'/%3E%3Ccircle cx='12.5' cy='12.5' r='5' fill='white'/%3E%3C/svg%3E"
+  const transparentPng = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/P1iJ6QAAAABJRU5ErkJggg=='
+  inlineIcon = (window as any).L.icon({ iconUrl: svgMarker, iconRetinaUrl: svgMarker, shadowUrl: transparentPng, iconSize: [25,41], iconAnchor: [12,41], popupAnchor: [1,-34], shadowSize: [1,1] })
+  ;(window as any).L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(mapInstance)
+  refreshMarkers()
+}
+
+function refreshMarkers() {
+  if (!mapInstance || !(window as any).L) return
+  const L = (window as any).L
+  // Clear existing
+  currentMarkers.forEach(m => mapInstance.removeLayer(m))
+  currentMarkers.length = 0
+  allLibraries.value.forEach((library: any) => {
+    if (!library.location?.lat || !library.location?.lng) return
+    const libUrl = library.library_id ? libraryUrl({ library_id: library.library_id, slug: library.slug }) : `/library/${library.slug}`
+    const marker = L.marker([library.location.lat, library.location.lng], inlineIcon ? { icon: inlineIcon } : undefined)
+      .addTo(mapInstance)
       .bindPopup(`
         <div class="p-2">
           <h4 class="font-semibold">${library.title}</h4>
           <p class="text-sm text-gray-600">${library.description}</p>
-          <a href="/library/${library.slug}" class="text-blue-600 hover:underline">View Details</a>
+          <a href="${libUrl}" class="text-blue-600 hover:underline">View Details</a>
         </div>
       `)
-    markers.push(marker)
+    currentMarkers.push(marker)
   })
-  if (markers.length > 0) {
-    const group = L.featureGroup(markers)
-    map.fitBounds(group.getBounds().pad(0.05))
+  if (currentMarkers.length) {
+    const group = L.featureGroup(currentMarkers)
+    mapInstance.fitBounds(group.getBounds().pad(0.05))
   }
-  ;(mapEl as any)._initialized = true
 }
+
+// Initialize map shell early (markers added when data arrives)
+onMounted(() => ensureMap(() => refreshMarkers()))
 
 // Enhanced stats data with actual imported library count (already declared above)
 
