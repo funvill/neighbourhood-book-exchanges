@@ -264,7 +264,7 @@ function refreshMarkers() {
   currentMarkers.length = 0
   allLibraries.value.forEach((library: any) => {
     if (!library.location?.lat || !library.location?.lng) return
-    const libUrl = library.library_id ? libraryUrl({ library_id: library.library_id, slug: library.slug }) : `/library/${library.slug}`
+  const libUrl = library.library_id ? libraryUrl({ library_id: library.library_id, slug: library.slug }) : `/library/${library.slug}/`
     const marker = L.marker([library.location.lat, library.location.lng], inlineIcon ? { icon: inlineIcon } : undefined)
       .addTo(mapInstance)
       .bindPopup(`

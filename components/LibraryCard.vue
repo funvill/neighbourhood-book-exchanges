@@ -116,7 +116,7 @@ const getLibraryUrl = () => {
   const slug = getLibrarySlug(props.library)
   const libraryId = props.library.library_id ?? props.library.id
   if (libraryId) return libraryUrl({ library_id: libraryId, slug })
-  return `/library/${slug}` // legacy fallback (should phase out)
+  return `/library/${slug}/` // legacy fallback (should phase out)
 }
 
 const getImageSrc = () => {

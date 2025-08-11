@@ -257,7 +257,7 @@ const libraryUrl = computed(() => {
   if (libraryId.value && librarySlug.value) {
     return generateLibraryUrl({ library_id: libraryId.value, slug: librarySlug.value })
   }
-  return `/library/${librarySlug.value}`
+  return `/library/${librarySlug.value}/`
 })
 
 // Dirty state detection

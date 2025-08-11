@@ -30,7 +30,7 @@ export function libraryUrl(library: LibraryInfo): string {
     if (!id) throw new Error('Library must have library_id or id field')
     const paddedId = padLibraryId(id)
     const slug = library.slug
-    return `/library/${paddedId}/${slug}`
+        return `/library/${paddedId}/${slug}/`
 }
 
 /**

@@ -315,7 +315,7 @@ watch(() => library.value, async (lib: LibraryViewModel | null) => {
   if (!lib) return
   // Permanent redirect to canonical slug
   if (!slugParam || slugParam !== lib.slug) {
-    const target = `/library/${paddedId}/${lib.slug}`
+  const target = `/library/${paddedId}/${lib.slug}/`
     if (target !== route.fullPath) await navigateTo(target, { redirectCode: 301, replace: true })
   }
 }, { immediate: true })
@@ -409,10 +409,10 @@ useHead({
   title: computed(() => library.value ? `${library.value.title} - Neighbourhood book exchanges` : 'Library - Neighbourhood book exchanges'),
   meta: [
     { name: 'description', content: library.value?.description || 'Library details page' },
-  { property: 'og:url', content: `https://neighbourhood-book-exchanges.com/library/${paddedId}/${library.value?.slug || ''}` }
+  { property: 'og:url', content: `https://neighbourhood-book-exchanges.com/library/${paddedId}/${library.value?.slug || ''}/` }
   ],
   link: [
-  { rel: 'canonical', href: `https://neighbourhood-book-exchanges.com/library/${paddedId}/${library.value?.slug || ''}` }
+  { rel: 'canonical', href: `https://neighbourhood-book-exchanges.com/library/${paddedId}/${library.value?.slug || ''}/` }
   ]
 })
 </script>

@@ -331,7 +331,7 @@ const updateMapMarkers = () => {
   searchResults.value.forEach((library: Library) => {
     const libUrl = library.library_id
       ? libraryUrl({ library_id: library.library_id, slug: library.slug })
-      : `/library/${library.slug}`
+      : `/library/${library.slug}/`
   const marker = L.marker([library.location.lat, library.location.lng], inlineIcon ? { icon: inlineIcon } : undefined)
       .addTo(map!)
       .bindPopup(`

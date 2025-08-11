@@ -26,7 +26,8 @@ describe('useLibraries helpers', () => {
       body: { children: [{ type: 'element', tag: 'p', children: [{ value: 'Hello world' }] }] }
     }
     const summary = mapContentDocToSummary(doc)
-    expect(summary.slug).toBe('example-slug')
+  // Title-based slug takes precedence over folder slug; 'Example' -> 'example'
+  expect(summary.slug).toBe('example')
     expect(summary.title).toBe('Example')
     expect(summary.description.length).toBeGreaterThan(0)
   })

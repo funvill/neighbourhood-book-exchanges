@@ -30,19 +30,19 @@ describe('libraryUrl utilities', () => {
         describe('libraryUrl', () => {
             it('generates canonical /library/{id}/{slug}', () => {
                 const library = { library_id: 73, slug: 'example-library' }
-                expect(libraryUrl(library)).toBe('/library/00073/example-library')
+                expect(libraryUrl(library)).toBe('/library/00073/example-library/')
             })
             it('handles id fallback field', () => {
                 const library = { id: 5, slug: 'test' }
-                expect(libraryUrl(library)).toBe('/library/00005/test')
+                expect(libraryUrl(library)).toBe('/library/00005/test/')
             })
             it('pads numeric id', () => {
                 const library = { library_id: 1, slug: 'x' }
-                expect(libraryUrl(library)).toBe('/library/00001/x')
+                expect(libraryUrl(library)).toBe('/library/00001/x/')
             })
             it('accepts already padded string id', () => {
                 const library = { library_id: '00042', slug: 'string-id' }
-                expect(libraryUrl(library)).toBe('/library/00042/string-id')
+                expect(libraryUrl(library)).toBe('/library/00042/string-id/')
             })
                     it('throws when missing id', () => {
                         expect(() => libraryUrl({ slug: 'no-id' } as any)).toThrow()
