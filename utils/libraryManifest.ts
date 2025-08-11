@@ -11,6 +11,7 @@ export interface LibraryManifestEntry {
     library_id: string
     slug: string
     title: string
+    folder: string
 }
 
 export interface LibraryManifest {
@@ -18,6 +19,7 @@ export interface LibraryManifest {
     idToSlug: Record<string, string>
     slugToId: Record<string, string>
     slugToTitle: Record<string, string>
+    folderSlugMap?: Record<string, string> // folder -> slug mapping
 }
 
 /**
@@ -44,8 +46,13 @@ export async function buildLibraryManifest(librariesDir: string = 'content/libra
                 const content = await readFile(indexPath, 'utf8')
                 const frontmatter = matter(content)
                 
-                const libraryId = frontmatter.data.library_id
-                const title = frontmatter.data.title || dir
+                                const libraryId = frontmatter.data.library_id
+                                const title = frontmatter.data.title || dir
+                                const titleSlug = title.toLowerCase()
+                                    .normalize('NFKD')
+                                    .replace(/[^a-z0-9]+/g, '-')
+                                    .replace(/^-+|-+$/g, '')
+                                    .replace(/-{2,}/g, '-') || dir
                 
                 if (!libraryId) {
                     console.warn(`Library ${dir} missing library_id, skipping`)
@@ -54,14 +61,15 @@ export async function buildLibraryManifest(librariesDir: string = 'content/libra
                 
                 const entry: LibraryManifestEntry = {
                     library_id: String(libraryId),
-                    slug: dir,
-                    title
+                    slug: titleSlug,
+                    title,
+                    folder: dir
                 }
                 
                 libraries.push(entry)
-                idToSlug[String(libraryId)] = dir
-                slugToId[dir] = String(libraryId)
-                slugToTitle[dir] = title
+                idToSlug[String(libraryId)] = titleSlug
+                slugToId[titleSlug] = String(libraryId)
+                slugToTitle[titleSlug] = title
                 
             } catch (error) {
                 console.warn(`Error processing ${dir}:`, error)
@@ -80,7 +88,8 @@ export async function buildLibraryManifest(librariesDir: string = 'content/libra
         libraries,
         idToSlug,
         slugToId,
-        slugToTitle
+    slugToTitle,
+    folderSlugMap: Object.fromEntries(libraries.map(l => [l.folder, l.slug]))
     }
 }
 

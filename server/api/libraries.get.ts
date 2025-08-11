@@ -23,7 +23,6 @@ export default defineEventHandler(() => {
         photo: data.photo || '/images/libraries/placeholder-library.jpg',
         tags: data.tags || [],
         description: first.length > 200 ? first.slice(0,200) + '…' : first,
-        established: data.established,
         _path: `/libraries/${dir}`
       }
     } catch { return null }

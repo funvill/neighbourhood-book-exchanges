@@ -19,17 +19,24 @@ try {
   // Build library manifest for route generation by reading actual frontmatter
   try {
     const libraries: any[] = []
-    for (const slug of librarySlugs) {
+    for (const folder of librarySlugs) {
       try {
-        const indexPath = path.join(librariesDir, slug, 'index.md')
+        const indexPath = path.join(librariesDir, folder, 'index.md')
         const content = fs.readFileSync(indexPath, 'utf8')
         const frontmatter = matter(content)
         const libraryId = frontmatter.data.library_id
         if (libraryId) {
+          const title: string = frontmatter.data.title || folder
+          const titleSlug = title.toLowerCase()
+            .normalize('NFKD')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '')
+            .replace(/-{2,}/g, '-') || folder
           libraries.push({
             library_id: String(libraryId),
-            slug,
-            title: frontmatter.data.title || slug
+            slug: titleSlug,
+            title,
+            folder
           })
         }
       } catch {
@@ -53,32 +60,12 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        // For now, keep legacy slug-only routes to avoid breaking prerender
-        // The new ID-slug routes will work at runtime with redirects
-        ...librarySlugs.map(slug => `/library/${slug}`)
+        // Canonical /library/{id}/{slug} routes (legacy single-param prerender removed 2025-08-10 after 301 cutover)
+        ...libraryManifest.libraries.map((l: any) => `/library/${String(l.library_id).padStart(5,'0')}/${l.slug}`)
       ],
       // Continue generating even if some routes fail
       failOnError: false
-    },
-    // Generate library manifest during build
-    hooks: {
-      'build:done': async () => {
-        try {
-          const { writeFile, mkdir } = await import('node:fs/promises')
-          const { generateLibraryManifestJson } = await import('./utils/libraryManifest')
-          
-          // Ensure public directory exists
-          await mkdir('public', { recursive: true })
-          
-          // Generate and write manifest
-          const manifestJson = await generateLibraryManifestJson()
-          await writeFile('public/library-manifest.json', manifestJson, 'utf8')
-          console.log('✓ Generated library manifest at public/library-manifest.json')
-        } catch (error) {
-          console.warn('Failed to generate library manifest:', error)
-        }
-      }
-    }
+  }
   },
 
   modules: [

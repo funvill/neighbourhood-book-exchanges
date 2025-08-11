@@ -13,7 +13,7 @@ export interface LibraryFrontmatter {
   location?: { lat: number; lng: number; address?: string }
   photo?: string
   tags?: string[]
-  established?: string | number
+  library_id?: string | number
 }
 
 export interface LibrarySummary {
@@ -23,8 +23,18 @@ export interface LibrarySummary {
   photo: string
   tags: string[]
   description: string
-  established?: string | number
   _path: string
+  library_id?: string | number
+}
+
+// Generate a URL-friendly slug from a title (lowercase, alnum & hyphens only)
+function slugifyTitle(title: string): string {
+  return title
+    .toLowerCase()
+    .normalize('NFKD') // split accented chars
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-{2,}/g, '-')
 }
 
 export function buildDescription(body?: any): string {
@@ -83,17 +93,21 @@ function resolvePhoto(slug: string, raw?: string): string {
 
 export function mapContentDocToSummary(doc: any): LibrarySummary {
   const fm: LibraryFrontmatter = doc || {}
-  const slug = doc._path.replace(/^\/libraries\//, '').replace(/\/$/, '')
+  const folderSlug = doc._path.replace(/^\/libraries\//, '').replace(/\/$/, '')
+  const titleSlug = fm.title ? slugifyTitle(fm.title) : ''
+  // Prefer title-derived slug when available; fall back to folder name
+  const slug = titleSlug || folderSlug
   const rawPhoto = fm.photo || '/images/libraries/placeholder-library.jpg'
   return {
     slug,
     title: fm.title || slug,
     location: fm.location,
-    photo: resolvePhoto(slug, rawPhoto),
+    // Use folderSlug for resolving relative images because files live under folder name, not canonical title slug
+    photo: resolvePhoto(folderSlug, rawPhoto),
     tags: fm.tags || [],
     description: buildDescription(doc.body),
-    established: fm.established,
-    _path: doc._path
+  _path: doc._path,
+  library_id: (doc.library_id ?? fm['library_id']) as string | number | undefined
   }
 }
 
@@ -151,8 +165,8 @@ export function useLibraries() {
           photo: d.photo,
           tags: d.tags || [],
           description: d.description,
-          established: d.established,
-          _path: `/libraries/${d.slug}`
+            _path: `/libraries/${d.slug}`,
+            library_id: d.library_id
         })) as LibrarySummary[]
       }
       // Final fallback: use /api/libraries (filesystem) immediately
@@ -170,8 +184,8 @@ export function useLibraries() {
             photo: d.photo,
             tags: d.tags || [],
             description: d.description,
-            established: d.established,
-            _path: `/libraries/${d.slug}`
+            _path: `/libraries/${d.slug}`,
+            library_id: d.library_id
           })) as LibrarySummary[]
         }
       } catch (e) {

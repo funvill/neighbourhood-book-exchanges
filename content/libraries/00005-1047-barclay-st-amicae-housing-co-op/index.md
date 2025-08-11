@@ -1,9 +1,9 @@
 ---
-title: "1047 Barclay St.;\_Amicae Housing Co-op"
+title: "Amicae Co-op Little Library"
 location:
   lat: 49.2827136
   lng: -123.1260234
-  address: '49.2827, -123.1260'
+  address: '1047 Barclay St, Vancouver, BC, Canada'
 tags:
   - kml-import
   - outdoor

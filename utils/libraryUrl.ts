@@ -1,6 +1,7 @@
 /**
  * Utility functions for library URL generation and parsing
- * Supports the new stable ID-prefixed URL pattern: /library/{library_id}-{slug}
+ * New stable pattern: /library/{library_id}/{slug}
+ * Backward compatibility supported for older /library/{id}-{slug} and /library/{slug}
  */
 
 export interface LibraryUrlParts {
@@ -26,63 +27,31 @@ export function padLibraryId(id: number | string): string {
  */
 export function libraryUrl(library: LibraryInfo): string {
     const id = library.library_id ?? library.id
-    if (!id) {
-        throw new Error('Library must have library_id or id field')
-    }
-    
-    // If the slug already includes the ID (current format), use it as-is
-    if (library.slug.startsWith(padLibraryId(id) + '-')) {
-        return `/library/${library.slug}`
-    }
-    
-    // Otherwise, construct the ID-slug format
+    if (!id) throw new Error('Library must have library_id or id field')
     const paddedId = padLibraryId(id)
-    return `/library/${paddedId}-${library.slug}`
+    const slug = library.slug
+    return `/library/${paddedId}/${slug}`
 }
 
 /**
  * Parse library URL parameter to extract ID and slug
  * Supports both new format ({id}-{slug}) and legacy format ({slug})
  */
-export function parseLibraryUrl(param: string): LibraryUrlParts | null {
+// Parse single-param legacy styles (kept for backward compatibility redirect logic)
+export function parseLegacySingleParam(param: string): LibraryUrlParts | null {
     if (!param) return null
-    
-    // Try new format first: {library_id}-{slug}
-    // But recognize that current directory structure already has this format
     const idSlugMatch = param.match(/^(\d{5,})-(.+)$/)
     if (idSlugMatch) {
-        return {
-            library_id: idSlugMatch[1],
-            slug: param // Use full param as slug for content lookup
-        }
+        return { library_id: idSlugMatch[1], slug: param }
     }
-    
-    // Also handle ID-only format
     const idOnlyMatch = param.match(/^(\d{5,})$/)
-    if (idOnlyMatch) {
-        return {
-            library_id: idOnlyMatch[1],
-            slug: param
-        }
-    }
-    
-    // Legacy format: just slug (no numeric prefix)
-    if (!/^\d/.test(param)) {
-        return {
-            library_id: '',
-            slug: param
-        }
-    }
-    
+    if (idOnlyMatch) return { library_id: idOnlyMatch[1], slug: param }
+    if (!/^\d/.test(param)) return { library_id: '', slug: param }
     return null
 }
 
-/**
- * Check if a URL parameter is in the new ID-slug format
- */
-export function isNewUrlFormat(param: string): boolean {
-    return /^\d{5,}-/.test(param)
-}
+// (Deprecated) Previously used for hyphen-joined ID-slug format
+export function isNewUrlFormat(_param: string): boolean { return false }
 
 /**
  * Check if a URL parameter is in the legacy slug-only format
@@ -95,7 +64,7 @@ export function isLegacyUrlFormat(param: string): boolean {
  * Extract just the slug from a URL parameter (removes ID prefix if present)
  */
 export function extractSlug(param: string): string {
-    const parsed = parseLibraryUrl(param)
+    const parsed = parseLegacySingleParam(param)
     return parsed?.slug || param
 }
 
@@ -103,6 +72,18 @@ export function extractSlug(param: string): string {
  * Extract just the library ID from a URL parameter
  */
 export function extractLibraryId(param: string): string | null {
-    const parsed = parseLibraryUrl(param)
+    const parsed = parseLegacySingleParam(param)
     return parsed?.library_id || null
+}
+
+/**
+ * Create a canonical slug from a title (mirrors logic used in composables & page)
+ */
+export function slugFromTitle(title: string): string {
+    return title
+        .toLowerCase()
+        .normalize('NFKD')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .replace(/-{2,}/g, '-')
 }

@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest'
-import { 
-    padLibraryId, 
-    libraryUrl, 
-    parseLibraryUrl, 
-    isNewUrlFormat, 
+import {
+    padLibraryId,
+    libraryUrl,
+    parseLegacySingleParam,
+    isNewUrlFormat,
     isLegacyUrlFormat,
     extractSlug,
     extractLibraryId
@@ -27,101 +27,49 @@ describe('libraryUrl utilities', () => {
         })
     })
 
-    describe('libraryUrl', () => {
-        it('generates URL with library_id field for existing format', () => {
-            const library = { library_id: 73, slug: '00073-example-library' }
-            expect(libraryUrl(library)).toBe('/library/00073-example-library')
+        describe('libraryUrl', () => {
+            it('generates canonical /library/{id}/{slug}', () => {
+                const library = { library_id: 73, slug: 'example-library' }
+                expect(libraryUrl(library)).toBe('/library/00073/example-library')
+            })
+            it('handles id fallback field', () => {
+                const library = { id: 5, slug: 'test' }
+                expect(libraryUrl(library)).toBe('/library/00005/test')
+            })
+            it('pads numeric id', () => {
+                const library = { library_id: 1, slug: 'x' }
+                expect(libraryUrl(library)).toBe('/library/00001/x')
+            })
+            it('accepts already padded string id', () => {
+                const library = { library_id: '00042', slug: 'string-id' }
+                expect(libraryUrl(library)).toBe('/library/00042/string-id')
+            })
+                    it('throws when missing id', () => {
+                        expect(() => libraryUrl({ slug: 'no-id' } as any)).toThrow()
+                    })
         })
 
-        it('generates URL with library_id field for new slug', () => {
-            const library = { library_id: 73, slug: 'example-library' }
-            expect(libraryUrl(library)).toBe('/library/00073-example-library')
-        })
-
-        it('generates URL with id field as fallback', () => {
-            const library = { id: 1, slug: 'first-library' }
-            expect(libraryUrl(library)).toBe('/library/00001-first-library')
-        })
-
-        it('prefers library_id over id', () => {
-            const library = { library_id: 73, id: 999, slug: 'example' }
-            expect(libraryUrl(library)).toBe('/library/00073-example')
-        })
-
-        it('throws error if no ID provided', () => {
-            const library = { slug: 'no-id' }
-            expect(() => libraryUrl(library)).toThrow('Library must have library_id or id field')
-        })
-
-        it('handles string IDs', () => {
-            const library = { library_id: '00042', slug: 'string-id' }
-            expect(libraryUrl(library)).toBe('/library/00042-string-id')
-        })
-    })
-
-    describe('parseLibraryUrl', () => {
-        it('parses new format with ID and slug', () => {
-            const result = parseLibraryUrl('00073-example-library')
-            expect(result).toEqual({
-                library_id: '00073',
-                slug: '00073-example-library'
+        describe('parseLegacySingleParam (backward compatibility)', () => {
+            it('parses id-hyphen-slug legacy form', () => {
+                expect(parseLegacySingleParam('00073-example-library')).toEqual({ library_id: '00073', slug: '00073-example-library' })
+            })
+            it('parses id only', () => {
+                expect(parseLegacySingleParam('00073')).toEqual({ library_id: '00073', slug: '00073' })
+            })
+            it('parses pure slug (no leading digit)', () => {
+                expect(parseLegacySingleParam('example-library')).toEqual({ library_id: '', slug: 'example-library' })
+            })
+            it('returns null for malformed value', () => {
+                expect(parseLegacySingleParam('123-')).toBeNull()
             })
         })
 
-        it('parses existing directory format', () => {
-            const result = parseLibraryUrl('00001-1005-jervis-st-at-nelson-st-sw')
-            expect(result).toEqual({
-                library_id: '00001',
-                slug: '00001-1005-jervis-st-at-nelson-st-sw'
+        describe('isNewUrlFormat (deprecated always false)', () => {
+            it('returns false for any input', () => {
+                expect(isNewUrlFormat('00073-example')).toBe(false)
+                expect(isNewUrlFormat('anything')).toBe(false)
             })
         })
-
-        it('parses new format with ID only', () => {
-            const result = parseLibraryUrl('00073')
-            expect(result).toEqual({
-                library_id: '00073',
-                slug: '00073'
-            })
-        })
-
-        it('parses legacy format (slug only)', () => {
-            const result = parseLibraryUrl('example-library-slug')
-            expect(result).toEqual({
-                library_id: '',
-                slug: 'example-library-slug'
-            })
-        })
-
-        it('handles empty/null input', () => {
-            expect(parseLibraryUrl('')).toBeNull()
-            expect(parseLibraryUrl(null as any)).toBeNull()
-        })
-
-        it('handles numeric IDs with varying lengths', () => {
-            expect(parseLibraryUrl('12345-slug')).toEqual({
-                library_id: '12345',
-                slug: '12345-slug'
-            })
-            expect(parseLibraryUrl('123456789-slug')).toEqual({
-                library_id: '123456789',
-                slug: '123456789-slug'
-            })
-        })
-    })
-
-    describe('isNewUrlFormat', () => {
-        it('recognizes new format', () => {
-            expect(isNewUrlFormat('00073-example')).toBe(true)
-            expect(isNewUrlFormat('12345-library')).toBe(true)
-            expect(isNewUrlFormat('00001-')).toBe(true)
-        })
-
-        it('rejects legacy format', () => {
-            expect(isNewUrlFormat('example-library')).toBe(false)
-            expect(isNewUrlFormat('library-name')).toBe(false)
-            expect(isNewUrlFormat('1-short-id')).toBe(false) // Less than 5 digits
-        })
-    })
 
     describe('isLegacyUrlFormat', () => {
         it('recognizes legacy format', () => {
@@ -137,17 +85,11 @@ describe('libraryUrl utilities', () => {
     })
 
     describe('extractSlug', () => {
-        it('extracts slug from new format', () => {
-            expect(extractSlug('00073-example-library')).toBe('00073-example-library')
-        })
-
-        it('returns full param for legacy format', () => {
-            expect(extractSlug('example-library')).toBe('example-library')
-        })
-
-        it('handles ID-only format', () => {
-            expect(extractSlug('00073')).toBe('00073')
-        })
+                it('returns original param (function retained for compatibility)', () => {
+                    expect(extractSlug('00073-example-library')).toBe('00073-example-library')
+                    expect(extractSlug('example-library')).toBe('example-library')
+                    expect(extractSlug('00073')).toBe('00073')
+                })
     })
 
     describe('extractLibraryId', () => {
