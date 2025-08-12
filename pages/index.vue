@@ -129,26 +129,6 @@
 
   <!-- Recently Updated Libraries section removed -->
 
-    <!-- Call to Action -->
-    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-      <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold mb-6">Ready to Begin Your Adventure?</h2>
-        <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-          Join our growing community of library enthusiasts and help expand the network of community libraries. 
-          Your next great discovery is just around the corner!
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/search" class="md-button shadow-xl hover:shadow-2xl transition-all flex items-center gap-1">
-            <span class="material-symbols-outlined" style="font-size:20px;">map</span>
-            Start Exploring Now
-          </a>
-          <a href="/library/log" class="md-button border border-white/30 hover:bg-white/10 flex items-center gap-1" style="background:transparent;color:white;">
-            <span class="material-symbols-outlined" style="font-size:20px;">edit_note</span>
-            Add Logbook Entry
-          </a>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 

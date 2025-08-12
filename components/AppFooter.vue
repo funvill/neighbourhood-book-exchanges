@@ -1,5 +1,22 @@
 <template>
   <footer class="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 text-white">
+    <!-- Call to Action Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-b border-blue-800/50">
+      <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-4xl font-bold mb-6">Ready to Begin Your Adventure?</h2>
+        <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+          Join our growing community of library enthusiasts and help expand the network of community libraries. 
+          Your next great discovery is just around the corner!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/search" class="md-button bg-white text-blue-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all flex items-center gap-1">
+            <span class="material-symbols-outlined" style="font-size:20px;">map</span>
+            Start Exploring Now
+          </a>
+        </div>
+      </div>
+    </section>
+    
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- Brand Section -->
@@ -11,8 +28,8 @@
             <h3 class="text-xl font-bold">Neighbourhood book exchanges</h3>
           </div>
           <p class="text-blue-100 leading-relaxed mb-6 max-w-md">
-            Discover tiny libraries, find zines, solve riddles, and unlock the overall puzzle. 
-            A community-driven project connecting puzzle enthusiasts and library lovers worldwide.
+            Discover tiny libraries, find content, and explore the community. 
+            A community-driven project connecting library enthusiasts and explorers worldwide.
           </p>
           <div class="flex space-x-4">
             <a href="#todo" class="md-button flex items-center gap-1" style="background: var(--md-primary); color: var(--md-on-primary);">
@@ -74,21 +91,12 @@
               </div>
             </div>
             <div class="flex items-center text-blue-100">
-              <div class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center mr-3">
-                <span class="material-symbols-outlined" style="font-size:18px;">extension</span>
-              </div>
-              <div>
-                <div class="font-semibold text-white">{{ stats.riddles }}</div>
-                <div class="text-xs">Riddles Solved</div>
-              </div>
-            </div>
-            <div class="flex items-center text-blue-100">
               <div class="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center mr-3">
                 <span class="material-symbols-outlined" style="font-size:18px;">groups</span>
               </div>
               <div>
-                <div class="font-semibold text-white">{{ stats.puzzlers }}</div>
-                <div class="text-xs">Active Puzzlers</div>
+                <div class="font-semibold text-white">{{ stats.explorers }}</div>
+                <div class="text-xs">Active Explorers</div>
               </div>
             </div>
           </div>
@@ -119,7 +127,6 @@
 // Mock stats data - in real implementation this would come from an API
 const stats = ref({
   libraries: 42,
-  riddles: 127,
-  puzzlers: 234
+  explorers: 234
 })
 </script>

@@ -21,39 +21,12 @@
             </span>
             Advanced Filters
           </button>
-          
-          <div class="flex items-center gap-2 text-sm text-gray-600">
-            <label class="flex items-center gap-1 cursor-pointer">
-              <input 
-                v-model="groupMarkers" 
-                type="checkbox" 
-                class="rounded border-gray-300"
-                @change="updateMapMarkers"
-              />
-              Group nearby markers
-            </label>
-          </div>
         </div>
       </div>
 
       <!-- Advanced Search Area -->
       <div v-if="showAdvancedSearch" class="px-6 pb-6 border-t border-gray-100">
         <div class="pt-4 space-y-4">
-          <!-- Sort Options -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Sort by</label>
-            <select 
-              v-model="sortBy" 
-              @change="performSearch"
-              class="w-full md:w-auto px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            >
-              <option value="relevance">Relevance</option>
-              <option value="updated">Last Updated</option>
-              <option value="title">Title (A-Z)</option>
-              <option value="library_id">Library ID</option>
-            </select>
-          </div>
-
           <!-- Tag Filters -->
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">Filter by Tags</label>
@@ -106,7 +79,7 @@
         </h3>
         <button
           @click="toggleFullScreen"
-          class="text-blue-600 hover:text-blue-700 flex items-center gap-1 text-sm font-medium"
+          class="bg-blue-600 text-white hover:bg-blue-700 flex items-center gap-1 text-sm font-medium px-4 py-2 rounded-md"
         >
           <span class="material-symbols-outlined" style="font-size:18px;">
             {{ isFullScreen ? 'fullscreen_exit' : 'fullscreen' }}
@@ -245,8 +218,6 @@ const itemsPerPage = 9
 const hasSearched = ref(false)
 const showAdvancedSearch = ref(false)
 const selectedTags = ref<string[]>([...props.similarTags])
-const sortBy = ref('relevance')
-const groupMarkers = ref(false)
 const isFullScreen = ref(false)
 
 // Map instance and markers
@@ -426,20 +397,6 @@ const performSearch = () => {
     )
   }
 
-  // Sort results
-  switch (sortBy.value) {
-    case 'updated':
-      results.sort((a, b) => new Date(b.updated_at || '2024-01-01').getTime() - new Date(a.updated_at || '2024-01-01').getTime())
-      break
-    case 'title':
-      results.sort((a, b) => a.title.localeCompare(b.title))
-      break
-    case 'library_id':
-      results.sort((a, b) => String(a.library_id || '').localeCompare(String(b.library_id || '')))
-      break
-    // 'relevance' is default - no additional sorting needed
-  }
-
   searchResults.value = results
   currentPage.value = 1
   updateMapMarkers()
@@ -452,7 +409,6 @@ const resetSearch = () => {
   hasSearched.value = false
   currentPage.value = 1
   showAdvancedSearch.value = false
-  sortBy.value = 'relevance'
   
   // Update URL to clear all search parameters
   navigateTo('/search', { replace: true })
@@ -479,7 +435,18 @@ const toggleFullScreen = () => {
   isFullScreen.value = !isFullScreen.value
   nextTick(() => {
     if (map) {
-      map.invalidateSize()
+      // Force map to recalculate its size after the DOM change
+      setTimeout(() => {
+        map.invalidateSize()
+        // Refit bounds to current markers if any exist
+        if (markers.length > 0) {
+          const L: any = (window as any).L
+          if (L) {
+            const group = L.featureGroup(markers)
+            map.fitBounds(group.getBounds().pad(0.1))
+          }
+        }
+      }, 100)
     }
   })
 }
@@ -592,14 +559,11 @@ const updateMapMarkers = () => {
     newMarkers.push(marker)
   })
 
-  if (groupMarkers && markerClusterGroup) {
-    markerClusterGroup.addLayers(newMarkers)
-  } else {
-    newMarkers.forEach(marker => {
-      marker.addTo(map!)
-      markers.push(marker)
-    })
-  }
+  // Add markers directly to map (no grouping)
+  newMarkers.forEach(marker => {
+    marker.addTo(map!)
+    markers.push(marker)
+  })
 
   // Fit map bounds to show all markers
   if (newMarkers.length > 0) {

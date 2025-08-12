@@ -56,20 +56,10 @@
 
       <!-- Actions -->
       <div class="mt-6 mt-auto space-y-2">
-        <a :href="getLibraryUrl()" class="md-button w-full flex items-center justify-center gap-1">
+        <a :href="getLibraryUrl()" class="md-button w-full flex items-center justify-center gap-1 text-white">
           <span class="material-symbols-outlined" style="font-size:18px;">visibility</span>
           Visit Library
         </a>
-        
-        <!-- Find Similar Libraries Button -->
-        <button 
-          v-if="library.tags && library.tags.length > 0"
-          @click="findSimilarLibraries"
-          class="w-full bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-md transition-colors flex items-center justify-center gap-1 text-sm font-medium"
-        >
-          <span class="material-symbols-outlined" style="font-size:16px;">travel_explore</span>
-          Find Similar Libraries
-        </button>
       </div>
     </div>
   </div>
@@ -139,14 +129,6 @@ const handleImageError = (event: string | Event) => {
     if (img.src !== '/images/libraries/placeholder-library.jpg') {
       img.src = '/images/libraries/placeholder-library.jpg'
     }
-  }
-}
-
-const findSimilarLibraries = () => {
-  if (props.library.tags && props.library.tags.length > 0) {
-    // Navigate to search page with tags pre-selected
-    const tagParams = props.library.tags.slice(0, 5).join(',') // Limit to first 5 tags
-    navigateTo(`/search?tags=${encodeURIComponent(tagParams)}`)
   }
 }
 </script>
