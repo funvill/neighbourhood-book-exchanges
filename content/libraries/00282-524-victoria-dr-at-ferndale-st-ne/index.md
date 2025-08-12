@@ -1,21 +1,24 @@
 ---
-title: 524 Victoria Dr. at Ferndale St.; n.e.
+title: 524 Victoria Dr
 location:
   lat: 49.279744
   lng: -123.0654507
-  address: '49.2797, -123.0655'
+  address: '524 Victoria Dr, Vancouver, BC, Canada'
 tags:
-  - kml-import
-  - outdoor
-  - book-exchange
-  - red-marker
+  - vancouver
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - books
+  - visited_funvill
+photo: logbook/PXL_20250810_211105453.png
 library_id: 00282
 ---
-2 blocks s. of E. Hastings St.  Small; log to sit on.
-Also known as 522 Victoria Dr.
-—Added to map by K.D., 2021 9 21.  Thanks, C.B.
+
+Active, 2 shelfs, wooden, books, needs repair, broken window
+
+2 blocks s. of E. Hastings St.  Small; log to sit on. Also known as 522 Victoria Dr.
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 2 shelfs, wooden, books, needs repair, broken window
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2021-Sep-21** - Added to map by K.D., 2021 9 21.  Thanks, C.B.

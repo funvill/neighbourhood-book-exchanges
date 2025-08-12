@@ -17,6 +17,6 @@ Wooden box with a tarp over it, needs maintence, 3 shelfs, little lights
 
 ## History
 
-- **2024-Aug-08** - visited by [@funvill](https://blog.abluestar.com). Active, Wooden box with a tarp over it, needs maintence, 3 shelfs, little lights
+- **2025-Aug-08** - visited by [@funvill](https://blog.abluestar.com). Active, Wooden box with a tarp over it, needs maintence, 3 shelfs, little lights
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
 - **2021-Aug-16** - Added to map by K.D., 2021 6 16.

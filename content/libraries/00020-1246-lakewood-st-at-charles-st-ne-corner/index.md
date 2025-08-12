@@ -1,21 +1,23 @@
 ---
-title: '1246 Lakewood St. at Charles St., n.e. corner'
+title: 'Neighbourhood book exchange 1246 Lakewood St'
 location:
   lat: 49.2730199
   lng: -123.0617854
-  address: '49.2730, -123.0618'
+  address: '1246 Lakewood St, Vancouver, BC, Canada'
 tags:
-  - kml-import
-  - outdoor
-  - book-exchange
-  - red-marker
+  - vancouver
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - books
+  - visited_funvill
+photo: logbook/PXL_20250810_210625647.png
 library_id: '00020'
 ---
-A friendly neighbourhood book exchange in this traffic-calmed green space.  Big, 3 shelves.  
-No textbooks.
-— Later notes by K.D.
+
+Active, 3 shelfs, wooden, books, needs repair
+
+A friendly neighbourhood book exchange in this traffic-calmed green space.  Big, 3 shelves. No textbooks.
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 3 shelfs, wooden, books, needs repair
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision

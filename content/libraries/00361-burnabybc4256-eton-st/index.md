@@ -9,7 +9,7 @@ tags:
   - active
   - books
   - visited_funvill
-photo: /logbook/PXL_20250809_021920966.jng
+photo: logbook/PXL_20250809_021920966.png
 library_id: '00361'
 ---
 
@@ -17,6 +17,6 @@ library_id: '00361'
 
 ## History
 
-- **2024-Aug-08** - visited by [@funvill](https://blog.abluestar.com)
+- **2025-Aug-08** - visited by [@funvill](https://blog.abluestar.com)
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
 - **2022-Mar-01** - Added to map by K.D., 2022 3 1; unconfirmed. Thanks, L.F.V.  

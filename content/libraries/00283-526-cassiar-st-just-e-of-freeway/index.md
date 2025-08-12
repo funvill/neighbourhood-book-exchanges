@@ -1,22 +1,24 @@
 ---
-title: '526 Cassiar St., just e. of freeway.'
+title: '526 Cassiar St, Burnaby'
 location:
   lat: 49.2798715
   lng: -123.0307695
-  address: '49.2799, -123.0308'
+  address: '526 Cassiar St, Burnaby, BC, Canada'
 tags:
-  - kml-import
-  - outdoor
-  - book-exchange
-  - red-marker
+  - burnaby
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - books
+  - visited_funvill
+photo: logbook/PXL_20250809_023404129.png
 library_id: 00283
 ---
-One block s. of E. Hastings St.; 
-3 blocks w. of Boundary Rd.  Pender—Turner 
-(The address is not 510, as noted elsewhere.)
-—Added to map by K.D., 2021 6 16.
+
+Wooden box, 2 shelfs, books
 
 ## History
+
+- **2025-Aug-08** - visited by [@funvill](https://blog.abluestar.com) Active, Wooden box, 2 shelfs, books
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2021-Aug-16** - Added to map by K.D., 2021 6 16.
+
+One block s. of E. Hastings St. 3 blocks w. of Boundary Rd.  Pender—Turner (The address is not 510, as noted elsewhere)

@@ -1,25 +1,27 @@
 ---
-title: 2821 E. Georgia St.; Kaslo—Renfrew St.
+title: Hasting Sunrise Little FIBRE Library
 location:
   lat: 49.2783323
   lng: -123.0460512
-  address: '49.2783, -123.0461'
+  address: '2821 E. Georgia St, Vancouver, BC, Canada'
 tags:
-  - kml-import
-  - fibre-library
-  - outdoor
-  - star-shape
+  - vancouver
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - books
+  - visited_funvill
+photo: logbook/PXL_20250810_205324836.png
 library_id: 00138
 ---
+
+Active, 1 shelfs, wooden, books, yarn
+
 Hasting Sunrise Little FIBRE Library; free books, tools, and materials related to all fibre arts.
-The other 2 Little Fibre Libaries in Vancouver are 3539 Welwyn St. and 4016 Kaslo St.
-In N. Vancouver is one at 742 Wellington Dr.
- Now closed is 1678 Pullman Porter St.
-https://BaaadAnnas.com/resources/ 
 4 blocks s. of E. Hastings St.
-—Added to map by K.D., 2021 7 29.  
+
+[BaaadAnnas](https://BaaadAnnas.com)
 
 ## History
+
+- **2025-Aug-08** - visited by [@funvill](https://blog.abluestar.com) Active, 1 shelfs, wooden, books, yarn
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2021-Jul-29** - Added to map by K.D., 2021 7 29.

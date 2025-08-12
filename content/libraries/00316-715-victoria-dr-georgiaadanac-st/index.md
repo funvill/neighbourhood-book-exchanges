@@ -1,21 +1,25 @@
 ---
-title: 715 Victoria Dr.; Georgia—Adanac St.
+title: Flatland Community 
 location:
   lat: 49.2781002
   lng: -123.0657694
-  address: '49.2781, -123.0658'
+  address: '715 Victoria Dr, Vancouver, BC, Canada'
 tags:
-  - kml-import
-  - free-store
-  - multi-purpose
-  - dark-blue-marker
+  - vancouver
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - books
+  - visited_funvill
+photo: logbook/PXL_20250810_211438144.png
 library_id: '00316'
 ---
-3 blocks s. of E. Hastings St.  Books might get wet inside, so please wrap each dry book you donate in its own clear plastic bag.
+
+Active, 4 shelfs, wooden, books, needs repair, unique design
+
 Flatland Community; exchange all kinds of items.  A little free store.
-—Added to map by K.D., 2020.
+3 blocks s. of E. Hastings St. 
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 4 shelfs, wooden, books, needs repair, unique design
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2020-Jan-01** - Added to map by K.D., 2020.
