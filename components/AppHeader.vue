@@ -29,13 +29,13 @@
           </a>
         </nav>
 
-        <!-- Search Bar -->
+        <!-- Search Bar - Main Search Input -->
         <div class="flex-1 max-w-md mx-4">
           <form class="relative" @submit.prevent="performSearch">
             <input
               v-model="searchQuery"
               type="text"
-              placeholder="Search libraries and content..."
+              placeholder="Search libraries, content, and tags..."
               class="w-full rounded-full border border-gray-200 py-2 pl-10 pr-10 focus:outline-none focus:border-blue-400 text-sm shadow-sm"
               @keyup.enter="performSearch"
             />
@@ -77,8 +77,23 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
 const searchQuery = ref('')
 const showMobileMenu = ref(false)
+
+// Initialize search query from URL on search page
+onMounted(() => {
+  if (route.path === '/search' && route.query.q) {
+    searchQuery.value = String(route.query.q)
+  }
+})
+
+// Watch for route changes to update search query
+watch(() => route.query.q, (newQuery) => {
+  if (route.path === '/search' && newQuery) {
+    searchQuery.value = String(newQuery)
+  }
+})
 
 const performSearch = () => {
   if (searchQuery.value.trim()) {
@@ -88,6 +103,9 @@ const performSearch = () => {
 
 const clearSearch = () => {
   searchQuery.value = ''
+  if (route.path === '/search') {
+    navigateTo('/search')
+  }
 }
 
 const toggleMobileMenu = () => {

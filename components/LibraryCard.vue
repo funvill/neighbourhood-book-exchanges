@@ -1,13 +1,12 @@
 <template>
   <div class="group">
     <div class="md-card h-full hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 flex flex-col">
-      <!-- Library Image -->
+      <!-- Library Image - Enhanced for better thumbnail display -->
       <a :href="getLibraryUrl()" class="block aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg overflow-hidden relative">
-        <!-- Use regular img for all images in static build -->
         <img
           :src="getImageSrc()"
           :alt="library.title"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
           @error="handleImageError"
         />
@@ -25,6 +24,11 @@
           <p class="text-gray-600 text-sm line-clamp-3 leading-relaxed">
             {{ library.description }}
           </p>
+        </div>
+
+        <!-- Library ID if available -->
+        <div v-if="library.library_id" class="text-xs text-gray-500 font-mono">
+          ID: {{ library.library_id }}
         </div>
 
         <!-- Location -->
@@ -51,11 +55,21 @@
       </div>
 
       <!-- Actions -->
-      <div class="mt-6 mt-auto">
+      <div class="mt-6 mt-auto space-y-2">
         <a :href="getLibraryUrl()" class="md-button w-full flex items-center justify-center gap-1">
           <span class="material-symbols-outlined" style="font-size:18px;">visibility</span>
           Visit Library
         </a>
+        
+        <!-- Find Similar Libraries Button -->
+        <button 
+          v-if="library.tags && library.tags.length > 0"
+          @click="findSimilarLibraries"
+          class="w-full bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-md transition-colors flex items-center justify-center gap-1 text-sm font-medium"
+        >
+          <span class="material-symbols-outlined" style="font-size:16px;">travel_explore</span>
+          Find Similar Libraries
+        </button>
       </div>
     </div>
   </div>
@@ -63,11 +77,6 @@
 
 <script setup lang="ts">
 import { libraryUrl } from '~/utils/libraryUrl'
-// Nuxt macros shim (if type inference missing in isolated file analysis)
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-declare function defineProps<T>(): T
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-declare function withDefaults<T, U>(props: T, defaults: U): T & U
 
 interface Library {
   id?: number
@@ -105,8 +114,6 @@ const formatLocation = (location: { lat: number; lng: number; address?: string }
 const getLibrarySlug = (library: Library) => {
   if (library.slug) return library.slug
   if (library._path) {
-    // Extract library slug from content path
-    // e.g., "/content/downtown-central-library" -> "downtown-central-library"
     return library._path.split('/').filter(Boolean).pop() || ''
   }
   return library.id?.toString() || ''
@@ -116,41 +123,30 @@ const getLibraryUrl = () => {
   const slug = getLibrarySlug(props.library)
   const libraryId = props.library.library_id ?? props.library.id
   if (libraryId) return libraryUrl({ library_id: libraryId, slug })
-  return `/library/${slug}/` // legacy fallback (should phase out)
+  return `/library/${slug}/`
 }
 
 const getImageSrc = () => {
-  // If library has a photo, use it, otherwise use placeholder
   if (props.library.photo && props.library.photo !== '/images/libraries/placeholder-library.jpg') {
     return props.library.photo
   }
   return '/images/libraries/placeholder-library.jpg'
 }
 
-const isPlaceholderImage = () => {
-  const photo = props.library.photo
-  if (!photo) return true
-  if (photo === '/images/libraries/placeholder-library.jpg') return true
-  // Also check if it ends with the placeholder filename (in case of absolute URLs)
-  if (photo.endsWith('placeholder-library.jpg')) return true
-  // Debug logging for the first few images
-  if (Math.random() < 0.05) { // Log ~5% of images
-    console.log('LibraryCard photo check:', { 
-      photo, 
-      isPlaceholder: photo === '/images/libraries/placeholder-library.jpg' || photo.endsWith('placeholder-library.jpg'),
-      libraryTitle: props.library.title 
-    })
-  }
-  return false
-}
-
 const handleImageError = (event: string | Event) => {
-  // If image fails to load, fallback to placeholder
   if (typeof event !== 'string') {
     const img = event.target as HTMLImageElement
     if (img.src !== '/images/libraries/placeholder-library.jpg') {
       img.src = '/images/libraries/placeholder-library.jpg'
     }
+  }
+}
+
+const findSimilarLibraries = () => {
+  if (props.library.tags && props.library.tags.length > 0) {
+    // Navigate to search page with tags pre-selected
+    const tagParams = props.library.tags.slice(0, 5).join(',') // Limit to first 5 tags
+    navigateTo(`/search?tags=${encodeURIComponent(tagParams)}`)
   }
 }
 </script>
@@ -170,5 +166,10 @@ const handleImageError = (event: string | Event) => {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Enhanced thumbnail display - clip bottom and show top */
+img {
+  object-position: top center;
 }
 </style>
