@@ -16,7 +16,7 @@
       <div class="flex-1 space-y-4">
         <div>
           <a :href="getLibraryUrl()" class="block">
-            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors hover:text-blue-600">
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
               {{ library.title }}
             </h3>
           </a>
@@ -26,19 +26,22 @@
           </p>
         </div>
 
-        <!-- Library ID if available -->
-        <div v-if="library.library_id" class="text-xs text-gray-500 font-mono">
-          ID: {{ library.library_id }}
-        </div>
 
-        <!-- Location -->
+        <!-- Location and ID -->
         <div class="flex items-center text-sm text-gray-500">
           <span class="material-symbols-outlined text-blue-500 mr-2" style="font-size:18px;">location_on</span>
           <span>{{ formatLocation(library.location) }}</span>
+          <template v-if="library.library_id">
+            <span class="mx-2">|</span>
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-gray-400" style="font-size:16px;">tag</span>
+              <span class="text-xs font-mono">{{ library.library_id }}</span>
+            </span>
+          </template>
         </div>
 
         <!-- Stats (optional) -->
-        <div v-if="showStats" class="flex items-center justify-between text-sm">
+  <div v-if="showStats" class="flex items-center justify-between text-sm">
           <div class="flex items-center text-green-600">
             <span class="material-symbols-outlined mr-1" style="font-size:18px;">extension</span>
             <span>{{ library.entries_count || 0 }} entries</span>

@@ -47,7 +47,7 @@ a:hover {
 button, .md-button {
   font-family: var(--md-font-family);
   background: var(--md-primary);
-  color: var(--md-on-primary);
+  color: #fff !important;
   border: none;
   border-radius: var(--md-radius);
   padding: 0.5rem 1.25rem;

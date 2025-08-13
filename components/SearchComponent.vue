@@ -13,8 +13,8 @@
         <!-- Advanced Search Toggle -->
         <div class="flex items-center justify-between mb-4">
           <button
+            class="bg-blue-600 text-white hover:bg-blue-700 flex items-center gap-1 text-sm font-medium px-4 py-2 rounded-md"
             @click="showAdvancedSearch = !showAdvancedSearch"
-            class="text-blue-600 hover:text-blue-700 flex items-center gap-1 text-sm font-medium"
           >
             <span class="material-symbols-outlined" style="font-size:18px;">
               {{ showAdvancedSearch ? 'expand_less' : 'expand_more' }}
@@ -34,13 +34,13 @@
               <button
                 v-for="tag in availableTags"
                 :key="tag"
-                @click="toggleTag(tag)"
                 :class="[
                   'px-3 py-1 rounded-full text-xs font-medium transition-colors',
                   selectedTags.includes(tag)
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-gray-700 text-white hover:bg-gray-900'
                 ]"
+                @click="toggleTag(tag)"
               >
                 {{ tag }}
                 <span v-if="selectedTags.includes(tag)" class="ml-1">×</span>
@@ -48,8 +48,8 @@
             </div>
             <div v-if="selectedTags.length > 0" class="mt-2">
               <button
-                @click="clearAllTags"
                 class="text-xs text-gray-500 hover:text-gray-700"
+                @click="clearAllTags"
               >
                 Clear all tags
               </button>
@@ -59,8 +59,8 @@
           <!-- Search Button for Advanced Search -->
           <div class="pt-2">
             <button
-              @click="performSearch"
               class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center gap-2"
+              @click="performSearch"
             >
               <span class="material-symbols-outlined" style="font-size:18px;">search</span>
               Apply Filters
@@ -77,30 +77,15 @@
           <span class="material-symbols-outlined mr-2">map</span>
           Interactive Map
         </h3>
-        <button
-          @click="toggleFullScreen"
-          class="bg-blue-600 text-white hover:bg-blue-700 flex items-center gap-1 text-sm font-medium px-4 py-2 rounded-md"
-        >
-          <span class="material-symbols-outlined" style="font-size:18px;">
-            {{ isFullScreen ? 'fullscreen_exit' : 'fullscreen' }}
-          </span>
-          {{ isFullScreen ? 'Exit' : 'Full Screen' }}
-        </button>
       </div>
       <div 
         :class="[
           'transition-all duration-300',
-          isFullScreen ? 'fixed inset-0 z-50 bg-white' : 'h-96 w-full'
+          isFullScreen ? 'fixed inset-0 z-50 bg-white' : 'h-[48rem] w-full'
         ]"
       >
         <div v-if="isFullScreen" class="h-16 flex items-center justify-between px-4 border-b border-gray-200">
           <h3 class="text-lg font-semibold">Library Map - Full Screen</h3>
-          <button
-            @click="toggleFullScreen"
-            class="text-gray-600 hover:text-gray-800"
-          >
-            <span class="material-symbols-outlined" style="font-size:24px;">close</span>
-          </button>
         </div>
         <div :id="mapId" :class="isFullScreen ? 'h-full' : 'h-full w-full'"></div>
       </div>
@@ -181,10 +166,14 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import { libraryUrl } from '~/utils/libraryUrl'
+import LibraryCard from './LibraryCard.vue'
+import { createApp, h } from 'vue'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare function queryContent(path?: string): any
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare function useLibraries(): { data: any; pending: any }
+
+// Import Leaflet.fullscreen plugin
 
 // Define library interface
 interface Library {
@@ -463,8 +452,10 @@ const initializeMap = () => {
   const el = document.getElementById(mapId.value)
   if (!el) return
   mapStarted = true
-  
-  import('leaflet').then((L) => {
+
+  // Dynamically import fullscreen plugin only on client
+  import('leaflet.fullscreen/Control.FullScreen.js').then(() => {
+    import('leaflet').then((L) => {
     // Create different colored icons
     const createIcon = (color: string) => {
       const svgMarker = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='41' viewBox='0 0 25 41'%3E%3Cpath fill='${encodeURIComponent(color)}' stroke='white' stroke-width='2' d='M12.5 0c-7 0-12.5 5.6-12.5 12.5 0 9.4 12.5 28.5 12.5 28.5S25 21.9 25 12.5C25 5.6 19.4 0 12.5 0z'/%3E%3Ccircle cx='12.5' cy='12.5' r='5' fill='white'/%3E%3C/svg%3E`
@@ -483,26 +474,25 @@ const initializeMap = () => {
     redIcon = createIcon('#ef4444')   // Red for gone/missing
     greenIcon = createIcon('#10b981') // Green for visited_funvill
     
-    map = L.map(mapId.value).setView([49.2827, -123.1207], 11)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map)
-    
-    // Initialize marker cluster group
-    try {
-      // Try to use MarkerClusterGroup if available
-      if ((L as any).markerClusterGroup) {
-        markerClusterGroup = (L as any).markerClusterGroup()
-        map.addLayer(markerClusterGroup)
+  map = L.map(mapId.value, { fullscreenControl: true }).setView([49.2827, -123.1207], 11)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map)
+      // Initialize marker cluster group
+      try {
+        // Try to use MarkerClusterGroup if available
+        if ((L as any).markerClusterGroup) {
+          markerClusterGroup = (L as any).markerClusterGroup()
+          map.addLayer(markerClusterGroup)
+        }
+      } catch (e) {
+        console.log('MarkerClusterGroup not available, using regular markers')
       }
-    } catch (e) {
-      console.log('MarkerClusterGroup not available, using regular markers')
-    }
-    
-    updateMapMarkers()
-  }).catch(err => {
-    console.error('[SearchComponent] Failed to init map', err)
-    mapStarted = false
+      updateMapMarkers()
+    }).catch(err => {
+      console.error('[SearchComponent] Failed to init map', err)
+      mapStarted = false
+    })
   })
 }
 
@@ -544,17 +534,17 @@ const updateMapMarkers = () => {
     const icon = getMarkerIcon(library)
     
     const marker = L.marker([library.location.lat, library.location.lng], icon ? { icon } : undefined)
-      .bindPopup(`
-        <div class="p-3 min-w-[200px]">
-          <h4 class="font-semibold text-lg mb-1">${library.title}</h4>
-          <p class="text-xs text-gray-500 mb-2">ID: ${library.library_id || 'N/A'}</p>
-          <p class="text-sm text-gray-600 mb-3 line-clamp-2">${library.description}</p>
-          <a href="${libUrl}" class="inline-flex items-center gap-1 bg-blue-600 text-white px-3 py-1.5 rounded text-xs font-medium hover:bg-blue-700 transition-colors">
-            <span class="material-symbols-outlined" style="font-size:14px;">visibility</span>
-            Visit Library
-          </a>
-        </div>
-      `)
+      // Create a container div for the popup
+      const popupDiv = document.createElement('div')
+      popupDiv.className = 'p-0 m-0 min-w-[260px] max-w-[320px]'
+      // Mount LibraryCard into the popup
+      const app = createApp({
+        render() {
+          return h(LibraryCard, { library, showStats: false })
+        }
+      })
+      app.mount(popupDiv)
+      marker.bindPopup(popupDiv)
     
     newMarkers.push(marker)
   })
@@ -592,4 +582,5 @@ defineExpose({
 <style>
 /* Import Leaflet CSS */
 @import 'leaflet/dist/leaflet.css';
+@import 'leaflet.fullscreen/Control.FullScreen.css';
 </style>
