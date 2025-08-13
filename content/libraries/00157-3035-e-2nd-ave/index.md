@@ -1,9 +1,9 @@
 ---
-title: 3035 E. 2nd Ave
+title: 3035 East 2nd Ave
 location:
   lat: 49.2685593
   lng: -123.0405989
-  address: '3035 E. 2nd Ave, Vancouver, BC, Canada'
+  address: '3035 East 2nd Ave, Vancouver, BC, Canada'
 tags:
   - vancouver
   - active
