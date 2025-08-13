@@ -1,5 +1,5 @@
 ---
-title: "2696 Eton St. & N. Slocan St.: \_Little Free Library #10089"
+title: "2696 Eton St"
 location:
   lat: 49.2875079
   lng: -123.0494392
@@ -13,6 +13,9 @@ tags:
 photo: /images/libraries/placeholder-library.jpg
 library_id: '00125'
 ---
+
+Little Free Library #10089
+
 Built with a community grant from the Hastings Community Partners Group.
 Notes by K.D.:  2696 Eton St. (e. side of house); 
 s.w. corner of Slocan, just n. of 225 N. Slocan St. (where another map ?wrongly places it).

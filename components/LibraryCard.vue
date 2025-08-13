@@ -1,13 +1,12 @@
 <template>
   <div class="group">
     <div class="md-card h-full hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 flex flex-col">
-      <!-- Library Image -->
+      <!-- Library Image - Enhanced for better thumbnail display -->
       <a :href="getLibraryUrl()" class="block aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg overflow-hidden relative">
-        <!-- Use regular img for all images in static build -->
         <img
           :src="getImageSrc()"
           :alt="library.title"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
           @error="handleImageError"
         />
@@ -17,7 +16,7 @@
       <div class="flex-1 space-y-4">
         <div>
           <a :href="getLibraryUrl()" class="block">
-            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors hover:text-blue-600">
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
               {{ library.title }}
             </h3>
           </a>
@@ -27,14 +26,22 @@
           </p>
         </div>
 
-        <!-- Location -->
+
+        <!-- Location and ID -->
         <div class="flex items-center text-sm text-gray-500">
           <span class="material-symbols-outlined text-blue-500 mr-2" style="font-size:18px;">location_on</span>
           <span>{{ formatLocation(library.location) }}</span>
+          <template v-if="library.library_id">
+            <span class="mx-2">|</span>
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-gray-400" style="font-size:16px;">tag</span>
+              <span class="text-xs font-mono">{{ library.library_id }}</span>
+            </span>
+          </template>
         </div>
 
         <!-- Stats (optional) -->
-        <div v-if="showStats" class="flex items-center justify-between text-sm">
+  <div v-if="showStats" class="flex items-center justify-between text-sm">
           <div class="flex items-center text-green-600">
             <span class="material-symbols-outlined mr-1" style="font-size:18px;">extension</span>
             <span>{{ library.entries_count || 0 }} entries</span>
@@ -51,8 +58,8 @@
       </div>
 
       <!-- Actions -->
-      <div class="mt-6 mt-auto">
-        <a :href="getLibraryUrl()" class="md-button w-full flex items-center justify-center gap-1">
+      <div class="mt-6 mt-auto space-y-2">
+        <a :href="getLibraryUrl()" class="md-button w-full flex items-center justify-center gap-1 text-white">
           <span class="material-symbols-outlined" style="font-size:18px;">visibility</span>
           Visit Library
         </a>
@@ -63,11 +70,6 @@
 
 <script setup lang="ts">
 import { libraryUrl } from '~/utils/libraryUrl'
-// Nuxt macros shim (if type inference missing in isolated file analysis)
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-declare function defineProps<T>(): T
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-declare function withDefaults<T, U>(props: T, defaults: U): T & U
 
 interface Library {
   id?: number
@@ -105,8 +107,6 @@ const formatLocation = (location: { lat: number; lng: number; address?: string }
 const getLibrarySlug = (library: Library) => {
   if (library.slug) return library.slug
   if (library._path) {
-    // Extract library slug from content path
-    // e.g., "/content/downtown-central-library" -> "downtown-central-library"
     return library._path.split('/').filter(Boolean).pop() || ''
   }
   return library.id?.toString() || ''
@@ -116,36 +116,17 @@ const getLibraryUrl = () => {
   const slug = getLibrarySlug(props.library)
   const libraryId = props.library.library_id ?? props.library.id
   if (libraryId) return libraryUrl({ library_id: libraryId, slug })
-  return `/library/${slug}/` // legacy fallback (should phase out)
+  return `/library/${slug}/`
 }
 
 const getImageSrc = () => {
-  // If library has a photo, use it, otherwise use placeholder
   if (props.library.photo && props.library.photo !== '/images/libraries/placeholder-library.jpg') {
     return props.library.photo
   }
   return '/images/libraries/placeholder-library.jpg'
 }
 
-const isPlaceholderImage = () => {
-  const photo = props.library.photo
-  if (!photo) return true
-  if (photo === '/images/libraries/placeholder-library.jpg') return true
-  // Also check if it ends with the placeholder filename (in case of absolute URLs)
-  if (photo.endsWith('placeholder-library.jpg')) return true
-  // Debug logging for the first few images
-  if (Math.random() < 0.05) { // Log ~5% of images
-    console.log('LibraryCard photo check:', { 
-      photo, 
-      isPlaceholder: photo === '/images/libraries/placeholder-library.jpg' || photo.endsWith('placeholder-library.jpg'),
-      libraryTitle: props.library.title 
-    })
-  }
-  return false
-}
-
 const handleImageError = (event: string | Event) => {
-  // If image fails to load, fallback to placeholder
   if (typeof event !== 'string') {
     const img = event.target as HTMLImageElement
     if (img.src !== '/images/libraries/placeholder-library.jpg') {
@@ -170,5 +151,10 @@ const handleImageError = (event: string | Event) => {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Enhanced thumbnail display - clip bottom and show top */
+img {
+  object-position: top center;
 }
 </style>

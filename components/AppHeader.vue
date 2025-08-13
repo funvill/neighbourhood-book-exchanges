@@ -19,23 +19,16 @@
 
         <!-- Navigation Menu -->
         <nav class="hidden md:flex items-center space-x-1">
-          <a href="/search" class="md-button text-gray-600 hover:text-blue-600 flex items-center gap-1 bg-transparent shadow-none">
-            <span class="material-symbols-outlined" style="font-size:20px;">map</span>
-            Explore
-          </a>
-          <a href="/library/log" class="md-button text-gray-600 hover:text-blue-600 flex items-center gap-1 bg-transparent shadow-none">
-            <span class="material-symbols-outlined" style="font-size:20px;">edit_note</span>
-            Add Logbook Entry
-          </a>
+          <!-- Navigation buttons removed per feedback -->
         </nav>
 
-        <!-- Search Bar -->
+        <!-- Search Bar - Main Search Input -->
         <div class="flex-1 max-w-md mx-4">
           <form class="relative" @submit.prevent="performSearch">
             <input
               v-model="searchQuery"
               type="text"
-              placeholder="Search libraries and content..."
+              placeholder="Search libraries, content, and tags..."
               class="w-full rounded-full border border-gray-200 py-2 pl-10 pr-10 focus:outline-none focus:border-blue-400 text-sm shadow-sm"
               @keyup.enter="performSearch"
             />
@@ -48,10 +41,6 @@
 
         <!-- Action Buttons -->
         <div class="flex items-center space-x-2">
-          <a href="#todo?/logbook/new" class="md-button shadow-md hover:shadow-lg transition-shadow flex items-center gap-1">
-            <span class="material-symbols-outlined" style="font-size:20px;">edit</span>
-            <span class="hidden sm:inline">Log Entry</span>
-          </a>
           <!-- Mobile menu button -->
           <button class="md-button md:hidden flex items-center justify-center bg-transparent shadow-none" @click="toggleMobileMenu" type="button">
             <span class="material-symbols-outlined" style="font-size:24px;">menu</span>
@@ -62,14 +51,7 @@
       <!-- Mobile Navigation -->
       <div v-if="showMobileMenu" class="md:hidden py-4 border-t border-gray-200">
         <div class="flex flex-col space-y-2">
-          <a href="/search" class="md-button justify-start flex items-center gap-1" @click="closeMobileMenu">
-            <span class="material-symbols-outlined" style="font-size:20px;">map</span>
-            Explore Libraries
-          </a>
-          <a href="/library/log" class="md-button justify-start flex items-center gap-1" @click="closeMobileMenu">
-            <span class="material-symbols-outlined" style="font-size:20px;">edit_note</span>
-            Add Logbook Entry
-          </a>
+          <!-- Mobile navigation items removed per feedback -->
         </div>
       </div>
     </div>
@@ -77,8 +59,23 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
 const searchQuery = ref('')
 const showMobileMenu = ref(false)
+
+// Initialize search query from URL on search page
+onMounted(() => {
+  if (route.path === '/search' && route.query.q) {
+    searchQuery.value = String(route.query.q)
+  }
+})
+
+// Watch for route changes to update search query
+watch(() => route.query.q, (newQuery) => {
+  if (route.path === '/search' && newQuery) {
+    searchQuery.value = String(newQuery)
+  }
+})
 
 const performSearch = () => {
   if (searchQuery.value.trim()) {
@@ -88,6 +85,9 @@ const performSearch = () => {
 
 const clearSearch = () => {
   searchQuery.value = ''
+  if (route.path === '/search') {
+    navigateTo('/search')
+  }
 }
 
 const toggleMobileMenu = () => {
