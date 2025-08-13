@@ -1,5 +1,5 @@
 ---
-title: ‘Grandview Little Free Pantry
+title: Grandview Little Free Pantry
 location:
   lat: 49.2697945
   lng: -123.067596
@@ -19,7 +19,7 @@ library_id: '00052'
 Active, 2 shelfs, wooden, books, glass window, Medium-small
 
 Commercial—Victoria Dr.
-Facing Salsbury Dr. By Grandview Church. ‘Grandview Little Free Pantry’ with bench. Open to all kinds of donated items. 
+Facing Salsbury Dr. By Grandview Church. ‘Grandview Little Free Pantry’ with bench. Open to all kinds of donated items.
 
 ## History
 

@@ -95,7 +95,14 @@ photo: /images/libraries/placeholder-library.jpg
 This is the text included with the logbook entry. it is markdown and can include markdown formating.
 ```
 
-
 ## ToDo
 
-- Add this libary https://photos.google.com/photo/AF1QipOW0qDqqrltBlUJexTQkNQH6xenGhH2jGBlCgRJ
+- Add this libary 
+  - https://photos.google.com/photo/AF1QipOW0qDqqrltBlUJexTQkNQH6xenGhH2jGBlCgRJ
+  - https://photos.app.goo.gl/9K22FjMTXAzvpgcN6
+  - https://photos.app.goo.gl/78szsH6EBee9fvLZ9
+  - https://photos.app.goo.gl/8qKah5YwUmbTjzCs5
+
+- Add this libary https://photos.app.goo.gl/MG67NgCtgUt6sRPGA, note it in the same place as 00406-2390-brunswick-st but not the same one
+
+- Add this little art gallery https://photos.app.goo.gl/Uz79vqdF99KqsRJUA

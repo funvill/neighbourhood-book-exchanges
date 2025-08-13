@@ -1,23 +1,30 @@
 ---
-title: '2601 Quebec St. at W. 10th Ave., s.e.'
+title: The Federal Store Little Tiny Library
 location:
   lat: 49.2620255
   lng: -123.103244
-  address: '49.2620, -123.1032'
+  address: '2601 Quebec St, Vancouver, BC, Canada'
 tags:
   - kml-import
   - outdoor
   - book-exchange
   - red-marker
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - vancouver
+  - books
+  - visited_funvill    
+photo: logbook/PXL_20250810_231758755.png
 library_id: 00119
 ---
+
+Active, 2 shelfs, wooden, books, blue, Dog toy box too
+
 'The Federal Store Little Tiny Library'.
-Closer to W. 10th Ave.
-Outside the Federal Store on the corner.
+Closer to W. 10th Ave. Outside the Federal Store on the corner.
 Small, 2 shelves.  On a bike route.
-—Added to map by K.D., 2024 12 18.
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 2 shelfs, wooden, books, blue, Dog toy box too
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2024-Dec-18** - Added to map by K.D., 2024 12 18

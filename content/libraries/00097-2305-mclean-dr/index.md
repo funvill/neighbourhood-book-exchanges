@@ -1,29 +1,35 @@
 ---
-title: '2305 McLean Dr. at E. 7th Ave., s.w. corner; Clark—Commercial Dr.'
+title: 2305 McLean Dr
 location:
   lat: 49.2641167
   lng: -123.0757441
-  address: '49.2641, -123.0757'
+  address: '2305 McLean Dr, Vancouver, BC, Canada'
 tags:
   - kml-import
   - outdoor
   - book-exchange
   - red-marker
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - vancouver
+  - books
+  - visited_funvill    
+photo: logbook/PXL_20250810_214212546.png
 library_id: 00097
+little_free_library: 6034
 ---
-1 bl. e. of Clark Dr.
-London-phone-booth-inspired 
-book-exchange  box.
-In Grandview-Woodland neighborhood.   
+
+Active, 2 shelfs, wooden, books, London-phone-booth-inspired, nice design
+
 Not 1385 E. 7th Ave.
+1 bl. e. of Clark Dr.
+London-phone-booth-inspired book-exchange box.
+
 Little Free Library #6034.
-Was noted at  www.LFL6034.org/ .
-The LFL is still there on the ground, as of 2024 9 20.
+
 A similar-looking one is at 447 E. 6th Ave.
-Missing door, so books might get wet, so please donate each book in its own clear plastic bag.
-— Revised by K.D. 2024 9 20+.
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 2 shelfs, wooden, books, London-phone-booth-inspired, nice design
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2024-Sep-20** - Revised by K.D. 2024 9 20

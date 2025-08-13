@@ -1,22 +1,28 @@
 ---
-title: 3699 Main St. at E. 21st Ave.
+title: 3699 Main St
 location:
   lat: 49.2518136
   lng: -123.1014943
-  address: '49.2518, -123.1015'
+  address: '3699 Main St, Vancouver, BC, Canada'
 tags:
   - kml-import
   - outdoor
   - book-exchange
   - red-marker
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - vancouver
+  - books
+  - visited_funvill    
+photo: logbook/PXL_20250810_233114539.png
 library_id: 00208
 ---
-Outside of Liberty Bakery in the street.
-At the w. end of the street seating which is blocking vehicle traffic on E. 21st Ave.
-Big box with 3 shelves.
-—Added to map by K.D., 2024 8 30.
+
+Active, 3 shelfs, wooden, books, plastic windows, needs repair
+
+Outside of Liberty Bakery in the street. At the w. end of the street seating which is blocking vehicle traffic on E. 21st Ave. Big box with 3 shelves.
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 3 shelfs, wooden, books, plastic windows, needs repair
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2024-Aug-30** - Added to map by K.D., 2024 8 30

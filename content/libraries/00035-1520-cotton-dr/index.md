@@ -1,20 +1,28 @@
 ---
-title: 1520 Cotton Dr.; Grant—Graveley St.
+title: 1520 Cotton Dr
 location:
   lat: 49.27105
   lng: -123.0714387
-  address: '49.2711, -123.0714'
+  address: '1520 Cotton Dr, Vancouver, BC, Canada'
 tags:
   - kml-import
   - outdoor
   - book-exchange
   - red-marker
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - vancouver
+  - books
+  - visited_funvill  
+photo: logbook/PXL_20250810_212755263.png
 library_id: '00035'
 ---
-Seems new.  Beautiful wood work.
-—Added to map by K.D., 2021 4 16.
+
+Active, 2 shelfs, wooden, books, unique design, Beautiful wood work.
+
+Coquitlam Men's Shed Society
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 2 shelfs, wooden, books, unique design
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Aug-08** - —Added to map by K.D., 2021 4 16.

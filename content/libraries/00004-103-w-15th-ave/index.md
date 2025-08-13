@@ -1,24 +1,30 @@
 ---
-title: 103 W. 15th Ave. at Manitoba St.; n.w.
+title: 103 W. 15th Ave
 location:
   lat: 49.2576957
   lng: -123.1071866
-  address: '49.2577, -123.1072'
+  address: '103 W. 15th Ave, Vancouver, BC, Canada'
 tags:
   - kml-import
   - outdoor
   - book-exchange
   - red-marker
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - vancouver
+  - books
+  - visited_funvill    
+photo: logbook/PXL_20250810_232330882.png
 library_id: '00004'
 ---
-Cambie—Main St.
+
+Active, 2 shelfs, wooden, books, tall, blue, plastic window, dog ball box
+
 Also known as 3091 Manitoba St.; not 100 W. 15th.
-Below the book box it says 'Bea's Ball Library for Dogs Who Can't Read Good'.
-In other words:  some free balls.  
-Take one for your dog, if you want. 
- —Added to map by K.D., 2021 6 19~. Thanks, K.G.
+
+Below the book box it says 'Bea's Ball Library for Dogs Who Can't Read Good'. In other words: some free balls. Take one for your dog, if you want.
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 2 shelfs, wooden, books, tall, blue, plastic window, dog ball box
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2021-Jun-19** - Added to map by K.D., 2021 6 19~. Thanks, K.G

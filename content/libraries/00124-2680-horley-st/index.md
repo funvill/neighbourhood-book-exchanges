@@ -1,21 +1,28 @@
 ---
-title: 2680 Horley St.; just e. of Duchess St.
+title: 2680 Horley St
 location:
   lat: 49.24096
   lng: -123.0500946
-  address: '49.2410, -123.0501'
+  address: '2680 Horley St, Vancouver, BC, Canada'
 tags:
   - kml-import
   - outdoor
   - book-exchange
   - red-marker
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - vancouver
+  - books
+  - visited_funvill  
+photo: logbook/PXL_20250811_023606598.png
 library_id: '00124'
 ---
+
+Active, 1 shelf, wooden, books, colorful paintings, good design
+
 3 blocks n. of Kingsway.  1 block w. of Earles St.
-Small.
-—Added to map by K.D., 2025 7 25.
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 1 shelf, wooden, books, colorful paintings, good design
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Jul-25** - Added to map by K.D., 2025 7 25

@@ -1,22 +1,29 @@
 ---
-title: '447 E. 6th Ave., Main—Fraser streets'
+title: 447 E. 6th Ave
 location:
   lat: 49.2653472
   lng: -123.0940926
-  address: '49.2653, -123.0941'
+  address: '447 E. 6th Ave, Vancouver, BC, Canada'
 tags:
   - kml-import
   - outdoor
   - book-exchange
   - red-marker
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - vancouver
+  - books
+  - visited_funvill    
+photo: logbook/PXL_20250810_215648675.MP.png
 library_id: '00254'
 ---
-A different box 2024 9.
-It looks exactly like the one at 2305 McLean. 
-Red with little windows and 2 shelves. 
-—Added to map by K.D., 2020.
+
+Active, 2 shelfs, wooden, books, london police box design, Red, plastic window
+
+It looks exactly like the one at 2305 McLean. Red with little windows and 2 shelves.
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 2 shelfs, wooden, books, london police box design, Red, plastic window
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2024-Sep-01** - A different box 2024 9.
+- **2020-Jan-01** - Added to map by K.D., 2020

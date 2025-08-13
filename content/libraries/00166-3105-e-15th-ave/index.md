@@ -1,21 +1,28 @@
 ---
-title: '3105 E. 15th Ave. at Lilloett St., n.e.'
+title: 3105 E. 15th Ave
 location:
   lat: 49.2564449
   lng: -123.038908
-  address: '49.2564, -123.0389'
+  address: '3105 E. 15th Ave, Vancouver, BC, Canada'
 tags:
   - kml-import
   - outdoor
   - book-exchange
   - red-marker
   - active
-photo: /images/libraries/placeholder-library.jpg
+  - vancouver
+  - books
+  - visited_funvill   
+photo: logbook/PXL_20250811_040356425.png
 library_id: '00166'
 ---
-Lillooet—Windemere; Renfrew—Rupert St.
-Large box.  'No pamphlets or religious material.'
-—Added to map by K.D., 2022 2 1. Thanks, K.G.
+
+Active, 1 shelf, wooden, books, Yellow with white trim, 'No pamphlets or religious material.'
+
+Lillooet—Windemere; Renfrew—Rupert St
 
 ## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 1 shelf, wooden, books, Yellow with white trim, 'No pamphlets or religious material.'
 - **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2022-Feb-01** - Added to map by K.D., 2022 2 1. Thanks, K.G. Large box. 'No pamphlets or religious material'

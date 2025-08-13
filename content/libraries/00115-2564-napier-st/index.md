@@ -9,7 +9,7 @@ tags:
   - active
   - books
   - visited_funvill
-photo: /images/libraries/placeholder-library.jpg
+photo: logbook/PXL_20250810_205701873.png
 library_id: '00115'
 ---
 
