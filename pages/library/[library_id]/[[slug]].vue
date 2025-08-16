@@ -81,6 +81,19 @@
               <div v-else-if="library.description" class="prose library-content max-w-none">
                 <p class="text-gray-700 leading-relaxed">{{ library.description }}</p>
               </div>
+
+              <!-- Logbook Section -->
+              <div v-if="logbookEntries && logbookEntries.length > 0" class="mt-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Logbook</h2>
+                <div class="space-y-6">
+                  <div v-for="entry in logbookEntries" :key="entry._path" class="border-b border-gray-200 pb-6 last:border-b-0">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">{{ formatLogbookDate(entry.date) }}</h3>
+                    <div class="prose library-content max-w-none">
+                      <ContentRenderer :value="entry" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Sidebar -->
@@ -309,6 +322,65 @@ const library = computed<LibraryViewModel | null>(() => {
     library_id: doc.value.library_id
   }
 })
+
+// Fetch logbook entries for this library
+interface LogbookEntry {
+  _path: string
+  date: string
+  title?: string
+  body: any
+}
+
+const { data: logbookEntries } = useAsyncData<LogbookEntry[]>(`logbook:${paddedId}:${slugParam}`, async () => {
+  // First try with slugParam if provided
+  let logbookPath = ''
+  if (slugParam) {
+    logbookPath = `/libraries/${slugParam}/logbook`
+  } else {
+    // Fallback to trying with paddedId format (find the matching library folder)
+    try {
+      const allLibraries = await queryContent('/libraries').find()
+      const matchingLibrary = allLibraries.find((lib: any) => {
+        const id = lib.library_id
+        if (id == null) return false
+        const n = Number(id)
+        if (!Number.isNaN(n) && n === Number(paddedId)) return true
+        return String(id).padStart(5, '0') === paddedId
+      })
+      if (matchingLibrary && matchingLibrary._path) {
+        const librarySlug = matchingLibrary._path.replace(/^\/libraries\//, '')
+        logbookPath = `/libraries/${librarySlug}/logbook`
+      }
+    } catch {
+      return []
+    }
+  }
+  
+  if (!logbookPath) return []
+  
+  try {
+    const entries = await queryContent(logbookPath).find()
+    // Sort by date, newest first
+    return (entries || [])
+      .filter((entry: any) => entry.date) // Only entries with dates
+      .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  } catch {
+    return []
+  }
+})
+
+// Format date for logbook entries
+const formatLogbookDate = (dateStr: string): string => {
+  try {
+    const date = new Date(dateStr)
+    const year = date.getFullYear()
+    const month = date.toLocaleDateString('en-US', { month: 'short' })
+    const day = date.getDate().toString().padStart(2, '0')
+    return `${year}-${month}-${day}`
+  } catch {
+    return dateStr // Fallback to original string if parsing fails
+  }
+}
 
 // Redirect if slug missing or mismatched (now permanent 301)
 watch(() => library.value, async (lib: LibraryViewModel | null) => {

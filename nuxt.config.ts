@@ -75,11 +75,10 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
-  // Exclude logbook entry markdown files from @nuxt/content indexing/search
+  // Note: Logbook entry markdown files are now included in content indexing to support library page logbook sections
   content: {
-    // User requested pattern; matches top-level /logbook folders under content root.
-    // If nested library paths need exclusion, consider changing to '**/logbook/*.md'
-    ignores: ['/logbook/*.md']
+    // Remove ignores to allow library logbook entries to be queryable
+    // ignores: ['/logbook/*.md']
   },
 
   // Image optimization configuration
