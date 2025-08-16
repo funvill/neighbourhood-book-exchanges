@@ -1,0 +1,29 @@
+---
+title: 5872 Sophia St
+location:
+  lat: 49.2314727
+  lng: -123.098583
+  address: '5872 Sophia St, Vancouver, BC, Canada'
+tags:
+  - kml-import
+  - outdoor
+  - book-exchange
+  - red-marker
+  - active
+  - vancouver
+  - books
+  - visited_funvill  
+photo: logbook/PXL_20250810_234810682.png
+library_id: 00296
+---
+
+Active, 2 large shelfs, wooden, books, Pink, eyeballs
+
+5874 is on the same lot. Not 5873. Big, with 2 shelves.
+
+## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 2 large shelfs, wooden, books, Pink, eyeballs
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2021-Sep-14** - Address corrected 2021 9 14
+- **2021-Jul-20** - Added to map by K.D., 2021 7 20

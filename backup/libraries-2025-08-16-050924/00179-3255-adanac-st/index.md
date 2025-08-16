@@ -1,0 +1,24 @@
+---
+title: "Adanac Exchange Free LIbrary"
+location:
+  lat: 49.2775363
+  lng: -123.0345383
+  address: '3255 Adanac St, Burnaby, BC, Canada'
+tags:
+  - vancouver
+  - active
+  - books
+  - visited_funvill
+photo: logbook/PXL_20250809_023820532.png
+library_id: 00179
+---
+
+Active, 4 shelfs, wooden, books, seeds
+
+Kid and youth only books. Also art and seeds.
+
+## History
+
+- **2025-Aug-08** - visited by [@funvill](https://blog.abluestar.com) Active, 4 shelfs, wooden, books, seeds
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2023-May-03** - Added to map by K.D., 2023 5 3.  

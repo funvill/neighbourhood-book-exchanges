@@ -1,0 +1,28 @@
+---
+title: 2925 Horley St
+location:
+  lat: 49.2391939
+  lng: -123.0452824
+  address: '2925 Horley St, Vancouver, BC, Canada'
+tags:
+  - kml-import
+  - outdoor
+  - book-exchange
+  - red-marker
+  - active
+  - vancouver
+  - books
+  - visited_funvill   
+photo: logbook/PXL_20250811_022959953.png
+library_id: '00146'
+---
+
+Active, 3 shelfs, wooden, books, Amazing design, Looks like the yellow house that it is in front of.
+
+Moss--Fairmont St.; Euclid Ave.—Kingsway. Food and a few small things besides books.
+
+## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 3 shelfs, wooden, books, Amazing design, Looks like the yellow house that it is in front of.
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2025-Jul-22** - Added to map by K.D., 2025 7 22.  Thanks, J.T.!

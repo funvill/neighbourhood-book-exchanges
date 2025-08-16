@@ -1,0 +1,22 @@
+---
+title: Lillooet Free Library
+location:
+  lat: 49.276804
+  lng: -123.0390141
+  address: '875 Lillooet St, Vancouver, BC, Canada'
+tags:
+  - vancouver
+  - active
+  - books
+  - visited_funvill
+photo: logbook/PXL_20250809_024910101.png
+library_id: '00344'
+---
+
+Active, 2 shelfs, wooden, kids books only
+
+## History
+
+- **2025-Aug-08** - Visited by [@funvill](https://blog.abluestar.com) Active, 2 shelfs, wooden, kids books only
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2021-Aug-16** - Added to map by K.D., 2021 6 16.

@@ -1,0 +1,23 @@
+---
+title: 115 W. 13th Ave
+location:
+  lat: 49.2594799
+  lng: -123.1075201
+  address: '115 W. 13th Ave, Vancouver, BC, Canada'
+tags:
+  - kml-import
+  - outdoor
+  - book-exchange
+  - red-marker
+  - active
+photo: logbook/PXL_20250810_232141563.png
+library_id: '00014'
+---
+
+Active, 3 shelfs, wooden, books, stained glass yellow house for the front window. Nice Design
+
+## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 3 shelfs, wooden, books, stained glass yellow house for the front window. Nice Design
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2020-Jan-01** - Added to map by K.D., 2020

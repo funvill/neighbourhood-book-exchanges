@@ -1,0 +1,28 @@
+---
+title: 4858 Moss St
+location:
+  lat: 49.2411574
+  lng: -123.0438741
+  address: '4858 Moss St, Vancouver, BC, Canada'
+tags:
+  - kml-import
+  - outdoor
+  - book-exchange
+  - red-marker
+  - active
+  - vancouver
+  - books
+  - visited_funvill   
+photo: logbook/PXL_20250811_023255075.MP.png
+library_id: '00274'
+---
+
+Active, 2 shelfs, wooden, books, Yellow trim
+
+2 blocks n. of Kingsway.  Vanness—Euclid Ave.
+
+## History
+
+- **2025-Aug-10** - Visited by [@funvill](https://blog.abluestar.com) Active, 2 shelfs, wooden, books, Yellow trim
+- **2025-Aug-08** - Imported from Vancouver Little Libraries 2025.8.6.revision
+- **2021-Sep-07** - Added to map by K.D., 2021 10 7. 'Book Exchange'.  Medium size.
