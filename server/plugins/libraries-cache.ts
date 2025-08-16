@@ -13,6 +13,7 @@ interface LibSummary {
   tags: string[]
   description: string
   _path: string
+  library_id?: string | number
   images?: string[]
 }
 
@@ -21,79 +22,53 @@ function buildDescription(content: string): string {
   return first.length > 200 ? first.slice(0, 200) + '…' : first
 }
 
-function ensureCopiedPhoto(slug: string, rawPhoto?: string): string | undefined {
+function ensureCopiedPhoto(libraryId: string, rawPhoto?: string): string | undefined {
   if (!rawPhoto) return undefined
   if (rawPhoto.startsWith('/') || /^https?:\/\//i.test(rawPhoto)) return rawPhoto
-  // Treat as relative inside the library folder (e.g. logbook/20250809-190601.png)
-  const contentDir = path.join(process.cwd(), 'content', 'libraries', slug)
-  const sourcePath = path.join(contentDir, rawPhoto)
-  if (!fs.existsSync(sourcePath) || !fs.statSync(sourcePath).isFile()) return undefined
-  const targetDir = path.join(process.cwd(), 'public', 'library-images', slug)
-  const fileName = path.basename(sourcePath)
-  const targetPath = path.join(targetDir, fileName)
-  try {
-    if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir, { recursive: true })
-    let shouldCopy = true
-    if (fs.existsSync(targetPath)) {
-      const srcStat = fs.statSync(sourcePath)
-      const dstStat = fs.statSync(targetPath)
-      if (srcStat.size === dstStat.size && srcStat.mtimeMs <= dstStat.mtimeMs) shouldCopy = false
-    }
-    if (shouldCopy) fs.copyFileSync(sourcePath, targetPath)
-    return `/library-images/${slug}/${fileName}`
-  } catch {
-    return undefined
-  }
+  
+  // TODO: Update for new structure when image migration is complete
+  // For now, return the raw photo path or placeholder
+  return rawPhoto || '/images/libraries/placeholder-library.jpg'
 }
 
-function copyAllImages(slug: string): string[] {
-  const libRoot = path.join(process.cwd(), 'content', 'libraries', slug)
-  if (!fs.existsSync(libRoot)) return []
-  const targetDir = path.join(process.cwd(), 'public', 'library-images', slug)
-  const exts = new Set(['.png','.jpg','.jpeg','.webp','.gif','.avif'])
-  const collected: string[] = []
-  const recurse = (dir: string) => {
-    for (const entry of fs.readdirSync(dir)) {
-      const full = path.join(dir, entry)
-      const stat = fs.statSync(full)
-      if (stat.isDirectory()) {
-        recurse(full)
-      } else {
-        const ext = path.extname(entry).toLowerCase()
-        if (exts.has(ext)) {
-          const filename = entry
-          if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir, { recursive: true })
-            const target = path.join(targetDir, filename)
-            let shouldCopy = true
-            if (fs.existsSync(target)) {
-              const dst = fs.statSync(target)
-              if (dst.size === stat.size && dst.mtimeMs >= stat.mtimeMs) shouldCopy = false
-            }
-            if (shouldCopy) {
-              fs.copyFileSync(full, target)
-            }
-            const publicPath = `/library-images/${slug}/${filename}`
-            if (!collected.includes(publicPath)) collected.push(publicPath)
-        }
-      }
-    }
-  }
-  recurse(libRoot)
-  return collected
+function copyAllImages(libraryId: string): string[] {
+  // TODO: Implement for new structure when image migration is complete
+  // For now, return empty array
+  return []
 }
 
 function loadLibraries(): LibSummary[] {
   const dir = path.join(process.cwd(), 'content', 'libraries')
   if (!fs.existsSync(dir)) return []
-  return fs.readdirSync(dir).filter(d => {
-    try { return fs.statSync(path.join(dir, d)).isDirectory() && fs.existsSync(path.join(dir, d, 'index.md')) } catch { return false }
-  }).map(slug => {
+  
+  // NEW: Read flattened .md files instead of directories
+  return fs.readdirSync(dir).filter(f => {
+    try { 
+      return f.endsWith('.md') && fs.statSync(path.join(dir, f)).isFile() 
+    } catch { 
+      return false 
+    }
+  }).map(filename => {
     try {
-      const raw = fs.readFileSync(path.join(dir, slug, 'index.md'), 'utf8')
+      const filePath = path.join(dir, filename)
+      const raw = fs.readFileSync(filePath, 'utf8')
       const { data, content } = matter(raw)
-      const copied = ensureCopiedPhoto(slug, data.photo)
+      
+      // Extract library_id for slug (remove .md extension as fallback)
+      const libraryId = data.library_id || filename.replace('.md', '')
+      const slug = data.title ? 
+        data.title.toLowerCase()
+          .normalize('NFKD')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, '')
+          .replace(/-{2,}/g, '-') 
+        : String(libraryId)
+      
+      // NEW: For flattened structure, use library_id for image paths instead of slug
+      const copied = ensureCopiedPhoto(String(libraryId), data.photo)
       // Copy all images and build gallery list
-      const gallery = copyAllImages(slug) || []
+      const gallery = copyAllImages(String(libraryId)) || []
+      
       // Ensure frontmatter image (copied or raw absolute) is first
       const primary = copied || data.photo
       let images: string[] = []
@@ -109,14 +84,16 @@ function loadLibraries(): LibSummary[] {
         }
       }
       for (const img of gallery) if (!images.includes(img)) images.push(img)
+      
       return {
         slug,
-        title: data.title || slug,
+        title: data.title || `Library ${libraryId}`,
         location: data.location,
         photo: copied || data.photo || '/images/libraries/placeholder-library.jpg',
         tags: data.tags || [],
         description: buildDescription(content),
-        _path: `/libraries/${slug}`,
+        _path: `/libraries/${filename.replace('.md', '')}`,
+        library_id: libraryId,
         images
       }
     } catch { return null }
