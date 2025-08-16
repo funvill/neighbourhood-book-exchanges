@@ -3,40 +3,41 @@ import fs from 'node:fs'
 import path from 'node:path'
 import matter from 'gray-matter'
 
-// Collect library slugs at build time so their pages & API endpoints are prerendered for static hosting
+// Collect library files at build time so their pages & API endpoints are prerendered for static hosting
 const librariesDir = path.resolve('content', 'libraries')
 let librarySlugs: string[] = []
 let libraryManifest: any = { libraries: [] }
 
 try {
+  // NEW: Read flattened .md files instead of directories
   librarySlugs = fs.readdirSync(librariesDir)
     .filter(name => {
       try {
-        return fs.statSync(path.join(librariesDir, name)).isDirectory() && fs.existsSync(path.join(librariesDir, name, 'index.md'))
+        return name.endsWith('.md') && fs.statSync(path.join(librariesDir, name)).isFile()
       } catch { return false }
     })
 
   // Build library manifest for route generation by reading actual frontmatter
   try {
     const libraries: any[] = []
-    for (const folder of librarySlugs) {
+    for (const filename of librarySlugs) {
       try {
-        const indexPath = path.join(librariesDir, folder, 'index.md')
-        const content = fs.readFileSync(indexPath, 'utf8')
+        const filePath = path.join(librariesDir, filename)
+        const content = fs.readFileSync(filePath, 'utf8')
         const frontmatter = matter(content)
         const libraryId = frontmatter.data.library_id
         if (libraryId) {
-          const title: string = frontmatter.data.title || folder
+          const title: string = frontmatter.data.title || filename.replace('.md', '')
           const titleSlug = title.toLowerCase()
             .normalize('NFKD')
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/^-+|-+$/g, '')
-            .replace(/-{2,}/g, '-') || folder
+            .replace(/-{2,}/g, '-') || filename.replace('.md', '')
           libraries.push({
             library_id: String(libraryId),
             slug: titleSlug,
             title,
-            folder
+            folder: filename.replace('.md', '') // Keep for compatibility
           })
         }
       } catch {
