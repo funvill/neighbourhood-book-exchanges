@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick, watch, createApp, h, resolveComponent } from 'vue'
 import { useRoute } from 'vue-router'
-import { libraryUrl } from '../utils/libraryUrl.js'
 
 // TypeScript interface for Library objects
 interface Library {
@@ -65,29 +64,26 @@ const updateMapMarkers = () => {
   const newMarkers: any[] = []
   
   searchResults.value.forEach((library: Library) => {
-    const libUrl = library.library_id
-      ? libraryUrl({ library_id: library.library_id, slug: library.slug })
-      : `/library/${library.slug}/`
-      
     const icon = getMarkerIcon(library)
     
     const marker = L.marker([library.location.lat, library.location.lng], icon ? { icon } : undefined)
       
-    // Create a simple HTML popup
-    const popupContent = `
-      <div class="p-2 min-w-[260px] max-w-[320px]">
-        <h3 class="font-bold text-lg mb-2">${library.title}</h3>
-        ${library.location.address ? `<p class="text-gray-600 mb-2">${library.location.address}</p>` : ''}
-        <p class="text-sm text-gray-700 mb-3">${library.description || 'No description available'}</p>
-        ${library.tags && library.tags.length > 0 ? `
-          <div class="flex flex-wrap gap-1 mb-2">
-            ${library.tags.map(tag => `<span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">${tag}</span>`).join('')}
-          </div>
-        ` : ''}
-        <a href="${libUrl}" class="text-blue-600 hover:text-blue-800 text-sm font-medium">View Details →</a>
-      </div>
-    `
-    marker.bindPopup(popupContent)
+    // Create a container div for the popup
+    const popupDiv = document.createElement('div')
+    popupDiv.className = 'p-0 m-0 min-w-[260px] max-w-[320px]'
+    
+    // Mount LibraryCard component into the popup
+    const app = createApp({
+      render() {
+        return h(resolveComponent('LibraryCard'), { 
+          library, 
+          showStats: false,
+          class: 'h-full w-full'
+        })
+      }
+    })
+    app.mount(popupDiv)
+    marker.bindPopup(popupDiv)
     
     newMarkers.push(marker)
   })
@@ -451,17 +447,6 @@ defineExpose({
                 Clear all tags
               </button>
             </div>
-          </div>
-
-          <!-- Search Button for Advanced Search -->
-          <div class="pt-2">
-            <button
-              class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center gap-2"
-              @click="performSearch"
-            >
-              <span class="material-symbols-outlined" style="font-size:18px;">search</span>
-              Apply Filters
-            </button>
           </div>
         </div>
       </div>

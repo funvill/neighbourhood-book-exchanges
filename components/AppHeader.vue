@@ -1,6 +1,7 @@
 <template>
   <header class="bg-white shadow-lg border-b border-blue-100 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Top row: Logo and Mobile Menu Button -->
       <div class="flex justify-between items-center py-4">
         <!-- Logo and Tagline -->
         <div class="flex-shrink-0">
@@ -17,35 +18,54 @@
           </NuxtLink>
         </div>
 
-        <!-- Navigation Menu -->
-        <nav class="hidden md:flex items-center space-x-1">
-          <!-- Navigation buttons removed per feedback -->
-        </nav>
+        <!-- Desktop: Navigation and Search -->
+        <div class="hidden md:flex items-center space-x-4 flex-1 justify-end">
+          <!-- Navigation Menu -->
+          <nav class="flex items-center space-x-1">
+            <!-- Navigation buttons removed per feedback -->
+          </nav>
 
-        <!-- Search Bar - Main Search Input -->
-        <div class="flex-1 max-w-md mx-4">
-          <form class="relative" @submit.prevent="performSearch">
-            <input
-              v-model="searchQuery"
-              type="text"
-              placeholder="Search libraries, content, and tags..."
-              class="w-full rounded-full border border-gray-200 py-2 pl-10 pr-10 focus:outline-none focus:border-blue-400 text-sm shadow-sm"
-              @keyup.enter="performSearch"
-            />
-            <span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400" style="font-size:20px;">search</span>
-            <button v-if="searchQuery" type="button" @click="clearSearch" class="absolute right-2 top-2.5 text-gray-400 hover:text-gray-600">
-              <span class="material-symbols-outlined" style="font-size:20px;">close</span>
-            </button>
-          </form>
+          <!-- Search Bar - Desktop -->
+          <div class="flex-1 max-w-md">
+            <form class="relative" @submit.prevent="performSearch">
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="Search libraries, content, and tags..."
+                class="w-full rounded-full border border-gray-200 py-2 pl-10 pr-10 focus:outline-none focus:border-blue-400 text-sm shadow-sm"
+                @keyup.enter="performSearch"
+              />
+              <span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400" style="font-size:20px;">search</span>
+              <button v-if="searchQuery" type="button" @click="clearSearch" class="absolute right-2 top-2.5 text-gray-400 hover:text-gray-600">
+                <span class="material-symbols-outlined" style="font-size:20px;">close</span>
+              </button>
+            </form>
+          </div>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="flex items-center space-x-2">
-          <!-- Mobile menu button -->
-          <button class="md-button md:hidden flex items-center justify-center bg-transparent shadow-none" @click="toggleMobileMenu" type="button">
+        <!-- Mobile: Menu Button -->
+        <div class="md:hidden">
+          <button class="md-button flex items-center justify-center bg-transparent shadow-none" @click="toggleMobileMenu" type="button">
             <span class="material-symbols-outlined" style="font-size:24px;">menu</span>
           </button>
         </div>
+      </div>
+
+      <!-- Mobile: Search Bar Row -->
+      <div class="md:hidden pb-4">
+        <form class="relative" @submit.prevent="performSearch">
+          <input
+            v-model="searchQuery"
+            type="text"
+            placeholder="Search libraries, content, and tags..."
+            class="w-full rounded-full border border-gray-200 py-2 pl-10 pr-10 focus:outline-none focus:border-blue-400 text-sm shadow-sm"
+            @keyup.enter="performSearch"
+          />
+          <span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400" style="font-size:20px;">search</span>
+          <button v-if="searchQuery" type="button" @click="clearSearch" class="absolute right-2 top-2.5 text-gray-400 hover:text-gray-600">
+            <span class="material-symbols-outlined" style="font-size:20px;">close</span>
+          </button>
+        </form>
       </div>
 
       <!-- Mobile Navigation -->
