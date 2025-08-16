@@ -335,9 +335,36 @@ interface LogbookEntry {
 const logbookEntries = computed<LogbookEntry[]>(() => {
   if (!library.value?.slug) return []
   
-  // For now, return empty array until we can debug properly
-  // TODO: Implement logbook fetching after fixing routing
-  return []
+  // Use a separate async data fetch for logbook entries
+  return logbookData.value || []
+})
+
+// Separate async data fetch for logbook entries to avoid circular dependencies
+const { data: logbookData } = await useAsyncData<LogbookEntry[]>(`logbook-${paddedId}`, async () => {
+  try {
+    // Find the library folder by matching library ID
+    const allLibraries = await queryContent('/libraries').find()
+    const matchingLibrary = allLibraries.find((lib: any) => {
+      const id = lib.library_id
+      if (id == null) return false
+      const n = Number(id)
+      if (!Number.isNaN(n) && n === Number(paddedId)) return true
+      return String(id).padStart(5, '0') === paddedId
+    })
+    
+    if (!matchingLibrary || !matchingLibrary._path) return []
+    
+    const librarySlug = matchingLibrary._path.replace(/^\/libraries\//, '')
+    const entries = await queryContent(`/libraries/${librarySlug}/logbook`).find()
+    
+    // Sort by date, newest first
+    return (entries || [])
+      .filter((entry: any) => entry.date) // Only entries with dates
+      .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  } catch (error) {
+    console.error('Error fetching logbook entries:', error)
+    return []
+  }
 })
 
 // Format date for logbook entries
