@@ -86,21 +86,26 @@ function resolvePhoto(slug: string, raw?: string): string {
 
 export function mapContentDocToSummary(doc: any): LibrarySummary {
   const fm: LibraryFrontmatter = doc || {}
-  const folderSlug = doc._path.replace(/^\/libraries\//, '').replace(/\/$/, '')
+  
+  // NEW: For flattened structure, extract library_id from filename
+  // Files are now named like "00001.md" instead of being in folders
+  const libraryId = fm.library_id || doc.library_id
   const titleSlug = fm.title ? slugifyTitle(fm.title) : ''
-  // Prefer title-derived slug when available; fall back to folder name
-  const slug = titleSlug || folderSlug
+  
+  // Use library_id as the primary slug, with title-derived slug as fallback
+  const slug = titleSlug || String(libraryId)
   const rawPhoto = fm.photo || '/images/libraries/placeholder-library.jpg'
+  
   return {
     slug,
-    title: fm.title || slug,
+    title: fm.title || `Library ${libraryId}`,
     location: fm.location,
-    // Use folderSlug for resolving relative images because files live under folder name, not canonical title slug
-    photo: resolvePhoto(folderSlug, rawPhoto),
+    // NEW: Use library_id for image resolution instead of folder slug
+    photo: resolvePhoto(String(libraryId), rawPhoto),
     tags: fm.tags || [],
     description: buildDescription(doc.body),
-  _path: doc._path,
-  library_id: (doc.library_id ?? fm['library_id']) as string | number | undefined
+    _path: doc._path,
+    library_id: libraryId
   }
 }
 
@@ -195,6 +200,8 @@ export function useLibraries() {
   })
 }
 
-export function useLibrary(slug: string) {
-  return useAsyncData<any>(`library:${slug}`, () => queryContent(`/libraries/${slug}`).findOne())
+export function useLibrary(libraryId: string) {
+  return useAsyncData<any>(`library:${libraryId}`, () => 
+    queryContent('/libraries').where({ library_id: libraryId }).findOne()
+  )
 }

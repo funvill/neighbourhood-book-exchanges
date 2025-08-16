@@ -230,37 +230,37 @@ declare function queryContent(path?: string): any
 
 /**
  * Fetch the actual library content from markdown files
- * This loads the rich content including descriptions, history, etc.
+ * Uses the new flattened structure: content/libraries/{library_id}.md
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const { data: doc, pending } = await useAsyncData<any>(`library-full:${paddedId}:${slugParam}`, async () => {
-  const match = libraryMatch.value
-  if (!match) return null
-  
   try {
-    // Use the actual _path from the library match to fetch content
-    if (match._path) {
-      const content = await queryContent(match._path).findOne()
-      if (content) {
-        return content
-      }
-    }
-    
-    // Fallback: If no _path or content not found, try to determine folder from library_id
-    // Build folder path based on directory listing pattern
-    const folderSlug = `${paddedId}-${match.slug.split('-').slice(0, 3).join('-')}`
-    const content = await queryContent(`/libraries/${folderSlug}`).findOne()
+    // NEW: Use simplified query for flattened structure
+    // Load library content directly by library_id
+    const content = await queryContent('/libraries').where({ library_id: paddedId }).findOne()
     if (content) {
       return content
+    }
+    
+    // Fallback: Try with numeric library_id
+    const numericId = Number(paddedId)
+    if (!Number.isNaN(numericId)) {
+      const contentByNumber = await queryContent('/libraries').where({ library_id: numericId }).findOne()
+      if (contentByNumber) {
+        return contentByNumber
+      }
     }
   } catch (error) {
     console.warn('Could not fetch library content:', error)
   }
   
-  // Final fallback: return the match data with minimal structure
+  // Final fallback: return minimal structure with library match data
+  const match = libraryMatch.value
+  if (!match) return null
+  
   return {
     ...match,
-    _path: match._path || `/libraries/${paddedId}-${match.slug.split('-').slice(0, 3).join('-')}`,
+    _path: `/libraries/${paddedId}`,
     body: {
       type: 'root',
       children: [
@@ -422,7 +422,7 @@ const library = computed<LibraryViewModel | null>(() => {
 // === LOGBOOK DATA LOADING ===
 /**
  * Fetch logbook entries for this library
- * Logbook entries are stored as individual markdown files in /logbook subdirectory
+ * NEW STRUCTURE: Logbook entries are stored in content/logbooks/{library_id}/*.md
  * Sorted by date in descending order (newest first)
  */
 interface LogbookEntry {
@@ -432,38 +432,19 @@ interface LogbookEntry {
   body: unknown
 }
 
-// Separate async data fetch for logbook entries using proper pattern
+// Separate async data fetch for logbook entries using NEW structure
 const { data: logbookData } = await useAsyncData<LogbookEntry[]>(`logbook-${paddedId}`, async () => {
   try {
-    // Get the library match to determine the correct folder path
-    const match = libraryMatch.value
-    if (!match) return []
-    
-    // Use the actual _path from the library to determine the logbook path
-    let logbookPath = ''
-    if (match._path) {
-      // Remove the index.md part and add /logbook
-      logbookPath = `${match._path}/logbook`
-    } else {
-      // Fallback: Build folder path based on directory listing pattern
-      const folderSlug = `${paddedId}-${match.slug.split('-').slice(0, 3).join('-')}`
-      logbookPath = `/libraries/${folderSlug}/logbook`
-    }
-    
-    // Fetch logbook entries from the actual markdown files
-    try {
-      const logbookEntries = await queryContent(logbookPath).where({ _extension: 'md' }).sort({ date: -1 }).find()
-      return logbookEntries as LogbookEntry[]
-    } catch (logbookError) {
-      console.warn('No logbook entries found or error fetching logbook:', logbookError)
-      return []
-    }
+    // NEW: Use simplified query for reorganized logbook structure
+    // Load logbook entries from content/logbooks/{library_id}/
+    const logbookEntries = await queryContent(`/logbooks/${paddedId}`).where({ _extension: 'md' }).sort({ date: -1 }).find()
+    return logbookEntries as LogbookEntry[]
   } catch (error) {
-    console.warn('Could not fetch logbook entries:', error)
+    console.warn('No logbook entries found for library', paddedId, ':', error)
     return []
   }
 }, {
-  watch: [libraryMatch]
+  watch: [paddedId]
 })
 
 // Compute logbook entries based on actual logbook files
