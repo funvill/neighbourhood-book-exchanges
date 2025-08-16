@@ -162,18 +162,7 @@
 <script setup lang="ts">
 // Re-implementation of rich detail page under new route pattern /library/{library_id}/{slug?}
 import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function queryContent(path?: string): any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function useAsyncData<T>(key: string, handler: () => Promise<T>): { data: { value: T | null }; pending: any }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function useHead(input: any): void
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function useRoute(): any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function $fetch<T = any>(url: string): Promise<T>
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function navigateTo(path: string, opts?: any): Promise<any>
+// Nuxt composables are auto-imported and don't need declarations
 
 const route = useRoute()
 const rawId = (route.params.library_id as string) || ''
@@ -184,63 +173,87 @@ const paddedId = rawId.padStart(5, '0')
 const resolvedSlug = ref(slugParam || '')
 const canonicalSlug = ref<string | null>(null)
 
-// Title -> slug helper (mirror logic in composable)
-const slugifyTitle = (title: string) => title
-  .toLowerCase()
-  .normalize('NFKD')
-  .replace(/[^a-z0-9]+/g, '-')
-  .replace(/^-+|-+$/g, '')
-  .replace(/-{2,}/g, '-')
+// Wait for libraries to load first, then fetch the specific library
+const { data: librariesData } = await useLibraries()
 
-// Fetch logic: attempt by slug first (if provided); else by id
-const { data: doc, pending } = useAsyncData<any>(`library-new:${paddedId}:${slugParam}`, async () => {
-  // helper to attempt slug fetch
-  const trySlug = async (slug: string) => {
-    if (!slug) return null
-    try {
-      return await queryContent(`/libraries/${slug}`).findOne()
-    } catch { return null }
+// First find the library match
+const libraryMatch = computed(() => {
+  const libraries = librariesData.value
+  if (!libraries) return null
+  
+  let match = null
+  
+  // First, try to find by slug if provided
+  if (slugParam) {
+    match = libraries.find((lib: any) => lib.slug === slugParam)
   }
-  let d = await trySlug(slugParam)
-  // If slug fetch failed or not provided, enumerate by library_id
-  if (!d) {
-    try {
-      const all = await queryContent('/libraries').find()
-      const match = (all || []).find((x: any) => {
-        const id = x.library_id
-        if (id == null) return false
-        const n = Number(id)
-        if (!Number.isNaN(n) && n === Number(paddedId)) return true
-        return String(id).padStart(5, '0') === paddedId
-      })
-      if (match) d = match
-    } catch { /* ignore */ }
+  
+  // If not found by slug, try to find by library_id
+  if (!match) {
+    match = libraries.find((lib: any) => {
+      const id = lib.library_id
+      if (id == null) return false
+      const n = Number(id)
+      if (!Number.isNaN(n) && n === Number(paddedId)) return true
+      return String(id).padStart(5, '0') === paddedId
+    })
   }
-  if (!d) {
-    // Last resort: API fallback by padded id (if an endpoint exists mapping id->slug). Using slugParam if present
-    try {
-      const candidate = slugParam || paddedId
-      const api = await $fetch(`/api/libraries/${candidate}`)
-      if (api && api.body) {
-        d = {
-          _path: `/libraries/${candidate}`,
-          title: api.title || candidate,
-          location: api.location,
-            photo: api.photo,
-            tags: api.tags,
-            body: { type: 'root', children: api.body.split(/\n\n+/).map((p: string) => ({ type: 'element', tag: 'p', children: [{ type: 'text', value: p }] })) }
-        }
+  
+  return match
+})
+
+// Declare queryContent for proper typing
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function queryContent(path?: string): any
+
+// Fetch the actual library content from markdown files
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const { data: doc, pending } = await useAsyncData<any>(`library-full:${paddedId}:${slugParam}`, async () => {
+  const match = libraryMatch.value
+  if (!match) return null
+  
+  try {
+    // Use the actual _path from the library match to fetch content
+    if (match._path) {
+      const content = await queryContent(match._path).findOne()
+      if (content) {
+        return content
       }
-    } catch { /* ignore */ }
+    }
+    
+    // If no _path or content not found, try to determine folder from library_id
+    // Build folder path based on directory listing pattern
+    const folderSlug = `${paddedId}-${match.slug.split('-').slice(0, 3).join('-')}`
+    const content = await queryContent(`/libraries/${folderSlug}`).findOne()
+    if (content) {
+      return content
+    }
+  } catch (error) {
+    console.warn('Could not fetch library content:', error)
   }
-  if (d) {
-    // Derive canonical slug from title (preferred) else fallback to path/folder
-    const folderSlug = d._path?.replace(/^\/libraries\//, '') || ''
-    const titleSlug = d.title ? slugifyTitle(d.title) : ''
-    resolvedSlug.value = d.slug || folderSlug
-    canonicalSlug.value = titleSlug || resolvedSlug.value
+  
+  // Fallback: return the match data with minimal structure
+  return {
+    ...match,
+    _path: match._path || `/libraries/${paddedId}-${match.slug.split('-').slice(0, 3).join('-')}`,
+    body: {
+      type: 'root',
+      children: [
+        {
+          type: 'element',
+          tag: 'p',
+          children: [
+            {
+              type: 'text',
+              value: 'This is a neighborhood book exchange where community members can take a book and leave a book.'
+            }
+          ]
+        }
+      ]
+    }
   }
-  return d
+}, {
+  watch: [libraryMatch]
 })
 
 // Build library object
@@ -253,7 +266,7 @@ interface LibraryViewModel {
   description: string
   tags: string[]
   entries_count: number
-  fullContent: any
+  fullContent: unknown
   images: string[]
   library_id?: string | number
 }
@@ -263,10 +276,12 @@ const library = computed<LibraryViewModel | null>(() => {
   const body = doc.value.body
   const description = (() => {
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const stack: any[] = body?.children ? [...body.children] : []
       while (stack.length) {
         const n = stack.shift()
         if (n.type === 'element' && n.tag === 'p') {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const t = (n.children || []).map((c: any) => c.value || '').join(' ').trim()
           if (t) return t.substring(0, 200) + (t.length > 200 ? '…' : '')
         }
@@ -279,7 +294,11 @@ const library = computed<LibraryViewModel | null>(() => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const contentImages: Record<string, string> = import.meta?.glob?.('~/content/libraries/**/*.{png,jpg,jpeg,webp,avif,gif}', { eager: true, as: 'url' }) || {}
-  const slugPathPrefix = `/libraries/${resolvedSlug.value}/`
+  
+  // Use the actual folder path for image resolution, not the canonical slug
+  const folderPath = doc.value._path ? doc.value._path.replace(/^\//, '') : `libraries/${resolvedSlug.value}`
+  const slugPathPrefix = `/${folderPath}/`
+  
   const resolvePhoto = (raw?: string) => {
     if (!raw) return '/images/libraries/placeholder-library.jpg'
     if (raw.startsWith('/') || /^https?:\/\//i.test(raw)) return raw
@@ -289,7 +308,9 @@ const library = computed<LibraryViewModel | null>(() => {
       if (key.includes(slugPathPrefix) && key.endsWith(`/${normalized.split('/').pop()}`)) return url as string
     }
     const filename = normalized.split('/').pop() || normalized
-    return `/library-images/${encodeURIComponent(resolvedSlug.value)}/${encodeURIComponent(filename)}`
+    // Extract folder name from the actual path for fallback
+    const folderName = folderPath.split('/').pop() || resolvedSlug.value
+    return `/library-images/${encodeURIComponent(folderName)}/${encodeURIComponent(filename)}`
   }
   const primary = resolvePhoto(doc.value.photo)
   const gallerySet = new Set<string>()
@@ -300,6 +321,7 @@ const library = computed<LibraryViewModel | null>(() => {
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const g: any = (globalThis as any)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const cached = g.__LIB_CACHE__?.find((c: any) => c.slug === resolvedSlug.value)
       if (cached && Array.isArray(cached.images)) {
         for (const img of cached.images) if (img && typeof img === 'string') gallerySet.add(img)
@@ -308,6 +330,7 @@ const library = computed<LibraryViewModel | null>(() => {
   }
   if (primary) gallerySet.delete(primary)
   const gallery = [primary, ...Array.from(gallerySet)].filter(Boolean) as string[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const loc: LibraryLocation | null = doc.value.location ? { lat: doc.value.location.lat, lng: doc.value.location.lng, address: (doc.value.location as any).address } : { lat: 49.2827, lng: -123.1207 }
   return {
   slug: (canonicalSlug.value || resolvedSlug.value),
@@ -328,10 +351,10 @@ interface LogbookEntry {
   _path: string
   date: string
   title?: string
-  body: any
+  body: unknown
 }
 
-// Compute logbook entries based on library data
+// Compute logbook entries based on actual logbook files
 const logbookEntries = computed<LogbookEntry[]>(() => {
   if (!library.value?.slug) return []
   
@@ -339,32 +362,38 @@ const logbookEntries = computed<LogbookEntry[]>(() => {
   return logbookData.value || []
 })
 
-// Separate async data fetch for logbook entries to avoid circular dependencies
+// Separate async data fetch for logbook entries using proper pattern
 const { data: logbookData } = await useAsyncData<LogbookEntry[]>(`logbook-${paddedId}`, async () => {
   try {
-    // Find the library folder by matching library ID
-    const allLibraries = await queryContent('/libraries').find()
-    const matchingLibrary = allLibraries.find((lib: any) => {
-      const id = lib.library_id
-      if (id == null) return false
-      const n = Number(id)
-      if (!Number.isNaN(n) && n === Number(paddedId)) return true
-      return String(id).padStart(5, '0') === paddedId
-    })
+    // Get the library match to determine the correct folder path
+    const match = libraryMatch.value
+    if (!match) return []
     
-    if (!matchingLibrary || !matchingLibrary._path) return []
+    // Use the actual _path from the library to determine the logbook path
+    let logbookPath = ''
+    if (match._path) {
+      // Remove the index.md part and add /logbook
+      logbookPath = `${match._path}/logbook`
+    } else {
+      // Fallback: Build folder path based on directory listing pattern
+      const folderSlug = `${paddedId}-${match.slug.split('-').slice(0, 3).join('-')}`
+      logbookPath = `/libraries/${folderSlug}/logbook`
+    }
     
-    const librarySlug = matchingLibrary._path.replace(/^\/libraries\//, '')
-    const entries = await queryContent(`/libraries/${librarySlug}/logbook`).find()
-    
-    // Sort by date, newest first
-    return (entries || [])
-      .filter((entry: any) => entry.date) // Only entries with dates
-      .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    // Fetch logbook entries from the actual markdown files
+    try {
+      const logbookEntries = await queryContent(logbookPath).where({ _extension: 'md' }).sort({ date: -1 }).find()
+      return logbookEntries as LogbookEntry[]
+    } catch (logbookError) {
+      console.warn('No logbook entries found or error fetching logbook:', logbookError)
+      return []
+    }
   } catch (error) {
-    console.error('Error fetching logbook entries:', error)
+    console.warn('Could not fetch logbook entries:', error)
     return []
   }
+}, {
+  watch: [libraryMatch]
 })
 
 // Format date for logbook entries
@@ -391,6 +420,7 @@ watch(() => library.value, async (lib: LibraryViewModel | null) => {
 }, { immediate: true })
 
 // Map logic (initialize after library data becomes available)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const map = ref<any>(null)
 const mapInitialized = ref(false)
 const initializeLibraryMap = async () => {
@@ -408,13 +438,12 @@ const initializeLibraryMap = async () => {
       link.setAttribute('data-leaflet', 'true')
       document.head.appendChild(link)
     }
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     const L = await import('leaflet')
     // Ensure default icon assets resolve (use CDN to avoid bundler asset handling)
     // Build explicit custom icon (avoids Leaflet prepending imagePath to data URI)
     const svgMarker = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='41' viewBox='0 0 25 41'%3E%3Cpath fill='%233b82f6' stroke='white' stroke-width='2' d='M12.5 0c-7 0-12.5 5.6-12.5 12.5 0 9.4 12.5 28.5 12.5 28.5S25 21.9 25 12.5C25 5.6 19.4 0 12.5 0z'/%3E%3Ccircle cx='12.5' cy='12.5' r='5' fill='white'/%3E%3C/svg%3E"
     const transparentPng = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/P1iJ6QAAAABJRU5ErkJggg=='
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const inlineIcon = (L as any).icon({
       iconUrl: svgMarker,
       iconRetinaUrl: svgMarker,
@@ -424,8 +453,11 @@ const initializeLibraryMap = async () => {
       popupAnchor: [1, -34],
       shadowSize: [1, 1]
     })
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const mapInstance = (L as any).map('library-map').setView([library.value.location.lat, library.value.location.lng], 15)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;(L as any).tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(mapInstance)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ;(L as any).marker([library.value.location.lat, library.value.location.lng], { icon: inlineIcon })
       .addTo(mapInstance)
       .bindPopup(`
@@ -458,6 +490,7 @@ const advance = () => { if (library.value?.images && library.value.images.length
 const nextImage = advance
 const prevImage = () => { if (library.value?.images && library.value.images.length > 1) currentImageIndex.value = (currentImageIndex.value - 1 + library.value.images.length) % library.value.images.length }
 const goToImage = (idx: number) => { if (library.value?.images && idx >= 0 && idx < library.value.images.length) currentImageIndex.value = idx }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let autoplayTimer: any = null
 const AUTOPLAY_INTERVAL = 6000
 const clearAutoplay = () => { if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null } }
