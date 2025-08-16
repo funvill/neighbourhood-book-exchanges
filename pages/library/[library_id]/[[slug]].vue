@@ -81,6 +81,19 @@
               <div v-else-if="library.description" class="prose library-content max-w-none">
                 <p class="text-gray-700 leading-relaxed">{{ library.description }}</p>
               </div>
+
+              <!-- Logbook Section -->
+              <div v-if="logbookEntries && logbookEntries.length > 0" class="mt-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Logbook</h2>
+                <div class="space-y-6">
+                  <div v-for="entry in logbookEntries" :key="entry._path" class="border-b border-gray-200 pb-6 last:border-b-0">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">{{ formatLogbookDate(entry.date) }}</h3>
+                    <div class="prose library-content max-w-none">
+                      <ContentRenderer :value="entry" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Sidebar -->
@@ -147,91 +160,138 @@
 </template>
 
 <script setup lang="ts">
-// Re-implementation of rich detail page under new route pattern /library/{library_id}/{slug?}
-import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function queryContent(path?: string): any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function useAsyncData<T>(key: string, handler: () => Promise<T>): { data: { value: T | null }; pending: any }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function useHead(input: any): void
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function useRoute(): any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function $fetch<T = any>(url: string): Promise<T>
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare function navigateTo(path: string, opts?: any): Promise<any>
+/**
+ * Library Detail Page
+ * 
+ * Displays comprehensive information about a specific library including:
+ * - Library metadata (title, location, tags, photos)
+ * - Rich content from markdown files (description, history)
+ * - Interactive image carousel
+ * - Logbook entries
+ * - Interactive map
+ * 
+ * Route pattern: /library/{library_id}/{slug?}
+ * - library_id: Zero-padded 5-digit ID (e.g., "00050")
+ * - slug: Optional canonical slug for SEO (e.g., "salsbury-garden-book-house")
+ */
 
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
+
+// === ROUTE PARAMETERS ===
 const route = useRoute()
 const rawId = (route.params.library_id as string) || ''
 const slugParam = (route.params.slug as string) || ''
 const paddedId = rawId.padStart(5, '0')
 
-// Internal canonical slug resolution
+// === SLUG RESOLUTION ===
+// Internal canonical slug resolution for SEO-friendly URLs
 const resolvedSlug = ref(slugParam || '')
 const canonicalSlug = ref<string | null>(null)
 
-// Title -> slug helper (mirror logic in composable)
-const slugifyTitle = (title: string) => title
-  .toLowerCase()
-  .normalize('NFKD')
-  .replace(/[^a-z0-9]+/g, '-')
-  .replace(/^-+|-+$/g, '')
-  .replace(/-{2,}/g, '-')
+// === LIBRARY DATA LOADING ===
+// Load all libraries first to find the specific library
+const { data: librariesData } = await useLibraries()
 
-// Fetch logic: attempt by slug first (if provided); else by id
-const { data: doc, pending } = useAsyncData<any>(`library-new:${paddedId}:${slugParam}`, async () => {
-  // helper to attempt slug fetch
-  const trySlug = async (slug: string) => {
-    if (!slug) return null
-    try {
-      return await queryContent(`/libraries/${slug}`).findOne()
-    } catch { return null }
+/**
+ * Find the library by ID or slug
+ * Priority: slug match first, then library_id match
+ */
+const libraryMatch = computed(() => {
+  const libraries = librariesData.value
+  if (!libraries) return null
+  
+  let match = null
+  
+  // First, try to find by slug if provided
+  if (slugParam) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    match = libraries.find((lib: any) => lib.slug === slugParam)
   }
-  let d = await trySlug(slugParam)
-  // If slug fetch failed or not provided, enumerate by library_id
-  if (!d) {
-    try {
-      const all = await queryContent('/libraries').find()
-      const match = (all || []).find((x: any) => {
-        const id = x.library_id
-        if (id == null) return false
-        const n = Number(id)
-        if (!Number.isNaN(n) && n === Number(paddedId)) return true
-        return String(id).padStart(5, '0') === paddedId
-      })
-      if (match) d = match
-    } catch { /* ignore */ }
+  
+  // If not found by slug, try to find by library_id
+  if (!match) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    match = libraries.find((lib: any) => {
+      const id = lib.library_id
+      if (id == null) return false
+      const n = Number(id)
+      if (!Number.isNaN(n) && n === Number(paddedId)) return true
+      return String(id).padStart(5, '0') === paddedId
+    })
   }
-  if (!d) {
-    // Last resort: API fallback by padded id (if an endpoint exists mapping id->slug). Using slugParam if present
-    try {
-      const candidate = slugParam || paddedId
-      const api = await $fetch(`/api/libraries/${candidate}`)
-      if (api && api.body) {
-        d = {
-          _path: `/libraries/${candidate}`,
-          title: api.title || candidate,
-          location: api.location,
-            photo: api.photo,
-            tags: api.tags,
-            body: { type: 'root', children: api.body.split(/\n\n+/).map((p: string) => ({ type: 'element', tag: 'p', children: [{ type: 'text', value: p }] })) }
-        }
-      }
-    } catch { /* ignore */ }
-  }
-  if (d) {
-    // Derive canonical slug from title (preferred) else fallback to path/folder
-    const folderSlug = d._path?.replace(/^\/libraries\//, '') || ''
-    const titleSlug = d.title ? slugifyTitle(d.title) : ''
-    resolvedSlug.value = d.slug || folderSlug
-    canonicalSlug.value = titleSlug || resolvedSlug.value
-  }
-  return d
+  
+  return match
 })
 
-// Build library object
-interface LibraryLocation { lat: number; lng: number; address?: string }
+// === CONTENT LOADING ===
+// Declare queryContent for proper typing
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function queryContent(path?: string): any
+
+/**
+ * Fetch the actual library content from markdown files
+ * This loads the rich content including descriptions, history, etc.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const { data: doc, pending } = await useAsyncData<any>(`library-full:${paddedId}:${slugParam}`, async () => {
+  const match = libraryMatch.value
+  if (!match) return null
+  
+  try {
+    // Use the actual _path from the library match to fetch content
+    if (match._path) {
+      const content = await queryContent(match._path).findOne()
+      if (content) {
+        return content
+      }
+    }
+    
+    // Fallback: If no _path or content not found, try to determine folder from library_id
+    // Build folder path based on directory listing pattern
+    const folderSlug = `${paddedId}-${match.slug.split('-').slice(0, 3).join('-')}`
+    const content = await queryContent(`/libraries/${folderSlug}`).findOne()
+    if (content) {
+      return content
+    }
+  } catch (error) {
+    console.warn('Could not fetch library content:', error)
+  }
+  
+  // Final fallback: return the match data with minimal structure
+  return {
+    ...match,
+    _path: match._path || `/libraries/${paddedId}-${match.slug.split('-').slice(0, 3).join('-')}`,
+    body: {
+      type: 'root',
+      children: [
+        {
+          type: 'element',
+          tag: 'p',
+          children: [
+            {
+              type: 'text',
+              value: 'This is a neighborhood book exchange where community members can take a book and leave a book.'
+            }
+          ]
+        }
+      ]
+    }
+  }
+}, {
+  watch: [libraryMatch]
+})
+
+// === LIBRARY VIEW MODEL ===
+/**
+ * Build the comprehensive library view model that combines metadata with content
+ * Handles image resolution, description extraction, and data transformation
+ */
+interface LibraryLocation { 
+  lat: number
+  lng: number
+  address?: string 
+}
+
 interface LibraryViewModel {
   slug: string
   title: string
@@ -240,20 +300,25 @@ interface LibraryViewModel {
   description: string
   tags: string[]
   entries_count: number
-  fullContent: any
+  fullContent: unknown
   images: string[]
   library_id?: string | number
 }
 
 const library = computed<LibraryViewModel | null>(() => {
   if (!doc.value) return null
+  
   const body = doc.value.body
+  
+  // Extract description from content body (first meaningful paragraph)
   const description = (() => {
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const stack: any[] = body?.children ? [...body.children] : []
       while (stack.length) {
         const n = stack.shift()
         if (n.type === 'element' && n.tag === 'p') {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const t = (n.children || []).map((c: any) => c.value || '').join(' ').trim()
           if (t) return t.substring(0, 200) + (t.length > 200 ? '…' : '')
         }
@@ -262,43 +327,87 @@ const library = computed<LibraryViewModel | null>(() => {
     } catch { /* ignore */ }
     return ''
   })()
-  // Resolve images
+  
+  // === IMAGE RESOLUTION ===
+  /**
+   * Resolve images using Vite's glob import for content images
+   * This ensures images are properly bundled and accessible
+   */
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const contentImages: Record<string, string> = import.meta?.glob?.('~/content/libraries/**/*.{png,jpg,jpeg,webp,avif,gif}', { eager: true, as: 'url' }) || {}
-  const slugPathPrefix = `/libraries/${resolvedSlug.value}/`
+  
+  // Use the actual folder path for image resolution, not the canonical slug
+  const folderPath = doc.value._path ? doc.value._path.replace(/^\//, '') : `libraries/${resolvedSlug.value}`
+  const slugPathPrefix = `/${folderPath}/`
+  
+  /**
+   * Resolve a single photo path to a full URL
+   * Handles relative paths, absolute paths, and fallbacks
+   */
   const resolvePhoto = (raw?: string) => {
     if (!raw) return '/images/libraries/placeholder-library.jpg'
     if (raw.startsWith('/') || /^https?:\/\//i.test(raw)) return raw
+    
     const normalized = raw.replace(/^\.\//, '')
+    
+    // Try to find in content images first
     for (const [key, url] of Object.entries(contentImages)) {
       if (key.endsWith(`${slugPathPrefix}${normalized}`)) return url as string
       if (key.includes(slugPathPrefix) && key.endsWith(`/${normalized.split('/').pop()}`)) return url as string
     }
+    
+    // Fallback: construct path to public directory
     const filename = normalized.split('/').pop() || normalized
-    return `/library-images/${encodeURIComponent(resolvedSlug.value)}/${encodeURIComponent(filename)}`
+    const folderName = folderPath.split('/').pop() || resolvedSlug.value
+    return `/library-images/${encodeURIComponent(folderName)}/${encodeURIComponent(filename)}`
   }
+  
+  // Resolve primary photo
   const primary = resolvePhoto(doc.value.photo)
+  
+  // Build gallery from defined images
   const gallerySet = new Set<string>()
   if (doc.value.images && Array.isArray(doc.value.images)) {
-    for (const p of doc.value.images) { const rp = resolvePhoto(p); if (rp) gallerySet.add(rp) }
+    for (const p of doc.value.images) { 
+      const rp = resolvePhoto(p)
+      if (rp) gallerySet.add(rp) 
+    }
   }
+  
+  // Add any cached images if gallery is empty
   if (gallerySet.size === 0) {
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const g: any = (globalThis as any)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const cached = g.__LIB_CACHE__?.find((c: any) => c.slug === resolvedSlug.value)
       if (cached && Array.isArray(cached.images)) {
         for (const img of cached.images) if (img && typeof img === 'string') gallerySet.add(img)
       }
     } catch { /* ignore */ }
   }
+  
+  // Remove primary from gallery to avoid duplication
   if (primary) gallerySet.delete(primary)
+  
+  // Final gallery: primary first, then additional images
   const gallery = [primary, ...Array.from(gallerySet)].filter(Boolean) as string[]
-  const loc: LibraryLocation | null = doc.value.location ? { lat: doc.value.location.lat, lng: doc.value.location.lng, address: (doc.value.location as any).address } : { lat: 49.2827, lng: -123.1207 }
+  
+  // Resolve location with fallback to Vancouver center
+  const loc: LibraryLocation | null = doc.value.location ? { 
+    lat: doc.value.location.lat, 
+    lng: doc.value.location.lng, 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    address: (doc.value.location as any).address 
+  } : { 
+    lat: 49.2827, 
+    lng: -123.1207 
+  }
+  
   return {
-  slug: (canonicalSlug.value || resolvedSlug.value),
-  title: doc.value.title || (canonicalSlug.value || resolvedSlug.value),
+    slug: (canonicalSlug.value || resolvedSlug.value),
+    title: doc.value.title || (canonicalSlug.value || resolvedSlug.value),
     location: loc,
     photo: primary || '/images/libraries/placeholder-library.jpg',
     description,
@@ -310,27 +419,118 @@ const library = computed<LibraryViewModel | null>(() => {
   }
 })
 
-// Redirect if slug missing or mismatched (now permanent 301)
+// === LOGBOOK DATA LOADING ===
+/**
+ * Fetch logbook entries for this library
+ * Logbook entries are stored as individual markdown files in /logbook subdirectory
+ * Sorted by date in descending order (newest first)
+ */
+interface LogbookEntry {
+  _path: string
+  date: string
+  title?: string
+  body: unknown
+}
+
+// Separate async data fetch for logbook entries using proper pattern
+const { data: logbookData } = await useAsyncData<LogbookEntry[]>(`logbook-${paddedId}`, async () => {
+  try {
+    // Get the library match to determine the correct folder path
+    const match = libraryMatch.value
+    if (!match) return []
+    
+    // Use the actual _path from the library to determine the logbook path
+    let logbookPath = ''
+    if (match._path) {
+      // Remove the index.md part and add /logbook
+      logbookPath = `${match._path}/logbook`
+    } else {
+      // Fallback: Build folder path based on directory listing pattern
+      const folderSlug = `${paddedId}-${match.slug.split('-').slice(0, 3).join('-')}`
+      logbookPath = `/libraries/${folderSlug}/logbook`
+    }
+    
+    // Fetch logbook entries from the actual markdown files
+    try {
+      const logbookEntries = await queryContent(logbookPath).where({ _extension: 'md' }).sort({ date: -1 }).find()
+      return logbookEntries as LogbookEntry[]
+    } catch (logbookError) {
+      console.warn('No logbook entries found or error fetching logbook:', logbookError)
+      return []
+    }
+  } catch (error) {
+    console.warn('Could not fetch logbook entries:', error)
+    return []
+  }
+}, {
+  watch: [libraryMatch]
+})
+
+// Compute logbook entries based on actual logbook files
+const logbookEntries = computed<LogbookEntry[]>(() => {
+  if (!library.value?.slug) return []
+  
+  // Use a separate async data fetch for logbook entries
+  return logbookData.value || []
+})
+
+// === UTILITY FUNCTIONS ===
+/**
+ * Format date for logbook entries in a user-friendly format
+ * Converts ISO date strings to YYYY-MMM-DD format
+ */
+const formatLogbookDate = (dateStr: string): string => {
+  try {
+    const date = new Date(dateStr)
+    const year = date.getFullYear()
+    const month = date.toLocaleDateString('en-US', { month: 'short' })
+    const day = date.getDate().toString().padStart(2, '0')
+    return `${year}-${month}-${day}`
+  } catch {
+    return dateStr // Fallback to original string if parsing fails
+  }
+}
+
+// === CANONICAL URL REDIRECTION ===
+/**
+ * Redirect to canonical URL if slug is missing or mismatched
+ * This ensures SEO-friendly URLs and handles legacy links
+ */
 watch(() => library.value, async (lib: LibraryViewModel | null) => {
   if (!lib) return
-  // Permanent redirect to canonical slug
+  
+  // Permanent redirect to canonical slug if not already correct
   if (!slugParam || slugParam !== lib.slug) {
-  const target = `/library/${paddedId}/${lib.slug}/`
-    if (target !== route.fullPath) await navigateTo(target, { redirectCode: 301, replace: true })
+    const target = `/library/${paddedId}/${lib.slug}/`
+    if (target !== route.fullPath) {
+      await navigateTo(target, { redirectCode: 301, replace: true })
+    }
   }
 }, { immediate: true })
 
-// Map logic (initialize after library data becomes available)
+// === INTERACTIVE MAP FUNCTIONALITY ===
+/**
+ * Initialize and manage the Leaflet map for library location
+ * Uses OpenStreetMap tiles and custom SVG marker
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const map = ref<any>(null)
 const mapInitialized = ref(false)
+
+/**
+ * Initialize the Leaflet map with library location
+ * Handles dynamic loading of Leaflet library and custom styling
+ */
 const initializeLibraryMap = async () => {
   if (mapInitialized.value) return
   if (typeof window === 'undefined') return
   if (!library.value?.location) return
+  
   const el = document.getElementById('library-map')
   if (!el) return
+  
   try {
-    // Inject stylesheet if not already present
+    // Inject Leaflet CSS if not already present
     if (!document.querySelector('link[data-leaflet]')) {
       const link = document.createElement('link')
       link.rel = 'stylesheet'
@@ -338,13 +538,15 @@ const initializeLibraryMap = async () => {
       link.setAttribute('data-leaflet', 'true')
       document.head.appendChild(link)
     }
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+    
+    // Dynamic import of Leaflet library
     const L = await import('leaflet')
-    // Ensure default icon assets resolve (use CDN to avoid bundler asset handling)
-    // Build explicit custom icon (avoids Leaflet prepending imagePath to data URI)
+    
+    // Custom SVG marker icon (avoids Leaflet asset bundling issues)
     const svgMarker = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='41' viewBox='0 0 25 41'%3E%3Cpath fill='%233b82f6' stroke='white' stroke-width='2' d='M12.5 0c-7 0-12.5 5.6-12.5 12.5 0 9.4 12.5 28.5 12.5 28.5S25 21.9 25 12.5C25 5.6 19.4 0 12.5 0z'/%3E%3Ccircle cx='12.5' cy='12.5' r='5' fill='white'/%3E%3C/svg%3E"
     const transparentPng = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/P1iJ6QAAAABJRU5ErkJggg=='
+    
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const inlineIcon = (L as any).icon({
       iconUrl: svgMarker,
       iconRetinaUrl: svgMarker,
@@ -354,9 +556,20 @@ const initializeLibraryMap = async () => {
       popupAnchor: [1, -34],
       shadowSize: [1, 1]
     })
+    
+    // Create map instance centered on library location
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const mapInstance = (L as any).map('library-map').setView([library.value.location.lat, library.value.location.lng], 15)
-    ;(L as any).tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(mapInstance)
-  ;(L as any).marker([library.value.location.lat, library.value.location.lng], { icon: inlineIcon })
+    
+    // Add OpenStreetMap tile layer
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ;(L as any).tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+      attribution: '© OpenStreetMap contributors' 
+    }).addTo(mapInstance)
+    
+    // Add marker with popup
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ;(L as any).marker([library.value.location.lat, library.value.location.lng], { icon: inlineIcon })
       .addTo(mapInstance)
       .bindPopup(`
         <div class="p-2">
@@ -364,37 +577,95 @@ const initializeLibraryMap = async () => {
           <p class="text-sm text-gray-600">${library.value.description}</p>
         </div>
       `)
+    
     map.value = mapInstance
     mapInitialized.value = true
   } catch (error) {
     console.error('[LibraryPage] Failed to load map:', error)
   }
 }
-onMounted(async () => { await nextTick(); await initializeLibraryMap() })
-watch(() => library.value?.location, async (loc: LibraryLocation | null | undefined) => { if (loc) { await nextTick(); await initializeLibraryMap() } })
-onUnmounted(() => { if (map.value) { map.value.remove(); map.value = null } })
 
-// Carousel
+// Initialize map when component mounts and when location changes
+onMounted(async () => { await nextTick(); await initializeLibraryMap() })
+watch(() => library.value?.location, async (loc: LibraryLocation | null | undefined) => { 
+  if (loc) { 
+    await nextTick(); 
+    await initializeLibraryMap() 
+  } 
+})
+onUnmounted(() => { 
+  if (map.value) { 
+    map.value.remove(); 
+    map.value = null 
+  } 
+})
+
+// === IMAGE CAROUSEL FUNCTIONALITY ===
+/**
+ * Interactive image carousel with autoplay, keyboard navigation, and manual controls
+ * Handles multiple images for each library with smooth transitions
+ */
 const currentImageIndex = ref(0)
 const isHovered = ref(false)
 const isFocused = ref(false)
+
+// Currently displayed image
 const activeImage = computed(() => {
   if (!library.value) return null
   if (library.value.images && library.value.images.length)
     return library.value.images[Math.min(currentImageIndex.value, library.value.images.length - 1)]
   return library.value?.photo
 })
-const advance = () => { if (library.value?.images && library.value.images.length > 1) currentImageIndex.value = (currentImageIndex.value + 1) % library.value.images.length }
+
+// Navigation functions
+const advance = () => { 
+  if (library.value?.images && library.value.images.length > 1) 
+    currentImageIndex.value = (currentImageIndex.value + 1) % library.value.images.length 
+}
 const nextImage = advance
-const prevImage = () => { if (library.value?.images && library.value.images.length > 1) currentImageIndex.value = (currentImageIndex.value - 1 + library.value.images.length) % library.value.images.length }
-const goToImage = (idx: number) => { if (library.value?.images && idx >= 0 && idx < library.value.images.length) currentImageIndex.value = idx }
+const prevImage = () => { 
+  if (library.value?.images && library.value.images.length > 1) 
+    currentImageIndex.value = (currentImageIndex.value - 1 + library.value.images.length) % library.value.images.length 
+}
+const goToImage = (idx: number) => { 
+  if (library.value?.images && idx >= 0 && idx < library.value.images.length) 
+    currentImageIndex.value = idx 
+}
+
+// === AUTOPLAY FUNCTIONALITY ===
+/**
+ * Automatic image progression with pause on hover/focus
+ * Respects user interaction and accessibility needs
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let autoplayTimer: any = null
 const AUTOPLAY_INTERVAL = 6000
-const clearAutoplay = () => { if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null } }
-const startAutoplay = () => { clearAutoplay(); if (library.value?.images && library.value.images.length > 1) autoplayTimer = setInterval(() => { if (!isHovered.value && !isFocused.value) advance() }, AUTOPLAY_INTERVAL) }
+
+const clearAutoplay = () => { 
+  if (autoplayTimer) { 
+    clearInterval(autoplayTimer); 
+    autoplayTimer = null 
+  } 
+}
+
+const startAutoplay = () => { 
+  clearAutoplay(); 
+  if (library.value?.images && library.value.images.length > 1) 
+    autoplayTimer = setInterval(() => { 
+      if (!isHovered.value && !isFocused.value) advance() 
+    }, AUTOPLAY_INTERVAL) 
+}
+
+// Start autoplay when images are available
 watch(() => library.value?.images?.length, () => startAutoplay())
 onMounted(() => startAutoplay())
 onUnmounted(() => clearAutoplay())
+
+// === KEYBOARD NAVIGATION ===
+/**
+ * Add keyboard navigation support for accessibility
+ * Arrow keys control image navigation
+ */
 if (typeof window !== 'undefined') {
   const keyHandler = (e: KeyboardEvent) => {
     if (!library.value?.images || library.value.images.length < 2) return
@@ -405,21 +676,32 @@ if (typeof window !== 'undefined') {
   onUnmounted(() => window.removeEventListener('keydown', keyHandler))
 }
 
+// === SEO AND META CONFIGURATION ===
+/**
+ * Configure page metadata for SEO and social media sharing
+ * Includes Open Graph tags and canonical URLs
+ */
 useHead({
   title: computed(() => library.value ? `${library.value.title} - Neighbourhood book exchanges` : 'Library - Neighbourhood book exchanges'),
   meta: [
     { name: 'description', content: library.value?.description || 'Library details page' },
-  { property: 'og:url', content: `https://neighbourhood-book-exchanges.com/library/${paddedId}/${library.value?.slug || ''}/` }
+    { property: 'og:url', content: `https://neighbourhood-book-exchanges.com/library/${paddedId}/${library.value?.slug || ''}/` }
   ],
   link: [
-  { rel: 'canonical', href: `https://neighbourhood-book-exchanges.com/library/${paddedId}/${library.value?.slug || ''}/` }
+    { rel: 'canonical', href: `https://neighbourhood-book-exchanges.com/library/${paddedId}/${library.value?.slug || ''}/` }
   ]
 })
 </script>
 
 <style>
+/* === COMPONENT STYLES === */
+/* Import Leaflet CSS for map functionality */
 @import 'leaflet/dist/leaflet.css';
 
+/* 
+ * Library content styling for markdown rendering
+ * Provides consistent typography and spacing for content sections
+ */
 .library-content :deep(h2) { font-size: 1.75rem; font-weight: 700; color: #111827; margin-top: 2.25rem; margin-bottom: 0.85rem; line-height: 1.25; }
 .library-content :deep(h3) { font-size: 1.5rem; font-weight: 600; color: #111827; margin-top: 2rem; margin-bottom: 0.75rem; line-height: 1.3; }
 .library-content :deep(h4) { font-size: 1.25rem; font-weight: 600; color: #111827; margin-top: 1.75rem; margin-bottom: 0.6rem; line-height: 1.35; }
@@ -431,6 +713,11 @@ useHead({
 .library-content :deep(strong) { font-weight: 600; color: #111827; }
 .library-content :deep(em) { font-style: italic; }
 .library-content :deep(blockquote) { border-left: 4px solid #dbeafe; padding-left: 1rem; font-style: italic; color: #4b5563; margin: 1rem 0; }
+
+/* 
+ * Enhanced prose styling for logbook entries and rich content
+ * Overrides default prose margins for better visual hierarchy
+ */
 .prose.library-content :where(h2):not(:where(.not-prose *)) { font-size: 1.75rem !important; line-height: 1.25 !important; margin-top: 2.25rem !important; margin-bottom: 0.85rem !important; }
 .prose.library-content :where(h2:first-child):not(:where(.not-prose *)) { margin-top: 2.25rem !important; }
 .prose.library-content :where(h3):not(:where(.not-prose *)) { margin-top: 2rem !important; margin-bottom: 0.75rem !important; }
