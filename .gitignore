@@ -26,3 +26,6 @@ logs
 public/library-images/
 
 .wrangler/tmp/
+
+# Migration backups
+backup/
