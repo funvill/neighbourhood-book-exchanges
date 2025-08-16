@@ -98,11 +98,7 @@ const updateMapMarkers = () => {
     markers.push(marker)
   })
 
-  // Fit map bounds to show all markers
-  if (newMarkers.length > 0) {
-    const group = L.featureGroup(newMarkers)
-    map?.fitBounds(group.getBounds().pad(0.1))
-  }
+  // Note: Removed auto-fitting to keep the map centered on the specified coordinates
 }
 
 const performSearch = () => {
@@ -307,14 +303,7 @@ const toggleFullScreen = () => {
       // Force map to recalculate its size after the DOM change
       setTimeout(() => {
         map.invalidateSize()
-        // Refit bounds to current markers if any exist
-        if (markers.length > 0) {
-          const L: any = (window as any).L
-          if (L) {
-            const group = L.featureGroup(markers)
-            map.fitBounds(group.getBounds().pad(0.1))
-          }
-        }
+        // Note: Removed auto-fitting to keep the map centered on the specified coordinates
       }, 100)
     }
   })
@@ -354,7 +343,7 @@ const initializeMap = () => {
     redIcon = createIcon('#ef4444')   // Red for gone/missing
     greenIcon = createIcon('#10b981') // Green for visited_funvill
     
-  map = L.map(mapId.value, { fullscreenControl: true }).setView([49.2827, -123.1207], 11)
+  map = L.map(mapId.value, { fullscreenControl: true }).setView([49.262930, -123.101129], 13)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
       }).addTo(map)
