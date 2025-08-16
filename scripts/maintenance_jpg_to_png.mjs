@@ -82,6 +82,8 @@ async function convert(sharp, jpgFile) {
     return { jpgFile, pngFile, converted: false, dryRun: true }
   }
 
+  console.log(`Converting ${jpgFile} to ${pngFile}...`)
+
   try {
     const buf = await fs.readFile(jpgFile)
     const out = await sharp(buf).png({ compressionLevel: 9, adaptiveFiltering: true }).toBuffer()

@@ -7,18 +7,13 @@
       
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div class="text-center">
-          <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-            <span class="material-symbols-outlined mr-2" style="font-size:20px;">auto_awesome</span>
-            <span class="text-sm font-medium">Community Library Adventure</span>
-          </div>
-          
           <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
             Welcome to<br>Neighbourhood Little Libraries
           </h1>
           
           <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
             Discover the magic of tiny libraries scattered throughout your community. 
-            Find hidden zines, solve mysterious challenges, and piece together stories from your neighborhood. 
+            Find hidden books, solve mysterious challenges, and piece together stories from your neighborhood. 
             Each library holds secrets waiting to be unlocked by curious minds like yours.
           </p>
           
@@ -26,11 +21,65 @@
             <a href="/search" class="md-button shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 flex items-center gap-1">
               <span class="material-symbols-outlined" style="font-size:20px;">map</span>
               Explore Libraries
-            </a>
-            <a href="#todo?/logbook/new" class="md-button border border-white/30 hover:bg-white/10 backdrop-blur-sm flex items-center gap-1" style="background:transparent;color:white;">
-              <span class="material-symbols-outlined" style="font-size:20px;">edit</span>
-              Share Your Discovery
-            </a>
+            </a>            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- How It Works -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Join thousands of library enthusiasts in an adventure that spans across your entire community
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-110">
+                <span class="material-symbols-outlined text-white" style="font-size:40px;">map</span>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">1</div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Find Libraries</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Use our interactive map to locate tiny libraries in your area. Each one contains unique content and books 
+              waiting to be discovered.
+            </p>
+          </div>
+          
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-110">
+                <span class="material-symbols-outlined text-white" style="font-size:40px;">extension</span>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">2</div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Explore Content</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Read the books, explore the content within each library, and collect insights for your journey. 
+              Every discovery brings you closer to understanding your community.
+            </p>
+          </div>
+          
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-110">
+                <span class="material-symbols-outlined text-white" style="font-size:40px;">emoji_events</span>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">3</div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Share Your Journey</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Combine insights from multiple libraries to create your own story and connect with community discoveries. 
+              Collaborate with others to build a rich tapestry of local knowledge.
+            </p>
           </div>
         </div>
       </div>
@@ -53,62 +102,6 @@
             </div>
             <div class="text-3xl font-bold text-gray-900 mb-2">{{ stats.logbookEntries }}</div>
             <div class="text-gray-600 font-medium">Log Book Entries</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Join thousands of library enthusiasts in an adventure that spans across your entire community
-          </p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="text-center group">
-            <div class="relative mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-110">
-                <span class="material-symbols-outlined text-white" style="font-size:40px;">map</span>
-              </div>
-              <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">1</div>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Find Libraries</h3>
-            <p class="text-gray-600 leading-relaxed">
-              Use our interactive map to locate tiny libraries in your area. Each one contains unique content and zines 
-              waiting to be discovered.
-            </p>
-          </div>
-          
-          <div class="text-center group">
-            <div class="relative mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-110">
-                <span class="material-symbols-outlined text-white" style="font-size:40px;">extension</span>
-              </div>
-              <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">2</div>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Explore Content</h3>
-            <p class="text-gray-600 leading-relaxed">
-              Read the zines, explore the content within each library, and collect insights for your journey. 
-              Every discovery brings you closer to understanding your community.
-            </p>
-          </div>
-          
-          <div class="text-center group">
-            <div class="relative mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-110">
-                <span class="material-symbols-outlined text-white" style="font-size:40px;">emoji_events</span>
-              </div>
-              <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-800">3</div>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Share Your Journey</h3>
-            <p class="text-gray-600 leading-relaxed">
-              Combine insights from multiple libraries to create your own story and connect with community discoveries. 
-              Collaborate with others to build a rich tapestry of local knowledge.
-            </p>
           </div>
         </div>
       </div>

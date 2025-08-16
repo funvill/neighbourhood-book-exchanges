@@ -6,7 +6,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "npm run maintenance && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "start": "nuxt preview",
@@ -16,7 +16,7 @@
     "maintenance:library-ids": "node ./scripts/assign-library-ids.mjs",    
     "maintenance:jpg_to_png": "node ./scripts/maintenance_jpg_to_png.mjs",
     "maintenance:png_resize": "node ./scripts/maintenance_png_resize.mjs",
-    "maintenance:copy_image": "node scripts/copy-library-images.mjs"
+    "maintenance:copy_image": "node ./scripts/maintenance_copy-library-images.mjs"
     
 
   },

@@ -1,3 +1,4 @@
+import { slugifyTitle } from '../utils/slugify.js'
 // Runtime imports (avoid TS path alias issues)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare function queryContent(path?: string): any
@@ -27,15 +28,7 @@ export interface LibrarySummary {
   library_id?: string | number
 }
 
-// Generate a URL-friendly slug from a title (lowercase, alnum & hyphens only)
-function slugifyTitle(title: string): string {
-  return title
-    .toLowerCase()
-    .normalize('NFKD') // split accented chars
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .replace(/-{2,}/g, '-')
-}
+
 
 export function buildDescription(body?: any): string {
   if (!body) return ''

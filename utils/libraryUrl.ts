@@ -1,3 +1,4 @@
+
 /**
  * Utility functions for library URL generation and parsing
  * New stable pattern: /library/{library_id}/{slug}
@@ -79,11 +80,4 @@ export function extractLibraryId(param: string): string | null {
 /**
  * Create a canonical slug from a title (mirrors logic used in composables & page)
  */
-export function slugFromTitle(title: string): string {
-    return title
-        .toLowerCase()
-        .normalize('NFKD')
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '')
-        .replace(/-{2,}/g, '-')
-}
+export const slugFromTitle = slugifyTitle;
