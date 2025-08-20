@@ -5,6 +5,8 @@
  * Backward compatibility supported for older /library/{id}-{slug} and /library/{slug}
  */
 
+import { slugifyTitle } from './slugify'
+
 export interface LibraryUrlParts {
     library_id: string
     slug?: string
