@@ -1,207 +1,186 @@
 # Neighbourhood Book Exchanges Project
 
+**CRITICAL**: Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.
+
 ## Project Overview
 
-A comprehensive web application for mapping and managing Little Free Libraries across Vancouver and surrounding areas. The project provides an interactive map, detailed library information, community logbooks, and search functionality for discovering neighbourhood book exchanges.
+A comprehensive Nuxt.js web application for mapping and managing Little Free Libraries across Vancouver and surrounding areas. The project provides an interactive map, detailed library information, community logbooks, and search functionality for discovering neighbourhood book exchanges.
 
 **Live Site:** [libraries.abluestar.com](https://libraries.abluestar.com)  
 **Project Spec:** [Google Doc](https://docs.google.com/document/d/12LJpVHkkpRywIbbA4dffJ5qQawoV1HBOpGzlhY7aTvA/edit?tab=t.0)
 
-## Tech Stack
+## Working Effectively
 
+### Bootstrap, Build and Test the Repository
+
+**NEVER CANCEL long-running commands. Build processes may take 4+ minutes.**
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+   - **Time**: ~50 seconds
+   - **NEVER CANCEL**: Set timeout to 120+ seconds
+
+2. **Run tests:**
+   ```bash
+   npm run test
+   ```
+   - **Time**: <1 second
+   - **Status**: ✅ Tests pass (22 tests in 2 files)
+
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
+   - **Time**: ~2 minutes
+   - **NEVER CANCEL**: Set timeout to 180+ seconds
+
+4. **Generate static site:**
+   ```bash
+   npm run generate
+   ```
+   - **Time**: ~4 minutes (includes maintenance scripts)
+   - **NEVER CANCEL**: Set timeout to 300+ seconds
+   - **Note**: Runs maintenance scripts first, then static generation
+
+5. **Development server:**
+   ```bash
+   npm run dev
+   ```
+   - **Time**: Starts in ~3 seconds
+   - **URL**: http://localhost:3000
+   - **Status**: ✅ Works perfectly with live reload
+
+6. **Preview production build:**
+   ```bash
+   npm run preview
+   ```
+   - **Time**: Starts in ~5 seconds  
+   - **URL**: http://localhost:3000
+
+## Validation
+
+### Mandatory Manual Testing
+Always manually validate any changes via browser interaction. The application is fully functional:
+
+1. **Homepage**: Beautiful gradient design with hero section and feature overview
+2. **Interactive Map**: 500+ library markers with Leaflet.js integration
+3. **Search & Browse**: Real-time search, filtering, pagination (44 pages)
+4. **Library Pages**: Individual pages with breadcrumbs, location, tags, logbook entries
+5. **Navigation**: Header search, responsive design, Material Design icons
+
+### Linting and Code Quality
+```bash
+npx eslint .
+```
+- **Time**: ~3 seconds
+- **Status**: ⚠️ 114 issues exist (52 errors, 62 warnings) - these are existing codebase issues
+- **Action**: Do not try to fix these during other tasks unless specifically required
+
+### Maintenance Scripts
+```bash
+npm run maintenance
+```
+- **Time**: ~1 second (scripts run but find no files in current structure)
+- **Components**: 
+  - `maintenance:library-ids` - Assign library IDs (skips new structure)
+  - `maintenance:jpg_to_png` - Convert JPG to PNG (no files found)
+  - `maintenance:png_resize` - Optimize PNG sizes (no files found)
+  - `maintenance:copy_image` - Copy images to public (no files found)
+
+## Tech Stack & Architecture
+
+### Core Technologies
 - **Nuxt.js 3.18.1** - Vue 3 + TypeScript framework for static site generation
-- **Leaflet.js** - Interactive mapping functionality with markers and popups
+- **Leaflet.js** - Interactive mapping functionality with markers and popups  
 - **Tailwind CSS** - Utility-first CSS framework for styling
 - **Google Material Design** - Design system with Material Symbols icons
 - **Nuxt Content** - File-based CMS for markdown content management
-- **Sharp** - Image processing for optimization and format conversion
-- **Cloudflare R2** - Static hosting and CDN
 - **Vitest** - Unit testing framework
+- **Node.js v20+** - Required runtime
 
-## Project Structure
-
-### Core Directories
-
+### Project Structure
 ```
 ├── .github/                    # GitHub configuration and instructions
-├── assets/                     # CSS and styling assets
-├── components/                 # Vue components
-│   ├── AppHeader.vue          # Main navigation with search
-│   ├── AppFooter.vue          # Site footer
-│   ├── SearchComponent.vue    # Interactive map and search
-│   ├── LibraryCard.vue        # Library display cards
-│   └── FeaturedLibraries.vue  # Homepage featured content
+├── components/                 # Vue components (AppHeader, SearchComponent, etc.)
 ├── content/                    # Markdown content (Nuxt Content)
-│   └── libraries/             # Library data files (*.md)
-├── layouts/                    # Page layout templates
-├── pages/                      # File-based routing
-│   ├── index.vue              # Homepage
-│   ├── search.vue             # Search/browse page
-│   ├── library/               # Dynamic library pages
-│   └── logbook/               # Logbook functionality
-├── public/                     # Static assets
-│   ├── images/                # General images
-│   └── library-images/        # Library-specific photos (PNG only)
-├── scripts/                    # Maintenance and build scripts
-├── server/                     # Server-side API routes
+│   ├── libraries/             # 519 library files (00001.md - 00519.md)
+│   └── logbooks/              # Logbook entries by library_id
+├── pages/                      # File-based routing 
+├── server/                     # Server-side API routes and plugins
 ├── types/                      # TypeScript type definitions
-└── utils/                      # Utility functions
+├── utils/                      # Utility functions
+├── tests/                      # Vitest unit tests
+└── scripts/                    # Maintenance and build scripts
 ```
 
 ### Key Files
-
 - `nuxt.config.ts` - Main configuration with static generation rules
-- `content.config.ts` - Nuxt Content configuration
-- `package.json` - Dependencies and build scripts
+- `package.json` - Dependencies and validated scripts
 - `types/content.ts` - TypeScript interfaces for content structure
+- `vitest.config.ts` - Test configuration
 
-## Features
+## Content & Data
 
-### 1. Interactive Map
-- **Leaflet.js integration** with custom markers for each library
-- **Real-time search** with map updates
-- **Clustering** for dense areas
-- **Popup details** with library information and quick actions
-- **Full-screen mode** for detailed exploration
+### Library Management  
+- **519 libraries** across Vancouver and BC
+- **File format**: `content/libraries/{5-digit-id}.md` (e.g., `00001.md`)
+- **Unique library IDs**: 5-digit zero-padded (00001-00519)
+- **URL structure**: `/library/{id}/{slug}/` (e.g., `/library/00001/1005-jervis-st-at-nelson-st-s-w/`)
 
-### 2. Library Management
-- **500+ libraries** across Vancouver and BC
-- **Unique library IDs** (5-digit zero-padded: 00001-99999)
-- **Geographic coordinates** with lat/lng precision
-- **Status tracking** (active, inactive, uncertain, removed)
-- **Photo galleries** with optimized PNG images
-- **Tag system** for categorization
-
-### 3. Content Structure
-- **Flattened markdown files** in `content/libraries/`
-- **Frontmatter schema** with standardized fields:
-  ```yaml
-  ---
-  title: 'Library Name'
-  library_id: '00001'
-  location:
-    lat: 49.2849729
-    lng: -123.1318965
-    address: '1005 Jervis St.'
-  photo: /library-images/00001/main.png
-  tags: [active, outdoor, book-exchange]
-  status: active
-  ---
-  ```
-
-### 4. Search & Discovery
-- **Full-text search** across titles, descriptions, and content
-- **Tag filtering** with real-time updates
-- **Geographic search** by coordinates or address
-- **Advanced filters** by status, region, and type
-- **Pagination** for large result sets
-
-### 5. Community Features
-- **Logbook entries** for community updates
-- **Photo submissions** with moderation workflow
-- **Visit tracking** and statistics
-- **Community contributions** and feedback
-
-## Development Workflow
-
-### Setup Commands
-```powershell
-npm install                 # Install dependencies
-npm run dev                # Start development server (localhost:3000)
-npm run build              # Build for production
-npm run generate           # Generate static site
-npm run preview            # Preview production build
+### Frontmatter Schema
+```yaml
+---
+title: 'Library Name'
+library_id: '00001'
+location:
+  lat: 49.2849729
+  lng: -123.1318965
+  address: '1005 Jervis St.'
+photo: /images/libraries/placeholder-library.jpg
+tags: [active, outdoor, book-exchange]
+status: active
+---
 ```
 
-### Maintenance Scripts
-```powershell
-npm run maintenance        # Run all maintenance tasks
-npm run maintenance:library-ids     # Assign/update library IDs
-npm run maintenance:jpg_to_png      # Convert JPG to PNG
-npm run maintenance:png_resize      # Optimize PNG sizes
-npm run maintenance:copy_image      # Copy images to public
+### Tags System
+- `kml-import` - Imported from KML dataset
+- `outdoor` - Outdoor installation  
+- `book-exchange` - Traditional book exchange
+- `active` - Currently active and maintained
+- `visited_funvill` - Library visited by @funvill
+
+## Common Issues & Solutions
+
+### Import Error Fix
+If tests fail with "slugifyTitle is not defined":
+```typescript
+// In utils/libraryUrl.ts - ensure this import exists:
+import { slugifyTitle } from './slugify'
 ```
 
-### Testing
-```powershell
-npm run test               # Run Vitest unit tests
-```
+### Build Performance
+- Static generation prerenders 3464+ routes
+- Build includes all 519 library pages
+- **CRITICAL**: Do not cancel builds - they process hundreds of routes
 
-## Content Management
+### Development Notes
+- Hot reload works in development mode
+- Map tiles may fail to load due to network blocks (normal in sandbox)
+- Some hydration warnings are expected (Vue SSR)
+- Google Fonts may be blocked (cosmetic only)
 
-### Library Data
-- **Location:** `content/libraries/*.md`
-- **Format:** Markdown with YAML frontmatter
-- **Naming:** `{5-digit-id}.md` (e.g., `00001.md`)
-- **Images:** Stored in `public/library-images/{library_id}/`
+## Deployment
 
-### Image Optimization
-- **Format:** PNG only (JPG automatically converted)
-- **Optimization:** Automated resizing and compression
-- **Structure:** `public/library-images/{library_id}/{filename}.png`
-- **Main photo:** Referenced in frontmatter `photo` field
+### Static Hosting
+- Builds to `.output/public` directory
+- **Target**: Cloudflare R2 static hosting
+- **CDN**: Global distribution for performance
+- **Command**: `npm run generate` produces deployment-ready files
 
-### URL Structure
-- **Homepage:** `/`
-- **Search:** `/search?q={query}&tags={tags}`
-- **Library detail:** `/library/{slug}/`
-- **Logbook:** `/logbook/new?library_id={id}`
-
-## TypeScript Configuration
-
-### Key Types
-- `LibraryFrontmatter` - Library content structure
-- `LogbookFrontmatter` - Logbook entry structure
-- `Coordinates` - Geographic location interface
-- `Library` - Runtime library object
-
-### Type Safety
-- **Strict TypeScript** enabled
-- **Content validation** at build time
-- **Runtime type checking** for API responses
-- **Component prop validation**
-
-## Build & Deployment
-
-### Static Generation
-- **Pre-rendered routes** for all libraries and pages
-- **API endpoints** generated for content queries
-- **Optimized assets** with automatic compression
-- **SEO metadata** for all pages
-
-### Cloudflare Integration
-- **R2 storage** for static assets
-- **CDN distribution** for global performance
-- **Edge caching** for optimal load times
-
-## Performance Optimizations
-
-### Image Handling
-- **PNG optimization** with Sharp
-- **Lazy loading** for library images
-- **Responsive images** with multiple sizes
-- **WebP fallbacks** where supported
-
-### JavaScript
-- **Code splitting** by route
-- **Component lazy loading**
-- **Tree shaking** for minimal bundles
-- **Modern ES modules**
-
-### SEO & Accessibility
-- **Semantic HTML** structure
-- **ARIA labels** for interactive elements
-- **Open Graph** metadata
-- **Structured data** for search engines
-
-## Other Copilot Instructions
-
-- `.github/instructions/steven.instructions.md` - Steven's best practices
-- `.github/instructions/typescript.instructions.md` - TypeScript best practices
-
-## Development Environment
-
-- **OS:** Windows (PowerShell commands)
-- **Node.js:** v20+ required
-- **Package Manager:** npm
-- **IDE:** VS Code recommended with Vue/TypeScript extensions
+### CI/CD Considerations
+- Build time: ~4 minutes
+- Generated size: ~30MB (10.9MB gzipped)
+- Route prerendering: 3464 routes
+- **NEVER CANCEL**: Allow full build completion
