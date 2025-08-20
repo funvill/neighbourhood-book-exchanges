@@ -1,18 +1,18 @@
 <template>
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <h1 class="text-4xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-      <span class="material-symbols-outlined text-blue-600" style="font-size:36px;">edit_note</span>
-      Add Log Entry
+      <span class="material-symbols-outlined text-purple-600" style="font-size:36px;">edit_note</span>
+      Add Logbook Entry
     </h1>
 
-    <!-- Library Context -->
-    <div v-if="librarySlug" class="mb-8">
+  <!-- Library Context -->
+  <div v-if="librarySlug || libraryIdParam" class="mb-8">
       <div class="flex items-start gap-4 p-4 rounded-xl border border-blue-200 bg-blue-50">
         <span class="material-symbols-outlined text-blue-500" style="font-size:32px;">local_library</span>
         <div class="flex-1 min-w-0">
           <p class="text-sm text-gray-600 mb-1">Adding an entry for</p>
           <p class="text-lg font-semibold text-gray-900 truncate">
-            <NuxtLink :to="libraryUrl" class="text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded">
+            <NuxtLink :to="libraryUrl" class="text-purple-700 hover:underline focus:outline-none focus:ring-2 focus:ring-purple-400 rounded">
               <span v-if="libraryTitle">{{ libraryTitle }}</span>
               <span v-else>{{ librarySlug }}</span>
             </NuxtLink>
@@ -21,7 +21,7 @@
           <p v-else-if="libraryTitleMissing" class="text-xs text-red-600 mt-1">Library not found. Make sure the link is correct.</p>
           <p v-else class="text-xs text-gray-500 mt-1">You can click the library name to review its page before submitting.</p>
         </div>
-        <div class="text-xs text-gray-500">Slug:<br><code class="font-mono text-[11px] bg-white/70 px-1 py-0.5 rounded">{{ librarySlug }}</code></div>
+  <div class="text-xs text-gray-500">ID:<br><code class="font-mono text-[11px] bg-white/70 px-1 py-0.5 rounded">{{ libraryId || libraryIdParam }}</code></div>
       </div>
     </div>
 
@@ -34,12 +34,13 @@
         <p>You waive all related rights and claims, including attribution, to the extent allowed. Do not submit material you do not have the right to share. Submissions may be moderated or removed.</p>
         <p>Your submission is optional and anonymous unless you include identifying information in the text. Please avoid personal data, private addresses (beyond library location context), or sensitive content.</p>
       </div>
-      <div class="mt-4">
-        <label class="flex items-start gap-3 cursor-pointer">
+      
+  <div class="mt-4">
+        <label class="flex items-center gap-3 cursor-pointer">
           <input
             type="checkbox"
             v-model="acceptedTerms"
-            class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+            class="mt-0.5 w-6 h-6 text-purple-600 border-gray-300 rounded focus:ring-purple-500 focus:ring-2"
             required
           />
           <span class="text-sm text-gray-700">
@@ -94,7 +95,7 @@
             type="button" 
             @click="requestLocation" 
             :disabled="locationState.requesting"
-            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-purple-800 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span class="material-symbols-outlined" style="font-size:18px;">my_location</span>
             {{ locationState.requesting ? 'Getting location...' : 'Use my current location' }}
@@ -119,11 +120,11 @@
         <label for="tags" class="block text-sm font-medium text-gray-700 mb-1">Tags (comma separated)</label>
         <input id="tags" ref="tagInputRef" v-model="tagInput" @keydown.tab.prevent="tryAutocomplete" @input="onTagInput" type="text" class="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500 text-sm p-2" placeholder="e.g. kid-friendly, poetry, puzzle" />
         <div v-if="tagSuggestions.length" class="mt-2 flex flex-wrap gap-2">
-          <button v-for="s in tagSuggestions" :key="s" type="button" @click="applySuggestion(s)" class="px-2 py-1 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-700 text-xs font-medium">{{ s }}</button>
+          <button v-for="s in tagSuggestions" :key="s" type="button" @click="applySuggestion(s)" class="px-2 py-1 rounded-full bg-purple-100 hover:bg-purple-200 text-purple-800 text-xs font-medium">{{ s }}</button>
         </div>
         <p class="mt-1 text-xs text-gray-500">Tab to autocomplete the last tag. Existing tags suggested below.</p>
         <div v-if="currentTags.length" class="mt-3 flex flex-wrap gap-2">
-          <span v-for="t in currentTags" :key="t" class="inline-flex items-center gap-1 bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
+          <span v-for="t in currentTags" :key="t" class="inline-flex items-center gap-1 bg-purple-50 text-purple-800 px-2 py-1 rounded-full text-xs">
             <span>{{ t }}</span>
             <button type="button" class="hover:text-red-600" @click="removeTag(t)">
               <span class="material-symbols-outlined" style="font-size:14px;">close</span>
@@ -142,10 +143,7 @@
           <h3 class="text-lg font-semibold text-gray-800 mb-2">Waterproof?</h3>
           <SingleSelectChips :options="waterproofOptions" v-model:selected="form.waterproof" />
         </div>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">Space Type</h3>
-          <SingleSelectChips :options="spaceTypeOptions" v-model:selected="form.spaceType" />
-        </div>
+        
       </div>
 
       <!-- Ratings -->
@@ -288,7 +286,7 @@ const SingleSelectChips = defineComponent({
           type: 'button',
           class: [
             'px-3 py-1.5 text-xs font-medium rounded-full border transition',
-            active ? 'bg-blue-600 text-white border-blue-600 shadow' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+            active ? 'bg-purple-600 text-white border-purple-600 shadow' : 'bg-white text-purple-800 border-purple-200 hover:bg-purple-50'
           ],
           onClick: () => setVal(opt)
         }, opt)
@@ -315,7 +313,7 @@ const RatingRow = defineComponent({
           title: `${n} - ${titles[n-1]}`,
           class: [
             'w-10 h-10 flex items-center justify-center rounded-full text-xs font-semibold border transition',
-            active ? 'bg-purple-600 text-white border-purple-600 shadow' : 'bg-white text-gray-700 border-gray-300 hover:bg-purple-50'
+            active ? 'bg-purple-600 text-white border-purple-600 shadow' : 'bg-white text-purple-800 border-purple-200 hover:bg-purple-50'
           ],
           onClick: () => setVal(n)
         }, n.toString())
@@ -329,7 +327,7 @@ const form = reactive({
   details: '',
   condition: '' as string,
   waterproof: '' as string,
-  spaceType: '' as string,
+  
   ratings: { creativity: undefined as number | undefined, content: undefined as number | undefined, location: undefined as number | undefined }
 })
 
@@ -507,7 +505,7 @@ const hasContent = computed(() => {
     form.details.trim() ||
     form.condition ||
     form.waterproof ||
-    form.spaceType ||
+    
     form.ratings.creativity !== undefined ||
     form.ratings.content !== undefined ||
     form.ratings.location !== undefined ||
@@ -537,23 +535,26 @@ const canSubmit = computed(() => {
 // Options
 const conditionOptions = ['Excellent','Good','Worn','Damaged','Removed']
 const waterproofOptions = ['Yes','No']
-const spaceTypeOptions = ['Public','Private']
+
 
 // Route / library context
 const route = useRoute()
+// Accept either `?library={slug}` (legacy) or `?library_id={00065}` (preferred)
 const librarySlug = computed(() => (route?.query?.library || '').toString().trim())
-const libraryIdParam = computed(() => (route?.query?.library_id || '').toString().trim())
+const libraryIdParam = computed(() => (route?.query?.library_id || route?.query?.library || '').toString().trim())
 const libraryTitle = ref('')
 const libraryId = ref('')
 const libraryTitleFetched = ref(false)
 const libraryTitleMissing = ref(false)
 
-// Computed library URL using new format if library_id is available
+// Computed library URL: prefer library_id when available (pad to 5 digits), fall back to slug
 const libraryUrl = computed(() => {
-  if (libraryId.value && librarySlug.value) {
-    return generateLibraryUrl({ library_id: libraryId.value, slug: librarySlug.value })
+  if (libraryId.value) {
+    const padded = String(libraryId.value).padStart(5, '0')
+    return generateLibraryUrl({ library_id: padded, slug: librarySlug.value || undefined })
   }
-  return `/library/${librarySlug.value}/`
+  if (librarySlug.value) return `/library/${librarySlug.value}/`
+  return '/'
 })
 
 // Dirty state detection
@@ -562,7 +563,7 @@ const isDirty = computed(() => {
     form.details.trim() ||
     form.condition ||
     form.waterproof ||
-    form.spaceType ||
+    
     form.ratings.creativity !== undefined ||
     form.ratings.content !== undefined ||
     form.ratings.location !== undefined ||
@@ -683,7 +684,7 @@ function resetForm() {
   form.details = ''
   form.condition = ''
   form.waterproof = ''
-  form.spaceType = ''
+  
   form.ratings.creativity = form.ratings.content = form.ratings.location = undefined
   tagInput.value = ''
   clearImage()
@@ -818,6 +819,24 @@ input[type="file"]:hover {
   background: #eff6ff;
 }
 
+/* Primary / action button styling */
+.md-button {
+  --md-primary: #6b21a8; /* purple-700 */
+  background: var(--md-primary);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.md-button[disabled] {
+  background: #f3e8ff; /* purple-100 */
+  color: #5b21b6; /* purple-800 text for contrast */
+  border-color: rgba(91,33,182,0.08);
+}
+.md-button.border {
+  /* make secondary / neutral buttons visibly distinct */
+  background: #f3e8ff; /* pale purple */
+  color: #5b21b6;
+}
+
 /* Rating buttons mobile improvements */
 @media (max-width: 640px) {
   .w-10.h-10 {
@@ -827,3 +846,4 @@ input[type="file"]:hover {
   }
 }
 </style>
+<!-- HMR trigger -->

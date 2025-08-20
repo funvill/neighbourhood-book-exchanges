@@ -126,16 +126,18 @@
                 </div>
               </div>
               <div class="space-y-3">
-                <NuxtLink :to="`/logbook/new?library=${library.slug}`"
+                <!-- Prefer library_id query param for reliable lookup; fall back to slug for older records -->
+                <NuxtLink :to="library.library_id ? `/logbook/new?library_id=${String(library.library_id).padStart(5, '0')}` : `/logbook/new?library=${library.slug}`"
                   class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
                   <span class="material-symbols-outlined" style="font-size:18px;">edit</span>
                   Add Log Entry
                 </NuxtLink>
-                <NuxtLink to="/search"
+                <!-- <NuxtLink to="/search"
                   class="w-full border border-blue-600 text-blue-600 px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
                   <span class="material-symbols-outlined" style="font-size:18px;">map</span>
                   Find Similar Libraries
                 </NuxtLink>
+                -->
               </div>
             </div>
           </div>
