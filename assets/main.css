@@ -44,7 +44,9 @@ a:hover {
   color: var(--md-primary-container);
 }
 
-button, .md-button {
+/* Only style .md-button (explicit action buttons). Do not target all native <button> elements
+  so smaller UI controls (chips, rating buttons) can retain their own classes for contrast.) */
+.md-button, button.md-button, a.md-button {
   font-family: var(--md-font-family);
   background: var(--md-primary);
   color: #fff !important;
@@ -57,10 +59,34 @@ button, .md-button {
   box-shadow: 0 1px 3px var(--md-shadow);
   transition: background 0.2s, box-shadow 0.2s;
 }
-button:hover, .md-button:hover {
+.md-button:hover, button.md-button:hover, a.md-button:hover {
   background: var(--md-primary-container);
   color: var(--md-on-primary-container);
   box-shadow: 0 2px 8px var(--md-shadow);
+}
+
+/* Enforce primary/secondary/disabled md-button styles with higher specificity
+   to override Tailwind utility classes that might set bg-white / text-white */
+/* Enforce primary/secondary/disabled md-button styles with higher specificity
+   to override Tailwind utility classes that might set bg-white / text-white */
+.md-button, button.md-button, a.md-button {
+  background: var(--md-primary) !important;
+  color: var(--md-on-primary) !important;
+}
+
+/* Secondary / bordered variant */
+.md-button.border, .md-button.secondary, button.md-button.border {
+  background: var(--md-primary-container) !important; /* pale purple */
+  color: var(--md-on-primary-container) !important;    /* dark text */
+  border: 1px solid rgba(0,0,0,0.04) !important;
+}
+
+/* Disabled state */
+.md-button[disabled], .md-button:disabled, button.md-button[disabled], button.md-button:disabled {
+  background: #f3e8ff !important; /* purple-100 */
+  color: #5b21b6 !important; /* purple-800 */
+  cursor: not-allowed !important;
+  opacity: 1 !important;
 }
 
 input, textarea, select {
@@ -129,3 +155,5 @@ input:focus, textarea:focus, select:focus {
 .md-text-center {
   text-align: center;
 }
+
+/* HMR trigger */
